@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout
+  title="Annonsera på Hälsorent.se"
+  description="Nå hälsomedvetna läsare som söker fakta om städning och inomhusmiljö. Information om annonsering och sponsrat innehåll på Hälsorent.se."
+  noindex={true}
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <Breadcrumbs items={[{ label: 'Annonsera' }]} />
+    <div class="prose-article">
+      <h1>Annonsera på Hälsorent</h1>
+      <p>Hälsorent.se riktar sig till hälsomedvetna läsare som aktivt söker information om allergivänlig städning, kemikaliefri rengöring, inomhusluft och mögel. En publik som är i ett aktivt beslutsläge och söker konkreta lösningar.</p>
+      <h2>Samarbetsmöjligheter</h2>
+      <ul>
+        <li>Sponsrade artiklar och guider (märkta "Sponsrat")</li>
+        <li>Produktplaceringar i befintliga guider (tydligt märkta)</li>
+        <li>Annonsbanners</li>
+      </ul>
+      <h2>Krav</h2>
+      <p>Vi samarbetar bara med aktörer vars produkter och tjänster är relevanta för läsarna och som inte strider mot vår redaktionella policy. Hälsopåståenden måste kunna styrkas.</p>
+      <h2>Kontakt</h2>
+      <p>Skicka förfrågan till: <span class="js-email" data-u="halsorent" data-d="proton.me">halsorent [at] proton.me</span></p>
+    </div>
+  </div>
+</BaseLayout>

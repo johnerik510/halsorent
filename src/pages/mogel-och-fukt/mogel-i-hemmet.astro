@@ -1,0 +1,142 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('mogel-i-hemmet', '/mogel-och-fukt/');
+
+const toc = [
+  { id: 'vad-ar-mogel', label: 'Vad är mögel?' },
+  { id: 'identifiera', label: 'Identifiera mögel i hemmet' },
+  { id: 'symtom', label: 'Hälsoeffekter och symtom' },
+  { id: 'mogeltest', label: 'Mögeltest: hur och varför' },
+  { id: 'orsaker', label: 'Vanligaste orsakerna i svenska hem' },
+  { id: 'agatgarda-sjalv', label: 'Åtgärda själv: när det går' },
+  { id: 'specialist', label: 'När du behöver specialist' },
+  { id: 'forebygg', label: 'Förebygg mögel' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Är allt svart i badrummet mögel?', a: 'Nej. Svarta missfärgningar i badrum kan vara smuts, kalk eller sot. Svartmögel luktar typiskt av jord och fukt. Om du är osäker: ta ett mögeltest eller skrapa lite av den svarta ytan och undersök om det är fiber/smuts eller biologiskt material.' },
+  { q: 'Kan mögel orsakas av ett läckande tak?', a: 'Ja. Läckage ger fukt in i byggnadsmaterial, och mögel kan börja växa inom 24 till 48 timmar i rätt förhållanden. Alla vattenintrång ska åtgärdas och torkas ordentligt inom 48 timmar.' },
+  { q: 'Kan jag bo kvar under mögelrengöring?', a: 'Vid liten mögelyta på hård yta: ja, med ökad ventilation. Vid större sanering bakom väggar eller i ventilation: helst inte, mögelsporer sprids under arbetet. Diskutera med saneringsfirman.' },
+  { q: 'Ersätter försäkringen mögelskador?', a: 'Det beror på orsaken. Plötsliga skador (rörbrott, stormskada) täcks ofta. Fuktskador som uppstått gradvis på grund av dålig ventilation eller eftersatt underhåll täcks sällan. Kontakta ditt försäkringsbolag.' },
+];
+---
+<ArticleLayout
+  title="Mögel i hemmet: identifiera, mäta och åtgärda | Hälsorent"
+  description="Synligt mögel är bara toppen av isberget. Så här identifierar du dolt mögel, tolkar ett mögeltest och avgör om du kan åtgärda det själv."
+  heroImage="/images/articles/mogel.webp"
+  heroAlt="Mögel i badrumssilikon och fog"
+  publishDate="2026-04-29"
+  updateDate="2026-04-29"
+  readingTime={11}
+  breadcrumbs={[{ label: 'Mögel & fukt', href: '/mogel-och-fukt/' }, { label: 'Mögel i hemmet' }]}
+  toc={toc}
+  category="Mögel & fukt"
+>
+
+<p>Mögel är en svamp, inte en enskild organism. Det finns tusentals mögelarter, varav de flesta förekommer i alla hus i låga halter utan att orsaka problem. Det är när mögelsvampen hittar fukt och näring och börjar växa okontrollerat som det blir ett hälsoproblem.</p>
+
+<p>Inomhusluft som innehåller förhöjda halter av mögelsporer kan orsaka luftvägsbesvär, allergireaktioner och i sällsynta fall allvarligare tillstånd vid exponering för toxinproducerande mögelarter. Nyckeln är att hitta möglet tidigt och åtgärda fuktorsaken, inte bara skrubba bort det synliga.</p>
+
+<h2 id="vad-ar-mogel">Vad är mögel?</h2>
+
+<img src="/images/articles/mogel.webp" alt="Mögelväxt på en vägg bakom en möbel" width="800" height="450" loading="lazy" />
+
+<p>Mögel reproducerar sig via sporer som ständigt finns i luften, inomhus och utomhus. Inomhus är sporhalten normalt låg. Mögel börjar växa när tre faktorer sammanfaller: fukt (relativ luftfuktighet över 70 till 80 procent eller direkt fuktpåverkan), näring (organiskt material som trä, gips, smuts) och temperatur (5 till 35 grader, med optimum runt 20 till 25 grader).</p>
+
+<p>Mögelangrepp producerar mykotoxiner och beta-glukananer som kan irritera slemhinnor och utlösa inflammationsreaktioner, även hos icke-allergiker.</p>
+
+<h2 id="identifiera">Identifiera mögel i hemmet</h2>
+
+<p>Synliga tecken:</p>
+<ul>
+  <li>Mörka eller vita fläckar på väggar, tak, fönsterbrädor eller bakom möbler</li>
+  <li>Missfärgad silikon eller fogmassa i badrum och kök</li>
+  <li>Missfärgat trä i källare, krypgrund eller vind</li>
+  <li>Bubblande, lösnanande eller missfärgad tapetfärg</li>
+</ul>
+
+<p>Osynliga tecken:</p>
+<ul>
+  <li>Ihållande doft av jord, källare eller fuktig källare i ett rum</li>
+  <li>Fuktfläckar på väggar eller tak som kommer tillbaka trots att ytan torkades</li>
+  <li>Symtom (se nästa avsnitt) som förbättras utanför bostaden</li>
+</ul>
+
+<h2 id="symtom">Hälsoeffekter och symtom</h2>
+
+<p>Mögelexponering inomhus kan ge:</p>
+<ul>
+  <li>Nästäppa, nysningar och rinnsnuva</li>
+  <li>Hosta, pip i bröstet och andningssvårigheter</li>
+  <li>Irriterade, röda och vattniga ögon</li>
+  <li>Hudirritationer och eksem</li>
+  <li>Trötthet och koncentrationssvårigheter (vid kronisk exponering)</li>
+  <li>Förvärrade symtom vid astma och allergi</li>
+</ul>
+
+<p>Om dina symtom förbättras påtagligt när du tillbringar tid utanför hemmet, och återkommer när du är hemma, bör du undersöka om inomhusmiljön är orsaken.</p>
+
+<h2 id="mogeltest">Mögeltest: hur och varför</h2>
+
+<p>Det finns tre typer av mögeltest tillgängliga för konsumenter:</p>
+
+<ol>
+  <li><strong>Lufttest:</strong> en behållare lämnas öppen i ett rum i 60 minuter, mögelsporer i luften faller ner på ett odlingssubstrat. Efter 4 till 7 dagar räknar du kolonier. Indikerar om mögelhalterna i luften är förhöjda, men berättar inte var källan är.</li>
+  <li><strong>Ytprov:</strong> tryck en kontaktplatta mot en misstänkt yta. Laboratorierna identifierar vilken mögelart det rör sig om. Berättar om ytan är mögelbesmittad men inte dolda skador.</li>
+  <li><strong>Dammprov:</strong> damm samlas och skickas för analys. Indikerar total mögelbelastning i rummet.</li>
+</ol>
+
+<p>Tolkning: ett testresultat med 0 till 5 kolonier är normalt, 5 till 25 är förhöjt och bör utredas vidare, över 25 är klart förhöjt och kräver åtgärd. Kontakta en mögelinspektör om du behöver professionell bedömning.</p>
+
+<h2 id="orsaker">Vanligaste orsakerna i svenska hem</h2>
+
+<ul>
+  <li><strong>Badrum:</strong> otillräcklig ventilation, trasig tätning kring badkar och dusch, gamla fuktskadade golvbrunnar</li>
+  <li><strong>Kök:</strong> läckande kyl- eller diskmaskinkopplingar, dålig ventilation vid spis</li>
+  <li><strong>Källare:</strong> kapillär fukttransport från marken, otillräcklig dränering</li>
+  <li><strong>Vind:</strong> dålig ventilation, kondens från varm inomhusluft som möter kall vindskonstruktion</li>
+  <li><strong>Köldbryggor:</strong> kalla ytor kring fönster och ytterväggar där fukt kondenserar</li>
+</ul>
+
+<h2 id="agatgarda-sjalv">Åtgärda själv: när det går</h2>
+
+<p>Du kan rengöra mögel själv om:</p>
+<ul>
+  <li>Det synliga mögelangrepet är under 0,5 kvadratmeter</li>
+  <li>Det är på en hård, icke-porös yta (kakel, glas, plast, rostfritt stål)</li>
+  <li>Du kan identifiera och åtgärda fuktorsaken</li>
+</ul>
+
+<p>Utrustning: P2-andningsmask (minst), skyddsglasögon, engångshandskar, sophandskar. Rengör med klorbaserat rengöringsmedel (1 del klorin, 10 delar vatten) på hårda ytor, eller se vår guide om <a href="/mogel-och-fukt/mogel-badrum/">mögel i badrummet</a> för specifika metoder.</p>
+
+<h2 id="specialist">När du behöver specialist</h2>
+
+<p>Anlita en mögelinspektör eller saneringsfirma när:</p>
+<ul>
+  <li>Möglet är bakom väggar, under golv eller i ventilationssystemet</li>
+  <li>Angrepet är större än 0,5 kvadratmeter</li>
+  <li>Du inte kan identifiera fuktorsaken</li>
+  <li>Möglet återkommer efter rengöring</li>
+  <li>Någon i hushållet har allvarliga symtom</li>
+</ul>
+
+<h2 id="forebygg">Förebygg mögel</h2>
+
+<ul>
+  <li>Håll luftfuktigheten i hemmet under 60 procent, helst 40 till 55 procent</li>
+  <li>Vädra badrummet efter dusch och bad, minst 15 minuter</li>
+  <li>Åtgärda vattenläckage och fuktintrång inom 48 timmar</li>
+  <li>Kontrollera ventilationen: frånluftsdonen ska dra till sig ett papper</li>
+  <li>Rensa och kontrollera hängrännor och takavvattning varje höst</li>
+</ul>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om mögel och fukt" />
+
+</ArticleLayout>

@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout
+  title="Cookies — Hälsorent.se"
+  description="Information om hur Hälsorent.se använder cookies."
+  noindex={true}
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <Breadcrumbs items={[{ label: 'Cookies' }]} />
+    <div class="prose-article">
+      <h1>Cookies</h1>
+      <p>Hälsorent.se använder cookies för att webbplatsen ska fungera korrekt och för att vi ska förstå hur den används. Vi använder inga spårningscookies för annonsändamål.</p>
+      <h2>Så här hanterar du cookies</h2>
+      <p>Du kan hantera eller radera cookies via din webbläsarinställning. Om du blockerar alla cookies kan delar av webbplatsen sluta fungera korrekt.</p>
+    </div>
+  </div>
+</BaseLayout>

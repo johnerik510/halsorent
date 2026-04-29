@@ -1,0 +1,61 @@
+---
+const navItems = [
+  { label: 'Allergi & astma', href: '/allergi-och-astma/' },
+  { label: 'Kemikaliefri', href: '/kemikaliefri-stadning/' },
+  { label: 'Inomhusluft', href: '/inomhusluft/' },
+  { label: 'Mögel & fukt', href: '/mogel-och-fukt/' },
+  { label: 'Städtips', href: '/stadtips-och-rutiner/' },
+  { label: 'Apparater', href: '/rengoring-av-apparater/' },
+];
+---
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="/" class="flex items-center flex-shrink-0 gap-2" aria-label="Hälsorent startsida">
+        <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <span class="font-heading font-bold text-xl tracking-tight text-primary-dark">hälsorent<span class="text-accent">.se</span></span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Huvudnavigering">
+        {navItems.map((item) => (
+          <a href={item.href} class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md transition-colors whitespace-nowrap">
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      <button id="mobile-menu-btn" class="lg:hidden p-2.5 rounded-md hover:bg-gray-100 transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-700" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu">
+        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100" aria-label="Mobilnavigering">
+    <div class="px-4 py-2 divide-y divide-gray-100">
+      {navItems.map((item) => (
+        <a href={item.href} class="block py-3 text-sm font-medium text-gray-800 hover:text-primary transition-colors">
+          {item.label}
+        </a>
+      ))}
+      <a href="/om-oss/" class="block py-3 text-sm font-medium text-gray-800 hover:text-primary transition-colors">Om oss</a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  btn?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden', !isOpen);
+    iconClose?.classList.toggle('hidden', isOpen);
+    btn.setAttribute('aria-expanded', String(isOpen ? 'false' : 'true'));
+  });
+</script>

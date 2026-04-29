@@ -1,0 +1,128 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('rengora-tvattmaskin', '/rengoring-av-apparater/');
+
+const toc = [
+  { id: 'varfor-rengora', label: 'Varför behöver tvättmaskinen rengöras?' },
+  { id: 'luddfilter', label: 'Rengör luddfilter och pump' },
+  { id: 'gummipackning', label: 'Rengör gummipackningen' },
+  { id: 'tvattlada', label: 'Rengör tvättlådan' },
+  { id: 'trumma', label: 'Rengör trumman' },
+  { id: 'avkalkning', label: 'Avkalkning' },
+  { id: 'schema', label: 'Rekommenderat rengöringsschema' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Kan jag använda diskmedel i tvättmaskinen?', a: 'Nej. Diskmedel skummar kraftigt och kan skada maskinen och orsaka översvämning. Använd tvättmaskinspecifika rengöringsmedel, citronsyra eller bikarbonat.' },
+  { q: 'Min tvättmaskin luktar unket trots att jag rengjort. Vad gör jag?', a: 'Unkta lukter sitter ofta kvar i gummipackningens veck och i tvättlådan. Rengör dessa grundligt med en gammal tandborste och en blandning av vatten och vit ättika. Lämna luckan öppen efter varje tvätt.' },
+  { q: 'Ska man alltid lämna tvättmaskinluckan öppen?', a: 'Ja. En stängd tvättmaskin med fukt inuti är en perfekt miljö för mögel och bakterier. Lämna luckan och tvättlådan öppna eller på glänt mellan tvättar.' },
+  { q: 'Hur vet jag om mitt luddfilter är igensatt?', a: 'Tecken på igensatt luddfilter: tvättmaskinen pumpar inte ut vattnet ordentligt, ovanliga ljud under centrifugering, felkoder på displayen. Kontrollera och rengör filtret månadsvis.' },
+];
+---
+<ArticleLayout
+  title="Rengöra tvättmaskin: komplett guide mot lukt och mögel | Hälsorent"
+  description="En smutsig tvättmaskin tvättar smutsigt och luktar. Hur du rensar luddfilter, avkalkar trumman och håller maskinen fräsch med naturliga medel."
+  heroImage="/images/articles/tvattmaskin.webp"
+  heroAlt="Tvättmaskin med öppen lucka för rengöring"
+  publishDate="2026-04-29"
+  updateDate="2026-04-29"
+  readingTime={8}
+  breadcrumbs={[{ label: 'Rengöring av apparater', href: '/rengoring-av-apparater/' }, { label: 'Rengöra tvättmaskin' }]}
+  toc={toc}
+  category="Rengöring av apparater"
+>
+
+<p>En tvättmaskin som aldrig rengörs ansamlar fukt, tvättmedelsrester, hudceller och fett i gummipackningen, tvättlådan och trumman. Det skapar idealförhållanden för mögel och bakterier, som sedan kan hamna i dina kläder under tvätten.</p>
+
+<p>Symptom på en ren tvättmaskin som behöver rengöras: kläder som luktar unket direkt ur maskinen, synliga svarta fläckar i gummipackningens veck, eller maskinen pumpar inte ut vatten ordentligt.</p>
+
+<h2 id="varfor-rengora">Varför behöver tvättmaskinen rengöras?</h2>
+
+<img src="/images/articles/tvattmaskin.webp" alt="Öppen tvättmaskin med synlig gummipackning" width="800" height="450" loading="lazy" />
+
+<p>Tre problem uppstår i en oren tvättmaskin:</p>
+<ol>
+  <li><strong>Mögelväxt:</strong> gummipackningen håller kvar fukt och mögelsporer efter varje tvätt</li>
+  <li><strong>Bakterietillväxt:</strong> 40-graderstvätt dödar inte alla bakterier, och rester i maskinen ger bakterierna näring</li>
+  <li><strong>Kalkavlagringar:</strong> hårt vatten bildar kalk på värmeelement och trumma, vilket ökar energiförbrukning och förkortar maskinens livslängd</li>
+</ol>
+
+<h2 id="luddfilter">Rengör luddfilter och pump</h2>
+
+<p>Luddfiltret fångar ludd, mynt, knappar och annat som annars skulle fastna i pumpen. Det bör rengöras månadsvis.</p>
+
+<ol>
+  <li>Lägg en handduk på golvet framför tvättmaskinen</li>
+  <li>Öppna luckan till filtret (sitter ofta längst ner till höger, bakom en liten lucka)</li>
+  <li>Skruva sakta loss filtret, ha en bunke eller trasa redo för vatten som rinner ut</li>
+  <li>Ta bort ludd, skräp och hår från filtret</li>
+  <li>Skölj filtret under rinnande vatten</li>
+  <li>Skruva tillbaka ordentligt för att undvika läckage</li>
+</ol>
+
+<h2 id="gummipackning">Rengör gummipackningen</h2>
+
+<p>Gummipackningen är maskinens mögelhärd nummer ett. Rengör den en gång i månaden:</p>
+
+<ol>
+  <li>Vik ut gummipackningens veck och inspektera alla ytor</li>
+  <li>Ta bort ludd, hår och smuts med händerna</li>
+  <li>Blanda lika delar vit ättika och vatten i en sprayflaska</li>
+  <li>Spraya generöst och gnid med en gammal tandborste i alla veck</li>
+  <li>Torka av med en ren trasa</li>
+  <li>Vid synligt mögel: använd en mild klorbaserad lösning (1 del klorin, 10 delar vatten) med handskar</li>
+</ol>
+
+<h2 id="tvattlada">Rengör tvättlådan</h2>
+
+<p>Tvättlådan samlar tvättmedels- och sköljmedelsrester som bildar en idealkultur för mögel och bakterier:</p>
+
+<ol>
+  <li>Dra ut hela tvättlådan (dra den rakt ut, sedan upp)</li>
+  <li>Blötlägg den i en blandning av varmt vatten och vit ättika i 15 till 30 minuter</li>
+  <li>Skrubba med en gammal tandborste, särskilt i hörnen och under flikarna</li>
+  <li>Skölj noggrant och torka av</li>
+  <li>Torka av hålrummet i maskinen med en fuktig trasa</li>
+  <li>Sätt tillbaka tvättlådan och lämna den på glänt</li>
+</ol>
+
+<h2 id="trumma">Rengör trumman</h2>
+
+<p>Rengör trumman en gång i månaden med ett tomt maskintvättprog­ram på 60 eller 90 grader:</p>
+
+<p><strong>Metod 1, citronsyra:</strong> Häll 100 gram citronsyra direkt i trumman (inte i tvättlådan). Kör ett tomt program på 60 grader. Effektivt mot kalk och bakterier.</p>
+
+<p><strong>Metod 2, bikarbonat och ättika:</strong> Häll 100 gram bikarbonat i trumman. Häll 250 ml vit ättika i tvättlådan. Kör ett tomt program på 60 grader. Bikarbonat motverkar lukt, ättika löser upp fett och desinfekterar.</p>
+
+<p><strong>Metod 3, tvättmaskinrengöring:</strong> Kommersiella produkter som Affresh eller Dr. Beckmann fungerar och är enkla att använda. Kostar 50 till 100 kronor per rengöring.</p>
+
+<h2 id="avkalkning">Avkalkning</h2>
+
+<p>Avkalkning rekommenderas var 3 till 6 månad beroende på din vattenhårdhet. Hård vatten (vanligt i södra Sverige och städer som Stockholm) kräver tätare avkalkning.</p>
+
+<p>Kontrollera Livsmedelsverkets karta över vattenhårdhet för ditt område, eller kontakta ditt VA-bolag.</p>
+
+<h2 id="schema">Rekommenderat rengöringsschema</h2>
+
+<table>
+  <thead>
+    <tr><th>Frekvens</th><th>Uppgift</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Efter varje tvätt</td><td>Lämna luckan och tvättlådan öppna</td></tr>
+    <tr><td>Varje månad</td><td>Luddfilter, gummipackning, tvättlåda, trumtvätt</td></tr>
+    <tr><td>Var 3:e månad</td><td>Avkalkning (vid hårt vatten), extra gummipackningskontroll</td></tr>
+    <tr><td>Var 6:e månad</td><td>Avkalkning (vid mjukt vatten), kontrollera slang och anslutningar</td></tr>
+  </tbody>
+</table>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om apparatrengöring" />
+
+</ArticleLayout>

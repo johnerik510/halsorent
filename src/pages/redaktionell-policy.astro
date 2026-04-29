@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout
+  title="Redaktionell policy — Hälsorent.se"
+  description="Hur Hälsorent.se arbetar med faktagranskning, oberoende och redaktionell integritet."
+  noindex={true}
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <Breadcrumbs items={[{ label: 'Redaktionell policy' }]} />
+    <div class="prose-article">
+      <h1>Redaktionell policy</h1>
+      <p>Hälsorent.se publicerar oberoende redaktionellt innehåll. Annonsörer och samarbetspartners påverkar inte vilket innehåll vi publicerar, hur vi värderar produkter eller vilka råd vi ger läsarna.</p>
+      <h2>Faktagranskning</h2>
+      <p>Alla påståenden i våra guider ska kunna backas upp av publicerad forskning, myndigheternas riktlinjer eller etablerad klinisk praxis. Vi hänvisar till Folkhälsomyndigheten, Astma- och Allergiförbundet och vetenskapliga publikationer, inte till tillverkares egna uppgifter.</p>
+      <h2>Uppdateringar</h2>
+      <p>Guider uppdateras när ny forskning eller nya riktlinjer ändrar rekommendationerna. Uppdateringsdatum anges på varje artikel.</p>
+      <h2>Rättelser</h2>
+      <p>Om vi publicerar felaktig information rättar vi den skyndsamt och noterar att en rättelse gjorts. Kontakta oss på <span class="js-email" data-u="halsorent" data-d="proton.me">halsorent [at] proton.me</span>.</p>
+      <h2>Sponsrat innehåll</h2>
+      <p>Sponsrat innehåll markeras alltid tydligt med "Sponsrat" och hålls separerat från det redaktionella innehållet. Se <a href="/sponsrat-innehall/">Sponsrat innehåll</a> för mer information.</p>
+    </div>
+  </div>
+</BaseLayout>

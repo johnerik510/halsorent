@@ -1,0 +1,127 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('dammkvalster-i-sang', '/allergi-och-astma/');
+
+const toc = [
+  { id: 'vad-ar-dammkvalster', label: 'Vad är dammkvalster?' },
+  { id: 'varfor-sangen', label: 'Varför är sängen värst?' },
+  { id: 'symtom', label: 'Symtom på dammkvalsterallergi' },
+  { id: 'minska-kvalsterna', label: 'Så minskar du antalet kvalster' },
+  { id: 'tvatt', label: 'Tvätta sängkläder rätt' },
+  { id: 'kuddar-och-dyner', label: 'Kuddar och dyner' },
+  { id: 'madrassskydd', label: 'Madrassskydd och örngottskydd' },
+  { id: 'luftfuktighet', label: 'Luftfuktighet i sovrummet' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Kan man bli av med dammkvalster helt?', a: 'Nej. Dammkvalster förekommer i princip i alla hem. Målet är att hålla ner antalet till en nivå som inte utlöser allergibesvär, inte att eliminera dem helt.' },
+  { q: 'Hur länge lever ett dammkvalster?', a: 'En dammkvalster lever 2 till 3 månader. Under sin livstid lägger en hona upp till 100 ägg. Det är exkrementer från kvalstren, inte kvalstren själva, som orsakar allergireaktion.' },
+  { q: 'Hjälper frysa madrassen?', a: 'Ja, kyla under minus 17 grader Celsius i minst 24 timmar dödar kvalster. Pratiska för kuddar och mjukisdjur men opraktiskt för madrasser. Bättre effekt ger madrassskydd och regelbunden tvätt.' },
+  { q: 'Behöver jag specialmärkt sängkläder för allergiker?', a: 'Inte nödvändigtvis. Det viktigaste är att du tvättar sängkläderna i minst 60 grader varannan vecka. Allergimärkta produkter kan vara bra, men de är inte ett krav om du har bra tvättrutiner.' },
+  { q: 'Är tatami-mattor bättre än heltäckningsmattor?', a: 'Hårda golv (parkett, klinker, laminat) samlar avsevärt färre dammkvalster än mattor. Om du har heltäckningsmatta i sovrummet är det den enskilt största åtgärden att byta ut den.' },
+];
+---
+<ArticleLayout
+  title="Dammkvalster i sängen: så bli du av med dem | Hälsorent"
+  description="Dammkvalster trivs i din säng. Så här minskar du antalet kvalster och lindrar allergibesvären med enkla åtgärder som faktiskt fungerar."
+  heroImage="/images/articles/dammkvalster.webp"
+  heroAlt="Sängkläder i vitt som tvättas vid hög temperatur för att döda dammkvalster"
+  publishDate="2026-04-29"
+  updateDate="2026-04-29"
+  readingTime={9}
+  breadcrumbs={[{ label: 'Allergi & astma', href: '/allergi-och-astma/' }, { label: 'Dammkvalster i sängen' }]}
+  toc={toc}
+  category="Allergi & astma"
+>
+
+<p>Du tillbringar en tredjedel av livet i sängen. Det gör dammkvalstren också. De lever på de hudfjäll du fäller av dig varje natt, trivs i den fukt som bildas av din kroppstemperatur och sprider allergener i den luft du andas in under sömnen. Det är därför sovrumsallergibesvär är vanligare och ofta svårare än besvär i andra rum.</p>
+
+<p>Den goda nyheten: rätt åtgärder fungerar. Forskning från bland annat Folkhälsomyndighetens riktlinjer för inomhusmiljö visar att allergenhalten i sängen kan minskas med 70 till 90 procent med konsekvent tvätt vid rätt temperatur och rätt skyddsprodukter.</p>
+
+<h2 id="vad-ar-dammkvalster">Vad är dammkvalster?</h2>
+
+<img src="/images/articles/dammkvalster.webp" alt="Närbild på dammkvalster under mikroskop" width="800" height="450" loading="lazy" />
+
+<p>Dammkvalster (Dermatophagoides pteronyssinus och D. farinae) är mikroskopiska spindeldjur på ungefär 0,3 millimeter. De är osynliga för blotta ögat. De lever i sängkläder, madrasser, dynor, mjuka möbler och heltäckningsmattor, där de livnär sig på din avfällda hud.</p>
+
+<p>Det är inte kvalstren i sig som orsakar allergi, utan proteinerna i deras exkrementer. En kvalster producerar ungefär 20 exkrementkulor per dag, och de är lätta nog att sväva i luften när du vädrar sängen, sitter ner i soffan eller dammsuger utan HEPA-filter.</p>
+
+<h2 id="varfor-sangen">Varför är sängen värst?</h2>
+
+<p>En typisk madrass kan innehålla 100 000 till 10 miljoner dammkvalster. Tre faktorer förklarar varför:</p>
+
+<ul>
+  <li><strong>Mat:</strong> du fäller av ungefär 1,5 gram hud per dygn, varav en stor del hamnar i sängen</li>
+  <li><strong>Fukt:</strong> en vuxen person avger ungefär 1 liter svett per natt, vilket håller luftfuktigheten i sängen hög</li>
+  <li><strong>Temperatur:</strong> 20 till 25 grader, som råder i de flesta sovrum, är idealtemperatur för kvalstren</li>
+</ul>
+
+<h2 id="symtom">Symtom på dammkvalsterallergi</h2>
+
+<p>Typiska symtom som förvärras på natten eller tidigt på morgonen:</p>
+
+<ul>
+  <li>Nästäppa och rinnsnuva</li>
+  <li>Nysningar, särskilt när du bäddar om</li>
+  <li>Kliande, röda ögon</li>
+  <li>Hosta och pip i bröstet (vid astma)</li>
+  <li>Eksem som förvärras nattetid</li>
+</ul>
+
+<p>Om symtomen förbättras under semester, särskilt i torr bergsmiljö eller vid havet, är dammkvalster en sannolik utlösare.</p>
+
+<h2 id="minska-kvalsterna">Så minskar du antalet kvalster</h2>
+
+<p>Åtgärderna rangordnade efter effekt:</p>
+
+<ol>
+  <li>Byt ut heltäckningsmatta i sovrummet mot hårt golv</li>
+  <li>Använd tätnande madrassskydd och örngottsskydd</li>
+  <li>Tvätta sängkläder i 60 grader varannan vecka</li>
+  <li>Håll luftfuktigheten i sovrummet under 50 procent</li>
+  <li>Damma med fuktigt trasa istället för torr trasa</li>
+  <li>Dammsug madrassen månadsvis med HEPA-dammsugare</li>
+</ol>
+
+<h2 id="tvatt">Tvätta sängkläder rätt</h2>
+
+<p>Tvätt i 60 grader dödar dammkvalstren och löser upp allergenerna i deras exkrementer. 40 grader är inte tillräckligt varmt och dödar bara en del av kvalstren. Kylning i frys (under minus 17 grader i 24 timmar) dödar dem men löser inte upp exkrementerna.</p>
+
+<p><strong>Rekommenderad frekvens:</strong></p>
+<ul>
+  <li>Örngott: varje vecka eller varannan vecka, 60 grader</li>
+  <li>Lakan: varannan vecka, 60 grader</li>
+  <li>Dyne: varannan månad, 60 grader om tvättinstruktionen tillåter</li>
+  <li>Kudde: varannan månad, 60 grader om tvättinstruktionen tillåter</li>
+</ul>
+
+<h2 id="kuddar-och-dyner">Kuddar och dyner</h2>
+
+<p>Välj syntetfyllda kuddar och dyner framför dun. Syntet tål tvätt i 60 grader bättre, och allergenhalten i syntetkuddar är lägre än i dunkuddar efter samma användningstid. Byt ut kuddar vart till vartannat år.</p>
+
+<p>Om du vill behålla dunkuddar: köp kuddar med tät väv (thread count 233 eller högre) som minskar allergenläckaget, och tvätta dem noggrant.</p>
+
+<h2 id="madrassskydd">Madrassskydd och örngottskydd</h2>
+
+<p>Tätnande madrassskydd (allergiöverdrag) med en porstruktur som är mindre än 10 mikrometer hindrar dammkvalsterallergenerna från att passera igenom. Det innebär att allergener som redan finns i madrassen inte når dig, och att nya kvalster inte kommer in i madrassen.</p>
+
+<p>Titta efter produkter märkta med "allergiöverdrags" eller "anti-allergi" med dokumenterade testresultat. Lösa madrassskydd utan tätning har liten effekt.</p>
+
+<p>Örngottsskydd av samma typ skyddar mot allergenexponering under natten, då du andas in luft på nära håll från kudden.</p>
+
+<h2 id="luftfuktighet">Luftfuktighet i sovrummet</h2>
+
+<p>Dammkvalster kan inte överleva i luft med under 40 till 45 procents relativ luftfuktighet. Att hålla sovrummet på 40 till 50 procents luftfuktighet är ett av de effektivaste sätten att kontrollera kvalsterpopulationen.</p>
+
+<p>Mät med en digital hygrometer (kostar 100 till 200 kronor). Om det är för fuktigt: vädra sovrummet mer, använd avfuktare eller kontrollera att ventilationen fungerar. Se vår guide om <a href="/inomhusluft/luftfuktighet-hemmet/">luftfuktighet i hemmet</a> för konkreta steg.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om allergi" />
+
+</ArticleLayout>

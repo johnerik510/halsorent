@@ -1,0 +1,58 @@
+---
+interface Props {
+  publishDate: string;
+  updateDate?: string;
+  readingTime?: number;
+  variant?: 'top' | 'bottom';
+}
+const { publishDate, updateDate, readingTime, variant = 'top' } = Astro.props;
+
+function formatDate(dateStr: string) {
+  return new Date(dateStr).toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+{variant === 'top' ? (
+  <div class="flex items-center gap-4 py-4 border-b border-border mb-8">
+    <img
+      src="/images/authors/karin-holm.webp"
+      alt="Karin Holm"
+      width="44"
+      height="44"
+      class="w-11 h-11 rounded-full object-cover flex-shrink-0"
+      loading="lazy"
+    />
+    <div class="text-sm">
+      <div class="font-semibold text-text font-sans">
+        <a href="/redaktionen/#karin-holm" class="hover:text-primary transition-colors">Karin Holm</a>
+      </div>
+      <div class="text-text-lighter flex flex-wrap gap-x-3">
+        <span>Publicerad {formatDate(publishDate)}</span>
+        {updateDate && <span>Uppdaterad {formatDate(updateDate)}</span>}
+        {readingTime && <span>{readingTime} min</span>}
+      </div>
+    </div>
+  </div>
+) : (
+  <div class="mt-10 pt-8 border-t border-border">
+    <div class="flex items-start gap-5 bg-bg-alt rounded-xl p-5">
+      <img
+        src="/images/authors/karin-holm.webp"
+        alt="Karin Holm"
+        width="72"
+        height="72"
+        class="w-16 h-16 rounded-full object-cover flex-shrink-0"
+        loading="lazy"
+      />
+      <div>
+        <div class="text-xs uppercase tracking-wider text-accent-dark font-semibold font-sans mb-1">Skribent</div>
+        <div class="font-heading font-bold text-lg text-text mb-1">Karin Holm</div>
+        <p class="text-sm text-text-light leading-relaxed">Utbildad sjuksköterska med specialisering mot allergi och lungsjukdomar, 10 år klinisk erfarenhet. Driver hälsorent.se för att ge faktabaserade råd om hur hemmet kan bli en friskare plats.</p>
+        <a href="/redaktionen/#karin-holm" class="mt-2 inline-block text-sm font-semibold text-accent-dark hover:text-primary transition-colors font-sans">Om Karin &rarr;</a>
+      </div>
+    </div>
+    {updateDate && (
+      <p class="mt-4 text-xs text-text-lighter font-sans">Senast verifierad: {formatDate(updateDate)}</p>
+    )}
+  </div>
+)}

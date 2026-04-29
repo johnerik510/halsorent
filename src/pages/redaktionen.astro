@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout
+  title="Redaktionen — Hälsorent.se"
+  description="Karin Holm, legitimerad sjuksköterska och grundare av Hälsorent.se. Läs om hennes bakgrund och kompetens."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <Breadcrumbs items={[{ label: 'Redaktionen' }]} />
+
+    <h1 class="font-heading text-3xl font-bold text-primary-dark mb-10">Redaktionen</h1>
+
+    <div id="karin-holm" class="flex flex-col sm:flex-row items-start gap-8 bg-white border border-border rounded-2xl p-8">
+      <img
+        src="/images/authors/karin-holm.webp"
+        alt="Karin Holm"
+        width="160"
+        height="160"
+        class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover flex-shrink-0 border-2 border-border"
+        loading="lazy"
+      />
+      <div class="prose-article max-w-2xl">
+        <div class="text-xs uppercase tracking-wider text-accent-dark font-semibold font-sans mb-1">Chefredaktör & grundare</div>
+        <h2 class="font-heading text-2xl font-bold text-primary-dark mt-0 mb-1">Karin Holm</h2>
+
+        <p>Karin är legitimerad sjuksköterska med vidareutbildning inom allergi och lungsjukdomar. Hon arbetar från 2012 till 2022 på allergiavdelningen vid Karolinska universitetssjukhuset, där hon mötte patienter vars symtom i hög grad påverkades av hemmiljön. Tillstånd som inte svarade på medicinering förbättrades när patienterna fick råd om allergenreducering, kemikaliefri städning och bättre ventilation.</p>
+
+        <p>Den insikten drev henne att sammanställa det hon lärde sig kliniskt i en form som alla kunde nå, inte bara sjukvårdsbesökare. Hälsorent.se är resultatet.</p>
+
+        <p>Karin läser kontinuerligt forskning inom inomhusmiljö och allergi, och uppdaterar guiderna när ny evidens förändrar rekommendationerna. Hon är övertygad om att det bästa rådet är det som baseras på fakta och inte på vilka produkter som betalar bäst.</p>
+
+        <p><strong>Kompetensområden:</strong> allergi, astma, dammkvalster, kemikaliekänslighet, inomhusluft, mögel och fukt.</p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

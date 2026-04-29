@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout
+  title="Integritetspolicy — Hälsorent.se"
+  description="Hälsorent.se:s integritetspolicy. Hur vi hanterar personuppgifter och cookies."
+  noindex={true}
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <Breadcrumbs items={[{ label: 'Integritetspolicy' }]} />
+    <div class="prose-article">
+      <h1>Integritetspolicy</h1>
+      <p><em>Senast uppdaterad: 2026-04-29</em></p>
+
+      <h2>Personuppgiftsansvarig</h2>
+      <p>Hälsorent.se, kontakt: <span class="js-email" data-u="halsorent" data-d="proton.me">halsorent [at] proton.me</span></p>
+
+      <h2>Vilka uppgifter samlar vi in?</h2>
+      <p>Vi samlar inte in personuppgifter direkt via webbplatsen. Om du kontaktar oss via e-post behandlar vi ditt namn och din e-postadress för att svara på din fråga. Inga uppgifter lämnas vidare till tredje part.</p>
+
+      <h2>Cookies och analysverktyg</h2>
+      <p>Hälsorent.se använder cookies för webbplatsanalys. Vi använder anonymiserade analysverktyg för att förstå hur webbplatsen används. Inga personidentifierande uppgifter lagras. Du kan blockera cookies i din webbläsarinställning.</p>
+
+      <h2>Dina rättigheter</h2>
+      <p>Du har rätt att begära ut, rätta eller radera personuppgifter som vi behandlar om dig. Kontakta oss på e-postadressen ovan.</p>
+
+      <h2>Laglig grund</h2>
+      <p>All behandling av personuppgifter sker i enlighet med GDPR (EU 2016/679) och svenska kompletterande bestämmelser.</p>
+    </div>
+  </div>
+</BaseLayout>

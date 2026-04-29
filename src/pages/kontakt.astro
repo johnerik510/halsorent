@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout
+  title="Kontakt — Hälsorent.se"
+  description="Kontakta Hälsorent för frågor, rättelser eller samarbeten."
+  noindex={true}
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <Breadcrumbs items={[{ label: 'Kontakt' }]} />
+    <div class="prose-article">
+      <h1>Kontakt</h1>
+      <p>Skicka e-post till: <span class="js-email" data-u="halsorent" data-d="proton.me">halsorent [at] proton.me</span></p>
+      <p>Vi svarar normalt inom 2 till 3 vardagar. För frågor om samarbeten och sponsrat innehåll, se <a href="/samarbeta/">Annonsera</a>.</p>
+      <h2>Rätta ett fel</h2>
+      <p>Om du hittar en faktafel eller ett föråldrat påstående i en av våra guider, berätta gärna vilken sida det gäller och vad som är felaktigt. Vi värdesätter rättelser och åtgärdar dem snabbt.</p>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,126 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('luftrenare-allergi', '/inomhusluft/');
+
+const toc = [
+  { id: 'hjalper-luftrenare', label: 'Hjälper en luftrenare vid allergi?' },
+  { id: 'hepa-filter', label: 'HEPA-filter: vad du måste veta' },
+  { id: 'cadr', label: 'CADR: det viktigaste måttet' },
+  { id: 'rumsstorlek', label: 'Välj rätt storlek för rummet' },
+  { id: 'vad-du-inte-behover', label: 'Funktioner du inte behöver betala för' },
+  { id: 'placering', label: 'Var ska luftrenaren stå?' },
+  { id: 'filterbyten', label: 'Filterbyte: hur ofta och vad det kostar' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Hjälper en luftrenare mot dammkvalster?', a: 'En luftrenare fångar dammkvalsterallergenerna som svävar i luften, men påverkar inte kvalstren i sängen, madrassen eller mattan. Luftrenare är ett komplement till, inte en ersättning för, madrassskydd och varm tvätt.' },
+  { q: 'Kan en luftrenare bota allergi?', a: 'Nej. Luftrenare minskar allergenhalten i luften och kan lindra symtom, men de botar inte den underliggande allergin. De bör kombineras med allergenreducering vid källan och medicinsk behandling.' },
+  { q: 'Vilken är den bästa luftrenaren för allergi?', a: 'Modeller med True HEPA-filter (filtrerar 99,97 procent av partiklar ner till 0,3 mikrometer) och ett CADR-värde anpassat till rumsstorleken. Undvik ozongenererande modeller och modeller utan dokumenterade filterprestanda.' },
+  { q: 'Hur länge ska jag köra luftrenaren?', a: 'Allergiförbundet rekommenderar att köra luftrenaren kontinuerligt, eller minst när du befinner dig i rummet. Att bara köra den en timme per dag ger liten effekt.' },
+  { q: 'Kan luftrenaren ersätta ventilation?', a: 'Nej. Luftrenare tar bort partiklar men inte koldioxid, fukt eller VOC. Fungerande ventilation är alltid prioritet ett.' },
+];
+---
+<ArticleLayout
+  title="Luftrenare mot allergi: vad du behöver veta innan du köper | Hälsorent"
+  description="HEPA-filter är ett krav, men det räcker inte ensamt. Vad som faktiskt avgör om en luftrenare hjälper mot allergi, och vilka funktioner du inte behöver betala för."
+  heroImage="/images/articles/luftrenare.webp"
+  heroAlt="Modern luftrenare i ett ljust vardagsrum"
+  publishDate="2026-04-29"
+  updateDate="2026-04-29"
+  readingTime={10}
+  breadcrumbs={[{ label: 'Inomhusluft', href: '/inomhusluft/' }, { label: 'Luftrenare mot allergi' }]}
+  toc={toc}
+  category="Inomhusluft"
+>
+
+<p>Marknaden för luftrenare är full av påståenden som inte håller vid granskning. Plasma-teknologi, UV-ljus, jonisatorer och "AI-styrning" är funktioner som marknadsförs aggressivt men som antingen har liten effekt på allergi eller i värsta fall genererar ozon, vilket skadar luftvägarna.</p>
+
+<p>Det du faktiskt behöver är ett certifierat HEPA-filter och rätt CADR-värde för ditt rum. Det är allt. Den här guiden reder ut varför, och vad du ska titta efter.</p>
+
+<h2 id="hjalper-luftrenare">Hjälper en luftrenare vid allergi?</h2>
+
+<img src="/images/articles/luftrenare.webp" alt="Luftrenare i ett sovrum mot fönster" width="800" height="450" loading="lazy" />
+
+<p>Ja, men med viktiga förbehåll. En luftrenare med HEPA-filter minskar halten av luftburna allergener: pollen, dammkvalsterexkrement, mögelsporer och djurepitel. Studier publicerade i bland annat Journal of Allergy and Clinical Immunology visar att luftrenare kan minska allergenhalten i luften med 50 till 70 procent i ett stängt rum.</p>
+
+<p>Luftrenaren kan däremot inte:</p>
+<ul>
+  <li>Ta bort allergener som sitter fast i madrassen, möblerna eller mattan</li>
+  <li>Ersätta regelbunden städning och allergenreducering vid källan</li>
+  <li>Filtrera bort koldioxid, VOC eller fukt</li>
+</ul>
+
+<h2 id="hepa-filter">HEPA-filter: vad du måste veta</h2>
+
+<p>HEPA (High-Efficiency Particulate Air) är en standard, inte ett varumärke. True HEPA-filter är certifierade att filtrera minst 99,97 procent av partiklar ner till 0,3 mikrometer. Det täcker pollen (10 till 100 mikrometer), dammkvalsterallergen (0,5 till 50 mikrometer) och de flesta mögelsporer (2 till 20 mikrometer).</p>
+
+<p>Undvik:</p>
+<ul>
+  <li><strong>"HEPA-like" eller "HEPA-style":</strong> okertifierade filter som kan ha betydligt lägre filtreringseffekt</li>
+  <li><strong>Jonisatorer och plasmafilter:</strong> genererar ofta ozon som irriterar luftvägarna</li>
+  <li><strong>UV-C-lampor enbart:</strong> dödar bakterier men filtrerar inte partiklar</li>
+</ul>
+
+<h2 id="cadr">CADR: det viktigaste måttet</h2>
+
+<p>CADR (Clean Air Delivery Rate) anger hur många kubikmeter filtrerad luft enheten levererar per timme. Måttet är standardiserat av AHAM (Association of Home Appliance Manufacturers) och testats oberoende.</p>
+
+<p>Tumregel: du behöver ett CADR-värde som är minst 2/3 av rummets golvyta i kvadratfot, eller ungefär 5 gånger rummets volym i kubikmeter per timme. För ett sovrum på 16 kvadratmeter (40 kubikmeter) behöver du ett CADR på minst 200 kubikmeter per timme.</p>
+
+<h2 id="rumsstorlek">Välj rätt storlek för rummet</h2>
+
+<table>
+  <thead>
+    <tr><th>Rumsstorlek</th><th>Minsta CADR (m³/h)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>10 m² (sovrum, litet)</td><td>120</td></tr>
+    <tr><td>16 m² (sovrum, normalt)</td><td>200</td></tr>
+    <tr><td>25 m² (vardagsrum, litet)</td><td>300</td></tr>
+    <tr><td>35 m² (vardagsrum, normalt)</td><td>420</td></tr>
+    <tr><td>50 m² (öppen planlösning)</td><td>600</td></tr>
+  </tbody>
+</table>
+
+<p>En undersized luftrenare tvingar dig att köra på maxeffekt, vilket är bullrigt. Köp hellre en storlek upp och kör på lägre effekt.</p>
+
+<h2 id="vad-du-inte-behover">Funktioner du inte behöver betala för</h2>
+
+<ul>
+  <li><strong>Wi-Fi-styrning:</strong> trevligt men inte nödvändigt. Köp inte en dyrare modell enbart för den funktionen.</li>
+  <li><strong>Luftkvalitetssensorer:</strong> ger ofta missledande avläsningar. Lita inte på dem blint.</li>
+  <li><strong>Ozon-generering:</strong> ozon i höga koncentrationer skadar luftvägarna. Undvik helt.</li>
+  <li><strong>Jonisator:</strong> hjälper inte mot allergi och kan generera ozon. Onödig funktion.</li>
+  <li><strong>Aromaterapi-funktion:</strong> sprider eteriska oljor i luften, som kan irritera känsliga luftvägar.</li>
+</ul>
+
+<h2 id="placering">Var ska luftrenaren stå?</h2>
+
+<p>Placera luftrenaren:</p>
+<ul>
+  <li>I det rum där du spenderar mest tid med stängd dörr: för allergiker oftast sovrummet</li>
+  <li>Inte mot väggen eller inne i ett hörn, luftcirkulationen behöver vara fri</li>
+  <li>Inte bakom möbler eller gardiner</li>
+  <li>På ungefär samma höjd som andningszonen, eller på golvet om enheten är utformad för det</li>
+</ul>
+
+<p>Stäng dörrarna till rummet. En luftrenare är designad för ett stängt rum, inte för att filtrera luft för hela lägenheten.</p>
+
+<h2 id="filterbyten">Filterbyte: hur ofta och vad det kostar</h2>
+
+<p>HEPA-filter i luftrenare bör bytas var 6 till 12 månader beroende på luftkvalitet och körtid. Kolfiltret (som absorberar gaser och lukt) byts vanligtvis var 3 till 6 månader.</p>
+
+<p>Räkna in filterkostnaden i köpbeslutet. Originalfilter från tillverkarna kostar 300 till 800 kronor per filterbyte. Modeller med dyra proprietära filter ökar den totala ägandekostnaden avsevärt under ett par år.</p>
+
+<p>För tips om rengöring av din befintliga luftrenare, se vår guide om <a href="/rengoring-av-apparater/rengora-luftrenare/">rengöring av luftrenare</a>.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om inomhusluft" />
+
+</ArticleLayout>

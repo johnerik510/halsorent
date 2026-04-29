@@ -1,0 +1,103 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AuthorByline from '../components/AuthorByline.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+
+interface Crumb { label: string; href?: string; }
+interface TOCItem { id: string; label: string; }
+
+interface Props {
+  title: string;
+  description: string;
+  heroImage: string;
+  heroAlt: string;
+  publishDate: string;
+  updateDate?: string;
+  readingTime?: number;
+  breadcrumbs: Crumb[];
+  toc?: TOCItem[];
+  ogImage?: string;
+  category: string;
+}
+
+const { title, description, heroImage, heroAlt, publishDate, updateDate, readingTime, breadcrumbs, toc, ogImage, category } = Astro.props;
+const h1 = title.split(' | ')[0];
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  image: `https://halsorent.se${heroImage}`,
+  datePublished: publishDate,
+  dateModified: updateDate || publishDate,
+  author: {
+    '@type': 'Person',
+    name: 'Karin Holm',
+    url: 'https://halsorent.se/redaktionen/#karin-holm',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Hälsorent',
+    url: 'https://halsorent.se',
+  },
+  articleSection: category,
+  inLanguage: 'sv-SE',
+  mainEntityOfPage: { '@type': 'WebPage', '@id': Astro.url.href },
+};
+---
+<BaseLayout title={title} description={description} ogImage={ogImage || heroImage}>
+  <slot name="head" slot="head" />
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(articleSchema)} />
+
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+  <article>
+    <header class="relative bg-primary-dark text-white">
+      <img src={heroImage} alt={heroAlt} class="absolute inset-0 w-full h-full object-cover opacity-40" loading="eager" fetchpriority="high" width="1600" height="900" />
+      <div class="absolute inset-0 bg-gradient-to-b from-primary-dark/70 via-primary-dark/60 to-primary-dark/85"></div>
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div class="max-w-3xl">
+          <div class="text-xs uppercase tracking-widest text-accent-light font-semibold font-sans mb-4">{category}</div>
+          <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight">{h1}</h1>
+          <p class="text-lg sm:text-xl text-white/85 leading-relaxed font-serif">{description}</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <Breadcrumbs items={breadcrumbs} />
+
+      <div class="lg:grid lg:grid-cols-[1fr_280px] lg:gap-12">
+        <div>
+          <AuthorByline publishDate={publishDate} updateDate={updateDate} readingTime={readingTime} variant="top" />
+          <div class="prose-article">
+            <slot />
+          </div>
+          <AuthorByline publishDate={publishDate} updateDate={updateDate} readingTime={readingTime} variant="bottom" />
+        </div>
+
+        {toc && toc.length > 0 && (
+          <aside class="hidden lg:block">
+            <TableOfContents items={toc} />
+          </aside>
+        )}
+      </div>
+    </div>
+  </article>
+
+  <script is:inline>
+    (function () {
+      var bar = document.getElementById('reading-progress');
+      if (!bar) return;
+      function update() {
+        var h = document.documentElement;
+        var scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+        bar.style.width = Math.max(0, Math.min(100, scrolled)) + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
+</BaseLayout>

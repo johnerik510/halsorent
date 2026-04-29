@@ -1,0 +1,96 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  canonical?: string;
+  noindex?: boolean;
+}
+
+const { title, description, ogImage = '/og-default.svg', canonical, noindex = false } = Astro.props;
+const canonicalUrl = canonical || Astro.url.href;
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `https://halsorent.se${ogImage}`;
+---
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+  {noindex
+    ? <meta name="robots" content="noindex, nofollow" />
+    : <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content="Hälsorent" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:image" content={ogImageUrl} />
+  <meta property="og:image:alt" content={`${title} - Hälsorent`} />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageUrl} />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Hälsorent",
+    "url": "https://halsorent.se",
+    "description": "Oberoende guide om städning och inomhusmiljö för din hälsa.",
+    "inLanguage": "sv-SE"
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Hälsorent",
+    "url": "https://halsorent.se",
+    "description": "Redaktionell guide om allergivänlig städning, kemikaliefria rengöringsmedel, inomhusluft och mögel.",
+    "foundingDate": "2026",
+    "founder": { "@type": "Person", "name": "Karin Holm" }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Karin Holm",
+    "jobTitle": "Chefredaktör",
+    "url": "https://halsorent.se/redaktionen/#karin-holm",
+    "worksFor": { "@type": "Organization", "name": "Hälsorent", "url": "https://halsorent.se" },
+    "knowsAbout": ["allergivänlig städning", "kemikaliefri rengöring", "inomhusluft", "dammkvalster", "mögel", "astma", "allergi"]
+  })} />
+
+  <slot name="head" />
+</head>
+<body class="bg-bg text-text antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[200] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-semibold">Hoppa till innehåll</a>
+  <Header />
+  <main id="main-content">
+    <slot />
+  </main>
+  <Footer />
+  <script is:inline>
+    document.querySelectorAll('.js-email').forEach(function(el){
+      var u=el.getAttribute('data-u'),d=el.getAttribute('data-d'),e=u+'@'+d;
+      var a=document.createElement('a');a.href='mai'+'lto:'+e;a.textContent=e;
+      a.className='text-accent-light hover:underline';el.replaceWith(a);
+    });
+  </script>
+</body>
+</html>

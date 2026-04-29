@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Sidan hittades inte — Hälsorent.se"
+  description="Den här sidan finns inte. Gå tillbaka till startsidan."
+  noindex={true}
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+    <div class="text-7xl font-heading font-bold text-primary-dark/20 mb-6">404</div>
+    <h1 class="font-heading text-3xl font-bold text-primary-dark mb-4">Sidan hittades inte</h1>
+    <p class="text-text-light mb-8 font-sans">Den här sidan verkar inte finnas. Kanske har den flyttat eller URL:en är felskriven.</p>
+    <a href="/" class="inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-white font-bold py-3 px-8 rounded-xl transition-colors font-sans">
+      Till startsidan
+    </a>
+  </div>
+</BaseLayout>

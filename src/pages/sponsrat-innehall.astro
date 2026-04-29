@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout
+  title="Sponsrat innehåll — Hälsorent.se"
+  description="Information om hur Hälsorent.se hanterar sponsrat innehåll och kommersiella samarbeten."
+  noindex={true}
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <Breadcrumbs items={[{ label: 'Sponsrat innehåll' }]} />
+    <div class="prose-article">
+      <h1>Sponsrat innehåll</h1>
+      <p>Hälsorent.se kan ta emot betalning för att publicera sponsrat innehåll. Allt sådant innehåll märks tydligt med "Sponsrat" eller "Annons" och hålls separerat från det redaktionella innehållet.</p>
+      <p>Sponsorer kan inte påverka det redaktionella innehållet, våra råd eller hur vi bedömer produkter och tjänster. Om ett sponsrat inlägg innehåller råd som strider mot vår redaktionella linje publicerar vi det inte.</p>
+      <p>För förfrågningar om sponsrat innehåll: <a href="/samarbeta/">Annonsera på Hälsorent</a>.</p>
+    </div>
+  </div>
+</BaseLayout>

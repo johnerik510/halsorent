@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { clusters, getArticlesByCluster } from '../../data/articles';
+
+const cluster = clusters.find(c => c.slug === 'allergi-och-astma')!;
+const articles = getArticlesByCluster(cluster.slug);
+---
+<BaseLayout
+  title="Allergi & astma i hemmet: städtips och råd | Hälsorent.se"
+  description={cluster.description}
+>
+  <header class="relative bg-primary-dark text-white">
+    <img src={cluster.hero} alt="" class="absolute inset-0 w-full h-full object-cover opacity-35" loading="eager" fetchpriority="high" width="1600" height="900" aria-hidden="true" />
+    <div class="absolute inset-0 bg-gradient-to-r from-primary-dark/90 to-primary-dark/55" aria-hidden="true"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+      <div class="max-w-2xl">
+        <div class="text-xs uppercase tracking-widest text-accent-light font-semibold mb-3 font-sans">Ämne</div>
+        <h1 class="font-heading text-4xl sm:text-5xl font-bold mb-4 leading-tight">{cluster.label}</h1>
+        <p class="text-lg text-white/85 leading-relaxed font-serif">{cluster.intro}</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <Breadcrumbs items={[{ label: cluster.label }]} />
+
+    <div class="prose-article max-w-3xl mb-10">
+      <p>Dammkvalster, pollen, djurepitel och mögel är de fyra vanligaste allergenerna i svenska hem. De kräver olika åtgärder, men grundprincipen är densamma: minska källan, förbättra filtreringen och städa på ett sätt som inte sprider allergener i luften.</p>
+      <p>Guiderna nedan täcker dammkvalster i sängen, val av dammsugare, pollenhantering och hur du städar på ett säkert sätt om du själv har astma.</p>
+      <h2>I detta ämne</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      {articles.map((a) => (
+        <a href={a.url} class="group block p-6 bg-white border border-border rounded-xl hover:border-primary transition-colors">
+          <div class="text-xs uppercase tracking-widest text-accent-dark font-semibold mb-2 font-sans">{a.cornerstone ? 'Komplett guide' : 'Guide'}</div>
+          <h2 class="font-heading text-xl font-bold text-text mb-2 leading-snug group-hover:text-primary transition-colors">{a.title}</h2>
+          <p class="text-sm text-text-light leading-relaxed mb-3 font-sans">{a.excerpt}</p>
+          <span class="text-sm text-accent-dark font-medium font-sans">Läs guiden · {a.readingTime} min &rarr;</span>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-12 max-w-3xl prose-article">
+      <h2>Vad är ett allergivänligt hem?</h2>
+      <p>Det finns inget hem som är helt fritt från allergener, men du kan komma långt med rätt rutiner. Forskning från bland annat Folkhälsomyndigheten visar att regelbunden allergenreducering, rätt ventilation och HEPA-filtrering minskar allergibesvär påtagligt hos känsliga individer.</p>
+      <p>Det handlar inte om att köpa ett visst städmärke, utan om teknik och rutiner: rätt dammsugare rätt ofta, rätt tvätt av sängkläder och rätt ventilation i sovrummet.</p>
+    </div>
+  </div>
+</BaseLayout>

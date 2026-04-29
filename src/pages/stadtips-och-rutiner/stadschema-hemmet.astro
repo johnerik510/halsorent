@@ -1,0 +1,133 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('stadschema-hemmet', '/stadtips-och-rutiner/');
+
+const toc = [
+  { id: 'varfor-schema', label: 'Varför ett städschema?' },
+  { id: 'daglig', label: 'Daglig städning (5 minuter)' },
+  { id: 'veckostadning', label: 'Veckostädning (60 till 90 minuter)' },
+  { id: 'manadsstadning', label: 'Månadsstädning' },
+  { id: 'kvartalsstadning', label: 'Kvartalsstädning' },
+  { id: 'ratt-ordning', label: 'Rätt ordning i varje rum' },
+  { id: 'verktyg', label: 'Rätt verktyg' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Hur ofta ska jag städa egentligen?', a: 'Det beror på hushållsstorlek, husdjur och allergistatus. Grundregel: daglig snabbstädning av kök och badrum, veckovis dammsugning och moppning, månatlig rengöring av apparater och bortglömda ytor.' },
+  { q: 'Vad ska prioriteras vid allergi?', a: 'Sovrumet, alltid. Damma och dammsug sovrummet veckovis. Tvätta sängkläder i 60 grader varannan vecka. Se vår guide om dammkvalster för detaljer.' },
+  { q: 'Ska man damma eller dammsuga först?', a: 'Damma alltid före dammsugning, och uppifrån och ner. Damm som faller från hyllor hamnar på golvet och dammsugaren tar hand om det. Om du dammsugare för dammar faller dammet ner på ett redan rent golv.' },
+  { q: 'Hur skapar jag ett städschema som faktiskt håller?', a: 'Gör det realistiskt: hellre 10 minuter varje dag än 3 timmar en gång i veckan. Koppla städuppgifter till redan existerande rutiner, till exempel torka köksbänken direkt efter middagen.' },
+];
+---
+<ArticleLayout
+  title="Städschema för hemmet: dagligt, veckovis och månadsvis | Hälsorent"
+  description="Ett städschema som faktiskt fungerar i vardagen. Vad som behöver göras varje dag, varje vecka och varje månad för att hålla ett hälsosamt hem."
+  heroImage="/images/articles/stadschema.webp"
+  heroAlt="Städprodukter och verktyg arrangerade på en ren köksbänk"
+  publishDate="2026-04-29"
+  updateDate="2026-04-29"
+  readingTime={8}
+  breadcrumbs={[{ label: 'Städtips & rutiner', href: '/stadtips-och-rutiner/' }, { label: 'Städschema för hemmet' }]}
+  toc={toc}
+  category="Städtips & rutiner"
+>
+
+<p>Ett städschema löser ett specifikt problem: du vet inte vad som ska göras när, och resultatet är att allt görs oregelbundet eller för sällan. Det påverkar inte bara hur hemmet ser ut, utan hur rent det faktiskt är i allergiologisk mening.</p>
+
+<p>Nedan finns ett schema som är hälsofokuserat: prioriteringen är att minska allergen, bakterie- och mögelbelastningen, inte att hemmet ska se perfekt ut för besök.</p>
+
+<h2 id="varfor-schema">Varför ett städschema?</h2>
+
+<img src="/images/articles/stadschema.webp" alt="En checklista för städning på ett bord" width="800" height="450" loading="lazy" />
+
+<p>Regelbunden städning med rätt frekvens håller nere halterna av dammkvalsterallergen, mögelsporer och luftburna partiklar. En hälsomässigt motiverad städrutin skiljer sig från en estetisk rutin: sovrummet och badrummet prioriteras, inte hallen och vardagsrummet.</p>
+
+<h2 id="daglig">Daglig städning (5 minuter)</h2>
+
+<p>Dessa uppgifter bör göras varje dag. De tar totalt 5 till 10 minuter och förhindrar att smuts och allergen ackumuleras:</p>
+
+<ul>
+  <li>Torka köksbänk och spishäll efter matlagning</li>
+  <li>Skölj diskho och torka av kran</li>
+  <li>Torka toalettens utsida och kanten på handfatet</li>
+  <li>Plocka upp kläder och textilier från golv (samlar dammkvalster)</li>
+  <li>Vädra sovrummet 10 till 15 minuter (sänker luftfuktigheten)</li>
+</ul>
+
+<h2 id="veckostadning">Veckostädning (60 till 90 minuter)</h2>
+
+<p>Genomför en gång per vecka. Ordningen nedan följer principen uppifrån och ner, torrare före vattnare:</p>
+
+<ol>
+  <li>Damma alla ytor uppifrån och ner med fuktigt trasa (hyllor, fönsterbräda, TV, lampor)</li>
+  <li>Dammsug alla rum inkl. under sängar och soffor. Börja i sovrummet.</li>
+  <li>Dammsug madrassen månadsvis (varannan vecka om du har allergi)</li>
+  <li>Mopp hårda golv med fuktigt mopp</li>
+  <li>Rengör toalett, handfat och dusch/badkar</li>
+  <li>Rengör kökssink och spis</li>
+  <li>Töm papperskorgar</li>
+  <li>Byt örngott (och lakan varannan vecka)</li>
+</ol>
+
+<h2 id="manadsstadning">Månadsstädning</h2>
+
+<p>En gång per månad, utöver den ordinarie städningen:</p>
+
+<ul>
+  <li>Rengör mikrovågsugn inuti</li>
+  <li>Avkalka vattenkokare och kaffemaskinen</li>
+  <li>Torka av kylskåpets insida</li>
+  <li>Rengör tvättmaskinens luddfilter och gummipackning</li>
+  <li>Damma av ventilationsgaller och frånluftsdonen</li>
+  <li>Damm bakom och under kylskåpet</li>
+  <li>Tvätta fönster om de är täckta med smuts eller pollen</li>
+  <li>Damma av bokhyllor och rensa bort onödigt damm­samlande prylar</li>
+</ul>
+
+<h2 id="kvartalsstadning">Kvartalsstädning</h2>
+
+<p>Fyra gånger per år, med fördel kopplat till årstidsskiftena:</p>
+
+<ul>
+  <li>Rengör ugnen grundligt</li>
+  <li>Avfetta och rengör spisfläktens filter</li>
+  <li>Tvätta gardiner och persienner</li>
+  <li>Rengör badrumsskåp inuti</li>
+  <li>Tvätta fönster, fönsterkarm och fönsterbräda</li>
+  <li>Kontrollera mögelstatus i badrum och under diskbänk</li>
+  <li>Rengör diskmaskinen (filter + avkalkning)</li>
+  <li>Damma av taklampor och lampskärmar</li>
+</ul>
+
+<h2 id="ratt-ordning">Rätt ordning i varje rum</h2>
+
+<p>Följ alltid denna princip:</p>
+<ol>
+  <li>Plocka undan</li>
+  <li>Damma uppifrån och ner</li>
+  <li>Dammsug</li>
+  <li>Torka av ytor med fuktigt trasa</li>
+  <li>Mopp/torrgolv sist</li>
+</ol>
+
+<p>Om du torkar golvet innan du dammar, dammar du ner det rena golvet. Om du dammsugare innan du dammar hyllorna, dammar du på ett rent golv.</p>
+
+<h2 id="verktyg">Rätt verktyg</h2>
+
+<ul>
+  <li><strong>Dammsugare:</strong> med HEPA-filter. Obligatoriskt vid allergi. Se vår guide om <a href="/allergi-och-astma/allergivanlig-dammsugare/">dammsugare för allergiker</a>.</li>
+  <li><strong>Mikrofibertrassor:</strong> binder damm elektrostatiskt. Bättre än bomullstrassor för att ta bort damm utan att sprida det.</li>
+  <li><strong>Fuktigt trasa:</strong> dammar alltid med fuktig, aldrig torr trasa. Torr trasa skickar upp dammet i luften.</li>
+  <li><strong>Mopp med mikrofiberpad:</strong> fånga smuts, inte bara förflytta det.</li>
+</ul>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler städtips" />
+
+</ArticleLayout>

@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+<BaseLayout
+  title="Om Hälsorent.se — oberoende guide om städning och hälsa"
+  description="Hälsorent.se är en oberoende redaktionell guide om hur städning och inomhusmiljö påverkar hälsan. Grundad av sjuksköterskan Karin Holm."
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <Breadcrumbs items={[{ label: 'Om oss' }]} />
+
+    <div class="prose-article max-w-3xl">
+      <h1>Om Hälsorent</h1>
+
+      <p>Hälsorent.se startades 2026 av Karin Holm, legitimerad sjuksköterska med specialisering mot allergi och lungsjukdomar. Syftet är enkelt: ge svenska hushåll faktabaserade råd om hur hemmet påverkar hälsan, utan att sälja produkter, utan reklamintressen och utan skrämselpropaganda.</p>
+
+      <h2>Vad vi gör</h2>
+      <p>Vi skriver fördjupade guider om allergivänlig städning, kemikaliefri rengöring, inomhusluft, mögel och fukt, och hur du håller dina hushållsapparater i ett tillstånd som inte skadar hälsan. Varje guide bygger på publicerad forskning, riktlinjer från Folkhälsomyndigheten och Astma- och Allergiförbundet, samt Karins egna kliniska erfarenheter från 10 år på allergiavdelning.</p>
+
+      <h2>Vad vi inte gör</h2>
+      <p>Vi jämför inte produkter med syfte att tjäna provision, rekommenderar inte specifika varumärken utan tydlig motivering, och publicerar inte content som inte kan backas upp av fakta. Om vi inte vet, säger vi det och hänvisar till rätt expert.</p>
+
+      <h2>Redaktionell oberoende</h2>
+      <p>Hälsorent finansieras via sponsrat innehåll och annonser. Sponsrat innehåll är alltid tydligt märkt. Redaktionen påverkas inte av annonsörer. Vår redaktionella policy finns publicerad under <a href="/redaktionell-policy/">Redaktionell policy</a>.</p>
+
+      <h2>Kontakt</h2>
+      <p>Frågor, rättelser och samarbetsförfrågningar: <span class="js-email" data-u="halsorent" data-d="proton.me">halsorent [at] proton.me</span></p>
+    </div>
+  </div>
+</BaseLayout>

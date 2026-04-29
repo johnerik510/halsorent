@@ -1,0 +1,24 @@
+---
+import type { Article } from '../data/articles';
+interface Props {
+  articles: Article[];
+  title?: string;
+}
+const { articles, title = 'Relaterade guider' } = Astro.props;
+---
+{articles.length > 0 && (
+  <section class="mt-12 pt-8 border-t border-border font-sans" aria-label={title}>
+    <h2 class="font-heading font-bold text-xl text-primary-dark mb-5">{title}</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {articles.map((a) => (
+        <a href={a.url} class="group flex gap-4 p-4 bg-bg-alt border border-border rounded-xl hover:border-primary transition-colors">
+          <div class="flex-1 min-w-0">
+            <div class="text-xs uppercase tracking-wider text-accent-dark font-semibold mb-1">{a.category}</div>
+            <div class="font-semibold text-text group-hover:text-primary transition-colors leading-snug text-sm">{a.title}</div>
+            <div class="mt-1 text-xs text-text-lighter">{a.readingTime} min</div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+)}
