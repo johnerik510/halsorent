@@ -13,7 +13,8 @@
     "seo-audit": "node /Users/axeljonemyr/Documents/scripts/seo-audit.mjs",
     "quality-audit": "node /Users/axeljonemyr/Documents/scripts/quality-audit.mjs",
     "data-audit": "node /Users/axeljonemyr/Documents/scripts/data-audit.mjs",
-    "quality-gate": "/Users/axeljonemyr/Documents/scripts/quality-gate.sh halsorent"
+    "quality-gate": "/Users/axeljonemyr/Documents/scripts/quality-gate.sh halsorent",
+    "deploy": "npm run build && CLOUDFLARE_ACCOUNT_ID=d7aaeddff2e39d5e547415f0865362e6 npx wrangler@3.90.0 pages deploy dist --project-name=halsorent --branch=main"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.18",
