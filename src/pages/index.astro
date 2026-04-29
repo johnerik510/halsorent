@@ -2,47 +2,58 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { clusters, articles } from '../data/articles';
 
-const cornerstones = articles.filter(a => a.cornerstone && a.published);
+const published = articles.filter(a => a.published);
+const sorted = [...published].sort((a, b) => {
+  const da = a.updateDate ?? a.publishDate;
+  const db = b.updateDate ?? b.publishDate;
+  return db.localeCompare(da);
+});
+
+const featured = sorted.slice(0, 9);
+
+const formatDate = (d: string) =>
+  new Date(d).toLocaleDateString('sv-SE', { year: 'numeric', month: 'short', day: 'numeric' });
 ---
 <BaseLayout
   title="Hälsorent.se — städning och inomhusmiljö för din hälsa"
   description="Oberoende guider om allergivänlig städning, kemikaliefri rengöring, inomhusluft och mögel. Faktabaserade råd för ett friskare hem."
 >
 
-  <section class="relative text-white overflow-hidden min-h-[520px] md:min-h-[600px] flex flex-col justify-center">
-    <img
-      src="/images/heroes/hem.webp"
-      alt="Ljust och rent hem med naturliga rengöringsmedel"
-      class="absolute inset-0 w-full h-full object-cover"
-      loading="eager"
-      fetchpriority="high"
-      width="1600"
-      height="900"
-    />
-    <div class="absolute inset-0 bg-gradient-to-r from-primary-dark/90 via-primary-dark/70 to-primary-dark/40" aria-hidden="true"></div>
-    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 w-full">
-      <div class="max-w-xl">
-        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3 py-1 text-xs font-semibold text-white/85 uppercase tracking-wider mb-5 font-sans">
+  <!-- Kompakt varumärkeshuvud utan hero-bild -->
+  <div class="bg-primary-dark text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3 py-1 text-xs font-semibold text-white/80 uppercase tracking-wider mb-4 font-sans">
           <span class="w-1.5 h-1.5 bg-accent rounded-full"></span>
           Oberoende guide 2026
         </div>
-        <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold mb-5 leading-tight">Städa för hälsans skull.</h1>
-        <p class="text-lg sm:text-xl text-white/85 mb-8 leading-relaxed font-serif">Faktabaserade guider om allergivänlig städning, kemikaliefri rengöring, inomhusluft och mögel. För ett hem som faktiskt är friskare att leva i.</p>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <a href="#amnen" class="inline-flex items-center justify-center bg-accent hover:bg-accent-dark text-white font-bold py-3.5 px-8 rounded-xl transition-colors text-base shadow-lg font-sans">Bläddra bland ämnen</a>
-          <a href="/om-oss/" class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 text-white font-semibold py-3.5 px-8 rounded-xl border border-white/25 transition-colors text-base font-sans">Om hälsorent</a>
+        <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 leading-tight">Städa för hälsans skull.</h1>
+        <p class="text-white/80 text-lg leading-relaxed mb-6 font-sans max-w-xl">Faktabaserade guider om allergivänlig städning, kemikaliefri rengöring, inomhusluft och mögel.</p>
+        <div class="flex flex-wrap gap-3">
+          <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 rounded-lg px-3 py-1.5 text-sm font-sans text-white/90">
+            <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            {published.length} faktagranskade guider
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 rounded-lg px-3 py-1.5 text-sm font-sans text-white/90">
+            <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            Granskade av legitimerad sjuksköterska
+          </span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-    <div class="mb-8">
-      <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary-dark mb-2">Populära guider</h2>
-      <p class="text-text-light max-w-2xl font-sans">De guider som flest läsare hittar mest nytta i.</p>
+  <!-- Senaste guider med datum -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex items-baseline justify-between mb-8">
+      <div>
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-primary-dark">Senaste guider</h2>
+        <p class="text-text-light text-sm mt-1 font-sans">Uppdateras löpande med ny forskning och verifierade råd</p>
+      </div>
+      <a href="#amnen" class="text-sm font-semibold text-accent-dark hover:text-primary transition-colors font-sans hidden sm:inline">Alla ämnen &rarr;</a>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {cornerstones.map((a) => (
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      {featured.map((a) => (
         <article class="bg-white border border-border rounded-xl overflow-hidden hover:shadow-md hover:border-primary transition-all group">
           <a href={a.url} class="block" aria-label={a.title}>
             <div class="aspect-[16/9] overflow-hidden bg-bg-alt">
@@ -57,25 +68,35 @@ const cornerstones = articles.filter(a => a.cornerstone && a.published);
             </div>
           </a>
           <div class="p-5">
-            <div class="text-xs uppercase tracking-widest text-accent-dark font-semibold mb-2 font-sans">{a.category}</div>
-            <h3 class="font-heading text-lg font-bold text-text mb-2 leading-snug">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs uppercase tracking-widest text-accent-dark font-semibold font-sans">{a.category}</span>
+              <time
+                datetime={a.updateDate ?? a.publishDate}
+                class="text-xs text-text-lighter font-sans"
+              >{formatDate(a.updateDate ?? a.publishDate)}</time>
+            </div>
+            <h3 class="font-heading text-base font-bold text-text mb-2 leading-snug">
               <a href={a.url} class="hover:text-primary transition-colors">{a.title}</a>
             </h3>
-            <p class="text-sm text-text-light leading-relaxed mb-4 font-sans">{a.excerpt}</p>
+            <p class="text-sm text-text-light leading-relaxed mb-4 font-sans line-clamp-3">{a.excerpt}</p>
             <a href={a.url} class="text-sm font-semibold text-accent-dark hover:text-primary transition-colors font-sans">
-              Läs guide &rarr;
+              {a.title.split(':')[0]} &rarr;
             </a>
           </div>
         </article>
       ))}
     </div>
+    <div class="mt-6 text-center sm:hidden">
+      <a href="#amnen" class="text-sm font-semibold text-accent-dark hover:text-primary transition-colors font-sans">Alla ämnen &rarr;</a>
+    </div>
   </section>
 
-  <section id="amnen" class="bg-bg-alt py-14">
+  <!-- Bläddra efter ämne -->
+  <section id="amnen" class="bg-bg-alt py-12 border-t border-border">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mb-8">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary-dark mb-2">Bläddra efter ämne</h2>
-        <p class="text-text-light max-w-2xl font-sans">Sex ämnesområden om hur hemmet påverkar din hälsa.</p>
+        <h2 class="font-heading text-2xl md:text-3xl font-bold text-primary-dark mb-1">Bläddra efter ämne</h2>
+        <p class="text-text-light text-sm font-sans">Sex ämnesområden om hur hemmet påverkar din hälsa.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {clusters.map((c) => (
@@ -84,7 +105,7 @@ const cornerstones = articles.filter(a => a.cornerstone && a.published);
             class="group flex flex-col gap-3 p-5 bg-white border border-border rounded-xl hover:border-primary hover:shadow-sm transition-all"
             aria-label={`${c.label}: ${c.description}`}
           >
-            <h3 class="font-heading text-lg font-bold text-primary-dark group-hover:text-primary transition-colors">{c.label}</h3>
+            <h3 class="font-heading text-base font-bold text-primary-dark group-hover:text-primary transition-colors">{c.label}</h3>
             <p class="text-sm text-text-light leading-relaxed flex-1 font-sans">{c.description}</p>
             <span class="text-sm text-accent-dark font-semibold group-hover:text-primary transition-colors font-sans">
               Guider om {c.shortLabel.toLowerCase()} &rarr;
@@ -95,38 +116,40 @@ const cornerstones = articles.filter(a => a.cornerstone && a.published);
     </div>
   </section>
 
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 border-t border-border">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+  <!-- Trust-signaler -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 border-t border-border">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div>
-        <div class="text-2xl font-heading font-bold text-primary mb-2">Verifierade fakta</div>
+        <div class="text-lg font-heading font-bold text-primary mb-2">Verifierade fakta</div>
         <p class="text-sm text-text-light leading-relaxed font-sans">Råd kontrolleras mot Folkhälsomyndigheten, Astma- och Allergiförbundet och publicerad forskning, inte mot tillverkares reklamtext.</p>
       </div>
       <div>
-        <div class="text-2xl font-heading font-bold text-primary mb-2">Klinisk erfarenhet</div>
+        <div class="text-lg font-heading font-bold text-primary mb-2">Klinisk erfarenhet</div>
         <p class="text-sm text-text-light leading-relaxed font-sans">Karin Holm har 10 år bakom sig som sjuksköterska inom allergi och lungsjukdomar. Det syns i råden: konkret, nyanserat, utan onödig skrämselpropaganda.</p>
       </div>
       <div>
-        <div class="text-2xl font-heading font-bold text-primary mb-2">Ärliga bedömningar</div>
+        <div class="text-lg font-heading font-bold text-primary mb-2">Ärliga bedömningar</div>
         <p class="text-sm text-text-light leading-relaxed font-sans">Vi säger ifrån när ett problem kräver specialist. Hälsorent tjänar inget på att du köper dyra produkter du inte behöver.</p>
       </div>
     </div>
   </section>
 
-  <section class="bg-bg-alt border-t border-border py-14">
+  <!-- Redaktör -->
+  <section class="bg-bg-alt border-t border-border py-12">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl flex flex-col sm:flex-row items-start gap-8">
+      <div class="max-w-3xl flex flex-col sm:flex-row items-start gap-6">
         <img
           src="/images/authors/karin-holm.webp"
           alt="Karin Holm, chefredaktör på Hälsorent"
           width="120"
           height="120"
-          class="w-24 h-24 sm:w-28 sm:h-28 rounded-full object-cover flex-shrink-0 border-2 border-border shadow-sm"
+          class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover flex-shrink-0 border-2 border-border shadow-sm"
           loading="lazy"
         />
         <div>
           <div class="text-xs uppercase tracking-widest text-accent-dark font-semibold mb-1 font-sans">Chefredaktör</div>
-          <h2 class="font-heading text-2xl font-bold text-primary-dark mb-3">Karin Holm</h2>
-          <p class="text-text-light leading-relaxed mb-4 font-serif">Legitimerad sjuksköterska med specialisering mot allergi och lungsjukdomar. 10 år på allergiavdelning, sedan rådgivare åt Astma- och Allergiförbundet. Startade hälsorent.se för att ge svenska hushåll ärliga, faktabaserade råd om hur hemmet påverkar hälsan, utan onödiga produktköp och utan skrämselpropaganda.</p>
+          <h2 class="font-heading text-xl font-bold text-primary-dark mb-2">Karin Holm</h2>
+          <p class="text-text-light leading-relaxed mb-3 font-serif text-sm">Legitimerad sjuksköterska med specialisering mot allergi och lungsjukdomar. 10 år på allergiavdelning, sedan rådgivare åt Astma- och Allergiförbundet. Startade hälsorent.se för att ge svenska hushåll ärliga, faktabaserade råd om hur hemmet påverkar hälsan.</p>
           <a href="/redaktionen/" class="inline-flex items-center gap-1 text-sm font-semibold text-accent-dark hover:text-primary transition-colors font-sans">
             Om redaktionen &rarr;
           </a>
