@@ -1,0 +1,117 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('pollen-i-hemmet', '/allergi-och-astma/');
+
+const toc = [
+  { id: 'hur-pollen-kommer-in', label: 'Hur pollen tar sig in' },
+  { id: 'klader-och-har', label: 'Kläder och hår' },
+  { id: 'ventilation', label: 'Ventilation och luftning' },
+  { id: 'sangsovrum', label: 'Sängen och sovrummet' },
+  { id: 'luftrenare', label: 'Luftrenare mot pollen' },
+  { id: 'husdjur', label: 'Husdjur och pollen' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'När är pollensäsongen i Sverige?', a: 'Björkpollen: april till maj. Grässläktet: juni till juli. Gråbo: juli till september. De mest besvärliga säsongerna för de flesta pollenkänsliga är april till maj (björk) och juni till juli (gräs).' },
+  { q: 'Hur länge dröjer pollen kvar i hemmet?', a: 'Pollen som fastnat i textilier, mattor och möbler kan sitta kvar i veckor om det inte aktivt avlägsnas. Dammsugning med HEPA-filter och tvätt av sängkläder är de effektivaste metoderna.' },
+  { q: 'Hjälper luftrenare mot pollen?', a: 'Ja. En luftrenare med HEPA H13-filter fångar pollenpartiklar effektivt. Välj en modell med rätt kapacitet för rumsytan och placera den i sovrummet för bästa effekt under natten.' },
+  { q: 'Ska jag stänga alla fönster under pollensäsongen?', a: 'Under pollentoppar (varma, torra och blåsiga dagar) bör fönster hållas stängda. Lufta tidigt på morgonen (före 10:00) eller efter regn, då pollenkoncentrationen är lägre.' },
+  { q: 'Är innergårdar pollenfattiga?', a: 'Inte nödvändigtvis. Beroende på vilka träd och buskar som planteras kan innergårdar ha höga pollennivåer. Kontrollera vilket växtmaterial som finns på gården.' },
+];
+---
+<ArticleLayout
+  title="Pollen i hemmet: minska pollenbördan inomhus | Hälsorent"
+  description="Pollen fastnar i kläder, hår och möbler. Konkreta råd för att hålla pollenet utanför hemmet och minska allergibesvären under pollensäsongen."
+  heroImage="/images/articles/pollen.webp"
+  heroAlt="Närbild på pollenpartiklar på en blomma under vårens pollensäsong"
+  publishDate="2026-04-29"
+  readingTime={6}
+  breadcrumbs={[{ label: 'Allergi & astma', href: '/allergi-och-astma/' }, { label: 'Pollen i hemmet' }]}
+  toc={toc}
+  category="Allergi & astma"
+>
+
+<p>En vuxen person bär med sig tusentals pollenpartiklar in i hemmet varje dag under pollensäsongen. De fastnar i hår, på kläder, på skor och i hundpälsen. Hemmet, som borde vara en frizon, blir snabbt lika pollenbelastat som utemiljön om du inte aktivt skapar barriärer vid ingångarna.</p>
+
+<p>Den goda nyheten: pollen är lätt att filtrera bort med rätt metoder. Till skillnad från dammkvalster, som kräver temperaturer och luftfuktighet att kontrollera, kan pollen hanteras med enkla hygienrutiner.</p>
+
+<h2 id="hur-pollen-kommer-in">Hur pollen tar sig in</h2>
+
+<img src="/images/articles/pollen.webp" alt="Pollenpartiklar från björkträd i luften under vår" width="800" height="450" loading="lazy" />
+
+<p>Pollen är aerosoler: partiklar som svävar i luften och följer med luftrörelser. De viktigaste ingångsvägarna är:</p>
+
+<ul>
+  <li><strong>Öppna fönster och ventilationsintag:</strong> varje ventilationsöppning är en väg in för pollenpartiklar</li>
+  <li><strong>Kläder och hår:</strong> björkpollen är 20 till 40 mikrometer, de fastnar lätt i textil och hår</li>
+  <li><strong>Skor:</strong> pollen på marken fastnar i sulorna och bärs in i hemmet</li>
+  <li><strong>Husdjur:</strong> hundar och katter som vistas ute bär hem pollen i pälsen</li>
+  <li><strong>Varor och väskor:</strong> kassar och ryggsäckar som legat utomhus</li>
+</ul>
+
+<h2 id="klader-och-har">Kläder och hår</h2>
+
+<p>Det effektivaste sättet att hålla pollenet ute är att skapa en "sluszon" vid ytterdörren. Principen: byt kläder och tvätta händer direkt när du kommer hem under pollensäsong.</p>
+
+<ol>
+  <li>Lämna ytterkläder och skor utanför sovrummet, helst i tamburen</li>
+  <li>Duscha och tvätta håret på kvällen, inte på morgonen, pollen samlas i håret under dagen</li>
+  <li>Tvätta ansiktet och ögonen med ljummet vatten efter utevistelse</li>
+  <li>Lägg aldrig kläder du burit utomhus på sängen eller i sovrummet</li>
+</ol>
+
+<p>Torka tvätt inomhus under pollensäsongen. Kläder som hänger utomhus samlar pollen och tar hem en hel dags pollenbörda.</p>
+
+<h2 id="ventilation">Ventilation och luftning</h2>
+
+<p>Pollenkoncentrationen i utomhusluften varierar kraftigt under dygnet och med väderlek. Generella regler:</p>
+
+<ul>
+  <li><strong>Låg pollentid:</strong> tidigt på morgonen (06:00 till 09:00), efter regn, eller under molnigt och vindstilla väder</li>
+  <li><strong>Hög pollentid:</strong> varma eftermiddagar med vind (12:00 till 18:00), soliga och torra dagar</li>
+  <li><strong>Björksäsong:</strong> håll fönster stängda under varma eftermiddagar i april till maj</li>
+</ul>
+
+<p>Om du har ventilationssystem med mekanisk till- och frånluft, kontrollera att tilluftsfilter är bytta. Gamla, igentäppta filter filtrerar sämre och kan i värsta fall bli ett pollenupplag. Byt filter minst en gång per år, företrädesvis inför pollensäsongen. Se vidare i guiden om <a href="/inomhusluft/ventilation-lagenhet/">ventilation i lägenhet</a> för hur du kontrollerar att ditt system fungerar rätt.</p>
+
+<h2 id="sangsovrum">Sängen och sovrummet</h2>
+
+<p>Sovrummet är den viktigaste zonen att pollenrena. Du spenderar 7 till 9 timmar per natt med ansiktet nära kudden och andas in vad som finns i sovrumsluften. Rutiner för sovrummet:</p>
+
+<ul>
+  <li>Stäng sovrumsfönstret vid höga pollennivåer</li>
+  <li>Tvätta sängkläder varannan vecka under pollensäsongen</li>
+  <li>Byt örngott oftare under pollensäsong (pollen från håret fastnar i örngottet)</li>
+  <li>Damma och dammsug sovrummet en extra gång per vecka</li>
+  <li>Håll kläderna du burit utomhus i ett annat rum</li>
+</ul>
+
+<p>Att kombinera ett tätt madrassskydd med regelbunden tvätt minskar den totala allergenbelastningen avsevärt. Du kan läsa mer om sömnmiljön i guiden om <a href="/allergi-och-astma/dammkvalster-i-sang/">dammkvalster i sängen</a>.</p>
+
+<h2 id="luftrenare">Luftrenare mot pollen</h2>
+
+<p>En luftrenare med H13-filter fångar pollenpartiklar (20 till 100 mikrometer) utan problem. Pollenpartiklar är faktiskt enklare att filtrera än de minsta dammkvalsterallergenerna. Det viktigaste är att luftrenaren har tillräcklig kapacitet för rummet.</p>
+
+<p>Räkna på ACH (luftomsättningar per timme): en bra luftrenare klarar minst 5 ACH för rumsstorleken. För ett sovrum på 15 kvadratmeter innebär det ett flöde på minst 75 till 100 kubikmeter per timme. Se guiden om <a href="/inomhusluft/luftrenare-allergi/">luftrenare mot allergi</a> för hur du väljer rätt modell.</p>
+
+<h2 id="husdjur">Husdjur och pollen</h2>
+
+<p>Hundar och katter är effektiva pollenspridare. En hund som vistats utomhus under björksäsongen bär med sig enorma mängder pollen i pälsen. Praktiska åtgärder:</p>
+
+<ul>
+  <li>Torka av hundens tassar och päls med fuktig handduk innan den kommer in</li>
+  <li>Bada husdjuret oftare under pollensäsongen</li>
+  <li>Håll husdjuret ute ur sovrummet under höga pollennivåer</li>
+  <li>Borsta husdjuret utomhus, inte inomhus</li>
+</ul>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om allergi" />
+
+</ArticleLayout>

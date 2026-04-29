@@ -1,0 +1,128 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('djupstadning', '/stadtips-och-rutiner/');
+
+const toc = [
+  { id: 'vad-ar', label: 'Vad är djupstädning?' },
+  { id: 'nar', label: 'När ska du djupstäda?' },
+  { id: 'kok', label: 'Kök' },
+  { id: 'badrum', label: 'Badrum' },
+  { id: 'sovrum', label: 'Sovrum' },
+  { id: 'vardagsrum', label: 'Vardagsrum och hall' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Hur länge tar en djupstädning?', a: 'En komplett djupstädning av ett normalstort hem (3 rum och kök) tar 4 till 8 timmar. Planera för en hel dag och gör det i etapper om det känns överväldigande.' },
+  { q: 'Hur ofta ska man djupstäda?', a: 'Två till fyra gånger per år är rimligt för de flesta hem. Naturliga tillfällen: före sommarsemester, inför höst, och i slutet av vintern (pollensäsongen startar). Vid allergier: kvartalsvis.' },
+  { q: 'Ska jag anlita en städfirma för djupstädning?', a: 'En professionell djupstädning kostar 3 000 till 8 000 kronor men sparar en hel dag. Kombinationen "professionell djupstädning en gång per år, egna djupstädningar kvartalsvis" är ett kostnadseffektivt alternativ.' },
+  { q: 'Hur rengör jag ugnen utan starka kemikalier?', a: 'Bikarbonatpasta (bikarbonat + lite vatten) på inbrändta rester, vänta 4 till 12 timmar, torka av. Häll litet ättika på smutsen precis innan du torkar för att luckra upp. Undviker du ugnsrengöringssprayer slipper du de starka lösningsmedelsångorna.' },
+  { q: 'Vad gör jag med saker jag hittar under möblerna?', a: 'Sortera direkt: kasta, donera eller ställa tillbaka. Ha tre högar. Det är psykologiskt lättare att sortera under rörelsens momentum än att lägga allt tillbaka och ta beslutet senare.' },
+];
+---
+<ArticleLayout
+  title="Djupstädning: vad det är och hur du gör det rum för rum | Hälsorent"
+  description="En djupstädning täcker allt som inte ingår i den vanliga städningen: bakom kylskåpet, inuti ugnen, under soffan och garderobernas insida. Komplett guide."
+  heroImage="/images/articles/djup.webp"
+  heroAlt="Djupstädning av kök med flytta möbler och rengöra bakom vitvaror"
+  publishDate="2026-04-29"
+  readingTime={9}
+  breadcrumbs={[{ label: 'Städtips & rutiner', href: '/stadtips-och-rutiner/' }, { label: 'Djupstädning' }]}
+  toc={toc}
+  category="Städtips & rutiner"
+>
+
+<p>En vanlig städning håller ytor rena. En djupstädning tar hand om allt som den vanliga städningen missar: bakom och under möbler, inuti apparater, garderobernas insida, ventilationsdonen, badrummets silikonlister och kylskåpets gummilister. Det är dessa platser som samlar damm, mögel och bakterier som gradvis påverkar inomhusmiljön.</p>
+
+<p>Djupstädning är inte ett alternativ till regelbunden städning. Det är ett komplement som du gör ett par gånger om året för att nollställa vad den löpande städningen inte hinner med.</p>
+
+<h2 id="vad-ar">Vad är djupstädning?</h2>
+
+<img src="/images/articles/djup.webp" alt="Grundlig städning med rengöring bakom och under möbler" width="800" height="450" loading="lazy" />
+
+<p>Djupstädning definieras av de uppgifter som inte ingår i veckostädningen:</p>
+
+<ul>
+  <li>Flytta tunga möbler och städa bakom och under dem</li>
+  <li>Tömma och rengöra kylskåp, ugn och mikrovåg inifrån</li>
+  <li>Rengöra tvättmaskin och diskmaskin grundligt</li>
+  <li>Tömma och rengöra garderober och skåp</li>
+  <li>Tvätta gardiner, täcken och kuddar</li>
+  <li>Rengöra ventilationsdon och fönsterkarmar</li>
+  <li>Rengöra socklar, lister och dörrkarmar</li>
+  <li>Tvätta fönster inifrån</li>
+  <li>Rengöra toalettens sifong och badrummets fogar grundligt</li>
+</ul>
+
+<h2 id="nar">När ska du djupstäda?</h2>
+
+<p>Naturliga tillfällen för djupstädning:</p>
+<ul>
+  <li><strong>Vår (april/maj):</strong> inför pollensäsongen, vädra ut vintersmutsen, tvätta textilier</li>
+  <li><strong>Sommar (juli/aug):</strong> före semestern eller vid hemkomst</li>
+  <li><strong>Höst (september/okt):</strong> innan uppvärmningssäsongen, stäng in hemmet rent</li>
+  <li><strong>Vid flytt:</strong> alltid, både till och från</li>
+  <li><strong>Kvartalsvis vid allergi:</strong> allergenbelastning ska hållas konsekvent låg</li>
+</ul>
+
+<h2 id="kok">Kök</h2>
+
+<p>Köket är den mest tidskrävande delen av en djupstädning. Räkna med 90 till 120 minuter.</p>
+
+<ul>
+  <li><strong>Kylskåp:</strong> töm, kasta gammal mat, rengör hyllor och gummilist. Se guiden om <a href="/rengoring-av-apparater/rengora-kylskap/">rengöra kylskåpet</a>.</li>
+  <li><strong>Ugn:</strong> bikarbonatpasta på inbrändta rester, 4 till 12 timmars verkningstid, torka av. Rengör luckan inifrån.</li>
+  <li><strong>Spisfläkt:</strong> rengör filter, torka av kåpan inifrån och ut</li>
+  <li><strong>Mikrovåg:</strong> laga en skål med vatten och citronsaft i 5 minuter, ångan löser fastbränd mat. Torka av.</li>
+  <li><strong>Skåp:</strong> töm ett och ett, rengör inuti och utsidan av hyllplan, kasta gamla livsmedel och köksredskap som inte används</li>
+  <li><strong>Diskmaskin:</strong> rengör filtret, avkalka med citronsyra. Detaljer i guiden om <a href="/rengoring-av-apparater/rengora-diskmaskin/">rengöra diskmaskin</a>.</li>
+  <li><strong>Bakom kylskåpet:</strong> damm bakom och under kylskåpet är en brandrisk och ökar energiförbrukningen. Dammsug kondenseringsgallret baktill.</li>
+</ul>
+
+<h2 id="badrum">Badrum</h2>
+
+<p>Djupstädning av badrummet inkluderar:</p>
+
+<ul>
+  <li>Rengör fogar och silikon grundligt med fogborste, byt ut om de är mögliga</li>
+  <li>Skrubba badrumets ventilationsgaller, dammsug kanalen</li>
+  <li>Torka av bakom toalettens vattenlåda och under foten</li>
+  <li>Rengör dränagegaller och avlopp</li>
+  <li>Tömma och rengöra badrumsskåp</li>
+  <li>Tvätta duschdraperi eller rengöra glasdörr ordentligt</li>
+</ul>
+
+<h2 id="sovrum">Sovrum</h2>
+
+<ul>
+  <li>Flytta sängen och dammsug bakom och under den</li>
+  <li>Tvätta kuddar och dyne (60 grader om det tillåts) eller airdry utomhus</li>
+  <li>Byt till rena madrassskydd</li>
+  <li>Dammsug madrassen, vänd den</li>
+  <li>Tömma och rengöra garderobens inre, sortera kläder</li>
+  <li>Torka av gardinerna eller tvätta dem</li>
+</ul>
+
+<p>För bakgrunden till varför sovrummet är prioritet: se guiden om <a href="/stadtips-och-rutiner/stadschema-hemmet/">städschema för hemmet</a>.</p>
+
+<h2 id="vardagsrum">Vardagsrum och hall</h2>
+
+<ul>
+  <li>Flytta soffa och fåtöljer, dammsug under och bakom dem</li>
+  <li>Rengör baksida av TV och elektronik (samlar damm)</li>
+  <li>Tvätta soffkuddar och sofföverdrag om det kan tvättas</li>
+  <li>Torka av bokhyllorna och rengör boken (torka av ryggar)</li>
+  <li>Rengör golvlister och socklar</li>
+  <li>Tvätta innerfönster</li>
+  <li>Hallen: rengör skoskåp och hållare, tvätta halkydda/mattan, torka av garderobens insida</li>
+</ul>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om städtips" />
+
+</ArticleLayout>

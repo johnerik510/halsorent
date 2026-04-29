@@ -1,0 +1,118 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('mogel-badrum', '/mogel-och-fukt/');
+
+const toc = [
+  { id: 'identifiera', label: 'Identifiera mögeltyp' },
+  { id: 'ta-bort-mogen', label: 'Ta bort mögel steg för steg' },
+  { id: 'fogen', label: 'Byt fogmassa' },
+  { id: 'forebygg', label: 'Förebygg att det kommer tillbaka' },
+  { id: 'nar-proffs', label: 'När du behöver hjälp' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Är svart mögel i badrummet farligt?', a: 'Det svarta du ser är oftast Cladosporium eller Aspergillus, vanliga mögelsorter i badrum. "Svart mögel" (Stachybotrys chartarum) som producerar kraftiga mykotoxiner är ovanligt i badrum och kräver fuktiga cellulosaytor (gips, trä). Oavsett art: ta bort det, det är inte nyttigt att andas in mögelsporer.' },
+  { q: 'Hur länge håller ny fogmassa?', a: 'Kvalitetsfogmassa håller 5 till 10 år med god skötsel. Sprickor, missfärgning eller mögel som återkommer inom ett år trots rengöring är tecken på att underliggande fukt inte är löst.' },
+  { q: 'Kan jag måla över mögel i badrummet?', a: 'Nej. Att måla över mögel dödar det inte, det fortsätter växa under färglagret och tränger igenom. Rengör alltid ordentligt och torka ut ytan innan du behandlar.' },
+  { q: 'Varför återkommer mögelskadan trots att jag rengjort?', a: 'Återkommande mögel tyder på en underliggande fuktorsak: otillräcklig ventilation, defekt fuktisolering bakom kakel, eller en vattenskada som inte torkades ordentligt. Löser du inte grundorsaken återkommer mögelskadan.' },
+  { q: 'Hur snabbt ska jag agera om jag hittar mögel?', a: 'Omgående. Mögel sprider sporer i luften dygnet runt och en liten mögelskada kan växa till ett större problem på veckor i en fuktig miljö. Identifiera källan och åtgärda den samma dag.' },
+];
+---
+<ArticleLayout
+  title="Mögel i badrummet: ta bort det och håll det borta | Hälsorent"
+  description="Badrumssilikonen och fogarna är klassiska mögelhärdar. Steg för steg: ta bort svart mögel, byt fogmassa och förhindra att det kommer tillbaka."
+  heroImage="/images/articles/mogel-badrum.webp"
+  heroAlt="Badrumskakel med mögelangrepp i fogar och silikonlister"
+  publishDate="2026-04-29"
+  readingTime={7}
+  breadcrumbs={[{ label: 'Mögel & fukt', href: '/mogel-och-fukt/' }, { label: 'Mögel i badrummet' }]}
+  toc={toc}
+  category="Mögel & fukt"
+>
+
+<p>Badrummet är hemmet mest mögelbenägna rum. Hög temperatur, fukt och organiska rester i fogar och silikon skapar perfekta villkor för mögeltillväxt. De flesta badrum i Sverige har, eller har haft, mögel i fogarna.</p>
+
+<p>Goda nyheter: badrumsytor är hårda och täta, vilket gör att mögelrengöring faktiskt fungerar om du gör det rätt. Du behöver inte alltid en specialist för badrummets mögel.</p>
+
+<h2 id="identifiera">Identifiera mögeltyp</h2>
+
+<img src="/images/articles/mogel-badrum.webp" alt="Tätad badrumssilikon och rena kakelfogar efter mögelbehandling" width="800" height="450" loading="lazy" />
+
+<p>Badrumsfogar och silikon är vanligtvis det svarta du ser. Det är mögelsvampar som livnär sig på tvålrester, hudceller och organiska rester i fogarna. Det är inte samma som Stachybotrys (det "farliga svarta möglet") som kräver cellulosa att leva på.</p>
+
+<p>Kontrollera:</p>
+<ul>
+  <li><strong>Fogmassa (kalkbruk):</strong> svart missfärgning, ofta djupt in i fogen</li>
+  <li><strong>Silikon (plastlister):</strong> svart fläckigt mönster, ofta i hörn och längs badkaret</li>
+  <li><strong>Bakom kakel (dolt mögel):</strong> missfärgning som tränger igenom från fogarna, instäng lukt</li>
+</ul>
+
+<p>Ytliga mögelangrepp på silikon och fog kan du åtgärda själv. Mögel som trängt in bakom kaklet kräver professionell hjälp. Läs om gränserna i guiden om <a href="/mogel-och-fukt/mogel-i-hemmet/">mögel i hemmet</a>.</p>
+
+<h2 id="ta-bort-mogen">Ta bort mögel steg för steg</h2>
+
+<p><strong>Utrustning du behöver:</strong></p>
+<ul>
+  <li>P2-andningsmask (FFP2)</li>
+  <li>Engångshandskar</li>
+  <li>Klorbaserat rengöringsmedel (toalettrent med klorin fungerar) eller 70-procentig alkohol</li>
+  <li>Gammal tandborste</li>
+  <li>Engångstrasor</li>
+</ul>
+
+<p><strong>Procedur:</strong></p>
+<ol>
+  <li>Ventilera badrummet, öppna fönster och sätt på fläkten</li>
+  <li>Applicera klorrengöringsmedlet direkt på mögelskadan, låt verka i 10 till 20 minuter</li>
+  <li>Skrubba med tandborsten i en cirkulär rörelse, arbeta in i fogarna</li>
+  <li>Torka av med engångstrasa</li>
+  <li>Upprepa om missfärgning kvarstår</li>
+  <li>Lät torka helt (öppet fönster, 30 till 60 minuter)</li>
+</ol>
+
+<p>Bikarbonat fungerar för ytlig mögelrengöring på fogar: applicera bikarbonatlösning, skrubba och skölj. Läs mer om <a href="/kemikaliefri-stadning/rengora-med-bikarbonat/">rengöra med bikarbonat</a> om du föredrar kemikaliefria alternativ.</p>
+
+<h2 id="fogen">Byt fogmassa</h2>
+
+<p>Om mögelskadan är djup i fogarna och inte försvinner med rengöring: byt fogmassan. Djupt mögel i fog är svårt att rengöra utan att ta bort fogmassan.</p>
+
+<ol>
+  <li><strong>Ta bort gammal fogmassa:</strong> använd fogskrapa, rundsåg med fogborrbit eller multitool. Arbeta försiktigt för att inte skada kaklet.</li>
+  <li><strong>Torka ut:</strong> låt ytan torka ordentligt, minst 24 timmar med god ventilation</li>
+  <li><strong>Behandla ytan:</strong> applicera ett mögelförebyggande primer om du är i en fuktig miljö</li>
+  <li><strong>Ny fog:</strong> använd epoxifog (mer motståndskraftig mot mögel än kalkmassa) eller cement­fog med mögelförebyggande tillsats</li>
+  <li><strong>Ny silikon:</strong> köp silikon med fungistat (mögelförebyggande tillsats). Applicera längs hörn och badkant med fogspruta.</li>
+</ol>
+
+<h2 id="forebygg">Förebygg att det kommer tillbaka</h2>
+
+<p>Mögel återkommer alltid om fuktproblemet inte åtgärdas. Förebyggande rutiner:</p>
+
+<ul>
+  <li>Torka av väggarna och badkaret med handduk direkt efter dusch, eliminerar stående fukt</li>
+  <li>Lämna badrumsdörren öppen efter dusch för att fukt ska ventileras bort</li>
+  <li>Sätt på badrumsfläkten under och 30 minuter efter dusch</li>
+  <li>Håll luftfuktigheten i badrummet under 60 procent, mät med hygrometer</li>
+  <li>Rengör fogarna med bikarbonat eller ättika en gång i månaden</li>
+</ul>
+
+<h2 id="nar-proffs">När du behöver hjälp</h2>
+
+<p>Kontakta en mögelspecialist om:</p>
+<ul>
+  <li>Mögelskadan är större än 0,5 kvadratmeter</li>
+  <li>Mögelskadan återkommer trots att du tätat och rengört</li>
+  <li>Du misstänker mögel bakom kaklet eller i väggkonstruktionen</li>
+  <li>Du eller familjemedlemmar har symtom (hosta, huvudvärk, trötthet) som förbättras utanför hemmet</li>
+</ul>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om mögel och fukt" />
+
+</ArticleLayout>

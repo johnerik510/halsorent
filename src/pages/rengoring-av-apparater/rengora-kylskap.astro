@@ -1,0 +1,126 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('rengora-kylskap', '/rengoring-av-apparater/');
+
+const toc = [
+  { id: 'forberedelse', label: 'Förberedelse' },
+  { id: 'ta-bort', label: 'Ta bort och rengöra hyllor' },
+  { id: 'invandiga-vaggar', label: 'Invändiga väggar' },
+  { id: 'gummilisten', label: 'Gummilisten' },
+  { id: 'frisar', label: 'Frysfack' },
+  { id: 'baksidan', label: 'Kondenseringsgaller baktill' },
+  { id: 'organisation', label: 'Organisera rätt' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Hur ofta ska kylskåpet rengöras?', a: 'Grundlig rengöring: en gång i kvartalet. Snabb torkning av synliga fläckar och spill: direkt när det händer. Kylskåpets gummilist och kondenseringsgaller: minst en gång per år.' },
+  { q: 'Vad är säkrast att använda för att rengöra kylskåpet?', a: 'Bikarbonat löst i vatten (1 matsked per 1 liter vatten) är det säkraste alternativet. Det desodorerar och rengör utan att lämna kemikalie­rester nära livsmedel. Undvik starka rengöringsmedel med kraftig lukt.' },
+  { q: 'Kan jag ta ut kylskåpets hyllor och tvätta dem i diskmaskinen?', a: 'Glasyllor: ja, om tillverkaren tillåter det. Läs i manualen. Plastdetaljer: ja på låg temperatur (40 grader). Metalldele med speciellbeläggning: kontrollera manualen. Lät alltid glashyllor nå rumstemperatur innan de sätts i diskmaskinen (temperaturskifte kan spräcka dem).' },
+  { q: 'Hur länge håller mat i kylskåpet?', a: 'Det beror på temperaturen: kylskåpet ska hålla 2 till 5 grader Celsius. Kontrollera med termometer. Vid rätt temperatur: kokt kött 3 till 4 dagar, kokt fisk 1 till 2 dagar, öppnad mjölk 3 till 5 dagar.' },
+  { q: 'Varför luktar det i kylskåpet trots att jag rengjort det?', a: 'Kvarvarar lukt sitter ofta i gummipackningens veck, i platsmaterialets porer eller bakom kylskåpets bakvägg. En öppen burk bikarbonat absorberar lukter. Byt burken var 1 till 2 månader.' },
+];
+---
+<ArticleLayout
+  title="Rengöra kylskåpet ordentligt: steg för steg | Hälsorent"
+  description="Kylskåpet är ett av hemets bakterietätaste ställen. Hur du tömmer, rengör, desinfekterar och organiserar det på rätt sätt för hälsosam matförvaring."
+  heroImage="/images/articles/kylskap.webp"
+  heroAlt="Öppet kylskåp med välorganiserade matvaror och rena hyllor"
+  publishDate="2026-04-29"
+  readingTime={6}
+  breadcrumbs={[{ label: 'Rengöring av apparater', href: '/rengoring-av-apparater/' }, { label: 'Rengöra kylskåpet' }]}
+  toc={toc}
+  category="Rengöring av apparater"
+>
+
+<p>Kylskåpet förvarar mat du sedan äter. Trots det är det en av de mest sällanrengörda ytorna i hemmet. Studier från livsmedelsverket visar att kylskåp i svenska hem regelbundet innehåller Listeria och Salmonella på hyllor och i gummipackningar, direkt bredvid maten.</p>
+
+<p>En grundlig kylskåpsrengöring tar 30 till 45 minuter och bör göras kvartalsvis. Här är hela processen steg för steg.</p>
+
+<h2 id="forberedelse">Förberedelse</h2>
+
+<img src="/images/articles/kylskap.webp" alt="Kylskåp som töms för grundlig rengöring" width="800" height="450" loading="lazy" />
+
+<p>Välj ett tillfälle innan storhandling, när kylskåpet är halvtomt. Du behöver:</p>
+
+<ul>
+  <li>En kylväska eller låda för att förvara kylvaror kortvarigt</li>
+  <li>Bikarbonat eller milt diskmedel</li>
+  <li>Trasor och svamp</li>
+  <li>Gammal tandborste för gummilisten</li>
+</ul>
+
+<p>Stäng av kylskåpet eller ställ termostaten på minimum om du planerar en grundlig rengöring.</p>
+
+<h2 id="ta-bort">Ta bort och rengöra hyllor</h2>
+
+<ol>
+  <li>Ta ut alla matvaror och ställ dem i kylväskan</li>
+  <li>Kasta utgångna produkter och mat av okänt datum</li>
+  <li>Lyft ut alla hyllor, lådor och dörrhyllor</li>
+  <li>Lät glashyllor nå rumstemperatur (15 till 20 min) innan tvätt</li>
+  <li>Tvätta hyllor i diskvatten med diskmedel, eller i diskmaskinen (se FAQ)</li>
+  <li>Torka torrt och lät lufttorka</li>
+</ol>
+
+<h2 id="invandiga-vaggar">Invändiga väggar</h2>
+
+<p>Blanda 1 matsked bikarbonat i 1 liter ljummet vatten. Torka alla invändiga ytor (väggar, golv, tak) med trasa indränkt i lösningen. Bikarbonat desodorerar och rengör utan att lämna kemikalierester nära maten.</p>
+
+<p>Torka torrt efteråt, fukt i kylskåpet är en mögelrisk.</p>
+
+<p>För synliga mögelfläckar (svarta prickar): applicera utspädd ättika (1:1 med vatten), lät verka 5 minuter, torka bort. Se mer om mögelrengöring i guiden om <a href="/kemikaliefri-stadning/rengora-med-bikarbonat/">rengöra med bikarbonat</a>.</p>
+
+<h2 id="gummilisten">Gummilisten</h2>
+
+<p>Gummipackningen längs dörren har veck och flikar som samlar matrester och fukt. Mögel etablerar sig snabbt i packningns veck och kan sprida Listeria till kylskåpets insida.</p>
+
+<ol>
+  <li>Inspektera packningn visuellt, leta efter svarta mögelsprickor</li>
+  <li>Använd en tandborste indränkt i utspädd ättika för att skrubba alla veck</li>
+  <li>Torka av med fuktig trasa</li>
+  <li>Torka torrt</li>
+</ol>
+
+<p>Lät kylskåpsdörren stå öppen en halvtimme efter rengöring för att säkerställa att packningas veck torkar.</p>
+
+<h2 id="frisar">Frysfack</h2>
+
+<p>Frysfack behöver avfrostning och rengöring en gång om året, eller när islagret är tjockare än 1 cm (ökar energiförbrukning):</p>
+
+<ol>
+  <li>Flytta frysvaror till kylväska</li>
+  <li>Stäng av frysen och lägg in en skål med varmt vatten för att påskynda avfrostning</li>
+  <li>Torka upp smältvatten med trasorna efterhand</li>
+  <li>Torka av invändiga ytor med bikarbonat-vattenblandning</li>
+  <li>Torka torrt och starta frysen igen</li>
+  <li>Vänta tills temperaturen är nere i -18 grader innan frysvarorna läggs tillbaka</li>
+</ol>
+
+<h2 id="baksidan">Kondenseringsgaller baktill</h2>
+
+<p>Kylskåpets kondenseringsgaller (metallgallret på baksidan) kyler kylmedlet. Damm på gallret gör att kylskåpet arbetar hårdare och förbrukar mer el. Dammstryk gallret en gång om året med en smal dammsugarmunstycke.</p>
+
+<h2 id="organisation">Organisera rätt</h2>
+
+<p>Rätt organisation minskar matsvinnet och förlänger matens hållbarhet:</p>
+
+<ul>
+  <li><strong>Kylaste zonen (längst in och ner):</strong> kött, fisk och mejeri</li>
+  <li><strong>Mellersta hyllorna:</strong> rester, kokt mat, ägg</li>
+  <li><strong>Övre hyllorna:</strong> sylt, sås, öppnade konserver</li>
+  <li><strong>Dörrhyllorna:</strong> kondiment, dryck (sämst kylda)</li>
+  <li><strong>Grönsakslåda:</strong> frukt och grönsaker (håller borta etylengasproduktion från tillexempel äpplen)</li>
+</ul>
+
+<p>En välorganiserad djupstädning inkluderar alltid kylskåpet. Se <a href="/stadtips-och-rutiner/djupstadning/">djupstädning</a> för ett komplett rum-för-rum-schema.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om apparatrengöring" />
+
+</ArticleLayout>

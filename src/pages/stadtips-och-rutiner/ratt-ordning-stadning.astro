@@ -1,0 +1,110 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('ratt-ordning-stadning', '/stadtips-och-rutiner/');
+
+const toc = [
+  { id: 'grundregeln', label: 'Grundregeln: uppifrån och ner' },
+  { id: 'torrt-fore-vatt', label: 'Torrt före vått' },
+  { id: 'rum-for-rum', label: 'Rum för rum' },
+  { id: 'vanliga-misstag', label: 'Vanliga misstag' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Varför ska man dammsuga efter att man dammtorkat?', a: 'Dammtorkning skapar ett luftflöde som kan uppvira lätta dammpartiklar. Om du dammsuger efter dammtorkning fångar du upp allt som hamnat på golvet. Gör du det omvänt (dammsug sedan dammtorka) sprider du fortfarande gammalt damm neråt, och det hamnar på det rena golvet.' },
+  { q: 'Ska jag städa köket eller badrummet först?', a: 'Badrummet. Toaletten är den smutsigaste ytan i hemmet. Städa den tidigt i sessionen, och tvätta händerna noggrant efteråt. Köket städas bäst sist bland rummen, då du naturligt avslutar med att torka av bänkytor och golvet.' },
+  { q: 'Kan jag städa på ett städ för att spara tid?', a: 'Ja, det är ofta mer effektivt att göra samma uppgift i alla rum på en gång. Dammtorka alla rum, sedan gå tillbaka och dammsug alla rum. Det minskar kontextsbyten och är snabbare totalt sett.' },
+  { q: 'Hur hanterar jag städning när jag har bråttom?', a: 'Prioritera: badrum och kök är alltid viktigast ur hälsosynpunkt (bakterier, mögel). Sovrum är viktigt för allergiern. Vardagsrum kan vänta längre. Se guiden om att städa fort för ett effektivt snabbstädningsschema.' },
+  { q: 'Ska jag städa med eller mot solen?', a: 'Med solen, det vill säga bakifrån framåt med tanke på ljusinsläppet. På det sättet ser du damm och smuts bättre och missar inte fläckar.' },
+];
+---
+<ArticleLayout
+  title="Rätt ordning när du städar: uppifrån och ner, torrare före vattnare | Hälsorent"
+  description="Fel ordning innebär att du sprider smuts du just städat bort. Den korrekta ordningen sparar tid och ger ett renare resultat varje gång."
+  heroImage="/images/articles/ordning.webp"
+  heroAlt="Städade hyllor och ett välordnat hem med rengöringsredskap"
+  publishDate="2026-04-29"
+  readingTime={5}
+  breadcrumbs={[{ label: 'Städtips & rutiner', href: '/stadtips-och-rutiner/' }, { label: 'Rätt ordning när du städar' }]}
+  toc={toc}
+  category="Städtips & rutiner"
+>
+
+<p>Ordningen du städar i avgör om du faktiskt gör hemmet rent eller om du bara förflyttar smuts. Det vanligaste misstaget är att dammsuga golvet och sedan dammtorka hyllorna: dammtorkning slungar upp partiklar som faller ner på det nystädade golvet.</p>
+
+<p>Rätt ordning är enkel: börja uppe, jobba neråt. Börja med torrare metoder, avsluta med vattnare. Det är det.</p>
+
+<h2 id="grundregeln">Grundregeln: uppifrån och ner</h2>
+
+<img src="/images/articles/ordning.webp" alt="Städning i rätt ordning med dammtorkning av hyllor" width="800" height="450" loading="lazy" />
+
+<p>Gravitation gör att damm och partiklar faller neråt. Börjar du med golvet och arbetar uppåt sprider du ständigt nytt damm från de ytor du städar ner på det rena golvet. Rätt ordning:</p>
+
+<ol>
+  <li>Tak och ventilationsdon (med mjuk borste eller dammvippa)</li>
+  <li>Taklister och lampor</li>
+  <li>Övre hyllor och skåpens ovansida</li>
+  <li>Möbler och bord</li>
+  <li>Undre hyllor och socklar</li>
+  <li>Sist: golvet</li>
+</ol>
+
+<p>Inom varje höjdnivå: städa börjandes i rumsmitt och arbeta mot dörröppningen. Du städar dig ut ur rummet, inte in i det.</p>
+
+<h2 id="torrt-fore-vatt">Torrt före vått</h2>
+
+<p>Torra metoder (dammtorkning, dammsugning) bör komma före våta metoder (moppning, fukttorkning). Orsaken: vatten binder damm och gör det svårare att ta bort. Dammsuger du och dammtorkar du efter mopping hakar dammpartiklarna fast i fukten och smetas ut istället för att avlägsnas.</p>
+
+<p>Ordning för golvet:</p>
+<ol>
+  <li>Dammsug (eller sopa) för att avlägsna löst damm och skräp</li>
+  <li>Moppa eller fukttorka (nu har du ett rent underlag)</li>
+</ol>
+
+<p>Undantag: om golvet har fastnadd smuts eller stänk (juice, sås) kan du behöva blötlägga det före dammsugning för att lossa det. Avlägsna sedan det lösta materialet och moppa.</p>
+
+<h2 id="rum-for-rum">Rum för rum</h2>
+
+<p><strong>Badrum:</strong></p>
+<ol>
+  <li>Besputa toalettens insida med rengöringsmedel, lät verka</li>
+  <li>Torka av spegel och glasytor</li>
+  <li>Torka av handfat, kranar och bänkyta</li>
+  <li>Skrubba toaletten (borste och runt utsidan)</li>
+  <li>Torka av dusch/badkar</li>
+  <li>Fukttorka golvet sist</li>
+</ol>
+
+<p><strong>Kök:</strong></p>
+<ol>
+  <li>Torka av spisfläkten och filterna</li>
+  <li>Torka av spisen (medan den är kall)</li>
+  <li>Torka av bänkytor och diskho</li>
+  <li>Torka utsidan av kylskåp, ugn och mikrovåg</li>
+  <li>Dammsug eller sopa golvet</li>
+  <li>Fukttorka golvet sist</li>
+</ol>
+
+<p>En väl genomtänkt städordning är kärnan i ett bra <a href="/stadtips-och-rutiner/stadschema-hemmet/">städschema för hemmet</a>. Lär du dig rätt ordning en gång, sparar du tid varje vecka framöver.</p>
+
+<h2 id="vanliga-misstag">Vanliga misstag</h2>
+
+<ul>
+  <li><strong>Dammsuga och sedan dammtorka:</strong> du sprider ner nytt damm på det nysvepna golvet</li>
+  <li><strong>Torka ytor med smutsig trasa:</strong> cirkulerar smuts istället för att ta bort den. Byt trasa när den är synligt smutsig.</li>
+  <li><strong>Blöt trasa på trä och laminat:</strong> överskottsvatten i springor och skarvar kan ge svällning och mögel. Vrida trasan hårt, nästan torr.</li>
+  <li><strong>Hoppa över ytor man inte ser:</strong> toppen av kylskåpet, undre del av soffbenet, bakom väggkransen. Dessa ytor samlar damm och mögel om de aldrig rengörs.</li>
+  <li><strong>Stryka med kemikalierna direkt:</strong> effekten förbättras om du lager rengöringsmedlet på ytan, lät verka en stund och sedan torkar bort. Gäller framför allt kalk och inbrändta rester.</li>
+</ul>
+
+<p>För att minska kemikalieanvändningen: <a href="/kemikaliefri-stadning/rengora-med-bikarbonat/">bikarbonat för rengöring</a> är ett effektivt alternativ för kökets och badrummets ytor utan starka kemikalielelukter.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om städtips" />
+
+</ArticleLayout>

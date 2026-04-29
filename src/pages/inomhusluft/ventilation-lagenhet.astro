@@ -1,0 +1,118 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('ventilation-lagenhet', '/inomhusluft/');
+
+const toc = [
+  { id: 'typer', label: 'Typer av ventilation' },
+  { id: 'kontrollera', label: 'Kontrollera att det fungerar' },
+  { id: 'oka-ventilation', label: 'Öka ventilationen' },
+  { id: 'filter', label: 'Filter och underhåll' },
+  { id: 'tecken-problem', label: 'Tecken på dålig ventilation' },
+  { id: 'hyresgast', label: 'Hyresgästrättigheter' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Vem ansvarar för ventilationen i en hyreslägenhet?', a: 'Hyresvärden är ansvarig för att ventilationen fungerar enligt Hyreslagen och Boverkets krav. Som hyresgäst har du rätt att begära OVK (Obligatorisk Ventilationskontroll) och åtgärd av brister.' },
+  { q: 'Hur ofta ska en lägenhet OVK-besiktigas?', a: 'Flerbostadshus med FT- och FTX-system: var 3:e år. Med S- eller F-system: var 6:e år. Besiktningsprotokollen ska vara tillgängliga för hyresgästerna.' },
+  { q: 'Kan jag öppna ventilationsdonen mer själv?', a: 'Ja, frånluftsdonen (i badrum och kök) kan du ofta justera själv. Tilluftsdon (om de finns) ska lämnas i det läge som OVK-tekniker ställt in dem. Justera inte tilluftsdonen utan att fråga fastighetsägaren.' },
+  { q: 'Vad är FTX-ventilation?', a: 'FTX (Från- och tilluftsventilation med värmeåtervinning) värmeväxlar frånluften med tilluften, vilket sparar energi. Vanligt i nyare hus. Kräver regelbundna filterbyte för att fungera optimalt.' },
+  { q: 'Hur vet jag om min lägenhet har undertryck?', a: 'Håll upp ett tunt papper mot stängd dörr (till badrum eller kök). Om pappret dras mot dörren finns undertryck, det är korrekt. Om pappret blåser bort finns övertryck, vilket kan tyda på problem med ventilationssystemet.' },
+];
+---
+<ArticleLayout
+  title="Ventilation i lägenhet: kontrollera och förbättra | Hälsorent"
+  description="Dålig ventilation leder till fukt, dålig luft och mögelproblem. Hur du kontrollerar att din ventilation fungerar och vad du kan justera själv."
+  heroImage="/images/articles/ventilation.webp"
+  heroAlt="Ventilationsdon i tak och frånluftsgaller i ett badrum"
+  publishDate="2026-04-29"
+  readingTime={6}
+  breadcrumbs={[{ label: 'Inomhusluft', href: '/inomhusluft/' }, { label: 'Ventilation i lägenhet' }]}
+  toc={toc}
+  category="Inomhusluft"
+>
+
+<p>Ventilationen i din lägenhet är grundbulten för hela inomhusmiljön. Den reglerar fukten (avgörande för att förhindra mögel), koldioxidhalten och koncentrationen av flyktiga organiska ämnen. En ventilation som inte fungerar rätt påverkar dig varje gång du andas, dygnet runt.</p>
+
+<p>De flesta lägenheter i Sverige har antingen självdragsventilation (S), frånluftsventilation (F) eller mekanisk från- och tilluftsventilation (FT/FTX). Varje typ har sina kontrollpunkter och begränsningar.</p>
+
+<h2 id="typer">Typer av ventilation</h2>
+
+<img src="/images/articles/ventilation.webp" alt="Ventilationskanal och tilluftsdon i lägenhet" width="800" height="450" loading="lazy" />
+
+<p><strong>Självdragsventilation (S)</strong> är vanlig i äldre hus. Luft rör sig naturligt genom temperaturskillnader och vindtryck. Inga fläktar, inget filter, enkel konstruktion. Nackdel: dålig reglering, fungerar sämst sommartid när temperaturskillnaden inne/ute är liten.</p>
+
+<p><strong>Frånluftsventilation (F)</strong> har fläktar som drar ut luft från badrum och kök. Ersättningsluft kommer in via springventiler i fönster eller via ventilationsdon. Det vanligaste systemet i miljonprogramshus och 80-talsbyggnader.</p>
+
+<p><strong>FT-ventilation</strong> har separat fläkt för tilluft och frånluft, med filter på tilluften. Bättre kontroll men kräver regelbundna filterbyte.</p>
+
+<p><strong>FTX-ventilation</strong> värmeväxlar frånluft och tilluft. Energieffektivt och vanligt i nyare hus. Kräver regelbunden filterskötsel för att inte bli ett luftkvalitetsproblem i sig.</p>
+
+<h2 id="kontrollera">Kontrollera att det fungerar</h2>
+
+<p>Enkla tester du kan göra utan verktyg:</p>
+
+<ol>
+  <li><strong>Papperstest på frånluftsgaller:</strong> håll en bit toalettpapper mot gallret. Det ska dras mot gallret av luftflödet. Om det inte rör sig: flödet är otillräckligt.</li>
+  <li><strong>Luktkontroll:</strong> stå i köket och låt någon ryka med en tändsticka i badrummet. Luften ska ledas ut och du ska inte känna tobaksröken i köket.</li>
+  <li><strong>CO2-mätare:</strong> mät CO2-nivån i sovrummet på morgonen. Över 1000 ppm vid uppvaknande tyder på otillräcklig ventilation under natten.</li>
+</ol>
+
+<h2 id="oka-ventilation">Öka ventilationen</h2>
+
+<p>Innan du installerar luftrenare eller andra tekniska lösningar: kontrollera att befintlig ventilation fungerar. Det är alltid billigare att optimera befintlig ventilation.</p>
+
+<ul>
+  <li>Kontrollera att tilluftsventiler (springventiler) i fönster är öppna, inte täckta med tejp eller tätningslister</li>
+  <li>Rengör frånluftsgaller, se nedan</li>
+  <li>Öppna dörrarna mellan rum, undertryck fungerar bättre med öppna innerdörrar</li>
+  <li>Vädra sovrummet morgon och kväll</li>
+</ul>
+
+<p>Välventilerade hem har lägre fuktighet, vilket reducerar dammkvalsterpopulationen och mögelrisken. Se guiden om <a href="/mogel-och-fukt/fukt-kallare/">fukt i källaren</a> för hur fukt sprider sig från undermåligt ventilerade utrymmen till resten av huset.</p>
+
+<h2 id="filter">Filter och underhåll</h2>
+
+<p>Frånluftsgaller (de runda/fyrkantiga gallren i badrum och kök) samlar damm och fett. Igentäppta galler reducerar flödet avsevärt:</p>
+
+<ol>
+  <li>Ta bort gallret (skruvas eller snäpper av)</li>
+  <li>Tvätta med diskvatten och borste</li>
+  <li>Torka och montera tillbaka</li>
+  <li>Frekvens: 2 till 4 gånger per år</li>
+</ol>
+
+<p>Om du har FT- eller FTX-system: filterbyte är obligatoriskt. Igensatta filter kan ge omvänd effekt: luften tar genvägar och luftkvaliteten försämras. Byt filter minst en gång per år, gärna inför hösten. Se anvisningarna från tillverkaren av ditt system.</p>
+
+<p>En ren, välfungerande ventilation bidrar till bättre <a href="/inomhusluft/forbattra-inomhusluft/">inomhusluft</a> utan att du behöver köpa extra utrustning.</p>
+
+<h2 id="tecken-problem">Tecken på dålig ventilation</h2>
+
+<ul>
+  <li>Kondens på fönster på morgonen (inte bara ytterst i hörnen)</li>
+  <li>Mögel i fönsterkarmar, badrumshörn eller längs ytterväggar</li>
+  <li>Instäng lukt i sovrummet på morgonen</li>
+  <li>Trötthet och huvudvärk som förbättras efter att du vädrat</li>
+  <li>Hög luftfuktighet (mätt med hygrometer) som inte sjunker trots vädring</li>
+</ul>
+
+<h2 id="hyresgast">Hyresgästrättigheter</h2>
+
+<p>Om ventilationen i din hyreslägenhet inte fungerar tillfredsställande:</p>
+
+<ol>
+  <li>Anmäl problemet skriftligen till hyresvärden och begär åtgärd</li>
+  <li>Begär att fastighetsägaren visar upp det senaste OVK-protokollet</li>
+  <li>Om inga åtgärder vidtas: kontakta kommunens miljö- och hälsoskyddskontor</li>
+  <li>Hyresgästföreningen kan ge råd om vidare åtgärder</li>
+</ol>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om inomhusluft" />
+
+</ArticleLayout>

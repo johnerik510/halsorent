@@ -1,0 +1,103 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('forbattra-inomhusluft', '/inomhusluft/');
+
+const toc = [
+  { id: 'vadra-ratt', label: 'Vädra rätt' },
+  { id: 'kallor', label: 'Identifiera källorna' },
+  { id: 'luftrenare', label: 'Luftrenare' },
+  { id: 'vaxter', label: 'Växter och luftkvalitet' },
+  { id: 'fukt', label: 'Kontrollera fukt' },
+  { id: 'kemikalier', label: 'Minska kemikalier inomhus' },
+  { id: 'dagsrutin', label: 'Dagsrutin för bättre luft' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Hur mäter jag inomhusluftkvaliteten hemma?', a: 'Enkla CO2-mätare (500 till 2000 kronor) ger ett bra mått på ventilationens effektivitet. CO2 över 1000 ppm indikerar otillräcklig ventilation. Mer avancerade luftkvalitetsmätare mäter även PM2.5 och VOC.' },
+  { q: 'Hjälper gröna växter mot dålig inomhusluft?', a: 'NASA-studier visade att växter kan ta upp VOC i kontrollerade laboratorieförhållanden. I ett verkligt hem med normal luftomsättning är effekten försumbar. Du behöver hundratals växter för mätbar effekt. Växter är fina men inte en luftreningslösning.' },
+  { q: 'Är det farligt att sova med stängda fönster?', a: 'I ett välventilerat hem med mekanisk ventilation: nej. I ett hem med enbart naturlig ventilation kan CO2 stiga till 2000 till 3000 ppm i ett litet sovrum under natten, vilket ger sämre sömnkvalitet och trötthet. Vädra sovrummet på morgonen.' },
+  { q: 'Hur länge ska jag vädra för att luften ska bli bra?', a: 'Korsvädring med öppna fönster på motstående sidor: 5 till 10 minuter räcker för att byta ut luften i ett rum. Ett stängt fönster öppet på glänt i 30 minuter har avsevärt lägre effekt.' },
+  { q: 'Påverkar matlagning inomhusluften?', a: 'Ja avsevärt. Stekning på hög värme, framför allt av kött och fett, frigör PM2.5-partiklar i nivåer som överstiger WHO:s riktlinjer. Sätt på spisfläkten på full effekt och öppna ett fönster vid stekning.' },
+];
+---
+<ArticleLayout
+  title="Förbättra inomhusluften: 8 åtgärder som gör skillnad | Hälsorent"
+  description="Från att vädra rätt till att välja rätt växter. Konkreta åtgärder som faktiskt minskar partikelhalten och VOC i ditt hem, rangordnade efter effekt."
+  heroImage="/images/articles/inomhusluft.webp"
+  heroAlt="Ljust hem med öppna fönster och frisk luft som strömmar in"
+  publishDate="2026-04-29"
+  readingTime={7}
+  breadcrumbs={[{ label: 'Inomhusluft', href: '/inomhusluft/' }, { label: 'Förbättra inomhusluften' }]}
+  toc={toc}
+  category="Inomhusluft"
+>
+
+<p>Inomhusluften är 2 till 5 gånger mer förorenad än utomhusluften i ett typiskt hem, enligt Folkhälsomyndigheten. Dammpartiklar, mögelsporer, VOC från möbler och målning, koldioxid från andning och matlagningspartiklar ackumuleras om du inte aktivt jobbar för att ta bort dem.</p>
+
+<p>De åtgärder som ger störst effekt är inte de dyraste. Rätt vädring, kontroll av fuktkällor och minskad kemikalieanvändning inomhus har ofta större effekt på luftkvaliteten än en dyr luftrenare.</p>
+
+<h2 id="vadra-ratt">Vädra rätt</h2>
+
+<img src="/images/articles/inomhusluft.webp" alt="Öppet fönster med frisk luft och naturligt ljus" width="800" height="450" loading="lazy" />
+
+<p>Korsvädring (öppna fönster på motstående sidor) byter ut luften i ett rum på 5 till 10 minuter. Det är den snabbaste och billigaste åtgärden du kan ta.</p>
+
+<p>Vädra strategiskt: morgon och kväll när utomhusluften är renast och partikelhalterna lägst. Under pollensäsongen: vädra tidigt på morgonen (06:00 till 09:00) eller efter regn.</p>
+
+<p>Vädra alltid efter matlagning, dusch och städning. Dessa aktiviteter höjer tillfälligt partikel- och fukthalterna kraftigt.</p>
+
+<h2 id="kallor">Identifiera källorna</h2>
+
+<p>De vanligaste källorna till dålig inomhusluft i svenska hem:</p>
+
+<ul>
+  <li><strong>Matlagning:</strong> stekning och ugnsbakning höjer PM2.5 till extrema nivåer utan ventilation</li>
+  <li><strong>Fukt och mögel:</strong> badrum, kök, källare och krypgrunder. Mögel avger sporer och mykotoxiner dygnet runt. Se guiden om <a href="/mogel-och-fukt/mogel-i-hemmet/">mögel i hemmet</a> för identifiering.</li>
+  <li><strong>VOC från nya möbler och golv:</strong> MDF-skivor, laminatgolv och många tapeter avgasas i månader till år</li>
+  <li><strong>Rengöringsmedel och parfym:</strong> sprej-rengöringsmedel, luftfräschare och starka parfymer höjer VOC-halterna tillfälligt</li>
+  <li><strong>Husdjur:</strong> allergen, päls och dander</li>
+  <li><strong>Dammkvalster:</strong> allergen som är en permanent del av inomhusluften utan aktiv allergenreduktion</li>
+</ul>
+
+<h2 id="luftrenare">Luftrenare</h2>
+
+<p>En luftrenare med H13-filter är den effektivaste lösningen för att reducera partiklar, allergen och mögelsporer. Den ersätter inte källkontroll och vädring men kompletterar dem effektivt.</p>
+
+<p>Välj en modell med kapacitet för rumsytan. En undermålig luftrenare cirkulerar luften för sällan för att göra skillnad. Guiden om <a href="/inomhusluft/luftrenare-allergi/">luftrenare mot allergi</a> går igenom vad du ska titta efter.</p>
+
+<h2 id="vaxter">Växter och luftkvalitet</h2>
+
+<p>Populärt råd, men tyvärr överdrivet i de flesta fall. NASA:s studier genomfördes i täta, slutna behållare, inte i normala hem med luftrörelser. I ett verkligt hem med naturlig luftomsättning behöver du mer än 1000 växter för mätbar VOC-reduktion.</p>
+
+<p>Växter är positiva av andra skäl (estetik, välmående) men räkna dem inte som luftrening.</p>
+
+<h2 id="fukt">Kontrollera fukt</h2>
+
+<p>Relativ luftfuktighet mellan 40 och 50 procent är optimal: tillräckligt hög för att slemhinnor och hud inte torkar, tillräckligt låg för att dammkvalster och mögel inte trivs. Under 40 procent: luftfuktaren. Över 50 procent: avfuktare och förbättrad ventilation.</p>
+
+<p>Mät med en digital hygrometer. Se guiden om <a href="/inomhusluft/luftfuktighet-hemmet/">luftfuktighet i hemmet</a> för vad du ska göra om det är utanför rätt intervall.</p>
+
+<h2 id="kemikalier">Minska kemikalier inomhus</h2>
+
+<p>Välj bort produkter med starka parfymer, lösningsmedel och aerosol-sprejflaskor. Rengöringsmedel med enzymatisk aktivitet eller enkla kemikalier (bikarbonat, ättika) har avsevärt lägre VOC-emissioner än kommersiella alternativ. Lämna nyinköpta möbler att avgasa i garaget eller förrådet i några dagar innan de tas in i sovrum.</p>
+
+<h2 id="dagsrutin">Dagsrutin för bättre luft</h2>
+
+<ul>
+  <li><strong>Morgon:</strong> vädra sovrummet i 10 minuter</li>
+  <li><strong>Vid matlagning:</strong> spisfläkt på full effekt, fönster öppet</li>
+  <li><strong>Efter dusch:</strong> låt badrumsfönster/ventilation gå i 30 minuter</li>
+  <li><strong>Kväll:</strong> kort vädring av vardagsrum</li>
+  <li><strong>Veckovis:</strong> rengör filter i luftrenare och ventilationsdonen</li>
+</ul>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om inomhusluft" />
+
+</ArticleLayout>

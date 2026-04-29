@@ -1,0 +1,91 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('stada-fort', '/stadtips-och-rutiner/');
+
+const toc = [
+  { id: 'principer', label: 'Tre principer för snabbstädning' },
+  { id: '45-minuter', label: 'Genomstädning på 45 minuter' },
+  { id: 'prioritera', label: 'Prioritera rätt rum' },
+  { id: 'daglig-reset', label: 'Daglig 10-minutersrutin' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Vad är skillnaden mellan snabbstädning och vanlig städning?', a: 'Snabbstädning fokuserar på synliga ytor och de rum som används mest. Du hoppar över djupstädning (bakom möbler, inuti ugnen, under soffan). Det är inte en ersättning för djupstädning, utan ett sätt att hålla hemmet presentabelt mellan de grundligare städningarna.' },
+  { q: 'Hur städar jag effektivt med barn i huset?', a: 'Städa i 15-minutersintervall med raster. Involvera barnen med ålders­anpassade uppgifter (plocka leksaker, torka av låga ytor). Acceptera att det aldrig är perfekt med barn, fokusera på hälsoviktig städning (badrum, kök, sängkläder).' },
+  { q: 'Kan man städa för snabbt och göra ett dåligt jobb?', a: 'Ja. Att torka ytor utan rengöringsmedel (bara torr trasa) eller att dammsuga utan att flytta möbler innebär att smutsen stannar kvar. Snabb städning ska fortfarande vara effektiv, inte cosmetic.' },
+  { q: 'Vilket rum prioriteras vid snabbstädning?', a: 'Badrum och kök är alltid viktigast ur hygienperspektiv. Därefter sovrummet (allergi, sömnkvalitet). Sist vardagsrum och hall.' },
+  { q: 'Hur håller man hemmet rent utan att städa lika ofta?', a: 'Daglig 10-minutersrutin förebygger ansamling av smuts. Städa omgående efter mat, häng kläder direkt och skölj disken. Det kräver kontinuerliga mikromoment men minskar behovet av storstopp-städning.' },
+];
+---
+<ArticleLayout
+  title="Städa fort: genomstäda hela hemmet på under en timme | Hälsorent"
+  description="En strategisk genomstädning tar inte 3 timmar om du jobbar rätt. Så här städar du ett helt hem på 45 till 60 minuter med metodiken som faktiskt fungerar."
+  heroImage="/images/articles/fort.webp"
+  heroAlt="Städning i effektivt tempo med rätt verktyg och ordning"
+  publishDate="2026-04-29"
+  readingTime={6}
+  breadcrumbs={[{ label: 'Städtips & rutiner', href: '/stadtips-och-rutiner/' }, { label: 'Städa fort' }]}
+  toc={toc}
+  category="Städtips & rutiner"
+>
+
+<p>De flesta tar tre gånger längre på sig att städa än nödvändigt. Inte för att de är slöa, utan för att de saknar system. De städar reaktivt: städar det som ser smutsigast ut, byter uppgift halvvägs, går tillbaka och gör om. En genomstädning av ett normalstort hem tar 45 till 60 minuter med rätt system.</p>
+
+<p>Det kräver tre saker: rätt ordning, rätt utrustning och att göra en uppgift i hela hemmet innan du börjar med nästa.</p>
+
+<h2 id="principer">Tre principer för snabbstädning</h2>
+
+<img src="/images/articles/fort.webp" alt="Effektiv städning med tydlig struktur och rätt verktyg" width="800" height="450" loading="lazy" />
+
+<p><strong>1. Uppifrån och ner, rum för rum.</strong> Gå igenom hela hemmet med en uppgift (t.ex. plocka undan) innan du börjar med nästa (t.ex. dammtorka). Att byta kontext (rum + uppgift) kostar tid.</p>
+
+<p><strong>2. Lämna toalett och kök sist.</strong> De är mest tidskrävande och kräver separata rengöringsmedel. Gör dem sist när du redan är i "städläge".</p>
+
+<p><strong>3. Ha allt med dig.</strong> Samla all städutrustning i ett städset (eller en hink med handtag). Du ska inte gå tillbaka och hämta saker. Varje tur du gör utan att ha verktyget med dig är bortkastad tid.</p>
+
+<h2 id="45-minuter">Genomstädning på 45 minuter</h2>
+
+<p><strong>Minut 1–5: Samla och plocka undan.</strong> Gå igenom hela hemmet med en korg. Plocka upp allt som är på fel plats. Korg på köket. Gör inga halvstopp för att ställa saker på rätt plats, det gör du sist.</p>
+
+<p><strong>Minut 6–15: Badrum.</strong> Besputa toalettens insida, handfat och duschvägg med rengöringsmedel. Lät verka medan du torkar spegel och kranar. Skrubba toaletten. Fukttorka golvet. Badrum klart.</p>
+
+<p><strong>Minut 16–25: Dammsug alla rum.</strong> Börja med sovrummet (hälsoviktigast), sedan vardagsrum och hall. Ta med dammsugaren, flytta inte möbler. Fokus på de ytor som syns och beträds.</p>
+
+<p><strong>Minut 26–35: Dammtorka och torka ytor.</strong> Dammtorka hyllor, bord och tv-bänkar i alla rum. Torka av kylskåpets utsida och diskho i köket.</p>
+
+<p><strong>Minut 36–45: Kök och hall.</strong> Torka av spisen, bänkytor och mikrovåg. Fukttorka kökets golv. Torka av hallen. Ställ undan saker från korgen.</p>
+
+<p>Referens för ett bra städschema med fördjupning: <a href="/stadtips-och-rutiner/stadschema-hemmet/">städschema för hemmet</a>.</p>
+
+<h2 id="prioritera">Prioritera rätt rum</h2>
+
+<p>Om du har 20 minuter och måste välja:</p>
+
+<ol>
+  <li><strong>Badrum:</strong> alltid. Toaletten är den bakterietätaste ytan i hemmet.</li>
+  <li><strong>Kök:</strong> alltid. Matberedningsytor och diskho kräver regelbunden rengöring.</li>
+  <li><strong>Sovrum:</strong> byt sängkläder och dammsug om det är länge sedan. Dammkvalsterallergen ansamlas i sängen.</li>
+  <li><strong>Vardagsrum och hall:</strong> kan vänta om tid saknas.</li>
+</ol>
+
+<h2 id="daglig-reset">Daglig 10-minutersrutin</h2>
+
+<p>En daglig rutinstädning på 10 minuter förebygger att det behövs en stor insats:</p>
+
+<ul>
+  <li>Morgon (3 min): bädd sängen, torka av diskbänken, plocka undan köket</li>
+  <li>Kväll (7 min): dammsug köket och hallen om det behövs, torka av spisen, skölj duschen</li>
+</ul>
+
+<p>Den dagliga rutinen gör att söndagens veckolstädning kan reduceras till 30 till 40 minuter istället för 90 minuter. Och <a href="/stadtips-och-rutiner/ratt-ordning-stadning/">rätt ordning när du städar</a> gör varje städtillfälle mer effektivt.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om städtips" />
+
+</ArticleLayout>

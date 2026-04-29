@@ -1,0 +1,107 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('allergivanlig-dammsugare', '/allergi-och-astma/');
+
+const toc = [
+  { id: 'hepa-filter', label: 'HEPA-filter: vad det betyder' },
+  { id: 'tat-konstruktion', label: 'Tät konstruktion' },
+  { id: 'sugkraft', label: 'Sugkraft och flöde' },
+  { id: 'typer', label: 'Typ av dammsugare' },
+  { id: 'robotdammsugare', label: 'Robotdammsugare vid allergi' },
+  { id: 'skota', label: 'Sköta dammsugaren rätt' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Måste HEPA-filtret bytas ut?', a: 'Ja. Ett HEPA-filter som är fullt av partiklar fungerar som en allergenreservoar. Byt enligt tillverkarens rekommendation, vanligtvis var 6 till 12 månader beroende på användning.' },
+  { q: 'Är dyra dammsugare bättre för allergiker?', a: 'Pris korrelerar inte automatiskt med allergivänlighet. Det viktiga är certifierat HEPA-filter (H13 eller H14) och en tät konstruktion. Vissa mellanprissegmentsdammsugare presterar bättre än dyra modeller utan tät byggnation.' },
+  { q: 'Kan jag använda en handdammsugare vid allergi?', a: 'Handdammsugare är sällan täta nog och saknar ofta HEPA-filter. De fungerar som komplement, inte som primär dammsugare vid allergi.' },
+  { q: 'Hur vet jag om min dammsugare läcker ut allergenerna igen?', a: 'Lukta på frånluften under drift. Känner du damm eller en instäng lukt är konstruktionen inte tät. En väl tätad HEPA-dammsugare luktar ingenting alls i frånluften.' },
+  { q: 'Hur ofta ska jag dammsuga vid allergi?', a: 'Sovrum: minst en till två gånger per vecka. Övriga rum: en gång per vecka. Dammsug alltid med fönstret stängt och lämna rummet i 20 minuter efteråt, så att uppvirvlat damm hinner sätta sig.' },
+];
+---
+<ArticleLayout
+  title="Dammsugare för allergiker: vad du ska titta efter | Hälsorent"
+  description="HEPA-filter, tät konstruktion och rätt sugkraft. Vad som faktiskt spelar roll när du väljer dammsugare vid allergi, och vad du kan strunta i."
+  heroImage="/images/articles/dammsugare.webp"
+  heroAlt="Modern dammsugare med HEPA-filter på ett ljust trägolv"
+  publishDate="2026-04-29"
+  readingTime={7}
+  breadcrumbs={[{ label: 'Allergi & astma', href: '/allergi-och-astma/' }, { label: 'Dammsugare för allergiker' }]}
+  toc={toc}
+  category="Allergi & astma"
+>
+
+<p>En vanlig dammsugare utan tätt filter suger upp dammkvalster och allergenpartiklar underifrån, för att sedan blåsa ut en del av dem igen genom motorns avluft. Resultatet: du förflyttar allergenerna snarare än att ta bort dem. En allergivänlig dammsugare gör det omvända, den håller kvar allt som sugs upp.</p>
+
+<p>De tre egenskaperna som faktiskt avgör är HEPA-filtrets klass, konstruktionens täthet och hur lätt det är att byta påse utan att exponeras för allergener.</p>
+
+<h2 id="hepa-filter">HEPA-filter: vad det betyder</h2>
+
+<img src="/images/articles/dammsugare.webp" alt="Dammsugare med synligt HEPA-filter" width="800" height="450" loading="lazy" />
+
+<p>HEPA (High Efficiency Particulate Air) är en filtreringsstandard, inte ett märke. Filtret ska fånga minst 99,97 procent av partiklar med en diameter på 0,3 mikrometer. Det är den partikelstorlek som är svårast att filtrera och som dammkvalsterallergenerna befinner sig i.</p>
+
+<p>Det finns tre HEPA-klasser som är relevanta för hemmabruk:</p>
+
+<ul>
+  <li><strong>H12:</strong> fångar 99,5 procent av 0,3 mikrometer partiklar. Acceptabelt men inte tillräckligt vid svår allergi.</li>
+  <li><strong>H13:</strong> fångar 99,95 procent. Det minimifilter du ska kräva vid allergi.</li>
+  <li><strong>H14:</strong> fångar 99,995 procent. Bäst för svår allergi och astma.</li>
+</ul>
+
+<p>Titta efter den exakta filterbeteckningen i produktspecifikationen, inte bara påståendet "HEPA-filter". Marknadsföringstext som "HEPA-liknande" eller "HEPA-standard" utan klassangivelse är inte tillförlitlig.</p>
+
+<h2 id="tat-konstruktion">Tät konstruktion</h2>
+
+<p>HEPA-filtret är meningslöst om luften kan ta genvägar runt filtret. En dammsugares täthet kallas "sealed system" eller "fullständigt tätat system" av tillverkarna. Det innebär att all luft som sugs in måste passera genom filtret innan den blåses ut, inga läckor runt fogar, slanganslutningar eller luckorna.</p>
+
+<p>Täthetskravet gäller hela systemet: sugmunstycket, slangen, behållaren, filtret och motorhuset. Dammsugare testade och certifierade enligt IEC 62885-2 eller British Allergy Foundation-certifiering uppfyller täthetskraven.</p>
+
+<h2 id="sugkraft">Sugkraft och flöde</h2>
+
+<p>Hög watt-siffra garanterar inte bra sugkraft, watt är motorns elförbrukning, inte faktisk prestanda. Titta istället på luftflödet i liter per sekund och sugnivån i kilopascal:</p>
+
+<ul>
+  <li><strong>Hårt golv:</strong> 200 till 300 watt räcker om konstruktionen är effektiv</li>
+  <li><strong>Heltäckningsmatta (välj bort om du är allergiker):</strong> 350 till 450 watt med roterande borste</li>
+  <li><strong>Soffklädslar och madrasser:</strong> separat klä-/tapetserarborste är viktigare än råkraft</li>
+</ul>
+
+<p>Om du har <a href="/allergi-och-astma/dammkvalster-i-sang/">dammkvalster i sängen</a> är en handhållen madrassstav ett viktigt tillbehör. Den vibrerar löst damm ur textilier för effektivare uppsamling.</p>
+
+<h2 id="typer">Typ av dammsugare</h2>
+
+<p><strong>Klassisk påsdammsugare</strong> är vanligtvis bäst vid allergi. Påsen håller dammet inneslutet och kan kastas utan att allergenerna sprids. Välj papperspåsar märkta "allergi" eller "microfilter" för bästa slutning.</p>
+
+<p><strong>Cyklondammsugare (påslösa)</strong> kräver att du tappar behållaren regelbundet, vilket kan frigöra allergenpartiklar om det inte görs utomhus eller med mask. Bra cyklondammsugare med H13-filter fungerar ändå, men kräver mer försiktighet vid tömning.</p>
+
+<p><strong>Robotdammsugare</strong> behandlas separat nedan.</p>
+
+<h2 id="robotdammsugare">Robotdammsugare vid allergi</h2>
+
+<p>En robotdammsugare håller golvet dagligen rent och minskar den totala allergenbelastningen. Det ersätter inte en rejäl veckodammsugning med HEPA-dammsugare, men det är ett utmärkt komplement. Välj modeller med HEPA-filter och sluten behållare.</p>
+
+<p>Viktigt: töm robotdammsugaren utomhus eller med mask om du är känslig. Automatiska tömningsstationer, där roboten tömmer sig i en sluten behållare, är ett utmärkt alternativ och sprider inga allergener vid tömning.</p>
+
+<p>För att förstå varför daglig robotdammsugning i sovrummet gör skillnad: läs om <a href="/inomhusluft/luftrenare-allergi/">luftrenare mot allergi</a> och kombinera för bästa effekt.</p>
+
+<h2 id="skota">Sköta dammsugaren rätt</h2>
+
+<p>En dammsugare som aldrig rengörs blir en allergenspridare. Tre rutiner som gäller oavsett modell:</p>
+
+<ol>
+  <li><strong>Byt filter i rätt tid:</strong> ett igensatt HEPA-filter tappar effektivitet och tvingar mer luft runt filtret. Byt enligt tillverkarens rekommendation.</li>
+  <li><strong>Rengör borstar och munstycken:</strong> hår och fibrer som samlas i borsten sprids tillbaka på golvet vid nästa körning. Rengör efter varje användning.</li>
+  <li><strong>Tappa behållaren eller byt påse regelbundet:</strong> vänta inte tills den är proppfull. En halvfull behållare eller påse ger bättre sugkraft och minskar risken att allergenerna pressas ut genom filtret.</li>
+</ol>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om allergi" />
+
+</ArticleLayout>

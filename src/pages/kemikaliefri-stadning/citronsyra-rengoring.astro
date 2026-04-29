@@ -1,0 +1,124 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('citronsyra-rengoring', '/kemikaliefri-stadning/');
+
+const toc = [
+  { id: 'varfor-citronsyra', label: 'Varför citronsyra?' },
+  { id: 'avkalkning', label: 'Avkalkning steg för steg' },
+  { id: 'diskmaskin', label: 'Diskmaskin' },
+  { id: 'tvattmaskin', label: 'Tvättmaskin' },
+  { id: 'dusch', label: 'Duschkabin och kranar' },
+  { id: 'varning', label: 'Ytor du ska skydda' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Hur stark lösning ska jag blanda?', a: 'För avkalkning: 1 till 2 matskedar citronsyrapulver per liter vatten (ungefär 5 till 10 procents lösning). För kranar och duschfästen: starkare lösning, 2 till 3 matskedar per 5 dl vatten fungerar utmärkt.' },
+  { q: 'Kan citronsyra ersätta ättika?', a: 'Citronsyra är starkare mot kalk och lämnar ingen lukt. Ättika har fördelen att den är flytande från start och billigare. De kan användas omväxlande beroende på uppgift.' },
+  { q: 'Hur ofta ska jag avkalka kaffemaskinen?', a: 'Beroende på vattenhårdheten i din ort. Hårt vatten (vanligt i Stockholmsregionen): var 1 till 2 månader. Mjukt vatten (vanligt i västra Sverige): var 3 till 4 månader. Följ maskinens avkalkningsindikator om den har en.' },
+  { q: 'Är citronsyra säkert att använda inomhus?', a: 'Ja. Citronsyra är biologiskt nedbrytbart, luktar inte och är ofarligt vid normalt bruk. Det är godkänt som livsmedelstillsats (E330). Undvik kontakt med ögonen och skölj huden om du arbetar med koncentrerade lösningar.' },
+  { q: 'Kan jag köpa citronsyra i matbutiken?', a: 'Ja, som "syranvändning" eller "bakpulvertillbehör" i mataffären, eller billigare i kilo-pack i välsorterade livsmedels- och kemikalieaffärer. Apoteket säljer också citronsyrapulver.' },
+];
+---
+<ArticleLayout
+  title="Citronsyra för rengöring: avkalkning och mer | Hälsorent"
+  description="Citronsyra är det kraftfullaste naturliga avkalkningsmedlet. Steg-för-steg: avkalka kaffemaskinen, vattenkokaren, diskmaskinen och duschfältet."
+  heroImage="/images/articles/citronsyra.webp"
+  heroAlt="Citronsyrapulver i glasburk bredvid en citron på en köksbänk"
+  publishDate="2026-04-29"
+  readingTime={6}
+  breadcrumbs={[{ label: 'Kemikaliefri städning', href: '/kemikaliefri-stadning/' }, { label: 'Citronsyra för rengöring' }]}
+  toc={toc}
+  category="Kemikaliefri städning"
+>
+
+<p>Citronsyra är starkare än ättika mot kalk, luktar inte och lämnar inga rester på ytor. Det är det naturliga avkalkningsmedlet du bör ha i köket. Löst i vatten bildar det en sur lösning som reagerar med kalciumkarbonat (kalk) och löser upp det kemiskt, utan skrubbning.</p>
+
+<p>Det finns i mataffären för ett par kronor per hushållning och räcker länge. Köper du i bulkpåsar via välsorterade butiker är det ett av de billigaste rengöringsmedlen per liter du kan använda.</p>
+
+<h2 id="varfor-citronsyra">Varför citronsyra?</h2>
+
+<img src="/images/articles/citronsyra.webp" alt="Citronsyrapulver i skål för naturlig avkalkning" width="800" height="450" loading="lazy" />
+
+<p>Citronsyras pH är ungefär 2,1 i koncentrerad lösning, det vill säga lika starkt som stark ättika. Fördelen över ättika är att citronsyra inte avger ättiksyraångorna som kan irritera luftvägarna, och att det är luktfritt efter att lösningen sköljs bort.</p>
+
+<p>Citronsyra fungerar genom att binda till kalciumjoner i kalciumkarbonat och bilda vattenlösligt kalciumcitrat, som enkelt sköljs bort. Samma princip gäller för mineralavlagringar från hårt vatten: järn, magnesium och kalcium.</p>
+
+<h2 id="avkalkning">Avkalkning steg för steg</h2>
+
+<p><strong>Vattenkokare:</strong></p>
+<ol>
+  <li>Fyll vattenkokaren med vatten till hälften</li>
+  <li>Tillsätt 1 matsked citronsyrapulver</li>
+  <li>Koka upp</li>
+  <li>Låt stå i 30 minuter</li>
+  <li>Häll ut, skölj tre gånger med rent vatten</li>
+  <li>Koka upp en gång med rent vatten och häll ut, för att avlägsna eventuella rester</li>
+</ol>
+
+<p><strong>Kaffebryggare (droppmodell):</strong></p>
+<ol>
+  <li>Blanda 1 liter vatten med 2 matskedar citronsyra</li>
+  <li>Häll i vattenbehållaren</li>
+  <li>Kör ett normalt bryggprogram utan kaffe</li>
+  <li>Kör sedan två program med rent vatten</li>
+</ol>
+
+<h2 id="diskmaskin">Diskmaskin</h2>
+
+<p>Diskmaskiner i hårt vatten samlar kalk på värmeelement och spolarmar, vilket minskar diskkvaliteten och ökar energiförbrukning. Avkalka en gång i månaden:</p>
+
+<ol>
+  <li>Töm diskmaskinen helt</li>
+  <li>Häll 3 matskedar citronsyrapulver i bestickkorgen eller direkt i botten</li>
+  <li>Kör ett 60-graders program</li>
+  <li>Kör ett kort sköljelsprogram med rent vatten efteråt</li>
+</ol>
+
+<p>Citronsyra kombinerat med regelbunden filterrengöring håller diskmaskinen i utmärkt skick utan dyra fabrikstillverkade avkalkningsmedel. Mer om diskmaskinens övriga rengöring i guiden om <a href="/rengoring-av-apparater/rengora-diskmaskin/">rengöra diskmaskin</a>.</p>
+
+<h2 id="tvattmaskin">Tvättmaskin</h2>
+
+<p>Tvättmaskinen samlar kalk i trumman, på värmeelementet och i tvättmedelsfacket. Avkalkning var tredje månad vid hårt vatten:</p>
+
+<ol>
+  <li>Häll 5 matskedar citronsyrapulver i trumman (inte i tvättmedelsfacket)</li>
+  <li>Kör ett 60-graders tvättprobram utan tvätt</li>
+</ol>
+
+<p>Kombinera avkalkning med en bikarbonatssköljning för att också ta bort tvålrester och lukt. Detaljerad guide i <a href="/rengoring-av-apparater/rengora-tvattmaskin/">rengöra tvättmaskin</a>.</p>
+
+<h2 id="dusch">Duschkabin och kranar</h2>
+
+<p>Kalkavlagringar på kran, duschfäste och glasdörrar tar du bort med koncentrerad citronsyralösning:</p>
+
+<ol>
+  <li>Blanda 3 matskedar citronsyra i 5 dl vatten</li>
+  <li>Spraya eller tillämpa med trasa direkt på kalkavlagringarna</li>
+  <li>Lät verka i 5 till 15 minuter (längre för tjocka avlagringar)</li>
+  <li>Skrubba med borste eller skrubbetrasa</li>
+  <li>Skölj noggrant med vatten</li>
+</ol>
+
+<p>För mycket tjocka avlagringar: dränk pappershanddukar i citronsyralösning och fäst dem mot ytan med tejp. Lät verka i 1 till 2 timmar.</p>
+
+<h2 id="varning">Ytor du ska skydda</h2>
+
+<p>Citronsyra är en syra och ska inte användas på:</p>
+
+<ul>
+  <li><strong>Marmor och kalksten:</strong> syran löser upp stenytan och ger permanenta mattfläckar</li>
+  <li><strong>Granit:</strong> kan bli matt med upprepat bruk</li>
+  <li><strong>Eloxerat aluminium:</strong> ytan frätes</li>
+  <li><strong>Äldre gummipackningar:</strong> kan med tid bli spröda</li>
+</ul>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om kemikaliefri städning" />
+
+</ArticleLayout>

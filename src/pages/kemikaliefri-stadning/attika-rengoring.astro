@@ -1,0 +1,106 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('attika-rengoring', '/kemikaliefri-stadning/');
+
+const toc = [
+  { id: 'vad-ar-attika', label: 'Vad är ättika?' },
+  { id: 'vad-klarar', label: 'Vad ättika klarar' },
+  { id: 'vad-klarar-inte', label: 'Vad ättika inte klarar' },
+  { id: 'blanda-inte', label: 'Blanda aldrig med bikarbonat' },
+  { id: 'forbjudna-ytor', label: 'Ytor du ska skydda' },
+  { id: 'praktisk-guide', label: 'Praktisk guide rum för rum' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Vilken styrka ättika ska jag köpa?', a: '12-procentig ättika (ättiksprit) är det vanligaste alternativet för rengöring. 24-procentig är starkare men kräver mer försiktighet. Vanlig matättika (6 procent) fungerar för lätta uppgifter men är svag mot kalk.' },
+  { q: 'Luktar ättika länge efter rengöring?', a: 'Ättiksyralukten försvinner inom 20 till 30 minuter efter torkning. Vädra rummet om du är känslig. Lukten är ett tecken på att ättiksyran avdunstar, vilket inte lämnar rester på ytan.' },
+  { q: 'Kan ättika ta bort rost?', a: 'Ja, utspädd ättika löser upp ytlig rost. Lägg rostiga metallföremål i ren ättika i 30 minuter till ett par timmar, borsta sedan bort lös rost. Fungerar på verktyg, bultar och liknande.' },
+  { q: 'Är ättika säkert för septictankar?', a: 'Ja. Ättika är biologiskt nedbrytbart och skadar inte bakterierna i en septictank i normala mängder.' },
+  { q: 'Kan jag blanda ättika och diskmedel?', a: 'Diskmedel innehåller ofta tensider med ett basiskt pH. Ättika (surt) neutraliserar dem delvis, vilket minskar effekten på båda. Bättre att använda dem separat.' },
+];
+---
+<ArticleLayout
+  title="Ättika vid rengöring: vad den klarar och vad den inte klarar | Hälsorent"
+  description="Ättika löser upp kalk och dödar bakterier, men ska aldrig blandas med bikarbonat eller användas på marmor. Den kompletta guiden till ättika som rengöringsmedel."
+  heroImage="/images/articles/attika.webp"
+  heroAlt="Flaska med ättiksprit bredvid naturliga rengöringsmedel i ett kök"
+  publishDate="2026-04-29"
+  readingTime={6}
+  breadcrumbs={[{ label: 'Kemikaliefri städning', href: '/kemikaliefri-stadning/' }, { label: 'Ättika vid rengöring' }]}
+  toc={toc}
+  category="Kemikaliefri städning"
+>
+
+<p>Ättika är ättiksyra löst i vatten. Den är surt (pH 2 till 3), vilket gör den effektiv mot kalk (alkaliskt) och bakterier. Det är ett av de billigaste rengöringsmedlen du kan köpa, 12-procentig ättiksprit kostar runt 20 kronor per liter, och det är fullt biologiskt nedbrytbart.</p>
+
+<p>Men ättika har tydliga begränsningar. Den ska aldrig användas på natursten, den tar inte bort fett, och det populära rådet om att blanda ättika med bikarbonat ger nästan ingen rengöringseffekt alls.</p>
+
+<h2 id="vad-ar-attika">Vad är ättika?</h2>
+
+<img src="/images/articles/attika.webp" alt="Ättika i sprayflaska för naturlig rengöring" width="800" height="450" loading="lazy" />
+
+<p>Ättiksyra (CH3COOH) är en svag syra som löser upp alkaliska ämnen: kalk, kalkavlagringar, tvålrester och mineralavlagringar. Den är inte tillräckligt stark för att lösa upp fett (neutralt pH) eller organiska rester som kräver alkaliska rengöringsmedel.</p>
+
+<p>12-procentig ättiksprit (ättika) är den koncentration som fungerar bäst för rengöring. Vanlig matättika på 6 procent är för svag för kraftig kalk. 24-procentig ättika bör spädas ut till hälften för de flesta ytor.</p>
+
+<h2 id="vad-klarar">Vad ättika klarar</h2>
+
+<ul>
+  <li><strong>Kalkavlagringar:</strong> kran, duschfäste, vattenkokare, kaffebryggare, diskmaskinens avkalkning</li>
+  <li><strong>Tvålrester och mineralfilm:</strong> duschdörrar, kakelfogar, badrumsgolv</li>
+  <li><strong>Bakterier:</strong> E. coli och Salmonella på hårda ytor (inte ett desinfektionsmedel i klinisk mening, men effektivt i hemmet)</li>
+  <li><strong>Lukt:</strong> desodoriserande effekt i sophinkar och avlopp</li>
+  <li><strong>Avlopp:</strong> häll ättika i avloppet följt av bikarbonat och sedan hett vatten för att lösa upp kalkavlagringar och fettfilm (notera: kombinationen bikarbonat + ättika är okej här, se nedan)</li>
+  <li><strong>Tvättmaskin och diskmaskin:</strong> regelbunden avkalkning med ättika förlänger maskinernas livslängd</li>
+</ul>
+
+<p>För att rengöra tvättmaskinen med ättika: häll 2 dl ättiksprit i facket för sköljmedel och kör ett 60-graders tvättprobram utan tvätt. Det löser upp kalkavlagringar och tvålrester. Läs mer i guiden om <a href="/rengoring-av-apparater/rengora-tvattmaskin/">rengöra tvättmaskin</a>.</p>
+
+<h2 id="vad-klarar-inte">Vad ättika inte klarar</h2>
+
+<ul>
+  <li><strong>Fett:</strong> fett är neutralt och reagerar inte med syra. Använd diskmedel, bikarbonat eller alkaliska avfettningsmedel mot fett.</li>
+  <li><strong>Djupa mögelangrepp:</strong> ättika dämpar mögel ytligt men tar inte bort djup mögeltillväxt</li>
+  <li><strong>Inbrända matskorpor:</strong> kräver mekanisk skrubbning och/eller bikarbonat</li>
+  <li><strong>Rost:</strong> ättika löser ytlig rost, men djup rost kräver andra metoder</li>
+</ul>
+
+<h2 id="blanda-inte">Blanda aldrig med bikarbonat</h2>
+
+<p>Kombinationen ättika och bikarbonat är förmodligen det vanligaste felaktiga rådet i hemmasrengöring. De reagerar energiskt (bubblar) och neutraliserar varandra: pH-effekterna tar ut varandra, och det som bildas är natriumacetat och koldioxid, inget aktivt rengöringsmedel.</p>
+
+<p>Den enda situationen där kombinationen är meningsfull är i avloppet: bubblingen hjälper till att fysiskt lossa fettfilm och kalk, som sedan kan sköljas bort med hett vatten. Effekten är mekanisk, inte kemisk.</p>
+
+<p>Använd ättika och bikarbonat på separata tillfällen för separata uppgifter. Ättika mot kalk, bikarbonat mot fett och lukt. Läs om <a href="/kemikaliefri-stadning/rengora-med-bikarbonat/">rengöra med bikarbonat</a> för att se när det är rätt verktyg.</p>
+
+<h2 id="forbjudna-ytor">Ytor du ska skydda</h2>
+
+<p>Ättika är aggressivt mot alkaliska material. Använd det aldrig på:</p>
+
+<ul>
+  <li><strong>Marmor, kalksten och travertin:</strong> natursten med kalciumkarbonat löses upp av ättiksyra. Ger bestående mattighet och etsar ytan.</li>
+  <li><strong>Granit:</strong> kan bli matt med upprepat ättikanvändande</li>
+  <li><strong>Poröst kakel utan glasyr:</strong> ättika penetrerar och kan fräta</li>
+  <li><strong>Eloxerat aluminium:</strong> ytterskiktet löses upp</li>
+  <li><strong>Gummipackningar i äldre hushållsmaskiner:</strong> ättika kan med tiden torka ut och spricka gamla gummipackningar</li>
+  <li><strong>Träytor utan tätning:</strong> syran tränger in i träet och kan missfärga</li>
+</ul>
+
+<h2 id="praktisk-guide">Praktisk guide rum för rum</h2>
+
+<p><strong>Badrum:</strong> Blanda lika delar ättika och vatten i en sprayflaska. Spraya på kalkbelagda ytor (inte marmor), vänta 5 till 10 minuter, skrubba och skölj. För envis kalk: lägg pappershanddukar dränkta i ren ättiksprit mot ytan i 30 minuter.</p>
+
+<p><strong>Kök:</strong> Spraya ättika-vattenblandning på bänkytor som har mineralfilm eller tvålrester. Diska inte med ättika om du har stenbänkskivor i marmor eller kalksten.</p>
+
+<p><strong>Diskmaskin:</strong> Häll 2 dl ättiksprit i botten av tom diskmaskin och kör ett normalt program. Månadsvis underhåll mot kalk. Mer detaljer i guiden om <a href="/rengoring-av-apparater/rengora-diskmaskin/">rengöra diskmaskin</a>.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om kemikaliefri städning" />
+
+</ArticleLayout>

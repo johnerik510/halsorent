@@ -1,0 +1,119 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('luftfuktighet-hemmet', '/inomhusluft/');
+
+const toc = [
+  { id: 'optimal-niva', label: 'Optimal nivå' },
+  { id: 'for-torr', label: 'Om luften är för torr' },
+  { id: 'for-fuktig', label: 'Om luften är för fuktig' },
+  { id: 'mata', label: 'Hur du mäter' },
+  { id: 'luftfuktare', label: 'Luftfuktare' },
+  { id: 'avfuktare', label: 'Avfuktare' },
+  { id: 'rum-for-rum', label: 'Rum för rum' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Vad är normal luftfuktighet inomhus i Sverige?', a: 'Under uppvärmningssäsongen (oktober till april) sjunker inomhusluften ofta till 20 till 30 procent i centraluppvärmda hem. Det är för torrt för optimal hälsa. Sommartid kan fuktigheten stiga till 60 procent eller mer, vilket gynnar dammkvalster och mögel.' },
+  { q: 'Kan hög luftfuktighet skada huset?', a: 'Ja. Relativ luftfuktighet över 60 procent i längre perioder ökar risken för kondensation på kalla ytor (fönster, ytterväggar), vilket kan leda till mögelskador och rötskador.' },
+  { q: 'Vilken typ av luftfuktare är bäst?', a: 'Ultrasonikfuktare är tyst och billiga men kräver destillerat eller avmineraliserat vatten, annars sprider de kalkpartiklar i luften. Ångfuktare kokar vatten och är hygieniska men förbrukar mer energi. Evaporationsfuktare med filter är ett bra mellanalternativ.' },
+  { q: 'Hur påverkar luftfuktigheten trä och möbler?', a: 'Trägolv och trämöbler sväller och krymper med luftfuktighetsförändringar. Håll luftfuktigheten stabil mellan 40 och 50 procent, framför allt om du har massivt trägolv.' },
+  { q: 'Är det bra att ha växter för att höja luftfuktigheten?', a: 'Växter transpirerar och höjer luftfuktigheten lokalt, men effekten är liten i ett normalt rum. En växt i ett litet rum höjer fuktigheten med 1 till 3 procent. Du behöver många växter för mätbar effekt.' },
+];
+---
+<ArticleLayout
+  title="Luftfuktighet i hemmet: rätt nivå för hälsa och hus | Hälsorent"
+  description="För låg luftfuktighet torkar slemhinnorna. För hög gynnar dammkvalster och mögel. Den optimala nivån är 40 till 50 procent, och så här når du dit."
+  heroImage="/images/articles/luftfuktighet.webp"
+  heroAlt="Digital hygrometer som visar luftfuktighet och temperatur i ett hem"
+  publishDate="2026-04-29"
+  readingTime={6}
+  breadcrumbs={[{ label: 'Inomhusluft', href: '/inomhusluft/' }, { label: 'Luftfuktighet i hemmet' }]}
+  toc={toc}
+  category="Inomhusluft"
+>
+
+<p>Luftfuktigheten i ditt hem påverkar din hälsa, dammkvalsterpopulationen, mögelrisken och träets livslängd. De flesta svenska hem har för torr luft under vintermånaderna och för hög fuktighet under sommaren, och båda extremerna är problematiska.</p>
+
+<p>Rätt nivå är inte komplicerad att uppnå, men den kräver mätning, inte gissning.</p>
+
+<h2 id="optimal-niva">Optimal nivå</h2>
+
+<img src="/images/articles/luftfuktighet.webp" alt="Hygrometer och termometer för mätning av inomhusmiljö" width="800" height="450" loading="lazy" />
+
+<p>Forskning från bland annat WHO:s riktlinjer för inomhusmiljö och Folkhälsomyndigheten pekar på 40 till 50 procents relativ luftfuktighet som det optimala intervallet för hälsa och husintegritet.</p>
+
+<ul>
+  <li><strong>Under 30 procent:</strong> slemhinnor torkar ut, ökad infektionskänslighet, statisk elektricitet, trä och möbler krymper</li>
+  <li><strong>30 till 40 procent:</strong> acceptabelt men inte optimalt. Lättare irriterade luftvägar vid andningsbesvär.</li>
+  <li><strong>40 till 50 procent:</strong> optimalt. Dammkvalster trivs sämre, inga problem med torra slemhinnor.</li>
+  <li><strong>50 till 60 procent:</strong> gränszonen. Dammkvalster trivs, men ingen omedelbar mögelrisk.</li>
+  <li><strong>Över 60 procent:</strong> dammkvalster multiplicerar kraftigt, kondensationsrisk på kalla ytor, mögelrisk</li>
+</ul>
+
+<p>Att hålla fuktigheten under 50 procent är en av de mest effektiva metoderna för att kontrollera dammkvalsterpopulationen. Se guiden om <a href="/allergi-och-astma/dammkvalster-i-sang/">dammkvalster i sängen</a> för sammanhang.</p>
+
+<h2 id="for-torr">Om luften är för torr</h2>
+
+<p>Under uppvärmningssäsongen är inomhusluften ofta 20 till 35 procent i svenska hem. Uppvärmning sänker den relativa luftfuktigheten (varm luft kan hålla mer fukt, men du tillför ingen ny fukt). Åtgärder:</p>
+
+<ul>
+  <li>Använd en luftfuktare i sovrum och vardagsrum</li>
+  <li>Vädra regelbundet (ta in ny utomhusluft som är fuktigare under vintern)</li>
+  <li>Torka tvätt inomhus (höjer fuktigheten avsevärt)</li>
+  <li>Lämna badrumsdörren öppen efter dusch</li>
+  <li>Ställ ut skålar med vatten nära element (enkel lösning med liten effekt)</li>
+</ul>
+
+<h2 id="for-fuktig">Om luften är för fuktig</h2>
+
+<p>Hög luftfuktighet under sommar eller i källare/badrum kan leda till mögelskador. Åtgärder:</p>
+
+<ul>
+  <li>Vädra mer, framför allt på morgonen när utomhusluften är svalare och relativt torrare</li>
+  <li>Säkerställ att köksfläkt och badrumsfläkt fungerar och används</li>
+  <li>Använd en avfuktare i källare och krypgrunder</li>
+  <li>Kontrollera att ventilationssystemet fungerar, igentäppta ventilationsdon är en vanlig orsak till hög fuktighet</li>
+  <li>Kontrollera om det finns vattenläckage eller byggfukt som driver upp fuktigheten</li>
+</ul>
+
+<p>Om hög fuktighet leder till synligt mögel: se guiden om <a href="/mogel-och-fukt/mogel-i-hemmet/">mögel i hemmet</a> för åtgärder.</p>
+
+<h2 id="mata">Hur du mäter</h2>
+
+<p>En digital hygrometer kostar 100 till 300 kronor och är tillräckligt noggrann för hemmabruk (±5 procent). Köp en med termometerfunktion för att förstå sambandet mellan temperatur och luftfuktighet.</p>
+
+<p>Placera hygromtern i sovrummet för mätning under sömn och i vardagsrummet för dagsmätning. Mät under minst en vecka för att se variationen.</p>
+
+<h2 id="luftfuktare">Luftfuktare</h2>
+
+<p>Tre vanliga typer:</p>
+
+<ul>
+  <li><strong>Ultrasonikfuktare:</strong> skapar dimma via ultraljud. Tyst, billig i drift. <em>Kräver destillerat vatten</em> annars sprids kalkpartiklar i luften som fastnar på möbler och inhaleras.</li>
+  <li><strong>Ångfuktare:</strong> kokar vatten och avger ånga. Hygienisk (bakterier dödas vid kokning), men förbrukar mer el och kan vara varm att ha nära barn.</li>
+  <li><strong>Evaporationsfuktare:</strong> vatten avdunstar naturligt via ett filter. Energisnål, men filtrena måste bytas regelbundet.</li>
+</ul>
+
+<h2 id="avfuktare">Avfuktare</h2>
+
+<p>Källare, krypgrunder och äldre badrum behöver ofta aktiv avfuktning. En kondensavfuktare (400 till 2000 kronor) drar fuktig luft över ett kylbatteri och samlar kondensvatten i en behållare. Välj modell med automatisk stopp vid full behållare och hygrostat för att hålla fuktigheten på önskad nivå.</p>
+
+<h2 id="rum-for-rum">Rum för rum</h2>
+
+<ul>
+  <li><strong>Sovrum:</strong> prioritera 40 till 50 procent, dammkvalster och sömnkvalitet påverkas direkt</li>
+  <li><strong>Badrum:</strong> hög fuktighet normalt, men den ska sjunka till under 60 procent inom 30 minuter efter dusch</li>
+  <li><strong>Kök:</strong> vädra vid matlagning, spisfläkt minskar fuktigheten avsevärt</li>
+  <li><strong>Källare:</strong> håll under 60 procent med avfuktare om det är ett fuktigt utrymme</li>
+</ul>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om inomhusluft" />
+
+</ArticleLayout>

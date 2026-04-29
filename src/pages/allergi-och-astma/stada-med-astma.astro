@@ -1,0 +1,108 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('stada-med-astma', '/allergi-och-astma/');
+
+const toc = [
+  { id: 'varfor-svart', label: 'Varför städning utlöser astma' },
+  { id: 'timing', label: 'Timing och förberedelse' },
+  { id: 'skydd', label: 'Andningsskydd och ventilation' },
+  { id: 'kemikalier', label: 'Välj bort kemikalier' },
+  { id: 'ordning', label: 'Rätt ordning minskar exponering' },
+  { id: 'prioritera', label: 'Prioritera rätt rum' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Kan jag dammsuga när jag har astma?', a: 'Ja, med rätt utrustning. Använd en dammsugare med H13-filter och tät konstruktion. Lämna rummet i 20 minuter efter dammsugning, så att uppvirvlat damm hinner sätta sig. Ta astmamedicin preventivt om din läkare rekommenderat det.' },
+  { q: 'Vilka rengöringsmedel är säkrast vid astma?', a: 'Parfymfria, oparfymerade produkter med enzymatisk rengöring. Bikarbonat och ättika har inga flyktiga kemiska ämnen som irriterar luftvägarna. Undvik starkt doftande rengöringsprodukter, klorin och produkter som innehåller ammoniak eller formaldehyd.' },
+  { q: 'Ska jag bära mask när jag städar?', a: 'En P2-mask (FFP2) filtrerar 94 procent av partiklar och minskar exponering markant. Det är särskilt viktigt vid dammsugning, bäddning och tömning av dammsugarpåsen.' },
+  { q: 'Hur snart kan jag gå in i ett rum jag just dammsugit?', a: 'Vänta minst 20 till 30 minuter. Dammsugning uppvirvlar en del damm, särskilt om dammsugaren inte är helt tätad. Under den tiden sjunker de flesta partiklar till marken igen.' },
+  { q: 'Kan jag be någon annan städa åt mig under en astmaattack?', a: 'Absolut. Under en pågående astmaperiod är det klokt att delegera städning, särskilt dammsugning och bäddning. Frisk luft och vila är prioritet.' },
+];
+---
+<ArticleLayout
+  title="Städa när du har astma: råd som faktiskt hjälper | Hälsorent"
+  description="Städning kan utlösa astmaanfall. Rätt teknik, rätt timing och rätt skydd minskar risken utan att hemmet blir ostädat."
+  heroImage="/images/articles/astma.webp"
+  heroAlt="Person som städar med mask och handskar för att skydda luftvägarna"
+  publishDate="2026-04-29"
+  readingTime={7}
+  breadcrumbs={[{ label: 'Allergi & astma', href: '/allergi-och-astma/' }, { label: 'Städa med astma' }]}
+  toc={toc}
+  category="Allergi & astma"
+>
+
+<p>Städning är en av de vanligaste utlösarna för astmaanfall. Damm, parfymerade rengöringsmedel, klorin, mögelsporer och kemiska ångor irriterar de inflammerade luftvägarna. Men att sluta städa är inte ett alternativ; ett ostädat hem innehåller mer allergen och mer mögel, vilket förvärrar astman långsiktigt.</p>
+
+<p>Lösningen är att förändra hur du städar, inte om du städar.</p>
+
+<h2 id="varfor-svart">Varför städning utlöser astma</h2>
+
+<img src="/images/articles/astma.webp" alt="Rengöringsmedel och städredskap på en köksbänk" width="800" height="450" loading="lazy" />
+
+<p>Tre faktorer gör städning problematisk för astmatiker:</p>
+
+<ol>
+  <li><strong>Partikeluppvirvling:</strong> dammsugning, bäddning och sopning slungar upp dammkvalsterallergen, mögelsporer och pollen i luften, de partiklar som driver den underliggande inflammationen</li>
+  <li><strong>Kemiska irritanter:</strong> rengöringsmedel med starka ångor (klorin, ammoniak, parfymer, propan-drivmedel i sprejflaskor) irriterar bronkerna direkt, oavsett om man är allergisk mot dem</li>
+  <li><strong>Fysisk ansträngning:</strong> skrubbning och intensivt städarbete ökar andningsfrekvensen, vilket leder in mer partiklar i lungorna per minut</li>
+</ol>
+
+<h2 id="timing">Timing och förberedelse</h2>
+
+<p>Ta eventuell förebyggande bronkvidgare 15 till 20 minuter före städning om din läkare ordinerat det. Undvik att städa direkt efter utomhusvistelse under pollensäsong, du har redan luftvägarna belastade.</p>
+
+<p>Bästa tillfälle att städa: dagtid med god ventilation, inte under pollentoppar (varma eftermiddagar i maj), inte direkt efter ett astmaanfall.</p>
+
+<h2 id="skydd">Andningsskydd och ventilation</h2>
+
+<p>En P2-mask (FFP2 eller FFP3) filtrerar partiklar och reducerar exponeringen för dammkvalsterallergen. Det är det enskilt viktigaste skyddet vid dammsugning och bäddning.</p>
+
+<p>Vädra rummet ordentligt före och efter städning. Öppna fönster skapar ett luftflöde som tar med sig partiklar ut. Lämna alltid rummet i minst 20 minuter efter dammsugning.</p>
+
+<p>En <a href="/inomhusluft/luftrenare-allergi/">luftrenare mot allergi</a> med H13-filter i sovrummet hjälper till att rena luften efter dammsugning och under pågående städning. Placera den med frånluften mot rummet, inte mot ansiktet.</p>
+
+<h2 id="kemikalier">Välj bort kemikalier</h2>
+
+<p>Kemikalier som bör undvikas av astmatiker:</p>
+
+<ul>
+  <li><strong>Klorin och blekmedel:</strong> klorgas irriterar bronkerna kraftigt, undvik helt</li>
+  <li><strong>Ammoniakbaserade rengöringsmedel:</strong> ammoniak bildar ångor som direkt irriterar slemhinnorna</li>
+  <li><strong>Starka parfymer:</strong> parfymerade rengöringsmedel, luftfräschare och textilsköljmedel är vanliga astmaframkallare</li>
+  <li><strong>Aerosol-sprejflaskor:</strong> drivgasen (propan, butan) och de finfördelade dropparna når djupare ner i lungorna än vanliga rengöringsmedel</li>
+</ul>
+
+<p>Använd istället: <a href="/kemikaliefri-stadning/rengora-med-bikarbonat/">bikarbonat för rengöring</a> i köket och badrummet, ättika mot kalk, enzymatiska rengöringsmedel utan parfym för textilier. Dessa alternativ saknar irriterande ångor och är lika effektiva mot de flesta vanliga smutsproblem.</p>
+
+<h2 id="ordning">Rätt ordning minskar exponering</h2>
+
+<p>Städa uppifrån och ner, torrare metoder före vattnare, och dammsug sist. Det innebär att du inte dammsuger och sedan dammtorkar, det sprider uppvirvlat damm som dammsugaren missat ner på golvet igen.</p>
+
+<ol>
+  <li>Damma tak, taklister och övre hyllor med fuktig trasa (binder dammet, sprider inte ut det)</li>
+  <li>Damma möbler och undre hyllor</li>
+  <li>Sist: dammsug golvet med HEPA-dammsugare</li>
+  <li>Lämna rummet. Lämna fönstret öppet om möjligt.</li>
+</ol>
+
+<h2 id="prioritera">Prioritera rätt rum</h2>
+
+<p>Du behöver inte städa alla rum lika intensivt med samma intervall. Prioritering för astmatiker:</p>
+
+<ul>
+  <li><strong>Sovrummet är viktigast:</strong> du tillbringar 7 till 9 timmar per natt här. Byt sängkläder i 60 grader varannan vecka. Damma och dammsug en gång per vecka. Inga mjukisdjur, gardiner eller textilier som samlar damm.</li>
+  <li><strong>Badrummet är andraviktigast:</strong> hög luftfuktighet gynnar mögel och dammkvalster. Torka av ytor direkt efter dusch.</li>
+  <li><strong>Kök och vardagsrum:</strong> veckovis dammsugning, fukttorka hårt golv.</li>
+  <li><strong>Källare och förråd:</strong> undvik helst dessa utrymmen vid städning om de är dammiga eller luktar instängt.</li>
+</ul>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om allergi" />
+
+</ArticleLayout>

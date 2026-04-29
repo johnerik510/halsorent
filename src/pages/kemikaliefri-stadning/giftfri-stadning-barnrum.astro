@@ -1,0 +1,107 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('giftfri-stadning-barnrum', '/kemikaliefri-stadning/');
+
+const toc = [
+  { id: 'varfor-barn-kansligare', label: 'Varför barn är känsligare' },
+  { id: 'kemikalier-undvika', label: 'Kemikalier att undvika' },
+  { id: 'rengora-leksaker', label: 'Rengöra leksaker' },
+  { id: 'golv-mattor', label: 'Golv och mattor' },
+  { id: 'luftkvalitet', label: 'Luftkvalitet i barnrummet' },
+  { id: 'sangen', label: 'Sängen och textilier' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Hur ren behöver ett barnrums golv vara?', a: 'Barn på golvet (kryppande, lekande) exponeras mer för damm och kemikalierester än vuxna. Dammsug med HEPA-filter minst tre gånger per vecka. Välj hårt golv framför heltäckningsmatta om möjligt.' },
+  { q: 'Kan jag använda alkohol för att desinfektera leksaker?', a: 'Ja. 70-procentig isopropylalkohol eller etanol desinfekterar effektivt utan skadliga rester när det torkat. Lät torka helt (30 till 60 sekunder) innan barnet hanterar leksaken.' },
+  { q: 'Hur tvättar jag mjukdjur och leksakstyger?', a: 'Tvätta i 60 grader om tvättinstruktionen tillåter. Mjukdjur som inte tål 60 grader: fryses i plastpåse i minst 24 timmar för att döda dammkvalster, sedan dammsugas eller skakas utomhus.' },
+  { q: 'Är parfymerade barnprodukter (barnlotion, schampo) farliga?', a: 'Parfymer kan irritera hud och luftvägar hos känsliga barn. WHO och EU:s kemikaliemyndighet ECHA flaggar vissa parfymämnen som allergiframkallande. Välj oparfymerade produkter, särskilt för spädbarn.' },
+  { q: 'Hur ofta ska jag byta sängkläder för ett barn?', a: 'Varannan vecka, 60 grader. Barn svettas mer per ytenhet än vuxna, vilket skapar perfekta förhållanden för dammkvalster. Vid eksem eller allergi: varje vecka.' },
+];
+---
+<ArticleLayout
+  title="Giftfri städning i barnrummet | Hälsorent"
+  description="Barn är känsligare för kemikalier än vuxna. Städa barnrummet effektivt utan ämnen som skadar luftvägar och hormoner, med naturliga alternativ."
+  heroImage="/images/articles/barnrum.webp"
+  heroAlt="Ljust barnrum med trägolv och ordentligt städat, inga kemikalier"
+  publishDate="2026-04-29"
+  readingTime={7}
+  breadcrumbs={[{ label: 'Kemikaliefri städning', href: '/kemikaliefri-stadning/' }, { label: 'Giftfri städning i barnrummet' }]}
+  toc={toc}
+  category="Kemikaliefri städning"
+>
+
+<p>Barn andas in mer luft per kilogram kroppsvikt än vuxna, de befinner sig lägre ner (nära golvet där partiklar och kemikalierester koncentreras) och de har ett outvecklat avgiftningssystem. Det gör dem mer känsliga för rengöringsmedelsrester, parfymämnen, plastmjukgörare och VOC (flyktiga organiska ämnen) i inomhusluften.</p>
+
+<p>Giftfri städning i barnrummet handlar om att välja bort de mest problematiska ämnena och ersätta dem med dokumenterat säkra alternativ, utan att kompromissa med renligheten.</p>
+
+<h2 id="varfor-barn-kansligare">Varför barn är känsligare</h2>
+
+<img src="/images/articles/barnrum.webp" alt="Städat barnrum med leksaker i ordning och naturliga rengöringsmedel" width="800" height="450" loading="lazy" />
+
+<p>Kemikalier som är relativt ofarliga för en vuxen vid normalt bruk kan ha oproportionerliga effekter på barn:</p>
+
+<ul>
+  <li><strong>Högre exponering per kroppsvikt:</strong> ett litet barn som andas i ett nyrengöring rum inhalerar mer kemikalie per kilo kroppsvikt än en vuxen i samma rum</li>
+  <li><strong>Hand-till-mun-beteende:</strong> barn under 3 år för händer och föremål till munnen, kemikalierester på golv och leksaker hamnar i munnen</li>
+  <li><strong>Outvecklat avgiftningssystem:</strong> leverns enzymsystem för att bryta ner toxiner är inte fullt utvecklat hos barn under 2 till 3 år</li>
+  <li><strong>Störningar av hormonsystemet:</strong> endokrina disruptorer (som vissa ftalater och parabener) har starkare effekt under tidiga utvecklingsfaser</li>
+</ul>
+
+<h2 id="kemikalier-undvika">Kemikalier att undvika</h2>
+
+<p>Prioritera att undvika dessa i barnrummet:</p>
+
+<ul>
+  <li><strong>Parfym och doftämnen:</strong> vanliga orsaker till luftvägsirritationer och hudallergi hos barn. Välj alltid oparfymerade rengöringsmedel.</li>
+  <li><strong>Klorbaserade rengöringsmedel:</strong> klorgas vid användning irriterar luftvägarna. Undvik i barnrummet, använd i välventilerade utrymmen som toaletter i nödfall.</li>
+  <li><strong>Ammoniakbaserade rengöringsmedel:</strong> rumsrenare och fönsterputsmedel med ammoniak avger ångor som irriterar barn med känsliga luftvägar.</li>
+  <li><strong>Luftfräschare och doftspray:</strong> innehåller ofta ftalater, bensen och terpener. Ge aldrig barn intryck av renhet via lukt, utan via faktisk rengöring.</li>
+  <li><strong>Nanosilver och triclosan:</strong> förekommer i "antibakteriella" barnprodukter. Breda spektrum biocider stör barnets normala bakterieflora och bidrar till resistensutveckling.</li>
+</ul>
+
+<h2 id="rengora-leksaker">Rengöra leksaker</h2>
+
+<p><strong>Plastleksaker:</strong> Tvätta med varmt vatten och milt diskmedel, skölj noggrant. Desinfektera vid sjukdom med 70-procentig alkohol och lät torka helt. Undvik blekmedel som kan ge rester i poröst plast.</p>
+
+<p><strong>Träleläker:</strong> Torka av med fuktigt trasa med bikarbonatvattenlösning. Använd inte diskmedel på obehandlat trä, det tränger in och kan ge smak. Lät torka helt innan barnet hanterar dem.</p>
+
+<p><strong>Elektroniska leksaker:</strong> Torka av med fuktigt trasa. Använd alkoholtorkar på knappar och sprickor. Lät torka.</p>
+
+<p><strong>Mjukdjur och tygdockor:</strong> Se FAQ-sektionen nedan. Dammkvalster trivs i mjukdjur, se även <a href="/allergi-och-astma/dammkvalster-i-sang/">dammkvalster i sängen</a> för bakgrund om varför regelbunden tvätt av barnets mjukdjur är viktig.</p>
+
+<h2 id="golv-mattor">Golv och mattor</h2>
+
+<p>Barnrumsgolvet är den viktigaste ytan att hålla ren och kemikalifri. Barn lever på golvet, bokstavligt talat.</p>
+
+<p>Bäst: hårt golv (trä, laminat, klinker) som kan fukttorkas utan kemikalier. En enkel lösning av <a href="/kemikaliefri-stadning/rengora-med-bikarbonat/">bikarbonat i vatten</a> desodorerar och rengör hårt golv effektivt.</p>
+
+<p>Om du har heltäckningsmatta i barnrummet: dammsug med HEPA-filter minst tre gånger per vecka. Mattor håller kvar dammkvalsterallergen, pollen och kemikalierester. Överväg att byta ut heltäckningsmatta mot hårt golv med en tvättbar fäll.</p>
+
+<h2 id="luftkvalitet">Luftkvalitet i barnrummet</h2>
+
+<p>Nymålade rum, nytt trägolv och nya möbler avger VOC (flyktiga organiska ämnen) i veckor till månader. Vädra noggrant, helst i flera veckor med öppna fönster, innan ett barn sover i ett nyrenoverat rum regelbundet.</p>
+
+<p>En luftrenare med H13-filter i barnrummet reducerar partiklar, allergener och en del VOC. Det är en av de bästa investeringarna för ett barns sovmiljö, särskilt i städer med utomhusluftsproblem eller i hem med pälsdjur.</p>
+
+<h2 id="sangen">Sängen och textilier</h2>
+
+<p>Barnets säng är deras primära uppehållsplats för 10 till 12 timmar per dygn. Samma principer gäller här som för den vuxnas säng, men med högre frekvens:</p>
+
+<ul>
+  <li>Tvätta sängkläder i 60 grader varannan vecka (varje vecka vid allergi)</li>
+  <li>Välj allergiöverdrag för madrass och kudde</li>
+  <li>Välj syntetfyllda kuddar och dyner framför dun, de tål 60-graderstvätt bättre</li>
+  <li>Inga lösa textilier, gardiner och vadderade vägghängare i babyrummet samlar damm</li>
+</ul>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om kemikaliefri städning" />
+
+</ArticleLayout>

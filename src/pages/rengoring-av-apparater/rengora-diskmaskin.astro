@@ -1,0 +1,133 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('rengora-diskmaskin', '/rengoring-av-apparater/');
+
+const toc = [
+  { id: 'filter', label: 'Rengöra filtret' },
+  { id: 'spolarmar', label: 'Spolarmar och munstycken' },
+  { id: 'avkalkning', label: 'Avkalkning' },
+  { id: 'tatningar', label: 'Gummitatning och dörr' },
+  { id: 'lukt', label: 'Ta bort diskmaskinlukt' },
+  { id: 'schema', label: 'Underhållsschema' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Hur vet jag om diskmaskinen behöver rengöras?', a: 'Tecken: dålig diskningsresultat, vitaktiga eller grumliga glas, disken luktar instängt efter diskning, synlig smuts eller kalkavlagringar inuti, dålig lukt från diskmaskinen.' },
+  { q: 'Kan jag använda vanligt diskmedel i diskmaskinen för rengöring?', a: 'Nej. Vanligt diskmedel skapar skum som kan skada maskin och pump. Använd diskmaskinsdiskmedel, citronsyra eller dedicerade diskmaskins­rengöringstablettar.' },
+  { q: 'Hur rengör jag diskmaskinens utvändiga knappar och panel?', a: 'Torka av med fuktigt trasa och milt rengöringsmedel. Undvik att vatten tränger in bakom panelen. Rengör sprickor och fogar med en Q-tips indränkt i alkohol.' },
+  { q: 'Varför är mina glas vita efter diskning?', a: 'Det är antingen kalk (från hårt vatten) eller etsning (permanent skada av för aggressivt diskmedel eller för hög temperatur). Kalk löser sig med ett program med citronsyra. Etsning är permanent.' },
+  { q: 'Ska jag använda salt i diskmaskinen?', a: 'Ja, om du har en ion-utbytare (nästan alla moderna diskmaskiner). Maskinssalt mjukar vattnet och minskar kalkavlagringar på allt: glas, spolarmar, värmeelement. Fyll på när indikatorn lyser.' },
+];
+---
+<ArticleLayout
+  title="Rengöra diskmaskin: avkalkning, filter och luktborttagning | Hälsorent"
+  description="Diskmaskinen samlar kalk, matfett och mögel i filter och packningar. Månatlig rengöring med citronsyra håller den i toppskick och diskar ordentligt."
+  heroImage="/images/articles/diskmaskin.webp"
+  heroAlt="Diskmaskin med öppen lucka och rena diskar inuti"
+  publishDate="2026-04-29"
+  readingTime={7}
+  breadcrumbs={[{ label: 'Rengöring av apparater', href: '/rengoring-av-apparater/' }, { label: 'Rengöra diskmaskin' }]}
+  toc={toc}
+  category="Rengöring av apparater"
+>
+
+<p>En smutsig diskmaskin diskar smutsigt. Det låter logiskt, men de flesta rengör aldrig sin diskmaskin och undrar varför glasen är grumliga och disken luktar unket. Kalk, matfett, tvålrester och mögel ackumuleras i filter, spolarmar, gummilist och på värmeelementet.</p>
+
+<p>Månatlig rengöring med citronsyra och kvartalsvis filterrengöring håller diskmaskinen i optimalt skick, förlänger dess livslängd och ger bättre diskresultat.</p>
+
+<h2 id="filter">Rengöra filtret</h2>
+
+<img src="/images/articles/diskmaskin.webp" alt="Diskmaskinens filter som rengörs under rinnande vatten" width="800" height="450" loading="lazy" />
+
+<p>Filtret sitter i botten av diskmaskinen och samlar upp matrester. Ett igensatt filter reducerar vattenflödet och leder till dåliga diskresultat och lukt.</p>
+
+<ol>
+  <li>Ta bort nedre korgen</li>
+  <li>Vrid filterlocket moturs (de flesta maskiner) och lyft upp filtret</li>
+  <li>Spola av filtret under rinnande varmt vatten</li>
+  <li>Skrubba med mjuk borste och lite diskmedel om det är fettigt</li>
+  <li>Sätt tillbaka filtret och lås det</li>
+</ol>
+
+<p>Frekvens: en gång i månaden, eller oftare om du diskar med matrester på tallrikarna.</p>
+
+<h2 id="spolarmar">Spolarmar och munstycken</h2>
+
+<p>Spolarmarna distribuerar vatten under diskning. Kalk och matrester täpper igen munstycken och ger ojämn distribution, blinda fläckar i diskmaskinen där disken inte blir ren.</p>
+
+<ol>
+  <li>Ta av spolarmarna (de flesta lyfts rakt upp eller skruvas av)</li>
+  <li>Håll under rinnande vatten och skaka för att lossa löst material</li>
+  <li>Rensa igentäppta munstycken med en tandpetare</li>
+  <li>Lägg i varmt vatten med lite citronsyra i 30 minuter för kalkrester</li>
+  <li>Skölj och montera tillbaka</li>
+</ol>
+
+<h2 id="avkalkning">Avkalkning</h2>
+
+<p>Kalkavlagringar på värmeelement, väggar och spolarmar reducerar effektiviteten och ökar energiförbrukning. Avkalka en gång i månaden:</p>
+
+<p><strong>Med citronsyra (rekommenderas):</strong></p>
+<ol>
+  <li>Töm diskmaskinen helt</li>
+  <li>Häll 3 matskedar citronsyrapulver i bestickkorgen eller direkt i botten</li>
+  <li>Kör ett 60-gradersprogram</li>
+  <li>Kör ett kortare sköljelsprogram efteråt</li>
+</ol>
+
+<p>Mer om citronsyra som avkalkningsmedel: <a href="/kemikaliefri-stadning/citronsyra-rengoring/">citronsyra för rengöring</a>.</p>
+
+<p><strong>Med ättika (alternativ):</strong></p>
+<ol>
+  <li>Häll 2 dl ättiksprit i botten av tom diskmaskin</li>
+  <li>Kör ett 60-gradersprogram</li>
+</ol>
+
+<p>Kombinera gärna: ett program med ättika för kalk och ett uppföljande program med bikarbonat för luktborttagning.</p>
+
+<h2 id="tatningar">Gummitatning och dörr</h2>
+
+<p>Gummipackningen längs diskmaskinens dörr är en klassisk mögelhärd. Fukt ansamlas i vecken och mögel etablerar sig snabbt.</p>
+
+<ol>
+  <li>Öppna dörren och undersök packningsrännan runt om</li>
+  <li>Torka av med en trasa indränkt i utspädd ättika (1:1 med vatten)</li>
+  <li>Använd en gammal tandborste för djupare ränder och veck</li>
+  <li>Torka torrt och lämna dörren på glänt efter varje diskprogram</li>
+</ol>
+
+<p>Att lämna diskmaskindörren öppen 2 till 3 cm efter varje program är det enklaste sättet att förebygga mögelbildning i packnigen.</p>
+
+<h2 id="lukt">Ta bort diskmaskinlukt</h2>
+
+<p>Instäng lukt kan ha flera orsaker: mögel i packningn, matfett i filter, kalk som bränns vid hög temperatur, eller stillastående vatten i slangar.</p>
+
+<p>Lösning i rätt ordning:</p>
+<ol>
+  <li>Rengör filtret (vanligaste orsaken till lukt)</li>
+  <li>Kör ett avkalkningsprogram med citronsyra</li>
+  <li>Torka av gummipackningen</li>
+  <li>Kör ett tomt 60-gradersprogram med en kopp bikarbonat i botten</li>
+  <li>Lämna dörren öppen mellan disktillfällen</li>
+</ol>
+
+<h2 id="schema">Underhållsschema</h2>
+
+<ul>
+  <li><strong>Varje vecka:</strong> torka av packningns utsida, lämna dörren öppen</li>
+  <li><strong>Varje månad:</strong> rengör filtret, avkalka med citronsyra</li>
+  <li><strong>Varje kvartal:</strong> rengör spolarmar, torka av invändiga väggar och packningens inre</li>
+</ul>
+
+<p>Kombinera diskmaskinens underhåll med tvättmaskinens för ett effektivt månadsrutinpaket. Se guiden om <a href="/rengoring-av-apparater/rengora-tvattmaskin/">rengöra tvättmaskin</a>.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om apparatrengöring" />
+
+</ArticleLayout>

@@ -1,0 +1,140 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('rengora-luftrenare', '/rengoring-av-apparater/');
+
+const toc = [
+  { id: 'nar-rengora', label: 'När är det dags att rengöra?' },
+  { id: 'hepa-filter', label: 'HEPA-filtret' },
+  { id: 'forfilter', label: 'Förfiltret' },
+  { id: 'kol-filter', label: 'Kolfilter' },
+  { id: 'kapa-sensorer', label: 'Kåpa, sensor och fläkt' },
+  { id: 'byteschema', label: 'Byteschema' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Kan jag tvätta HEPA-filtret?', a: 'Nej. "Washable HEPA" är ett marknadsföringsbegrepp. Att tvätta ett HEPA-filter skadar filtrets fiberskikt och reducerar filtreringsförmågan dramatiskt. HEPA-filter ska bytas, inte tvättas.' },
+  { q: 'Hur vet jag om mitt filter behöver bytas?', a: 'Indikatorlampa (om luftrenaren har en), reducerat luftflöde, ökat buller, att luftkvalitetsmätaren indikerar sämre luft trots att renaren kör. Eller helt enkelt att det rekommenderade bytesintervallet har passerat.' },
+  { q: 'Vad händer om jag aldrig rengör luftrenaren?', a: 'Igensatt förfilter och HEPA reducerar luftflödet till nära noll. Luftrenaren drar samma el men renar praktiskt taget ingenting. Dessutom kan ett fullt filter börja sprida tillbaka partiklar.' },
+  { q: 'Ska jag stänga av luftrenaren när jag inte är hemma?', a: 'En luftrenare gör mest nytta när du är hemma och andas luften. Att köra den på låg inställning dygnet runt ger jämnast luftkvalitet och motverkar att dammpartiklar sedimenterar.' },
+  { q: 'Kan luftrenaren ta bort cigarettrök?', a: 'HEPA-filter fångar rökpartiklar. Kolfilter absorberar en del gasformiga luktämnen. Kombinationen HEPA + kol reducerar synlig rök och lukt avsevärt, men eliminerar den inte helt vid aktiv rökning inomhus.' },
+];
+---
+<ArticleLayout
+  title="Rengöra luftrenaren: filter, kåpa och sensorer | Hälsorent"
+  description="En luftrenare med igensatt filter renar sämre och kan sprida partiklar. Hur ofta du bör rengöra och byta filter, och hur du gör det rätt för varje filtertyp."
+  heroImage="/images/articles/rengorning-luftrenare.webp"
+  heroAlt="Luftrenare med borttagen panel som visar HEPA-filter för rengöring"
+  publishDate="2026-04-29"
+  readingTime={5}
+  breadcrumbs={[{ label: 'Rengöring av apparater', href: '/rengoring-av-apparater/' }, { label: 'Rengöra luftrenaren' }]}
+  toc={toc}
+  category="Rengöring av apparater"
+>
+
+<p>En luftrenare med igensatt filter arbetar hårdare och renar sämre. I värsta fall kan ett fullt förfilter börja sprida tillbaka insamlade partiklar i rummet. Regelbunden rengöring av förfiltret och byte av HEPA- och kolfilter är inte frivilligt underhåll, det är förutsättningen för att luftrenaren ska göra vad den är till för.</p>
+
+<p>Underhållsbehovet varierar med luftrenarltyp, filterkonfiguration och hur smutsig luften är i ditt hem. Husdjur, allergi och rök kräver oftare byte.</p>
+
+<h2 id="nar-rengora">När är det dags att rengöra?</h2>
+
+<img src="/images/articles/rengorning-luftrenare.webp" alt="HEPA-filter från luftrenare som inspekteras för att avgöra om det behöver bytas" width="800" height="450" loading="lazy" />
+
+<p>Tecken på att underhåll behövs:</p>
+<ul>
+  <li>Luftflödet är märkbart reducerat trots att renaren kör på hög inställning</li>
+  <li>Renaren är ovanligt bullrig (motorn arbetar hårdare för att kompensera)</li>
+  <li>Filterindikatorlampan lyser (om modellen har en)</li>
+  <li>Det är länge sedan du kontrollerade förfiltret</li>
+  <li>Det rekommenderade bytesintervallet för HEPA-filtret har passerat</li>
+</ul>
+
+<h2 id="hepa-filter">HEPA-filtret</h2>
+
+<p>HEPA-filtret fångar 99,95 procent av partiklar ned till 0,3 mikrometer: dammkvalsterallergen, pollen, mögelsporer och fina dammpartiklar. Det ska bytas, inte tvättas.</p>
+
+<p><strong>Bytesintervall:</strong></p>
+<ul>
+  <li>Normalt hem: var 12 till 18 månader</li>
+  <li>Hem med husdjur eller hög allergenbelastning: var 6 till 12 månader</li>
+  <li>Hem med rök eller hög partikelbelastning: var 6 månader</li>
+</ul>
+
+<p>Kontrollera i tillverkarens manual det exakta rekommenderade intervallets för din modell. Billiga "kompatibla" ersättningsfilter kan ha lägre filtreringseffektivitet än originalfiltret.</p>
+
+<h2 id="forfilter">Förfiltret</h2>
+
+<p>Förfiltret (ofta ett svart eller grått nätfilter) fångar upp grova partiklar: damm, hår, pälsfibrer. Det förlänger HEPA-filtrets livslängd och ska rengöras regelbundet.</p>
+
+<ol>
+  <li>Ta bort förfiltret (se manualen)</li>
+  <li>Dammsug filtret med en mjuk borste</li>
+  <li>Om det är väldigt smutsigt: tvätta med ljummet vatten och milt diskmedel</li>
+  <li>Lät torka HELT innan du sätter tillbaka det</li>
+</ol>
+
+<p>Frekvens: var 2 till 4 veckor. Ta för vana att kontrollera det varje gång du byter sängkläder.</p>
+
+<h2 id="kol-filter">Kolfilter</h2>
+
+<p>Kolfiltret absorberar gasformiga föroreningar: VOC, matos, tobakslukt och kemikalie­ångor. Till skillnad från HEPA kan kolfiltret bli mättat och börja avge luktämnen.</p>
+
+<p>Bytesintervall: var 3 till 6 månader. Kolfiltret kan aldrig "rengöras" effektivt, kolpartiklar som absorberat VOC ska bytas ut, inte värmas eller tvättas.</p>
+
+<h2 id="kapa-sensorer">Kåpa, sensor och fläkt</h2>
+
+<p>Luftrenarens yttre kåpa och luftinsläppsgaller samlar damm och kan ge upphov till dålig lukt om det byggs upp biofilm:</p>
+
+<ol>
+  <li>Torka av kåpan med fuktig trasa</li>
+  <li>Använd en liten borste eller Q-tips för gallerspringor</li>
+  <li>Rengör eventuell luftkvalitetssensor: litet hål eller öppning på kåpan. Blås försiktigt med tryckluft eller använd en torr bomullstipp</li>
+</ol>
+
+<p>En smutsig sensor ger felaktiga luftkvalitetsavläsningar och kan göra att luftrenaren körs på fel hastighet.</p>
+
+<p>En välunderhållen luftrenare är din viktigaste utrustning mot allergen. Se guiden om <a href="/inomhusluft/luftrenare-allergi/">luftrenare mot allergi</a> för mer om vad som faktiskt skiljer en bra luftrenare från en sämre, och <a href="/inomhusluft/forbattra-inomhusluft/">förbättra inomhusluften</a> för ett helhetsperspektiv.</p>
+
+<h2 id="byteschema">Byteschema</h2>
+
+<table style="width:100%; border-collapse: collapse; font-size: 0.9em;">
+  <thead>
+    <tr style="background: var(--color-bg-alt);">
+      <th style="padding: 8px; text-align: left; border: 1px solid var(--color-border);">Del</th>
+      <th style="padding: 8px; text-align: left; border: 1px solid var(--color-border);">Åtgärd</th>
+      <th style="padding: 8px; text-align: left; border: 1px solid var(--color-border);">Intervall</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px; border: 1px solid var(--color-border);">Förfilter</td>
+      <td style="padding: 8px; border: 1px solid var(--color-border);">Dammsug/tvätta</td>
+      <td style="padding: 8px; border: 1px solid var(--color-border);">Varannan till var fjärde vecka</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid var(--color-border);">HEPA-filter</td>
+      <td style="padding: 8px; border: 1px solid var(--color-border);">Byt ut</td>
+      <td style="padding: 8px; border: 1px solid var(--color-border);">6 till 18 månader</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid var(--color-border);">Kolfilter</td>
+      <td style="padding: 8px; border: 1px solid var(--color-border);">Byt ut</td>
+      <td style="padding: 8px; border: 1px solid var(--color-border);">3 till 6 månader</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; border: 1px solid var(--color-border);">Kåpa och sensor</td>
+      <td style="padding: 8px; border: 1px solid var(--color-border);">Torka av</td>
+      <td style="padding: 8px; border: 1px solid var(--color-border);">Månadsvis</td>
+    </tr>
+  </tbody>
+</table>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om apparatrengöring" />
+
+</ArticleLayout>

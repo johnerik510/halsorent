@@ -1,0 +1,118 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('mogelsanering-sjalv', '/mogel-och-fukt/');
+
+const toc = [
+  { id: 'nar-sjalv', label: 'När du kan göra det själv' },
+  { id: 'nar-proffs', label: 'När du måste anlita proffs' },
+  { id: 'utrustning', label: 'Utrustning och skydd' },
+  { id: 'metoder', label: 'Rengöringsmetoder' },
+  { id: 'efter', label: 'Efter rengöringen' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Kan jag använda klorin mot mögel?', a: 'Klorin (natriumhypoklorit) dödar mögelsvampar på hårda, täta ytor. Det tränger inte djupt in i porösa material. Spä ut till 1:10 (1 del klorin, 10 delar vatten). Ventilera noggrant, använd mask och handskar.' },
+  { q: 'Vad är skillnaden mellan mögel och mörk smuts?', a: 'Mögel är en organism med struktur och doft. Pressa en engångsduk mot missfärgningen. Mögel smetas ut och luktar instängt. Vanlig smuts är inaktiv och saknar mögellukt. Vid osäkerhet: ta ett mögeltest.' },
+  { q: 'Hur länge ska jag vänta efter mögelrengöring?', a: 'Låt ytan torka i minst 24 timmar med god ventilation innan du tapetserar, målar eller lägger ny fogmassa. En inte fullständigt torr yta är en ny grogrund för mögel.' },
+  { q: 'Ska jag slösa kastat mögliga föremål?', a: 'Porösa föremål (mjukisdjur, gamla böcker, kläder med djupt mögel, papp, spånskivor) som inte kan diskas i 60 grader bör kastas. Mögel i porerna är praktiskt omöjligt att rengöra fullständigt.' },
+  { q: 'Kan jag sanera mögel i ventilationskanalerna själv?', a: 'Nej. Mögel i ventilationskanalerna kräver professionell sanering med industriell utrustning. Att försöka rengöra kanalerna själv kan sprida mögelsporer i hela systemet.' },
+];
+---
+<ArticleLayout
+  title="Mögelrengöring själv: när det går och när det inte går | Hälsorent"
+  description="Skador under 0,5 kvadratmeter på hårda ytor kan du ofta rengöra själv. Allt annat kräver professionell sanering. Gränserna och metoderna."
+  heroImage="/images/articles/sanering.webp"
+  heroAlt="Person med skyddsglasögon och mask som rengör mögelskada på vägg"
+  publishDate="2026-04-29"
+  readingTime={7}
+  breadcrumbs={[{ label: 'Mögel & fukt', href: '/mogel-och-fukt/' }, { label: 'Mögelrengöring själv' }]}
+  toc={toc}
+  category="Mögel & fukt"
+>
+
+<p>Mögelrengöring är möjlig att göra själv under rätt förhållanden. Men "mögelrengöring" är inte detsamma som "städning". Det kräver rätt skyddsutrustning, rätt metod och en förståelse för att rengöringen bara är halva jobbet. Den andra halvan är att identifiera och åtgärda fuktorsaken, annars återkommer mögelskadan.</p>
+
+<p>Tumregeln: ytliga skador under 0,5 kvadratmeter på hårda, täta ytor (kakel, betong, glas) kan du i regel rengöra själv. Allt annat bör hanteras av en certifierad mögelspecialist.</p>
+
+<h2 id="nar-sjalv">När du kan göra det själv</h2>
+
+<img src="/images/articles/sanering.webp" alt="Mögelrengöring med skyddsutrustning på en tärd yta" width="800" height="450" loading="lazy" />
+
+<p>Du kan rengöra mögel själv om <strong>alla</strong> dessa kriterier uppfylls:</p>
+
+<ul>
+  <li>Skadans yta är under 0,5 kvadratmeter</li>
+  <li>Ytan är hård och tät: kakel, betong, glas, stål, plast, glasyrad keramik</li>
+  <li>Du har hittat fuktorsaken och åtgärdat den (eller kan göra det)</li>
+  <li>Du eller familjemedlemmar har inga allvarliga luftvägssjukdomar (svår astma, KOL)</li>
+  <li>Mögelskadan är ytlig, inte djupt inpenetrerad i konstruktionen</li>
+</ul>
+
+<p>Typiska fall för egensanering: mögel i badrumsfogar, mögel på kaklade badrumsväggar, mögel på fönsterkarm (lackat trä), mögelfilm i källargolv av betong. Se separat guide om <a href="/mogel-och-fukt/mogel-badrum/">mögel i badrummet</a> för detaljer om badrumsmögel.</p>
+
+<h2 id="nar-proffs">När du måste anlita proffs</h2>
+
+<p>Anlita en certifierad mögelspecialist (certifiering via fuktexperten.se eller liknande) om:</p>
+
+<ul>
+  <li>Skadan är större än 0,5 kvadratmeter</li>
+  <li>Mögelskadan är på porösa material: gips, mineralull, spånskiva, konstruktionsvirke, OSB-skiva</li>
+  <li>Du misstänker mögel bakom kakel, i bjälklag eller i mellanväggar</li>
+  <li>Instäng mögellukt utan synlig skada (dolt mögel)</li>
+  <li>Familjemedlemmar har hälsosymtom kopplade till hemmet</li>
+  <li>Mögelskadan uppstår i ventilationskanaler</li>
+  <li>Du har en fastighetstransaktion planerad</li>
+</ul>
+
+<p>Professionell sanering är inte billigt (5 000 till 50 000 kronor beroende på skada) men det är den enda tillförlitliga metoden för större skador. En ofullständig egensanering kan vara farligare än ingen åtgärd, om möglet störs och sprids ytterligare.</p>
+
+<h2 id="utrustning">Utrustning och skydd</h2>
+
+<p>Obligatoriskt:</p>
+<ul>
+  <li><strong>Andningsmask P2 (FFP2) eller P3 (FFP3):</strong> skyddar mot mögelsporer (0,3 till 100 mikrometer). Enkel dammask räcker inte.</li>
+  <li><strong>Skyddsglasögon:</strong> täta modell, inte vanliga glasögon</li>
+  <li><strong>Engångshandskar:</strong> nitril eller latex</li>
+  <li><strong>Engångsrock eller gamla kläder:</strong> du bör byta kläder och tvätta dem direkt efter rengöring</li>
+</ul>
+
+<p>Rekommenderat:</p>
+<ul>
+  <li>HEPA-dammsugare (för att samla upp löst mögelsporer utan att sprida dem)</li>
+  <li>Negativa tryck-fan om du har en (drar luft UT ur rummet och förhindrar sporspridning)</li>
+  <li>Plastfolie för att täcka möbler och golv</li>
+</ul>
+
+<h2 id="metoder">Rengöringsmetoder</h2>
+
+<p><strong>Steg 1: Isolera arbetsområdet.</strong> Stäng dörrar till angränsande rum. Täck möbler med plastfolie om möjligt. Ventilera ut (öppna fönster, sätt en fläkt som blåser UT ur rummet).</p>
+
+<p><strong>Steg 2: Dammfri mekanisk borttagning.</strong> Torka ytan med en fuktig engångstrasa för att binda lösa mögelsporer. Kasta trasan omgående. Gör ALDRIG med torr trasa (sprider sporer).</p>
+
+<p><strong>Steg 3: Kemisk behandling.</strong></p>
+<ul>
+  <li>Hårda täta ytor: klorbaserat rengöringsmedel (1 del klorin, 10 delar vatten), 10 till 20 min kontakttid</li>
+  <li>Lackerade träytor: 70-procentig alkohol, 10 min kontakttid</li>
+  <li>Fogar och silikon: se guide om <a href="/mogel-och-fukt/mogel-badrum/">mögel i badrummet</a></li>
+</ul>
+
+<p><strong>Steg 4: Torka ordentligt.</strong> Lät ytan torka i 24 till 48 timmar med god ventilation. Kontrollera med fuktmätare om du har en.</p>
+
+<p><strong>Steg 5: Åtgärda fuktorsaken.</strong> Utan detta steg återkommer mögelskadan.</p>
+
+<h2 id="efter">Efter rengöringen</h2>
+
+<p>Slut alla kläder i plastpåse och tvätta dem omgående. Kasta engångsutrustning direkt i sophanken. Dammtorka HEPA-dammsugaren utomhus. Tvätta händerna och gärna duscha.</p>
+
+<p>Kontrollera området efter 2 veckor och igen efter 2 månader. Om mögelskadan återkommer har fuktorsaken inte åtgärdats tillräckligt.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om mögel och fukt" />
+
+</ArticleLayout>

@@ -1,0 +1,111 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('fukt-kallare', '/mogel-och-fukt/');
+
+const toc = [
+  { id: 'typer-fukt', label: 'Typer av källarfukt' },
+  { id: 'identifiera', label: 'Identifiera orsaken' },
+  { id: 'mäta', label: 'Mäta fukthalten' },
+  { id: 'atgarda-sjalv', label: 'Vad du kan göra själv' },
+  { id: 'ventilation', label: 'Ventilation i källaren' },
+  { id: 'nar-specialist', label: 'När du behöver specialist' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Varför är källarfukt vanligt i Sverige?', a: 'Svenska hus byggda före 1975 saknar ofta ångspärr och fuktisolering mot grundmurarna. Klimatskifte med mer regn och mildare vintrar ökar också grundvattennivåer och tjällyftning, vilket ökar trycket mot grunden.' },
+  { q: 'Kan källarfukt påverka inomhusluften i övervåningen?', a: 'Ja. Luften i huset rör sig uppåt (stack-effekt). Mögel och mögelsporer från en fuktig källare sprids till resten av huset via sprickor, ledningsdragningar och öppna dörrar.' },
+  { q: 'Hur snabbt växer mögel vid hög källarfukt?', a: 'Vid luftfuktighet över 70 procent och temperaturer 15 till 25 grader kan mögel etablera sig på organiska material (trä, papp, kartong) inom 24 till 72 timmar. Håll källaren under 60 procent för att hämma tillväxt.' },
+  { q: 'Är avfuktare en permanent lösning?', a: 'Nej. En avfuktare hanterar symptomet men inte orsaken. Om källaren är fuktig pga. markfukt, otät grundmur eller dålig dränering måste grundorsaken åtgärdas, annars kör du avfuktaren i all oändlighet.' },
+  { q: 'Vad kostar det att dränera om ett hus?', a: 'Utvändig dränering: 100 000 till 300 000 kronor beroende på hustyp och svårighetsgrad. Det är en stor investering men enda permanenta lösningen vid grund- eller markfuktsproblem.' },
+];
+---
+<ArticleLayout
+  title="Fukt i källaren: orsaker och åtgärder | Hälsorent"
+  description="Källarfukt är vanligt i svenska hus och kan orsaka mögel och dålig inomhusluft i hela huset. Vad du kan göra själv och när du behöver en specialist."
+  heroImage="/images/articles/kallare.webp"
+  heroAlt="Källare med fuktig betongvägg och kondensation som tyder på fuktproblem"
+  publishDate="2026-04-29"
+  readingTime={8}
+  breadcrumbs={[{ label: 'Mögel & fukt', href: '/mogel-och-fukt/' }, { label: 'Fukt i källaren' }]}
+  toc={toc}
+  category="Mögel & fukt"
+>
+
+<p>Källarfukt är ett av de vanligaste byggnadsproblemen i Sverige. Uppskattningsvis har var tredje villa med källare ett fuktproblem av varierade allvarlighetsgrad. Det är ett problem som sällan löser sig av sig självt och som, om det ignoreras, kan leda till mögel, rötskador och strukturella skador på huset.</p>
+
+<p>Det viktiga att förstå: källarfukt är inte ett enda problem, det är flera möjliga problem med olika orsaker och lösningar. Rätt åtgärd kräver rätt diagnos.</p>
+
+<h2 id="typer-fukt">Typer av källarfukt</h2>
+
+<img src="/images/articles/kallare.webp" alt="Källarvägg med fuktfläckar och kalkutfällningar" width="800" height="450" loading="lazy" />
+
+<p>De tre vanligaste typerna av källarfukt i svenska hus:</p>
+
+<p><strong>1. Kapillärsugning:</strong> vatten sugs upp underifrån via betong och murverk, precis som ett sugrör. Vanligt i äldre hus utan kapillärbrytande skikt under betongplattan. Kännetecken: fukten finns mest nära golvet och är jämnt fördelad.</p>
+
+<p><strong>2. Markfukt via otät grundmur:</strong> vatten tränger in lateralt (horisontellt) via sprickor eller otät murning i grundmuren. Kännetecken: fukten korrelerar med regn och snösmältning, fukten syns som saltutfällningar (vita fläckar) längs sprickor.</p>
+
+<p><strong>3. Kondensfukt:</strong> varm, fuktig sommarluft kondenseras mot kalla källarväggar och golv. Vanligt att det ser torrare ut på vintern än på sommaren, trots att man tror att vintern borde vara värre. Kännetecken: fukten är värre på sommaren och vid varmt väder.</p>
+
+<h2 id="identifiera">Identifiera orsaken</h2>
+
+<p>Enkel diagnostisering med plastfolie-test:</p>
+<ol>
+  <li>Klipp ett 50x50 cm plastfoliestycke</li>
+  <li>Tejpa det lufttätt mot källargolvet eller väggen</li>
+  <li>Lät sitta i 24 till 48 timmar</li>
+  <li><strong>Fukt under plasten (mot väggen/golvet):</strong> markfukt eller kapillärsugning</li>
+  <li><strong>Fukt ovanpå plasten (mot källarluften):</strong> kondensfukt</li>
+</ol>
+
+<h2 id="mata">Mäta fukthalten</h2>
+
+<p>En fuktmätare (400 till 2000 kronor) mäter fukthalten i betong och trä direkt. Det är det tillförlitligare verktyget om du ska avgöra om en yta är lämplig för golvläggning eller renovering.</p>
+
+<p>Betong bör ha under 75 procent RF (relativ fukt) för att PVC-mattor och klinker ska kunna läggas. Trä bör ha under 18 procent fukthalt för att inte riskera mögel och röta.</p>
+
+<h2 id="atgarda-sjalv">Vad du kan göra själv</h2>
+
+<p>Åtgärder som du kan göra utan specialist:</p>
+
+<ul>
+  <li><strong>Avfuktare:</strong> en kondensavfuktare (800 till 3000 kronor) med hygrostat kan hålla luftfuktigheten under 60 procent. Det hanterar kondensfukt och minskar risken för mögelväxt vid kapillärsugning, men löser inte grundproblemet.</li>
+  <li><strong>Tätningsmedel:</strong> för enstaka sprickor i grundmuren kan du använda kristallinttätningsmedel (t.ex. Penetron) som tränger in i betongen och tätar inifrån.</li>
+  <li><strong>Inga kartonger på golvet:</strong> organiska material på fuktig källarbetong möglar snabbt. Ta bort kartonger, trälådor och böcker från kalla golv.</li>
+  <li><strong>Bättre ventilation:</strong> se nedan</li>
+</ul>
+
+<p>Vet du att du har kondensfukt? Ventilera strategiskt: ventilera på morgonen (svalare luft med lägre absolut fuktinnehåll) och håll källaren stängd på varma sommardagar (varm luft har högt fuktinnehåll). Guiden om <a href="/inomhusluft/ventilation-lagenhet/">ventilation i lägenhet</a> förklarar principerna.</p>
+
+<h2 id="ventilation">Ventilation i källaren</h2>
+
+<p>Källaren behöver luftomsättning för att fukt och mögelsporer inte ska ackumuleras. Men felaktig ventilation av källaren kan förvärra kondensproblem.</p>
+
+<ul>
+  <li><strong>Mekanisk frånluftsventilation</strong> (fläkt som drar ut luft) fungerar bra för att sänka fuktighet om du tillåter torr luft att komma in</li>
+  <li><strong>Öppna källarfönster på sommardagar:</strong> undvik detta om utomhusluften är varm och fuktig, den kondenserar mot kalla källarens ytor</li>
+  <li>Håll källartrappan stängd för att förhindra att källarens fukt vandrar upp i huset</li>
+</ul>
+
+<h2 id="nar-specialist">När du behöver specialist</h2>
+
+<ul>
+  <li>Fuktproblemet återkommer trots avfuktning och tätning</li>
+  <li>Mögel finns på mer än 0,5 kvadratmeter, framför allt på konstruktionsvirke</li>
+  <li>Instäng mögellukt i källaren som sprider sig uppåt i huset</li>
+  <li>Du planerar att renovera källaren (lägg aldrig golv på fuktig betong)</li>
+  <li>Strukturella sprickor i grundmuren</li>
+</ul>
+
+<p>Vid synligt mögel på källarens trä och väggar: se guiden om <a href="/mogel-och-fukt/mogel-i-hemmet/">mögel i hemmet</a> för att förstå hur mögel identifieras, mäts och hanteras.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om mögel och fukt" />
+
+</ArticleLayout>
