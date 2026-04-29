@@ -54,24 +54,34 @@ const articleSchema = {
   <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
 
   <article>
-    <header class="relative bg-primary-dark text-white">
-      <img src={heroImage} alt={heroAlt} class="absolute inset-0 w-full h-full object-cover opacity-40" loading="eager" fetchpriority="high" width="1600" height="900" />
-      <div class="absolute inset-0 bg-gradient-to-b from-primary-dark/70 via-primary-dark/60 to-primary-dark/85"></div>
-      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div class="max-w-3xl">
-          <div class="text-xs uppercase tracking-widest text-accent-light font-semibold font-sans mb-4">{category}</div>
-          <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold mb-5 leading-tight">{h1}</h1>
-          <p class="text-lg sm:text-xl text-white/85 leading-relaxed font-serif">{description}</p>
-        </div>
-      </div>
-    </header>
-
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-10">
       <Breadcrumbs items={breadcrumbs} />
 
-      <div class="lg:grid lg:grid-cols-[1fr_280px] lg:gap-12">
+      <div class="lg:grid lg:grid-cols-[1fr_280px] lg:gap-12 mt-4">
         <div>
+          <!-- Kategori + rubrik + ingress -->
+          <header class="mb-6">
+            <a href={breadcrumbs[1]?.href ?? '/'} class="text-xs font-bold uppercase tracking-widest text-accent-dark hover:text-primary transition-colors font-sans">{category}</a>
+            <h1 class="font-heading text-3xl sm:text-4xl font-bold text-text leading-tight mt-2 mb-3">{h1}</h1>
+            <p class="text-lg text-text-light leading-relaxed font-serif">{description}</p>
+          </header>
+
           <AuthorByline publishDate={publishDate} updateDate={updateDate} readingTime={readingTime} variant="top" />
+
+          <!-- Heroibild inlinead -->
+          <figure class="mb-8 -mx-4 sm:mx-0">
+            <img
+              src={heroImage}
+              alt={heroAlt}
+              class="w-full sm:rounded-xl object-cover"
+              style="aspect-ratio: 16/9; max-height: 480px;"
+              loading="eager"
+              fetchpriority="high"
+              width="1200"
+              height="675"
+            />
+          </figure>
+
           <div class="prose-article">
             <slot />
           </div>

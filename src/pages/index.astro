@@ -21,27 +21,13 @@ const formatDate = (d: string) =>
   description="Oberoende guider om allergivänlig städning, kemikaliefri rengöring, inomhusluft och mögel. Faktabaserade råd för ett friskare hem."
 >
 
-  <!-- Kategorinavigation under hauptmenyn -->
-  <div class="border-b border-border bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <nav class="flex gap-1 overflow-x-auto scrollbar-none py-0" aria-label="Ämnesnavigering">
-        {clusters.map(c => (
-          <a
-            href={c.url}
-            class="flex-shrink-0 text-xs font-semibold text-text-lighter uppercase tracking-wider px-3 py-3 hover:text-primary hover:border-b-2 hover:border-primary transition-colors whitespace-nowrap font-sans"
-          >{c.shortLabel}</a>
-        ))}
-      </nav>
-    </div>
-  </div>
-
   <!-- Toppnyhet: stor featured + 2 sekundära -->
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6">
     <div class="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6">
 
       <!-- Stor featured -->
       <article class="group relative">
-        <a href={featured.url} class="block" aria-label={featured.title}>
+        <a href={featured.url} class="block">
           <div class="aspect-[16/9] overflow-hidden rounded-xl bg-bg-alt">
             <img
               src={featured.hero}
@@ -53,6 +39,7 @@ const formatDate = (d: string) =>
               height="450"
             />
           </div>
+          <span class="sr-only">{featured.title}</span>
         </a>
         <div class="mt-4">
           <div class="flex items-center gap-3 mb-2">
@@ -70,7 +57,7 @@ const formatDate = (d: string) =>
       <div class="flex flex-col gap-5 lg:border-l lg:border-border lg:pl-6">
         {secondary.map(a => (
           <article class="group flex gap-4">
-            <a href={a.url} class="flex-shrink-0" aria-label={a.title}>
+            <a href={a.url} class="flex-shrink-0">
               <div class="w-24 h-24 sm:w-28 sm:h-28 overflow-hidden rounded-lg bg-bg-alt">
                 <img
                   src={a.hero}
@@ -81,6 +68,7 @@ const formatDate = (d: string) =>
                   height="200"
                 />
               </div>
+              <span class="sr-only">{a.title}</span>
             </a>
             <div class="flex-1 min-w-0">
               <div class="flex items-center gap-2 mb-1">
@@ -116,7 +104,7 @@ const formatDate = (d: string) =>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
       {rest.map(a => (
         <article class="group flex gap-4 sm:flex-col sm:gap-0">
-          <a href={a.url} class="flex-shrink-0 sm:flex-shrink sm:block sm:mb-3" aria-label={a.title}>
+          <a href={a.url} class="flex-shrink-0 sm:flex-shrink sm:block sm:mb-3">
             <div class="w-24 h-24 sm:w-full sm:aspect-[16/9] overflow-hidden rounded-lg bg-bg-alt">
               <img
                 src={a.hero}
@@ -127,6 +115,7 @@ const formatDate = (d: string) =>
                 height="450"
               />
             </div>
+            <span class="sr-only">{a.title}</span>
           </a>
           <div class="flex-1 min-w-0">
             <div class="flex items-center gap-2 mb-1">
@@ -155,7 +144,7 @@ const formatDate = (d: string) =>
           >
             <h3 class="font-heading text-sm font-bold text-primary-dark group-hover:text-primary transition-colors leading-tight">{c.label}</h3>
             <span class="text-xs text-accent-dark font-semibold group-hover:text-primary transition-colors font-sans">
-              Guider &rarr;
+              {c.label} guider &rarr;
             </span>
           </a>
         ))}
