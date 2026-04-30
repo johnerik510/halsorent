@@ -14,8 +14,15 @@ const clusters = [
     <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
       <div class="md:col-span-2">
         <div class="mb-4">
-          <a href="/" aria-label="Hälsorent startsida">
-            <img src="/halsorent-logo.svg" alt="Hälsorent" class="h-8 w-auto brightness-0 invert" width="166" height="44" loading="lazy" />
+          <a href="/" aria-label="Hälsorent startsida" class="flex items-center gap-2.5">
+            <!-- Bocken: SVG croppad till enbart ikonen, orangefärg bevarad -->
+            <div class="h-9 w-9 flex-shrink-0 overflow-hidden relative">
+              <img src="/halsorent-logo.svg" alt="" aria-hidden="true"
+                   class="absolute"
+                   style="width:290px;margin-left:-155px;margin-top:-250px;" />
+            </div>
+            <!-- Textdel i vitt -->
+            <span class="font-heading font-bold text-xl text-white leading-none tracking-tight">hälsorent<span class="text-orange-300">.se</span></span>
           </a>
         </div>
         <p class="text-sm text-white/80 leading-relaxed max-w-md">Oberoende guide om städning och inomhusmiljö för din hälsa. Verifierade råd om allergivänlig städning, kemikaliefria rengöringsmedel, mögel och inomhusluft.</p>
