@@ -1,0 +1,139 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Callout from '../../components/Callout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('gora-eget-allrengoringsmedel', '/kemikaliefri-stadning/');
+
+const toc = [
+  { id: 'basingredienser', label: 'Tre basingredienser' },
+  { id: 'allrengorare', label: 'Gör ditt eget allrengöringsmedel' },
+  { id: 'badrumsrengoring', label: 'Badrumsrengöring' },
+  { id: 'fonsterputsmedel', label: 'Fönsterputsmedel' },
+  { id: 'skurpulver', label: 'Skurpulver för ugn och spis' },
+  { id: 'vad-som-inte-funkar', label: 'Vad som inte fungerar' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Är hemmagjorda rengöringsmedel lika effektiva som köpta?', a: 'För de flesta vardagsuppgifter: ja. Fettlösning (diskmedel), avkalkning (ättika och citronsyra) och skurverkan (bikarbonat) täcker 80 procent av hushållsrengöringen. Köpta medel är bättre vid desinfektionsbehov och vid hårdnackade organiska fläckar som kräver enzymer.' },
+  { q: 'Kan jag blanda ättika och bikarbonat för extra effekt?', a: 'Nej. Blandningen skapar koldioxidgas (det bubblar) och de neutraliserar varandra. Resultatet är varmt saltvatten utan rengöringseffekt. Använd dem separat på olika uppgifter.' },
+  { q: 'Är ättika säker på alla ytor?', a: 'Nej. Ättika ska inte användas på marmor, kalksten, granitkeramik, natursten eller ytor med kalkfärgning. Det löser upp kalkstensmineralet och etsar ytan. På rostfritt stål, glas, kakel och de flesta plastmaterial fungerar det utmärkt.' },
+  { q: 'Hur länge håller ett hemmagjort rengöringsmedel?', a: 'Ättika och citronsyralösning håller i 3 till 6 månader. Blandningar med diskmedel håller i 1 till 2 månader. Skurpulver med bikarbonat håller nästan obegränsat om det förvaras torrt. Märk alltid upp burken med datum och innehåll.' },
+  { q: 'Behöver jag destillerat vatten?', a: 'Rekommenderat om du bor i ett hårt-vattenområde. Kalkhaltigt kranvatten kan lämna fläckar på fönster och blankt stål. För de flesta rengöringsändamål duger kranvatten utmärkt.' },
+];
+---
+<ArticleLayout
+  title="Gör ditt eget rengöringsmedel: recept med bikarbonat, ättika och citronsyra | Hälsorent"
+  description="Sex beprövade recept på hemmagjorda rengöringsmedel som kostar en bråkdel av köpta. Allrengörare, badrumsrengöring, fönsterputsmedel och skurpulver."
+  heroImage="/images/articles/allrengoringsmedel.webp"
+  heroAlt="Hemmagjorda rengöringsmedel i glasflaskor med bikarbonat och ättika"
+  publishDate="2026-04-30"
+  updateDate="2026-04-30"
+  readingTime={8}
+  breadcrumbs={[{ label: 'Kemikaliefri städning', href: '/kemikaliefri-stadning/' }, { label: 'Gör eget rengöringsmedel' }]}
+  toc={toc}
+  category="Kemikaliefri städning"
+>
+
+<p>En flaska allrengörare från butiken innehåller ofta 90 procent vatten, lite tensid och ibland parfym och konserveringsmedel. Du kan blanda samma sak hemma för under 5 kronor per liter med ingredienser som du troligen redan har. Här är recepten.</p>
+
+<h2 id="basingredienser">Tre basingredienser räcker</h2>
+
+<p>Tre råvaror täcker de flesta rengöringsbehov i ett hem:</p>
+
+<ul>
+  <li><strong>Bikarbonat</strong> (natriumbikarbonat): mild slipeffekt, luktneutraliserande, pH-höjande. Kostar 15 till 25 kronor per kilo.</li>
+  <li><strong>Ättika</strong> (12 procents ättiksprit eller 7 procents matättika): löser upp kalk och fett, viss bakteriell effekt. Kostar 15 till 30 kronor per liter.</li>
+  <li><strong>Citronsyra</strong> (pulver): kraftigare avkalkning än ättika, luktfri, löser mineralavlagringar. Kostar 30 till 50 kronor per kilo.</li>
+</ul>
+
+<p>Valfria tillägg: diskmedel (tensid för fettlösning), flytande kastiljsåpa (mildare tensid) och eteriska oljor för doft (lavendel, eukalyptus, tea tree).</p>
+
+<Callout type="warning" title="Blanda aldrig ättika och bikarbonat">
+  <p>De neutraliserar varandra kemiskt och ger dig ett ineffektivt saltvatten. Använd dem alltid separat: bikarbonat för slipning och neutralisering, ättika för avkalkning och fettlösning.</p>
+</Callout>
+
+<h2 id="allrengorare">Gör ditt eget allrengöringsmedel</h2>
+
+<p>Det här ersätter de flesta universalrengörare och fungerar på köksbänkar, handfat, toaletter och hårda golv.</p>
+
+<p><strong>Recept:</strong></p>
+<ul>
+  <li>4 dl vatten</li>
+  <li>1 dl 12-procentig ättiksprit (eller 2 dl 7-procentig matättika)</li>
+  <li>1 msk diskmedel</li>
+  <li>10 till 15 droppar eterisk olja (valfritt)</li>
+</ul>
+
+<p>Blanda i en sprayflaska. Skaka lätt. Håller 2 till 3 månader.</p>
+
+<p><strong>Fungerar på:</strong> kakel, köksbänkar, toalettsits, handfat, speglar, köksgolv.<br />
+<strong>Undvik på:</strong> marmor, natursten, kalkfärgade ytor, aluminium.</p>
+
+<figure>
+  <img src="/images/inline/hemmagjord-rengoring.webp" alt="Glasflaskor med hemmagjorda rengöringsmedel märkta med innehåll" width="1200" height="700" loading="lazy" />
+  <figcaption>Märk alltid upp hemmagjorda rengöringsmedel med innehåll och datum. Sprayflaskor i glas är hållbarare än plast och tål ättiksyra bättre.</figcaption>
+</figure>
+
+<h2 id="badrumsrengoring">Badrumsrengöring med citronsyra</h2>
+
+<p>Citronsyra är det bästa naturliga avkalkningsmedlet. Det löser upp kalkavlagringar på kran, duschhuvud och kakel utan att lukta lika starkt som ättika.</p>
+
+<p><strong>Recept för badrumsrengöring:</strong></p>
+<ul>
+  <li>5 dl varmt vatten</li>
+  <li>2 msk citronsyrapulver</li>
+  <li>1 tsk diskmedel</li>
+</ul>
+
+<p>Blanda, lägg i sprayflaska. Spraya på ytan, låt verka 5 till 10 minuter, skrubba och skölj. Fungerar utmärkt på kalk runt kranar, i duschkabinen och i toaletten. Du kan även läsa mer om <a href="/kemikaliefri-stadning/citronsyra-rengoring/">citronsyra vid rengöring</a> för avkalkning av kaffemaskiner och vattenkokare.</p>
+
+<h2 id="fonsterputsmedel">Fönsterputsmedel utan ränder</h2>
+
+<p>Receptet som ger streakfria fönster:</p>
+
+<p><strong>Recept:</strong></p>
+<ul>
+  <li>3 dl vatten (destillerat om hårt kratten)</li>
+  <li>1 dl 12-procentig ättiksprit</li>
+  <li>1 tsk diskmedel</li>
+</ul>
+
+<p>Blanda i sprayflaska. Torka av med mikrofiberduk (inte tidningspapper som många tror, mikrofibern ger bättre resultat utan ränder). Undvik att putsa fönster i direkt solljus, det torkar lösningen för fort och ger ränder.</p>
+
+<h2 id="skurpulver">Skurpulver för ugn och spis</h2>
+
+<p>Det kraftigaste hemmagjorda receptet. Fungerar mot inbränt fett i ugnen, på spishällen och i emaljkastrullen.</p>
+
+<p><strong>Recept skurpulver:</strong></p>
+<ul>
+  <li>200 g bikarbonat</li>
+  <li>50 g citronsyrapulver</li>
+  <li>2 msk salt (extra slipverkan)</li>
+</ul>
+
+<p>Blanda torrt i en burk. Fukt med lite vatten till pasta, skrubba in på ytan, låt verka 15 till 30 minuter, skrubba och skölj. Bikarbonat bryter upp organiskt fett, citronsyran löser mineralrester.</p>
+
+<Callout type="tip" title="Ugnsrengöring utan kemikalier">
+  <p>Spraya botten och väggarna i kall ugn med vatten. Strö på ett tjockt lager bikarbonat. Spraya med ättika tills det bubblar. Låt stå över natten. Torka bort med fuktig duk nästa morgon. Kraftig inbränning kan kräva en extra omgång.</p>
+</Callout>
+
+<h2 id="vad-som-inte-funkar">Vad som inte fungerar</h2>
+
+<p>Ärlighet: hemmagjorda medel har begränsningar.</p>
+
+<ul>
+  <li><strong>Desinficering:</strong> ättika och bikarbonat har viss antimikrobiell effekt men är inte desinfektionsmedel i medicinsk mening. Vid gastrointestinala utbrott, salmonella eller liknande: använd godkänt desinfektionsmedel (klorin eller isopropanol)</li>
+  <li><strong>Organiska fläckar (blod, gräs, vin):</strong> enzymatiska medel är avsevärt effektivare</li>
+  <li><strong>Kraftigt igensatta avlopp:</strong> mekanisk rensning eller professionellt medel, inte bikarbonat</li>
+  <li><strong>Mögelbehandling:</strong> ättika har viss effekt på ytmögel men är inte tillräcklig vid mögel i fog och porösa ytor; se guiden för <a href="/mogel-och-fukt/mogelsanering-sjalv/">mögelrengöring</a></li>
+</ul>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om kemikaliefri städning" />
+
+</ArticleLayout>

@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { clusters, getArticlesByCluster } from '../../data/articles';
+
+const cluster = clusters.find(c => c.slug === 'kok-och-hygien')!;
+const articles = getArticlesByCluster(cluster.slug);
+---
+<BaseLayout
+  title="Kök & hygien: rengöring och matsäkerhet | Hälsorent.se"
+  description={cluster.description}
+>
+  <header class="relative bg-primary-dark text-white">
+    <img src={cluster.hero} alt="" class="absolute inset-0 w-full h-full object-cover opacity-35" loading="eager" fetchpriority="high" width="1600" height="900" aria-hidden="true" />
+    <div class="absolute inset-0 bg-gradient-to-r from-primary-dark/90 to-primary-dark/55" aria-hidden="true"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+      <div class="max-w-2xl">
+        <div class="text-xs uppercase tracking-widest text-accent-light font-semibold mb-3 font-sans">Ämne</div>
+        <h1 class="font-heading text-4xl sm:text-5xl font-bold mb-4 leading-tight">{cluster.label}</h1>
+        <p class="text-lg text-white/85 leading-relaxed font-serif">{cluster.intro}</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <Breadcrumbs items={[{ label: cluster.label }]} />
+
+    <div class="prose-article max-w-3xl mb-10">
+      <p>Köket är hemmet mest använda rum och ett av de hygieniskt mest krävande. Bakterier trivs på skärbrädor, fuktiga disktrasor och i ugnen. Rätt rengöringsrutiner och rätt frekvens minskar risken för matförgiftning och håller köket i bra skick.</p>
+      <p>Guiderna nedan täcker ugnsrengöring, skärbrädshygien, spisfläktens filter och desinfektion av kontaktytor som handtag, kranar och bänkar.</p>
+      <h2>I detta ämne</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      {articles.map((a) => (
+        <a href={a.url} class="group block bg-white border border-border rounded-xl overflow-hidden hover:border-primary transition-colors">
+          <div class="aspect-[16/9] overflow-hidden">
+            <img src={a.hero} alt={a.title} width="800" height="450" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-5">
+            <div class="text-xs uppercase tracking-widest text-accent-dark font-semibold mb-2 font-sans">{a.cornerstone ? 'Komplett guide' : 'Guide'}</div>
+            <h2 class="font-heading text-xl font-bold text-text mb-2 leading-snug group-hover:text-primary transition-colors">{a.title}</h2>
+            <p class="text-sm text-text-light leading-relaxed mb-3 font-sans">{a.excerpt}</p>
+            <span class="text-sm text-accent-dark font-medium font-sans">Läs guiden · {a.readingTime} min &rarr;</span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-12 max-w-3xl prose-article">
+      <h2>Köket och matsäkerheten</h2>
+      <p>De flesta matförgiftningar uppstår hemma, inte på restauranger. Skärbrädor, disktrasor och kylskåpets insida är de tre vanligaste källorna till korssmittning i hemmet. Rutinmässig rengöring och rätt hygienpraktik eliminerar den risken utan att kräva kemiska desinfektionsmedel.</p>
+      <p>Regelbundet underhåll av spisfläktens filter och ugnen förlänger också apparaternas livslängd och minskar brandrisken som inbränt fett innebär.</p>
+    </div>
+  </div>
+</BaseLayout>

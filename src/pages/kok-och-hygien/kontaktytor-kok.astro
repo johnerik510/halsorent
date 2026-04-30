@@ -1,0 +1,122 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Callout from '../../components/Callout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('kontaktytor-kok', '/kok-och-hygien/');
+
+const toc = [
+  { id: 'vad-ar-kontaktytor', label: 'Vad är kontaktytor?' },
+  { id: 'korssmittning', label: 'Korssmittning via händer' },
+  { id: 'rengoring-av-kontaktytor', label: 'Rengöring av kontaktytor' },
+  { id: 'disktrasor-och-svampar', label: 'Disktrasor och svampar' },
+  { id: 'frekvens', label: 'Hur ofta?' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Räcker det att torka av bänken med en fuktig trasa?', a: 'En fuktig trasa utan rengöringsmedel sprider bakterier snarare än att ta bort dem. Använd alltid diskmedelsvatten eller allrengörare, och skölj av med ren fuktig duk. Mikrofiber fångar bakterier mekaniskt bättre än vanlig bomullstrasa.' },
+  { q: 'Hur ofta ska disktrasor bytas?', a: 'En disktrasa som används dagligen ska bytas minst en gång i veckan. Tvättas den inte mellan användningarna ska den bytas ännu oftare. Lägg disktrasor i tvätten vid 60 grader, inte 40. En blöt, varm disktrasa är en idealisk miljö för bakterietillväxt.' },
+  { q: 'Är desinfektionsdukar nödvändiga?', a: 'Inte nödvändigtvis. Alkoholbaserade desinfektionsdukar (70-procentig etanol) är effektiva men manar till överdrift i normala hushåll. Regelbunden rengöring med diskmedelsvatten är tillräckligt vid normal hygiennivå. Desinfektionsdukar är motiverade efter hantering av rått kött, vid sjukdom i hushållet, eller för riskgrupper.' },
+  { q: 'Ska man rengöra kökshandtag varje dag?', a: 'Daglig avtorkning är bäst, men räcker inte alltid i vardagen. Prioritera kranar (rörs vid med smutsiga händer), kylskåpshandtaget (rörs vid ofta), ugns- och mikrovågshandtaget. En snabb avdragning med fuktig mikrofiberduk tar 60 sekunder.' },
+  { q: 'Vad är skillnaden mellan rengöring och desinfektion?', a: 'Rengöring tar bort smuts och de flesta bakterier mekaniskt. Desinfektion dödar mikroorganismer med kemiska medel (alkohol, klor). I normala hushåll räcker rengöring. Desinfektion behövs bara vid sjukdom, immunsuppression i hushållet eller efter kontaminering med rått kött.' },
+];
+---
+<ArticleLayout
+  title="Kontaktytor i köket: rengöra handtag, kranar och bänkar rätt | Hälsorent"
+  description="Kökets kontaktytor sprider bakterier via händerna. Vilka ytor riskeras mest, hur du rengör dem effektivt och hur ofta det bör göras."
+  heroImage="/images/articles/kontaktytor.webp"
+  heroAlt="Rena köksbänkar och kranar i ett hygieniskt kök"
+  publishDate="2026-04-30"
+  updateDate="2026-04-30"
+  readingTime={6}
+  breadcrumbs={[{ label: 'Kök & hygien', href: '/kok-och-hygien/' }, { label: 'Kontaktytor i köket' }]}
+  toc={toc}
+  category="Kök & hygien"
+>
+
+<p>Bakterier sprids inte bara via mat — de sprids via händer och kontaktytor. Kökskranen, skåphandtagen och kylskåpsdörren rörs av händer som kan ha hanterat rått kött, jord eller bara är smutsiga från vardagen. Dessa ytor är ofta lika bakteriebelastade som toaletten men städas mer sällan.</p>
+
+<h2 id="vad-ar-kontaktytor">Vad är kontaktytor?</h2>
+
+<p>Kontaktytor är ytor som regelbundet berörs av händer. I köket:</p>
+
+<ul>
+  <li><strong>Hög risk:</strong> kökskranen (rörs vid med smutsiga händer), kylskåpshandtag, mikrovågs- och ugnshandtag, skåphandtag vid spisen</li>
+  <li><strong>Medel risk:</strong> köksbenken runt diskbänken, strömbrytare, kaffemaskinens knappar</li>
+  <li><strong>Lägre risk:</strong> övriga skåphandtag, fönsterbänkar, överhyllor</li>
+</ul>
+
+<h2 id="korssmittning">Korssmittning via händer</h2>
+
+<p>Korssmittning innebär att bakterier förs från en plats till en annan via händer. Scenariot ser ut såhär:</p>
+
+<ol>
+  <li>Du hanterar rå kyckling</li>
+  <li>Du rör vid kylskåpshandtaget för att hämta smör</li>
+  <li>Nästa person i hushållet rör kylskåpshandtaget och sedan sin mat</li>
+</ol>
+
+<p>Campylobacter och salmonella överlever på kontaktytor i timmar till dagar. Lösningen är konsekvent handtvätt och regelbunden rengöring av kontaktytorna.</p>
+
+<Callout type="tip" title="Handtvätt är viktigast">
+  <p>Den effektivaste åtgärden mot spridning via kontaktytor är att tvätta händerna med tvål och vatten i 20 sekunder: alltid efter hantering av rått kött, alltid innan matlagning, alltid när du kommer hem. Rengöring av kontaktytorna är det andra steget — inte det enda.</p>
+</Callout>
+
+<h2 id="rengoring-av-kontaktytor">Rengöring av kontaktytor</h2>
+
+<p>Vad du behöver:</p>
+<ul>
+  <li>Mikrofiberduk (fångar bakterier mekaniskt)</li>
+  <li>Allrengörare eller diskmedelsvatten (1 tsk diskmedel per 5 dl vatten)</li>
+  <li>Eventuellt: 70-procentig isopropyl- eller etanolspray för desinfektion vid behov</li>
+</ul>
+
+<p>Steg:</p>
+<ol>
+  <li>Fukta mikrofiber duken med allrengörare</li>
+  <li>Torka av kontaktytan med tryck, inte bara ytligt</li>
+  <li>Torka av med ren fuktig duk (sköljer bort rengöringsmedelsrester)</li>
+  <li>Torka torrt — fuktiga ytor lockar till sig ny smuts</li>
+</ol>
+
+<figure>
+  <img src="/images/inline/kontaktytor-kok-desinfektion.webp" alt="Rengöring av kökskran och bänkyta med mikrofiberduk" width="1200" height="700" loading="lazy" />
+  <figcaption>Kökskranen rörs vid med smutsiga händer och är kökets vanligaste bakteriehärd utanför skärbrädor. Torka av den dagligen med fuktig mikrofiberduk.</figcaption>
+</figure>
+
+<h2 id="disktrasor-och-svampar">Disktrasor och svampar</h2>
+
+<p>Disktrasor och disksvampar är de mest bakteriebelastade föremålen i köket. De är alltid fuktiga, varma och fulla av matrester — optimala förhållanden för bakterietillväxt.</p>
+
+<ul>
+  <li>Byt disktrasa minst en gång i veckan</li>
+  <li>Tvätta den i 60 grader i tvätten, inte 40</li>
+  <li>Alternativt: blötlägg i klorinlösning (1 tsk klorin per liter vatten) i 5 minuter, skölj</li>
+  <li>Disksvamp: byt var 1 till 2 vecka, aldrig när den luktar</li>
+  <li>Mikrofiber diskdukar är lättare att hålla hygieniska än bomullstrasor</li>
+</ul>
+
+<h2 id="frekvens">Hur ofta?</h2>
+
+<table>
+  <thead>
+    <tr><th>Kontaktyta</th><th>Rekommenderad frekvens</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Kökskran</td><td>Dagligen</td></tr>
+    <tr><td>Kylskåpshandtag</td><td>Varje till varannan dag</td></tr>
+    <tr><td>Köksbänk</td><td>Efter varje matlagningssession</td></tr>
+    <tr><td>Ugns- och mikrovågshandtag</td><td>Veckovis</td></tr>
+    <tr><td>Skåphandtag vid spis</td><td>Veckovis</td></tr>
+    <tr><td>Disktrasa</td><td>Byta/tvätta veckovis</td></tr>
+  </tbody>
+</table>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om kök och hygien" />
+
+</ArticleLayout>

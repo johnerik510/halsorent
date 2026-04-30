@@ -1,0 +1,127 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Callout from '../../components/Callout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('husdjursallergen-i-hemmet', '/allergi-och-astma/');
+
+const toc = [
+  { id: 'hur-allergenerna-sprids', label: 'Hur allergenerna sprids' },
+  { id: 'katt-vs-hund', label: 'Katt- och hundallergener: skillnaden' },
+  { id: 'rum-for-rum', label: 'Minska allergenerna rum för rum' },
+  { id: 'rengoring', label: 'Rengöring och städrutiner' },
+  { id: 'luftrenare', label: 'Luftrenare mot husdjursallergen' },
+  { id: 'om-du-inte-har-husdjur', label: 'Husdjursallergen utan husdjur' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Kan man vänja sig av med husdjursallergi?', a: 'Ja, via allergivaccinering (SCIT eller SLIT) som ges av allergolog. Processen tar 3 till 5 år men kan minska symtomen permanent. Det är inte samma sak som att "vänja sig" utan medicinsk behandling, vilket inte fungerar.' },
+  { q: 'Hur länge finns kattallergenet kvar efter att katten är borta?', a: 'Fel d 1 (kattallergenet) är extremt lätt och fastnar i textilier, väggar och ventilationssystem. I ett hem utan städning efter kattens bortgång kan allergenhalten vara förhöjd i 4 till 6 månader. Med intensiv rengöring av alla textilier och ytor går det ner snabbare.' },
+  { q: 'Är vissa hundraser allergivänliga?', a: 'Inga hundar är helt allergensfria, men raser med låg hårfällning (pudel, bichon frisé, portugisisk vattenhund) avger generellt lägre mängder Can f 1. Enskilda djur inom samma ras kan skilja sig avsevärt i allergenproduktion.' },
+  { q: 'Hjälper det att bada hunden regelbundet?', a: 'Badning varannan till var tredje dag minskar Fel d 1 och Can f 1 på hunden tillfälligt. Effekten sitter i 2 till 3 dagar. Det är en av de mer effektiva åtgärderna om den görs konsekvent.' },
+  { q: 'Kan jag ha katt om jag är allergisk?', a: 'Många allergiker lever med husdjur genom att kombinera luftrenare med HEPA-filter, frekventa städrutiner, husdjursfri sovzon och ibland antihistamin eller nässpray. Det är en individuell bedömning i samråd med allergolog.' },
+];
+---
+<ArticleLayout
+  title="Husdjursallergen i hemmet: minska symtomen utan att ge bort djuret | Hälsorent"
+  description="Katt- och hundallergener fastnar i textilier, möbler och ventilation. Konkreta åtgärder som sänker allergenhalten och lindrar symtomen, även om du behåller djuret."
+  heroImage="/images/articles/husdjursallergen.webp"
+  heroAlt="Hund och katt i ett ljust hem"
+  publishDate="2026-04-30"
+  updateDate="2026-04-30"
+  readingTime={9}
+  breadcrumbs={[{ label: 'Allergi & astma', href: '/allergi-och-astma/' }, { label: 'Husdjursallergen i hemmet' }]}
+  toc={toc}
+  category="Allergi & astma"
+>
+
+<p>Husdjursallergener är inte hår, vilket många tror. Det är proteiner som produceras i hudens talgkörtlar, i saliven och i urinen. De fastnar på hårstrån och dander (avfällda hudceller) och sprids därifrån i hela hemmet. Det är därför allergenerna finns kvar länge efter att djuret är borta, och det är därför det inte räcker att bara hålla hunden borta från sängen.</p>
+
+<p>Allergenerna Fel d 1 (katt) och Can f 1 (hund) är extremt lätta och fastnar på alla ytor: möbler, väggar, kläder och ventilationssystem. En person som inte själv har husdjur kan ha förhöjda allergenhalter hemma om de spenderar tid hos någon som har det.</p>
+
+<h2 id="hur-allergenerna-sprids">Hur allergenerna sprids</h2>
+
+<p>Husdjursallergenerna sprids på tre sätt:</p>
+
+<ul>
+  <li><strong>Direkt kontakt:</strong> att röra djuret och sedan röra ansiktet</li>
+  <li><strong>Luftburen spridning:</strong> allergenerna sitter på partiklar som svävar i luften i timmar efter att djuret rört sig i rummet</li>
+  <li><strong>Sekundär spridning:</strong> du bär hem allergener på kläder, väskor och hår från miljöer där det finns husdjur</li>
+</ul>
+
+<p>Fel d 1 från katt är litet nog att sväva i stillastående luft i flera timmar, vilket gör kattallergener svårare att kontrollera än hundallergener.</p>
+
+<h2 id="katt-vs-hund">Katt- och hundallergener: skillnaden</h2>
+
+<p>Fel d 1 (katt) är det vanligaste allergenproteinet vid husdjursallergi och produceras i kattens talgkörtlar och spottkörtlar. Katten sprider det när den putsar sig. Fet d 1 är mycket litet (molekylvikt 18 kDa) och svävar länge i luften.</p>
+
+<p>Can f 1 (hund) produceras i hundens saliv och naglar och sprids via hud och hår. Hundallergener är generellt lättare att kontrollera eftersom de är tyngre och sjunker snabbare.</p>
+
+<Callout type="assess" title="Hur allvarlig är din exponering?">
+  <p><strong>Låg exponering:</strong> Djuret tillåts i hela hemmet utan regelbunden städning. Allergenhalten är hög i alla rum.</p>
+  <p><strong>Medel exponering:</strong> Djuret hålls borta från sovrummet, textilier dammsrugs regelbundet. Allergenhalten är måttlig.</p>
+  <p><strong>Låg exponering:</strong> Husdjursfri sovzon, daglig dammsugning med HEPA, luftrenare i sovrum, regelbunden badning av djuret. Allergenhalten är klart reducerad.</p>
+</Callout>
+
+<h2 id="rum-for-rum">Minska allergenerna rum för rum</h2>
+
+<h3>Sovrummet: den viktigaste zonens</h3>
+<p>Du spenderar 7 till 8 timmar i sovrummet varje natt och andas in mer luft per tidsenhet under sömnen. Sovrumsallergenhalten påverkar sömnkvaliteten och morgonbesvären mer än något annat rum.</p>
+
+<ul>
+  <li>Husdjursfri sovzon, utan undantag: Fel d 1 minskar med 90 procent i rum där katten inte tillåts om du städar regelbundet</li>
+  <li>Håll sovrumsdörren stängd dygnet runt, inte bara på natten</li>
+  <li>Byt sängkläder var till varannan vecka i 60 grader</li>
+  <li>Luftrenare med HEPA-filter i sovrummet: se råd om <a href="/inomhusluft/luftrenare-allergi/">luftrenare mot allergi</a></li>
+</ul>
+
+<h3>Vardagsrummet</h3>
+<p>Textilier är den största allergenreservoaren. Soffor, mattor och gardiner samlar avsevärt mer allergener än hårda ytor.</p>
+
+<ul>
+  <li>Välj möbler med lättrentgjord klädsel (mikrofiber håller kvar mer allergener än läder eller syntet med slät yta)</li>
+  <li>Dammmas och dammsugs veckovis med HEPA-dammsugare; se råd för <a href="/allergi-och-astma/allergivanlig-dammsugare/">allergivänlig dammsugare</a></li>
+  <li>Heltäckningsmattor är svåra att rengöra från allergener, hårdgolv är att föredra i allergibelastade hem</li>
+</ul>
+
+<h2 id="rengoring">Rengöring och städrutiner</h2>
+
+<p>Frekvens är viktigare än metod. Daglig dammsugning med HEPA minskar allergenhalten mer än en grundlig veckovis städning utan rätt utrustning.</p>
+
+<ol>
+  <li><strong>Dammsuga dagligen</strong> i rum där djuret spenderar tid: golv, möbler, kanter</li>
+  <li><strong>Torka hårda ytor</strong> med fuktig mikrofiberduk veckovis: Fel d 1 är statiskt och fastnar på ytor</li>
+  <li><strong>Borsta och bada djuret</strong> utomhus, varannan till var tredje dag för hund; katter kan penslas med fuktiga djurservetter</li>
+  <li><strong>Tvätta djurets bädd</strong> varje till varannan vecka i 60 grader</li>
+  <li><strong>Byt kläder</strong> efter intensiv kontakt med djuret, innan du går in i sovrummet</li>
+</ol>
+
+<figure>
+  <img src="/images/inline/husdjursallergen-stadning.webp" alt="Dammsugning av soffa med HEPA-dammsugare för att minska husdjursallergen" width="1200" height="700" loading="lazy" />
+  <figcaption>Regelbunden dammsugning av textilier med HEPA-filtrering är den effektivaste åtgärden mot husdjursallergen i hemmet.</figcaption>
+</figure>
+
+<h2 id="luftrenare">Luftrenare mot husdjursallergen</h2>
+
+<p>En luftrenare med True HEPA-filter (filtrerar 99,97 procent av partiklar ner till 0,3 mikrometer) är ett av de mest effektiva hjälpmedlen mot luftburna husdjursallergen. Välj en modell med CADR (Clean Air Delivery Rate) anpassad till rummets storlek.</p>
+
+<p>För ett sovrum på 15 kvadratmeter: CADR på minst 100 m³/h. För ett vardagsrum på 30 kvadratmeter: CADR på minst 200 m³/h.</p>
+
+<Callout type="tip" title="Placera luftrenaren rätt">
+  <p>Placera luftrenaren i det rum där du och djuret spenderar mest tid, inte i hallen. Sovrummet är nästan alltid förstahandsvalet. Luftrenaren ska köra på låg effekt dygnet runt, inte bara när symtomen är värst.</p>
+</Callout>
+
+<h2 id="om-du-inte-har-husdjur">Husdjursallergen utan husdjur</h2>
+
+<p>Husdjursallergener sprids från kläder till alla miljöer. Kontor, skolor, kollektivtrafik och lägenheter utan husdjur har mätbara halter av Fel d 1. Om du är känslig och inte har husdjur men ändå upplever symtom hemma kan det bero på att du bär hem allergenerna på kläder.</p>
+
+<p>Åtgärder: byt om när du kommer hem från miljöer med husdjur, tvätta ytterkläder regelbundet, välj tvättbara kuddar och täcken. Samma <a href="/allergi-och-astma/stada-med-astma/">städrutiner som vid astma</a> hjälper även vid husdjursallergi.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om allergi" />
+
+</ArticleLayout>

@@ -1,0 +1,28 @@
+---
+interface Props {
+  type?: 'info' | 'warning' | 'tip' | 'assess';
+  title?: string;
+}
+const { type = 'info', title } = Astro.props;
+
+const styles = {
+  info: { bg: 'bg-bg-alt', border: 'border-primary', label: 'Info' },
+  warning: { bg: 'bg-amber-50', border: 'border-amber-600', label: 'Varning' },
+  tip: { bg: 'bg-emerald-50', border: 'border-emerald-700', label: 'Tips' },
+  assess: { bg: 'bg-bg-alt', border: 'border-accent', label: 'Bedöm själv' },
+};
+const s = styles[type];
+---
+<aside class={`not-prose my-8 p-5 ${s.bg} border-l-4 ${s.border} rounded-r-md`} role="note">
+  {title && <h4 class="font-heading font-semibold text-base mb-2 text-text">{title}</h4>}
+  <div class="text-sm text-text-light leading-relaxed callout-content">
+    <slot />
+  </div>
+</aside>
+<style>
+  .callout-content :global(p) { margin-bottom: 0.6em; }
+  .callout-content :global(p:last-child) { margin-bottom: 0; }
+  .callout-content :global(ul) { margin: 0.4em 0; padding-left: 1.2em; }
+  .callout-content :global(li) { margin-bottom: 0.3em; }
+  .callout-content :global(strong) { color: var(--color-text); font-weight: 600; }
+</style>

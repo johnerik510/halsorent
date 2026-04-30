@@ -1,0 +1,111 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Callout from '../../components/Callout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('rengora-spisflaknten', '/kok-och-hygien/');
+
+const toc = [
+  { id: 'hur-ofta', label: 'Hur ofta ska fläkten rengöras?' },
+  { id: 'fettfilter', label: 'Rengöra fettfiltret' },
+  { id: 'kapa-och-insida', label: 'Kåpa och insida' },
+  { id: 'kolfilter', label: 'Kolfilter: byte inte rengöring' },
+  { id: 'tecken-pa-igensatt', label: 'Tecken på igensatt fläkt' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Hur vet jag om min spisfläkt har kolfilter eller frånluftsfläkt?', a: 'Frånluftsfläkt (ventilerad): har ett rör som går ut genom vägg eller tak. Kolfilterfläkt (cirkulerande): har inget rör, luften filtreras och recirkuleras. Kolfilter behöver bytas, inte bara rengöras. Kontrollera modellens manual.' },
+  { q: 'Kan man diska fettfiltret i diskmaskin?', a: 'Ja, de flesta metalliska fettfilter (aluminiumfilter) tål diskmaskin, 60-gradersprogram. Det är det enklaste sättet att rengöra dem. Kontrollera i manualen. Gamla filter kan missfärgas men funktionen påverkas inte.' },
+  { q: 'Hur länge håller ett kolfilter?', a: 'Vid normal matlagning 3 till 6 månader. Vid intensiv matlagning med mycket fett och kryddor kortare. Kolfilter kan inte rengöras — aktiv kol mättas och tappar absorptionsförmåga. Byt kolfilter vid sämre luktabsorption, inte på fast schema.' },
+  { q: 'Kan igensatt fläkt orsaka brand?', a: 'Ja. Inbränt fett i fläkten och i kanalerna är brandfarligt. En spisfläkt som inte rengörs regelbundet är en av de vanligaste orsakerna till köksbränder. Rengör fettfiltret minst var tredje månad.' },
+  { q: 'Finns det elrisk vid rengöring av spisfläkt?', a: 'Koppla alltid ur fläktens strömbrytare eller stäng av säkringen innan rengöring av insida och motor. För yttre rengöring av kåpa och filter räcker det att fläkten är avslagen. Spola aldrig vatten direkt mot motorhuset.' },
+];
+---
+<ArticleLayout
+  title="Rengöra spisfläkten: filter, kåpa och insida steg för steg | Hälsorent"
+  description="Igensatt spisfläkt är en vanlig brandorsak. Hur du rengör fettfilter, kåpa och insida, samt när kolfilter behöver bytas istället för rengöras."
+  heroImage="/images/articles/spisflaknten.webp"
+  heroAlt="Spisfläkt ovanför spisen med rena fettfilter"
+  publishDate="2026-04-30"
+  updateDate="2026-04-30"
+  readingTime={6}
+  breadcrumbs={[{ label: 'Kök & hygien', href: '/kok-och-hygien/' }, { label: 'Rengöra spisfläkten' }]}
+  toc={toc}
+  category="Kök & hygien"
+>
+
+<p>Spisfläkten är en av de mest förbisedda apparaterna i köket. Fettfilter som inte rengörs samlar inbränt fett, minskar luftflödet drastiskt och är en reell brandrisk. En fläkt som suger halvdåligt ger heller inte köket den ventilation det behöver.</p>
+
+<h2 id="hur-ofta">Hur ofta ska fläkten rengöras?</h2>
+
+<ul>
+  <li>Fettfilter: var 4 till 8 vecka vid normal matlagning</li>
+  <li>Intensiv matlagning med mycket stekfett: var 2 till 4 vecka</li>
+  <li>Kåpans utsida och insida: var 1 till 3 månad</li>
+  <li>Kolfilter: byts (inte rengörs) var 3 till 6 månad</li>
+</ul>
+
+<Callout type="warning" title="Stäng av strömmen vid rengöring">
+  <p>Slå alltid av spisfläkten på strömbrytaren innan rengöring. För rengöring av fläktens insida och motorhuset: stäng av säkringen. Kombinationen vatten och elektricitet nära motorn är farlig.</p>
+</Callout>
+
+<h2 id="fettfilter">Rengöra fettfiltret</h2>
+
+<p>Fettfiltret är den del som rengörs mest frekvent. De flesta moderna fläktar har metallfilter (aluminium eller rostfritt) som kan rengöras upprepade gånger.</p>
+
+<p><strong>Metod 1: Diskmaskin (enklast)</strong></p>
+<p>Ta ut fettfiltret (de flesta lossnar med ett klick eller ett tryck). Lägg det i diskmaskinen, 60-graders intensivprogram. Gamla filter kan bli missfärgade men funktionen bevaras. Kontrollera manualen att ditt filter tål diskmaskin.</p>
+
+<p><strong>Metod 2: Handrengöring med avfettning</strong></p>
+<ol>
+  <li>Lägg filtret i diskho med mycket varmt vatten och rikligt med diskmedel</li>
+  <li>Blötlägg 15 till 30 minuter</li>
+  <li>Skrubba med diskborste, framför allt i näten</li>
+  <li>Skölj, skaka av och torka eller lufttorka</li>
+</ol>
+
+<p><strong>Metod 3: Bikarbonat och kokande vatten</strong></p>
+<p>Lägg filtret i en plåt eller stor kastrull, strö generöst med bikarbonat, häll kokande vatten tills filtret täcks. Fettet löses upp kemiskt, det skummar. Låt stå 10 minuter, skrubba och skölj. Effektiv metod för ordentligt igensatta filter.</p>
+
+<figure>
+  <img src="/images/inline/spisflaknten-filter-rengoring.webp" alt="Spisfläktens fettfilter rengörs i diskho med varmt vatten och bikarbonat" width="1200" height="700" loading="lazy" />
+  <figcaption>Bikarbonat och kokande vatten löser upp fett i spisfläktens filter effektivt utan aggressiva kemikalier.</figcaption>
+</figure>
+
+<h2 id="kapa-och-insida">Kåpa och insida</h2>
+
+<p>Fläktkåpans utsida samlar fettdimma, damm och smuts. Torka av med en duk fuktad i diskmedelsvatten eller allrengörare. Inga starka slipmedel på rostfria ytor, det repar.</p>
+
+<p>Fläktens insida (bakom filtret) rengörs med fuktig duk när du ändå har filtret ute. Se till att motorn inte utsätts för vätska. Inbränt fett på insidans väggar: bikarbonatpasta appliceras, låt verka 15 minuter, skrapa och torka.</p>
+
+<h2 id="kolfilter">Kolfilter: byte inte rengöring</h2>
+
+<p>Cirkulerande fläktar (utan rör ut) har kolfilter som absorberar lukt. Aktiv kol mättas med tid och kan inte regenereras genom rengöring. Kolfiltret ska bytas, inte tvättas.</p>
+
+<p>Tecken på att kolfiltret behöver bytas:</p>
+<ul>
+  <li>Lukt sprider sig i köket trots att fläkten är på</li>
+  <li>Fläkten låter men doften försvinner inte</li>
+  <li>Det är mer än 6 månader sedan senaste bytet</li>
+</ul>
+
+<p>Kolfilter finns som tillbehör till respektive fläktmodell på näthandel och elektrospecialister. Prisintervall: 200 till 500 kronor.</p>
+
+<h2 id="tecken-pa-igensatt">Tecken på igensatt fläkt</h2>
+
+<ul>
+  <li>Fläkten låter mer än tidigare på samma effektnivå (motor arbetar hårdare)</li>
+  <li>Luftflödet känns svagt trots hög inställning</li>
+  <li>Kökslukterna sprider sig i hela hemmet trots att fläkten är på</li>
+  <li>Synligt grå eller brun beläggning på filtret</li>
+  <li>Oljig film på kåpans utsida och på spishällen</li>
+</ul>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om kök och hygien" />
+
+</ArticleLayout>

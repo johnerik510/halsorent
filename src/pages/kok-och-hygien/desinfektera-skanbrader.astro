@@ -1,0 +1,109 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Callout from '../../components/Callout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('desinfektera-skanbrader', '/kok-och-hygien/');
+
+const toc = [
+  { id: 'varfor-skanbraden', label: 'Varför skärbrädor är en hygienrisk' },
+  { id: 'tra-vs-plast', label: 'Trä eller plast?' },
+  { id: 'daglig-rengoring', label: 'Daglig rengöring' },
+  { id: 'djuprengoring', label: 'Djuprengöring och desinfektion' },
+  { id: 'nar-byta', label: 'När ska skärbrädan bytas?' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Är träskärbrädor mer hygieniska än plastskärbrädor?', a: 'Forskning är delad. Trä absorberar och dödar bakterier i sina fibrer, men djupa repor samlar mer bakterier än på plast. Plast är lättare att desinficera och diskmaskinstäla. Oavsett material är regelbunden rengöring och borttagning av repade och spruckna brädor viktigast.' },
+  { q: 'Kan man lägga träskärbrädor i diskmaskinen?', a: 'Nej. Diskmaskinen skadar träets fibrer, gör det porösare och kortare livslängd. Trä ska alltid handdiskas och torkas torrt direkt. Plastskärbrädor är diskmaskinstäla.' },
+  { q: 'Dödar salt bakterier på skärbrädor?', a: 'Salt har viss bakteriostatisk effekt (hämmar tillväxt) men är inte ett desinfektionsmedel. Kombinationen salt + citron som gnids in och sköljs av är mer ett lukt- och missfärgningsbehandling än en riktig desinfektion.' },
+  { q: 'Hur många skärbrädor bör man ha?', a: 'Minst två: en för rått kött och fisk, en för grönsaker och bröd. Tydlig färgkodning (röd för kött, grön för grönsaker) är en enkel och effektiv metod för att undvika korssmittning i vardagen.' },
+  { q: 'Räcker diskmedel för att ta bort salmonella och campylobacter?', a: 'Ja, vanligt diskmedel i varmt vatten med ordentlig mekanisk skrubbning tar bort de flesta bakterier effektivt. Desinficering med ättika eller klorinlösning är ett extra steg vid osäkerhet om korssmittning med rått kött.' },
+];
+---
+<ArticleLayout
+  title="Desinfektera skärbrädor: hygienguide för kök | Hälsorent"
+  description="Skärbrädor är kökets vanligaste källa till korssmittning. Hur du rengör och desinfekterar trä- och plastskärbrädor, och när det är dags att byta."
+  heroImage="/images/articles/skanbrader.webp"
+  heroAlt="Rena skärbrädor i trä och plast i ett hygieniskt kök"
+  publishDate="2026-04-30"
+  updateDate="2026-04-30"
+  readingTime={6}
+  breadcrumbs={[{ label: 'Kök & hygien', href: '/kok-och-hygien/' }, { label: 'Desinfektera skärbrädor' }]}
+  toc={toc}
+  category="Kök & hygien"
+>
+
+<p>Skärbrädor är kökets mest bakteriebelastade redskap. En studie från UC Davis fann att en vanlig skärbräda har 200 gånger fler bakterier än en toalettsits. Campylobacter från rått kycklingkött och salmonella från rå köttytor överlever länge i repor och sprickor. Rätt rengöringsrutin tar bort dem effektivt.</p>
+
+<h2 id="varfor-skanbraden">Varför skärbrädor är en hygienrisk</h2>
+
+<p>Knivskär i skärbrädan skapar mikroskopiska sprickor där bakterier och matrester samlas. Ytliga sprickor är svåra att nå med disksvampen. Om du skär rå kyckling på brädan och sedan skär grönsaker utan att rengöra ordentligt däremellan, kallas det korssmittning och är en av de vanligaste orsakerna till matförgiftning i hemmet.</p>
+
+<p>Riskfyllda livsmedel för korssmittning:</p>
+<ul>
+  <li>Rå kyckling och rött kött (campylobacter, salmonella, E. coli)</li>
+  <li>Rå fisk och skaldjur</li>
+  <li>Otvättade rotfrukter och grönsaker (jord-relaterade bakterier)</li>
+</ul>
+
+<Callout type="tip" title="Färgkodning förhindrar korssmittning">
+  <p>Det enklaste sättet att undvika korssmittning: separata skärbrädor med tydlig färgkodning. Röd för rått kött, gul för fjäderfä, grön för grönsaker, blå för fisk. Du behöver aldrig komma ihåg vad som skurits var.</p>
+</Callout>
+
+<h2 id="tra-vs-plast">Trä eller plast?</h2>
+
+<p>Båda materialen kan vara hygieniska om de underhålls rätt.</p>
+
+<p><strong>Trä</strong> har antibakteriella egenskaper i fibern men samlar mer bakterier i djupa repor. Trä ska aldrig läggas i diskmaskinen (det spricker och bucklar) och behöver oljas in med matolja var 2 till 3 månad för att inte torka och spricka. Slipning med sandpapper tar bort ytliga repor.</p>
+
+<p><strong>Plast</strong> är lättare att desinficera, diskmaskinstäla och billigare att byta ut. Nackdelen är att äldre plastskärbrädor med djupa repor är svårare att rengöra effektivt. Byt plastskärbrädan när den är kraftigt repad.</p>
+
+<h2 id="daglig-rengoring">Daglig rengöring</h2>
+
+<p>Rengör skärbrädan direkt efter användning, inte efter att rester torkat fast.</p>
+
+<ol>
+  <li>Skölj av lösa rester under rinnande vatten</li>
+  <li>Gnid in diskmedel på hela ytan med diskborste eller disksvamp</li>
+  <li>Skrubba i riktning längs träets fibrer (träskärbräda) eller i alla riktningar (plast)</li>
+  <li>Skölj noggrant med varmt vatten</li>
+  <li>Torka torrt direkt och ställ på kant för luftning (aldrig platt, det samlar fukt under)</li>
+</ol>
+
+<p>Plastskärbrädor: diskmaskin på 60 grader är det bästa alternativet för daglig rengöring.</p>
+
+<figure>
+  <img src="/images/inline/skanbrader-hygien.webp" alt="Skärbrädor ställda på kant för att lufttorka efter rengöring" width="1200" height="700" loading="lazy" />
+  <figcaption>Ställ alltid skärbrädor på kant för att lufttorka — liggande skärbrädor samlar fukt under och gynnar bakterietillväxt.</figcaption>
+</figure>
+
+<h2 id="djuprengoring">Djuprengöring och desinfektion</h2>
+
+<p>En gång i veckan, eller alltid efter kontakt med rått kött och fisk:</p>
+
+<p><strong>Metod 1: Ättika</strong></p>
+<p>Häll outtspädd vit ättika på ytan, låt verka 5 minuter, skölj. Ättika har viss antimikrobiell effekt och är säker på trä och plast.</p>
+
+<p><strong>Metod 2: Citronsyralösning</strong></p>
+<p>Blanda 1 msk citronsyra per dl vatten, spraya på ytan, låt verka 10 minuter, skölj. Effektivt mot vanliga kökspatogener och luktfritt.</p>
+
+<p><strong>Metod 3: Klorinlösning (vid säkerhet om kontaminering)</strong></p>
+<p>1 msk hushållsklorin per liter vatten. Lägg skärbrädan i lösningen i 2 minuter, skölj noggrant. Det effektivaste alternativet men kräver handskar och god ventilation. Aldrig på träskärbrädor (bleker och skadar fibrerna).</p>
+
+<h2 id="nar-byta">När ska skärbrädan bytas?</h2>
+
+<ul>
+  <li>Plastskärbräda: när djupa repor inte kan rengöras effektivt, vanligtvis efter 1 till 3 år</li>
+  <li>Träskärbräda: vid djupa sprickor eller när oljebehandling inte längre hjälper mot uttorkning</li>
+  <li>Alltid om skärbrädan fått stå med blöt yta under lång tid och mögellukt uppstått</li>
+</ul>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om kök och hygien" />
+
+</ArticleLayout>

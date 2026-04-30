@@ -1,0 +1,121 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Callout from '../../components/Callout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('avfuktare-hemmet', '/mogel-och-fukt/');
+
+const toc = [
+  { id: 'nar-behover-du', label: 'När behöver du en avfuktare?' },
+  { id: 'kondensations-vs-adsorption', label: 'Kondensation eller adsorption?' },
+  { id: 'valja-kapacitet', label: 'Välja rätt kapacitet' },
+  { id: 'placering', label: 'Placering och användning' },
+  { id: 'kallare-och-krypgrund', label: 'Källare och krypgrund' },
+  { id: 'underhall', label: 'Skötsel och underhåll' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Vad är optimal luftfuktighet inomhus?', a: '40 till 50 procent relativ luftfuktighet är optimalt för hälsa och byggnad. Under 30 procent torkar slemhinnorna och träpanel spricker. Över 60 procent riskerar du kondensation på kalla ytor och mögeltillväxt.' },
+  { q: 'Hur vet jag om jag behöver en avfuktare?', a: 'Köp en digital hygrometer för 100 till 200 kronor och mät. Om luftfuktigheten regelbundet överstiger 60 procent i ett rum, eller om du ser kondensation på fönster, är en avfuktare motiverad. Mätning är bättre än att gissa.' },
+  { q: 'Kan man använda en avfuktare mot mögel?', a: 'En avfuktare förebygger ny mögelväxt men tar inte bort befintligt mögel. Befintligt mögel måste rengöras mekaniskt. Avfuktaren håller luftfuktigheten under möglets tillväxttröskel och förhindrar att det kommer tillbaka.' },
+  { q: 'Vad kostar det att köra en avfuktare?', a: 'En avfuktare på 300 till 500 watt dygnet runt kostar 65 till 110 kronor per månad vid 30 öre per kWh. De flesta behöver inte köra maskinen dygnet runt, utan bara tills målnivån är nådd (hygrometerstyrning hjälper att spara el).' },
+  { q: 'Fungerar avfuktare i kyla?', a: 'Kondensationsavfuktare tappar effekt under 15 till 18 grader och slutar fungera helt under 5 grader. För källare och garage under vinterhalvåret krävs en adsorptionsavfuktare som fungerar ner till under noll grader.' },
+];
+---
+<ArticleLayout
+  title="Avfuktare hemma: när du behöver en och hur du väljer rätt | Hälsorent"
+  description="Förhöjd luftfuktighet gynnar mögel och dammkvalster. Hur du mäter, väljer rätt avfuktartyp och storlek, och var du bör placera den för bäst effekt."
+  heroImage="/images/articles/avfuktare.webp"
+  heroAlt="Avfuktare i ett källarrum med hygrometer"
+  publishDate="2026-04-30"
+  updateDate="2026-04-30"
+  readingTime={9}
+  breadcrumbs={[{ label: 'Mögel & fukt', href: '/mogel-och-fukt/' }, { label: 'Avfuktare hemma' }]}
+  toc={toc}
+  category="Mögel & fukt"
+>
+
+<p>Relativ luftfuktighet över 60 procent skapar optimala förhållanden för mögeltillväxt och dammkvalster. I svenska hem är förhöjd luftfuktighet vanligast i källare, badrum och krypgrunder, men kan uppstå var som helst under fuktiga månader. En avfuktare är ett effektivt verktyg när ventilation inte räcker till.</p>
+
+<h2 id="nar-behover-du">När behöver du en avfuktare?</h2>
+
+<p>En avfuktare är motiverad när:</p>
+
+<ul>
+  <li>Luftfuktigheten regelbundet överstiger 60 procent i ett rum (mät med hygrometer)</li>
+  <li>Kondens bildas på fönster, kalla ytor eller köldbryggor</li>
+  <li>Det luktar fukt eller instängt i källare, garage eller krypgrund</li>
+  <li>Du har fått ett mögelintyg och ska förhindra återväxt</li>
+  <li>Kläder som hängs på tork inomhus höjer fuktnivån påtagligt</li>
+</ul>
+
+<Callout type="assess" title="Mät innan du köper">
+  <p>Köp en digital hygrometer (100 till 200 kr, finns på Clas Ohlson, Jula och Kjell) och mät luftfuktigheten i det aktuella rummet under en vecka. Om mätningarna konsekvent visar över 60 procent är en avfuktare motiverad. Om mätningarna visar 45 till 55 procent kan förbättrad ventilation räcka.</p>
+</Callout>
+
+<h2 id="kondensations-vs-adsorption">Kondensation eller adsorption?</h2>
+
+<p>Det finns två principiellt olika avfuktartyper:</p>
+
+<h3>Kondensationsavfuktare</h3>
+<p>Fungerar som ett kylskåp: fuktig luft leds över ett kallt element, vatten kondenseras och dräneras. Effektiv vid rumstemperatur (över 15 till 18 grader). Tappar effekt i kyla och slutar fungera under 5 grader. Bäst för inomhusmiljöer med normal temperatur: sovrum, vardagsrum, källare med uppvärmning.</p>
+
+<h3>Adsorptionsavfuktare</h3>
+<p>Fukten absorberas av ett roterande silikagel-hjul och driver sedan ut med varm luft. Fungerar i kyla ner till minus 20 grader. Bättre för ouppvärmda källare, garage, båtar och krypgrunder. Något dyrare i drift.</p>
+
+<figure>
+  <img src="/images/inline/avfuktare-typer.webp" alt="Kondensationsavfuktare och adsorptionsavfuktare sida vid sida" width="1200" height="700" loading="lazy" />
+  <figcaption>Kondensationsavfuktare till vänster (för uppvärmda rum) och adsorptionsavfuktare till höger (för kalla utrymmen).</figcaption>
+</figure>
+
+<h2 id="valja-kapacitet">Välja rätt kapacitet</h2>
+
+<p>Kapaciteten anges i liter per dygn vid standardiserade testförhållanden (30 grader, 80 procents luftfuktighet), vilket skiljer sig från verkliga förhållanden. Ta tillverkarens siffra med en nypa salt och räkna upp med 30 till 50 procent.</p>
+
+<table>
+  <thead>
+    <tr><th>Rumsstorlek</th><th>Luftfuktighet</th><th>Rekommenderad kapacitet</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>upp till 30 m²</td><td>måttlig (55-65%)</td><td>10-16 liter/dygn</td></tr>
+    <tr><td>30-60 m²</td><td>måttlig</td><td>16-25 liter/dygn</td></tr>
+    <tr><td>källare (50-100 m²)</td><td>hög (65-80%)</td><td>25-40 liter/dygn</td></tr>
+    <tr><td>krypgrund</td><td>hög</td><td>Adsorptionsmodell, 20-30 l/dygn</td></tr>
+  </tbody>
+</table>
+
+<h2 id="placering">Placering och användning</h2>
+
+<p>Placera avfuktaren mitt i rummet, inte i ett hörn, för bästa luftcirkulation. Stäng dörrar och fönster när maskinen körs. De flesta moderna modeller har en hygrostat som stänger av maskinen när målnivån nåtts (ställ in 45 till 50 procent). Det sparar el och förhindrar uttorkning.</p>
+
+<p>Töm vattentanken dagligen, eller anslut en avloppsslang om maskinen har det alternativet. En full tank stoppar maskinen automatiskt men är ett vanligt problem om du glömmer tömning.</p>
+
+<h2 id="kallare-och-krypgrund">Källare och krypgrund</h2>
+
+<p>Källare och krypgrunder är de vanligaste platserna för fuktproblem i svenska hus. En avfuktare i krypgrunden ska köras under hela sommaren (maj till september) när utomhusluften är varm och fuktig och kondenserar mot det kalla betongbjälklaget.</p>
+
+<p>En krypgrundsavfuktare ska vara driftsatt med kontinuerlig dränering eller ha en stor tank som töms manuellt. Krypgrunder kräver ofta adsorptionsmodell på grund av låga temperaturer. Mer om fukt i källare och krypgrunder finns i guiden om <a href="/mogel-och-fukt/fukt-kallare/">fukt i källaren</a>.</p>
+
+<Callout type="tip" title="Kombinera avfuktare med ventilation">
+  <p>En avfuktare ensam löser inte problemet om fukttillförseln är stor (dålig dränering, vattenläckage, otillräcklig ventilation). Åtgärda källan till fukten, sedan är avfuktaren ett komplement för att kontrollera kvarstående fukt. En avfuktare som körs mot en öppen dörr mot fuktigt klimat arbetar i uppförsbacke.</p>
+</Callout>
+
+<h2 id="underhall">Skötsel och underhåll</h2>
+
+<ul>
+  <li>Rengör filtret var 2 till 4 vecka (dammsug eller skölj med vatten)</li>
+  <li>Töm vattentanken dagligen, eller anslut dräneringsslang</li>
+  <li>Rengör kondensatorspiraler en gång per år med mjuk borste</li>
+  <li>Förvara maskinen torrt på vintern om den inte används</li>
+</ul>
+
+<p>Om luftfuktigheten inte minskar trots att maskinen körs: kontrollera att filtret är rent, att dörrar och fönster är stängda, och att kapaciteten är tillräcklig för rummets storlek och faktiska fukttillförsel. Tillförseln av fukt (kokning, duschning, tvättorkning) kan överstiga maskinens kapacitet.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om mögel och fukt" />
+
+</ArticleLayout>

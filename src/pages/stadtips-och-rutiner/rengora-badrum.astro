@@ -1,0 +1,130 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Callout from '../../components/Callout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('rengora-badrum', '/stadtips-och-rutiner/');
+
+const toc = [
+  { id: 'ordning', label: 'Rätt ordning i badrummet' },
+  { id: 'toalett', label: 'Toaletten: snabbaste vägen till rent' },
+  { id: 'dusch-och-badkar', label: 'Dusch och badkar' },
+  { id: 'handfat-och-kran', label: 'Handfat och kran' },
+  { id: 'golv', label: 'Golv och golvbrunn' },
+  { id: 'djupstadning', label: 'Djupstädning var tredje månad' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Hur ofta ska badrummet städas?', a: 'Toalett och handfat bör torkas av varje till varannan dag vid normal användning. Golvdusch och golv en gång per vecka. Djupstädning av fogar, bakom toaletten och inuti skåp var till varannan månad. Det tar totalt 5 till 10 minuter för veckostädningen om du håller grundnivån uppe.' },
+  { q: 'Vilket är det bästa rengöringsmedlet för kalk i duschen?', a: 'Citronsyra (2 msk per 5 dl vatten) är det effektivaste naturliga avkalkningsmedlet. Spraya, låt verka 10 till 20 minuter på kalkiga ytor och skölj. Undvik ättika på fogmassa och natursten, det kan skada materialet. Citronsyra är mildare och luktfriare.' },
+  { q: 'Hur tar man bort svart mögel i duschfogar?', a: 'Lätt ytmögel: pensla med en blandning av diskmedel och vätväteperoxid (3-procentig apoteksvariant), låt verka 30 minuter, skrubba med tandborste och skölj. Djupgående svart mögel i fogmassan kan inte rengöras bort, fogmassan behöver bytas. Guiden om <a href="/mogel-och-fukt/mogel-badrum/">mögel i badrummet</a> beskriver processen.' },
+  { q: 'Kan man desinficera badrummet med naturliga medel?', a: 'Destillerad vit ättika har viss antibakteriell effekt men är inte ett medicinsk desinfektionsmedel. Vid mag-tarm-infektioner i hushållet eller andra hygieniska skäl att desinficera: använd godkänt desinfektionsmedel med etanol (70 procent) eller hypoklorit. Annars räcker god rengöring.' },
+  { q: 'Varför luktar det i badrummet trots att det är rent?', a: 'Den vanligaste orsaken är uttorkat vattenlås i golvbrunnen eller handfatets avlopp. Häll en hink vatten i golvbrunnen. Luktar det fortfarande är det ofta organiska avlagringar i avloppsröret eller bakom toalettets sköljtank. Kontrollera också ventilationsgallret, det kan vara igensatt.' },
+];
+---
+<ArticleLayout
+  title="Rengöra badrummet effektivt: steg för steg med naturliga medel | Hälsorent"
+  description="Badrummet rengörs snabbast med rätt ordning och rätt medel. Komplett guide: toalett, dusch, handfat, golv och djupstädning av fogar."
+  heroImage="/images/articles/badrum-stadning.webp"
+  heroAlt="Rent badrum med duschdörr och handfat"
+  publishDate="2026-04-30"
+  updateDate="2026-04-30"
+  readingTime={7}
+  breadcrumbs={[{ label: 'Städtips & rutiner', href: '/stadtips-och-rutiner/' }, { label: 'Rengöra badrummet' }]}
+  toc={toc}
+  category="Städtips & rutiner"
+>
+
+<p>Badrummet är det rum i hemmet med högst bakteriekoncentration och den snabbaste tillväxten av kalk, såprester och mögel. Det tar längre att städa än de flesta andra rum, men rätt ordning och rätt medel halverar tiden utan att ge sämre resultat.</p>
+
+<h2 id="ordning">Rätt ordning i badrummet</h2>
+
+<p>Badrummet städas i denna ordning:</p>
+
+<ol>
+  <li>Applicera rengöringsmedel på toalett, dusch och handfat <em>innan</em> du börjar skrubba. Låt verka medans du gör annat.</li>
+  <li>Rengör toaletten (börja alltid med toaletten)</li>
+  <li>Rengör duschen och badet</li>
+  <li>Rengör handfat och kran</li>
+  <li>Torka av alla hårda ytor, spegel, hylla, dörr</li>
+  <li>Rengör golv och golvbrunn sist</li>
+</ol>
+
+<Callout type="tip" title="Applicera medlen tidigt">
+  <p>Häll en kula toalettmedel i skålen och spraya citronsyralösning i duschen innan du sätter igång med något annat. Medan du rengör toaletten arbetar medlen vidare i duschen. Det sparar skrubbarbete.</p>
+</Callout>
+
+<h2 id="toalett">Toaletten: snabbaste vägen till rent</h2>
+
+<p>Toaletten rengörs i tre steg:</p>
+
+<ol>
+  <li><strong>Insidan av skålen:</strong> häll en kula toalettmedel eller en msk bikarbonat i skålen, låt verka 5 minuter, skrubba med toalettborsten runt hela insidan inklusive under kanten. Spola.</li>
+  <li><strong>Sitsen:</strong> lyfts av (de flesta moderna toalettsitsar lossnar med ett klick eller med en skruv). Rengör undersidan, insidan och alla hörn med diskmedelsvatten och papper eller trasa. Torka sitsens ovansida och sidorna.</li>
+  <li><strong>Utsidan:</strong> torka av toalettstomme, tank och väggen bakom toaletten med fuktig duk och allrengörare. Bakom toaletten är ofta förbisedd.</li>
+</ol>
+
+<p>Byt toalettborsten var 6:e månad eller när den ser sliten ut. En sliten borste rengör sämre och kan sprida mer än den städar.</p>
+
+<h2 id="dusch-och-badkar">Dusch och badkar</h2>
+
+<p>Kalk och såprester är de vanligaste problemet i duschen. Citronsyra löser upp kalk effektivt utan att skada de flesta ytor.</p>
+
+<p><strong>Veckovis rengöring:</strong></p>
+<ul>
+  <li>Spraya duschwäggar och badkar med allrengörare eller citronsyralösning (2 msk citronsyra per 5 dl vatten)</li>
+  <li>Skrubba med mjuk badrumsborste eller svamp. Glasväggar: använd squeegee dagligen för att förhindra kalkavlagring.</li>
+  <li>Rengör duschhuvudet: blötlägg i citronsyralösning 20 minuter om kalkavlagring hindrar vattenstrålen</li>
+</ul>
+
+<figure>
+  <img src="/images/inline/badrum-rengoring-dusch.webp" alt="Rengöring av duschkabinen med citronsyra och borste" width="1200" height="700" loading="lazy" />
+  <figcaption>Citronsyra är det effektivaste naturliga medlet mot kalk i duschen. Spraya, låt verka 10 minuter, skrubba och skölj.</figcaption>
+</figure>
+
+<p><strong>Fogar:</strong> rengör med en gammal tandborste och diskmedelsvatten. Svart ytmögel i fogar: pensla med vätväteperoxid (3 procent), låt verka 20 minuter, skrubba. Vid djupgående mögel i fogmassan behöver den bytas ut. Se guiden om <a href="/mogel-och-fukt/mogel-badrum/">mögel i badrummet</a>.</p>
+
+<h2 id="handfat-och-kran">Handfat och kran</h2>
+
+<p>Handfatets avlopp samlar hår, såpa och tandkräm och behöver tömmas regelbundet. Lyft siphonen om möjligt, ta ut hårklimp med papper, skölj. Luktar det från avloppet: häll ett glas vatten med en msk bikarbonat i, låt stå, skölj med varmt vatten.</p>
+
+<p>Kranar med kalkavlagring: blötlägg med citronsyralösning i en plastpåse bunden runt kranen i 30 minuter. Polera med mikrofiberduk.</p>
+
+<h2 id="golv">Golv och golvbrunn</h2>
+
+<p>Badrumsgolvet städas sist, efter att allt annat smuts fallit ner under städningen.</p>
+
+<ol>
+  <li>Lyft golvbrunnens sil, ta bort hår och skräp med papper</li>
+  <li>Skölj golvbrunnen med varmt vatten</li>
+  <li>Skura golvet med varmt vatten och allrengörare: skurborste eller moppning</li>
+  <li>Skölj med rent vatten, torka med torr trasa om möjligt (förebygger kalkfläckar)</li>
+</ol>
+
+<p>Golvtrender kan verka dubbla, det gäller att bekämpa dem regelbundet. Se städrutiner och stadschema i <a href="/stadtips-och-rutiner/stadschema-hemmet/">städschema för hemmet</a> för en helhetsbild av hur badrumsstädningen integreras i övriga städrutiner.</p>
+
+<h2 id="djupstadning">Djupstädning var tredje månad</h2>
+
+<p>Utöver veckostädningen behöver badrummet djupstädas tre till fyra gånger per år:</p>
+
+<ul>
+  <li>Ta ur alla lådor och hyllor och rengör dem inifrån</li>
+  <li>Rengör bakom toaletten och bakom toaletttanken</li>
+  <li>Byt fogmassa vid behov (silikonfogar i duschkabinen håller 5 till 10 år)</li>
+  <li>Rengör ventilationsgallret (dammsugs och torkas av)</li>
+  <li>Kontrollera att alla avlopp rinner fritt</li>
+  <li>Inspektera under badrumsmöbeln för fuktfläckar eller mögel</li>
+</ul>
+
+<Callout type="info" title="Ventilation förebygger mögel">
+  <p>Fukt är det badrummet städproblem som inte rengöring löser. Vädra badrummet efter duschning, alltid. Lämna fördörren öppen, kör frånluftsfläkten. Luftfuktigheten ska vara under 60 procent efter 30 minuter. Om inte, är ventilationen otillräcklig. Mer om luftfuktighet och mögel: <a href="/inomhusluft/luftfuktighet-hemmet/">luftfuktighet i hemmet</a>.</p>
+</Callout>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler städguider" />
+
+</ArticleLayout>

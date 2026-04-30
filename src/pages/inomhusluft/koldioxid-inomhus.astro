@@ -1,0 +1,117 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Callout from '../../components/Callout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('koldioxid-inomhus', '/inomhusluft/');
+
+const toc = [
+  { id: 'vad-ar-problemet', label: 'Varför koldioxid inomhus är ett problem' },
+  { id: 'niva-oversikt', label: 'CO₂-nivåer och deras effekter' },
+  { id: 'mata', label: 'Hur du mäter koldioxid hemma' },
+  { id: 'atgarder', label: 'Åtgärder för lägre CO₂-halt' },
+  { id: 'sovrum', label: 'Sovrummet: det viktigaste rummet' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Hur farligt är hög koldioxid inomhus?', a: 'Vid normala inomhusnivåer (400 till 1 500 ppm) är koldioxid inte direkt farligt, men det påverkar kognition och välbefinnande märkbart. Studier visar att kognitionsförmågan minskar med 15 procent vid 1 000 ppm och med 50 procent vid 2 500 ppm jämfört med utomhusluft på 420 ppm.' },
+  { q: 'Hur många ppm är normalt utomhus?', a: 'Utomhusluft i städer innehåller 410 till 430 ppm CO₂. I naturen utan biltrafik är det 400 till 415 ppm. Under 700 ppm anses utmärkt för inomhusmiljöer. 700 till 1 000 ppm är acceptabelt, över 1 000 är ett tecken på otillräcklig ventilation.' },
+  { q: 'Hjälper växter mot koldioxid?', a: 'Inte märkbart. Växter absorberar CO₂ via fotosyntes men i mycket liten mängd jämfört med det du andas ut. En genomsnittlig människa andas ut 200 liter CO₂ per timme. Du skulle behöva ett par hundra stora växter för att kompensera en person. Ventilation är den enda effektiva åtgärden.' },
+  { q: 'Vad kostar en CO₂-mätare?', a: 'En grundläggande CO₂-mätare med NDIR-sensor (korrektare teknik) kostar 400 till 800 kronor. Billigare varianter använder elektrisk sensor och är opålitliga. Märken som Aranet4, CO2meter och SCD40-baserade modeller brukar rekommenderas.' },
+  { q: 'Räcker det med friskluftventiler?', a: 'Friskluftventiler i fönsterkarmar tillför frisk luft passivt men beror helt på temperaturskillnaden inne/ute. På sommaren, när trycket är lika på båda sidor, tillför de lite luft. De är ett bra komplement men inte en fullständig lösning vid hög belastning (sovrum med stängd dörr).' },
+];
+---
+<ArticleLayout
+  title="Koldioxid inomhus: mäta, förstå och sänka CO₂-halten hemma | Hälsorent"
+  description="Hög CO₂-halt i hemmet ger trötthet, huvudvärk och sämre sömn. Hur du mäter koldioxid, tolkar värdena och åtgärdar problemet med ventilation."
+  heroImage="/images/articles/koldioxid.webp"
+  heroAlt="CO2-mätare på ett nattduksbord i ett sovrum"
+  publishDate="2026-04-30"
+  updateDate="2026-04-30"
+  readingTime={8}
+  breadcrumbs={[{ label: 'Inomhusluft', href: '/inomhusluft/' }, { label: 'Koldioxid inomhus' }]}
+  toc={toc}
+  category="Inomhusluft"
+>
+
+<p>Koldioxid (CO₂) är ofarlig i låga halter men påverkar kognition, sömn och välbefinnande märkbart redan vid de nivåer som är normala i svenska sovrum med stängda dörrar. Problemet är att du inte kan känna det direkt, men forskning visar tydliga samband med trötthet, koncentrationssvårigheter och sämre sömnkvalitet.</p>
+
+<h2 id="vad-ar-problemet">Varför koldioxid inomhus är ett problem</h2>
+
+<p>Du andas ut koldioxid kontinuerligt. I ett dåligt ventilerat rum stiger CO₂-halten gradvis. Utomhusluft innehåller ungefär 420 ppm (parts per million) CO₂. En person i ett stängt sovrum på 20 kvadratmeter utan ventilation kan höja CO₂-halten till 2 000 till 3 000 ppm under en natt.</p>
+
+<p>Forskning från Lawrence Berkeley National Laboratory visar att kognitionsförmågan minskar mätbart redan vid 1 000 ppm, och att sömnkvaliteten påverkas negativt av CO₂-halter som är vanliga i dåligt ventilerade sovrum.</p>
+
+<h2 id="niva-oversikt">CO₂-nivåer och deras effekter</h2>
+
+<table>
+  <thead>
+    <tr><th>Nivå (ppm)</th><th>Bedömning</th><th>Typiska effekter</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Under 700</td><td>Utmärkt</td><td>Utomhuslikvärdigt, inga effekter</td></tr>
+    <tr><td>700 till 1 000</td><td>Bra till acceptabelt</td><td>Normalt för ventilerade kontor och hem</td></tr>
+    <tr><td>1 000 till 1 500</td><td>Måttligt dåligt</td><td>Märkbar trötthet, lättare koncentrationssvårigheter</td></tr>
+    <tr><td>1 500 till 2 500</td><td>Dåligt</td><td>Huvudvärk, trötthet, sämre sömn</td></tr>
+    <tr><td>Över 2 500</td><td>Otillräcklig ventilation</td><td>Påtagliga symtom, åtgärd krävs</td></tr>
+  </tbody>
+</table>
+
+<Callout type="info" title="CO₂ vs andra luftföroreningar">
+  <p>CO₂ är ett enkelt mått på ventilationskvalitet men inte den enda luftföroreningen. Hög CO₂ indikerar att ventilationen är otillräcklig, vilket också betyder att VOC, dammpartiklar och biologiska allergener ansamlas. Att sänka CO₂ innebär att du förbättrar luftkvaliteten generellt. Läs mer om <a href="/inomhusluft/forbattra-inomhusluft/">att förbättra inomhusluften</a>.</p>
+</Callout>
+
+<h2 id="mata">Hur du mäter koldioxid hemma</h2>
+
+<p>En CO₂-mätare är det enda sättet att veta om du har ett problem. Du kan inte känna av det, och symptomen (trötthet, lätt huvudvärk) är diffusa och lätta att felattribuera.</p>
+
+<p>Köp en mätare med NDIR-sensor (Non-Dispersive Infrared). Dessa är noggranna och stabila. Elektriska sensorer (billigare, under 300 kronor) är för opålitliga för meningsfull mätning.</p>
+
+<p><strong>Hur du mäter rätt:</strong></p>
+<ol>
+  <li>Placera mätaren på 1 till 1,5 meters höjd, inte direkt mot ett fönster eller ventilationstrumma</li>
+  <li>Mät i det rum du spenderar mest tid: sovrummet på natten, vardagsrummet på kvällen</li>
+  <li>Notera toppar, inte bara medelvärdet. Klockan 06 i sovrummet är den värsta tidpunkten</li>
+  <li>Mät med och utan öppet fönster för att kvantifiera ventilationens effekt</li>
+</ol>
+
+<figure>
+  <img src="/images/inline/co2-matare-placering.webp" alt="CO2-mätare placerad på skrivbord med tydlig display" width="1200" height="700" loading="lazy" />
+  <figcaption>Placera CO₂-mätaren på skrivbordet eller nattduksbordet, inte direkt vid ett ventilationsgaller eller öppet fönster.</figcaption>
+</figure>
+
+<h2 id="atgarder">Åtgärder för lägre CO₂-halt</h2>
+
+<p>Det finns bara en effektiv åtgärd: ventilation. Ventilation för in frisk luft och för ut CO₂-lastad inomhusluft.</p>
+
+<p><strong>Rankning efter effekt:</strong></p>
+
+<ol>
+  <li><strong>Vädra aktivt:</strong> öppna ett fönster och en dörr på motstående sida av lägenheten för genomdrag, 10 till 15 minuter räcker för att halvera CO₂-halten i ett sovrum</li>
+  <li><strong>Friskluftventil i fönsterkarm:</strong> tillför kontinuerlig luftomsättning utan att helt öppna fönstret; bra i kallare väder</li>
+  <li><strong>Tilluftsventilation (FTX):</strong> det effektivaste systemet, tillför filtrerad frisk luft och återvinner värmen</li>
+  <li><strong>Lämna sovrumsdörren på glänt:</strong> luftomsättningen i ett stängt sovrum är dramatiskt sämre än i ett öppet</li>
+</ol>
+
+<h2 id="sovrum">Sovrummet: det viktigaste rummet</h2>
+
+<p>Du spenderar en tredjedel av livet i sovrummet med relativt låg luftomsättning. CO₂-mätningar i svenska sovrum utan ventilation visar regelmässigt 1 500 till 3 000 ppm mot slutet av natten. Bättre CO₂-nivåer i sovrummet är den enstaka åtgärd som troligen har störst positiv effekt på sömnkvaliteten för de flesta.</p>
+
+<p>Åtgärder specifikt för sovrummet:</p>
+<ul>
+  <li>Sov med fönstret på glänt under sommarhalvåret</li>
+  <li>Montera friskluftventil i fönsterkarm för vinterbruk</li>
+  <li>Lämna sovrumsdörren öppen om möjligt</li>
+  <li>Undvik att ha många personer i ett litet sovrum utan ventilation</li>
+</ul>
+
+<p>Mer om ventilation i lägenheter och hur du kontrollerar befintliga ventilationssystem finns i guiden om <a href="/inomhusluft/ventilation-lagenhet/">ventilation i lägenhet</a>.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om inomhusluft" />
+
+</ArticleLayout>

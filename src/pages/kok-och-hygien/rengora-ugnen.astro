@@ -1,0 +1,114 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Callout from '../../components/Callout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('rengora-ugnen', '/kok-och-hygien/');
+
+const toc = [
+  { id: 'hur-ofta', label: 'Hur ofta ska ugnen rengöras?' },
+  { id: 'bikarbonat-metoden', label: 'Bikarbonatmetoden' },
+  { id: 'sjalvrengoring', label: 'Om ugnen har självrensningsteknik' },
+  { id: 'lucka-och-galler', label: 'Lucka, galler och plåtar' },
+  { id: 'brandrisk', label: 'Inbränt fett och brandrisk' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Kan man använda ättiksrengöringsmedel i ugnen?', a: 'Ja, utspädd ättika (lika delar vatten och ättika) fungerar på måttliga fettfläckar och är säkert för de flesta ugnar. Bikarbonat är effektivare på inbränt fett. Undvik ättikskoncentrat på aluminiumkomponenter.' },
+  { q: 'Kan man baka i ugnen direkt efter rengöring?', a: 'Ja, om du sköljt bort allt rengöringsmedel ordentligt. Värm ugnen tom på 200 grader i 10 minuter efter rengöring för att bränna bort eventuella rester och lukter.' },
+  { q: 'Hur rensar man ugnsventilationen?', a: 'Ugnsventilationen inuti ugnen (inte spisfläkten) torkas med fuktig duk. Spruta aldrig vätska direkt in i ventilationsöppningar. Fettfilter i ugnar med integrerad cirkulation byts eller diskas var 3 till 6 månader.' },
+  { q: 'Är ugnsrengöringssprayer farliga?', a: 'Ugnsrengörare med natriumhydroxid (kaustik soda) är frätande och kräver handskar och god ventilation. De är effektiva men ska inte användas i ugnar med känsliga ytbeläggningar eller nonstick-beläggning. Bikarbonatmetoden är säkrare och räcker för de flesta hushållsugnar.' },
+  { q: 'Varför luktar det från ugnen trots att den är ren?', a: 'Lukt kan komma från fett som bränts fast bakom värmeelementen eller i ugnsventilationen. Kör ugnen tom på max temperatur i 30 minuter (välj bra ventilation och förbered att rökdetektorn kan reagera). Det bränner bort rester som är svåra att nå mekaniskt.' },
+];
+---
+<ArticleLayout
+  title="Rengöra ugnen: bikarbonatmetoden och hur du tar bort inbränt fett | Hälsorent"
+  description="Inbränt fett i ugnen är en brandrisk och ger dålig lukt. Bikarbonatmetoden tar bort gamla fettfläckar utan farliga kemikalier och tar 15 minuters aktiv tid."
+  heroImage="/images/articles/ugnen.webp"
+  heroAlt="Ren ugn med öppen lucka och rena plåtar"
+  publishDate="2026-04-30"
+  updateDate="2026-04-30"
+  readingTime={7}
+  breadcrumbs={[{ label: 'Kök & hygien', href: '/kok-och-hygien/' }, { label: 'Rengöra ugnen' }]}
+  toc={toc}
+  category="Kök & hygien"
+>
+
+<p>Ugnsrengöring är ett av de mest uppskjutna städmomenten i hemmet. Inbränt fett och matrester samlas gradvis och bränns in djupare för varje gång ugnen används. Förutom att ge ifrån sig lukt och rök är inbränt fett en reell brandrisk. Den goda nyheten är att bikarbonat löser upp det utan att du behöver farliga kemikalier.</p>
+
+<h2 id="hur-ofta">Hur ofta ska ugnen rengöras?</h2>
+
+<p>Riktlinje baserad på användningsfrekvens:</p>
+
+<ul>
+  <li>Daglig ugnsanvändning: rengör månadsvis</li>
+  <li>Ugnsmatlagning 2 till 3 gånger per vecka: rengör var 6 till 8 vecka</li>
+  <li>Ugnsmatlagning mer sällan: rengör kvartalsvis eller när synligt smuts uppstår</li>
+  <li>Torka alltid upp stänk direkt efter ugnen svalnat: förhindrar inbränning</li>
+</ul>
+
+<Callout type="warning" title="Brandrisk vid inbränt fett">
+  <p>Inbränt fett i ugnen är den vanligaste orsaken till köksbränder i svenska hem. Tjocka lager av inbränt fett kan antändas vid höga temperaturer, särskilt vid grillfunktion. Rengör ugnen innan detta sker — det är en säkerhetsfråga, inte bara estetisk.</p>
+</Callout>
+
+<h2 id="bikarbonat-metoden">Bikarbonatmetoden</h2>
+
+<p>Den effektivaste kemikaliefria metoden för ugnsrengöring.</p>
+
+<p><strong>Vad du behöver:</strong></p>
+<ul>
+  <li>Bakpulver (bikarbonat), ungefär 200 gram</li>
+  <li>Vatten</li>
+  <li>Sprayflaska med ättika (valfritt, förstärker effekten)</li>
+  <li>Gummihandskar</li>
+  <li>Mjuk svamp eller gammal diskborste</li>
+</ul>
+
+<p><strong>Steg för steg:</strong></p>
+<ol>
+  <li>Ta ut ugnsplåtarna och gallret och sätt dem att blötlägga i diskho med varmt vatten och diskmedel.</li>
+  <li>Blanda bikarbonat med lite vatten till en tjock pasta (ska inte vara rinnig).</li>
+  <li>Klä ugnens insida med pastan: botten, sidor och taket. Undvik värmeelementen om de är synliga.</li>
+  <li>Låt pastan verka i minst 12 timmar eller över natten.</li>
+  <li>Spraya ättika över bikarbonatytan — det bubblar och löser upp fettlager ytterligare. Valfritt men effektivt.</li>
+  <li>Skrapa och torka bort pastan med fuktig duk eller svamp. Bikarbonat plus fett bildar en grå mass som torkas bort.</li>
+  <li>Skölj med rent vatten och torka torrt.</li>
+</ol>
+
+<figure>
+  <img src="/images/inline/ugn-rengoring-bikarbonat.webp" alt="Ugns insida täckt med bikarbonatpasta för kemikaliefri rengöring" width="1200" height="700" loading="lazy" />
+  <figcaption>Bikarbonatpasta täcker ugnens insida och lämnas att verka över natten. Det aktiva arbetet tar 15 minuter, men verkningstiden gör jobbet.</figcaption>
+</figure>
+
+<h2 id="sjalvrengoring">Om ugnen har självrensningsteknik</h2>
+
+<p>Pyrolytisk ugn bränner bort matrester vid 450 till 500 grader under 2 till 3 timmar. Det fungerar utmärkt för normalt fett men kräver god ventilation (öppna fönster), ger ifrån sig rök och lukt och drar mycket el. Pyrolytisk rengöring rekommenderas 2 till 4 gånger per år, inte som veckostädning.</p>
+
+<p>Katalytisk ugn (katalytiska plattor) absorberar fett vid normal bakningstemperatur. Tål inte manuell rengöring med kemikalier, torka bara av med fuktigt papper. Katalytiska plattor slits och kan behöva bytas efter 5 till 10 år.</p>
+
+<h2 id="lucka-och-galler">Lucka, galler och plåtar</h2>
+
+<p>Ugnsgallret och plåtarna blötläggs i diskho med diskmedel och varmt vatten. Tjockt inbränt fett: strö bikarbonat ovanpå, häll vatten för att lösa ut det, låt stå 2 timmar och skrubba. Skursvamp med stålull fungerar på gallret men ska undvikas på belagda plåtar.</p>
+
+<p>Ugnsglasrutan: rengörs inifrån med bikarbonatpasta. Hänvisas till om glaset är dubbelglasat med fett däremellan behöver service. Spraya inte rengöringsmedel direkt på glasets kant — det kan ta sig in i det dubbla glaset.</p>
+
+<h2 id="brandrisk">Inbränt fett och brandrisk</h2>
+
+<p>Tjocka fettlager i ugnen kan antändas om ugnen körs på hög temperatur, särskilt under grillning. Tecken på att det behöver rengöras omedelbart:</p>
+
+<ul>
+  <li>Synlig rök utan att det finns mat i ugnen</li>
+  <li>Brinnande lukt vid 200+ grader</li>
+  <li>Synliga svarta brinnande fläckar på ugnens botten eller sidor</li>
+</ul>
+
+<p>Mer om kemikaliefri rengöring av ugn och kök: <a href="/kemikaliefri-stadning/rengora-med-bikarbonat/">bikarbonat vid rengöring</a> och <a href="/kok-och-hygien/desinfektera-skanbrader/">desinfektera skärbrädor</a>.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om kök och hygien" />
+
+</ArticleLayout>

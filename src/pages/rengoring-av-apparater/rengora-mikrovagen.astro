@@ -1,0 +1,135 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Callout from '../../components/Callout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('rengora-mikrovagen', '/rengoring-av-apparater/');
+
+const toc = [
+  { id: 'hur-ofta', label: 'Hur ofta ska mikrovågsugnen rengöras?' },
+  { id: 'angmetoden', label: 'Ångmetoden: utan kemikalier' },
+  { id: 'inbrant', label: 'Ta bort inbränt och torkat smuts' },
+  { id: 'detaljer', label: 'Detaljer och svåra ställen' },
+  { id: 'lukt', label: 'Ta bort lukt' },
+  { id: 'forebygg', label: 'Förebygg kommande smuts' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Kan man använda diskmedel i mikrovågsugnen?', a: 'Ja, en liten mängd diskmedel utspädd i varmt vatten fungerar bra på insidan. Skölj väl med fuktig duk efteråt. Undvik starka slipmedel och skursvampar på insidan som kan repa lacken.' },
+  { q: 'Varför luktar det bränt i mikrovågsugnen trots att den är ren?', a: 'Lukt kan sitta i ventilationsöppningarna och i fettfiltret om modellen har ett sådant. Det kan även vara matrester bakom den inre rutan eller i glänsen runt dörren. Aktivt kol i ett glas vatten som körs i mikron kan absorbera lukter, liksom en skål med citronsaft.' },
+  { q: 'Kan man ta bort mikrovågsugnens inre platta och diska den?', a: 'Ja, glasplattan i botten är alltid avtagbar och diskmaskins- och handdiskbar. Det är det enklaste sättet att rengöra den ordentligt. Rullringen (plastringen under plattan) kan också tas ur och diskas.' },
+  { q: 'Hur rensar man en igensatt ventilationstrumma i mikrovågsugnen?', a: 'Mikrovågsugnar som sitter ovanför spisen (hood-typ) har fettfilter som ska rengöras eller bytas var 3 till 6 månad. De flesta kan diskas i diskmaskin. Resterande ventilationsöppningar rengörs med fuktig duk och en mjuk borste, aldrig med vätska direkt i öppningarna.' },
+  { q: 'Hur sällan kan man rengöra mikrovågsugnen?', a: 'Minst en gång i månaden om den används dagligen. Tre gånger per år om den används sällan. Mikrovågsugnar med inbränt fett på väggarna kan ge ifrån sig rök och avger partiklar vid uppvärmning. Konsekvent rengöring är hygienisk och förlänger apparatens livslängd.' },
+];
+---
+<ArticleLayout
+  title="Rengöra mikrovågsugnen: ångmetoden och hur du tar bort inbränt | Hälsorent"
+  description="Mikrovågsugnen rengörs lättast med ånga och naturliga medel. Steg för steg: ångmetoden, ta bort inbränt fett, och hur du förebygger framtida smuts."
+  heroImage="/images/articles/mikrovagen.webp"
+  heroAlt="Ren mikrovågsugn öppen med citronskiva i vattenglas"
+  publishDate="2026-04-30"
+  updateDate="2026-04-30"
+  readingTime={6}
+  breadcrumbs={[{ label: 'Rengöring av apparater', href: '/rengoring-av-apparater/' }, { label: 'Rengöra mikrovågsugnen' }]}
+  toc={toc}
+  category="Rengöring av apparater"
+>
+
+<p>Mikrovågsugnen är en av de apparater som rengörs minst i köket, trots att den används dagligen och samlar stänk, fett och bakterier snabbare än de flesta andra ytor. Den goda nyheten är att rengöringen tar 10 minuter med ångmetoden, och att du inte behöver några kemikalier.</p>
+
+<h2 id="hur-ofta">Hur ofta ska mikrovågsugnen rengöras?</h2>
+
+<p>Torka av eventuellt stänk direkt efter varje användning, det tar 10 sekunder och förhindrar att det torkar fast. En grundrengöring med ångmetoden bör göras:</p>
+
+<ul>
+  <li>En gång per vecka vid daglig intensiv användning</li>
+  <li>En gång per månad vid normal användning</li>
+  <li>Alltid när det börjar lukta eller synligt smuts fastnat på väggarna</li>
+</ul>
+
+<Callout type="tip" title="Täck alltid maten">
+  <p>Använd mikrovågssäker lock eller plastfilm med hål. Det enda sättet att förhindra stänk i mikrovågsugnen är att täcka maten. Det tar 2 sekunder och halverar städtiden.</p>
+</Callout>
+
+<h2 id="angmetoden">Ångmetoden: utan kemikalier</h2>
+
+<p>Det enklaste och effektivaste sättet att rengöra mikrovågsugnen. Ångan löser upp och mjukar upp smuts och fett på alla inre ytor.</p>
+
+<p><strong>Vad du behöver:</strong></p>
+<ul>
+  <li>En mikrovågssäker skål eller mugge</li>
+  <li>Vatten (2 till 3 dl)</li>
+  <li>En halv citron eller 1 msk citronsaft (valfritt, förbättrar lukten och tillför viss rengöringseffekt)</li>
+  <li>Mikrofiberduk eller vanlig trasa</li>
+</ul>
+
+<p><strong>Steg för steg:</strong></p>
+<ol>
+  <li>Fyll skålen med 2 till 3 dl vatten. Lägg i en halv citron, pressad, eller tillsätt 1 msk citronsaft.</li>
+  <li>Kör på full effekt i 3 till 5 minuter tills vattnet kokar och ångan täcker insidan.</li>
+  <li>Låt skålen stå kvar i stängd mikrovågsugn i ytterligare 5 minuter. Ångan fortsätter mjuka upp smutsen.</li>
+  <li>Öppna mikrovågsugnen, ta ut skålen (den är het, använd grytlapp). Ta ut glasplattan.</li>
+  <li>Torka av alla inre ytor med fuktig duk. Smutsen lossnar utan skrubbning.</li>
+  <li>Diska glasplattan och rullringen för hand eller i diskmaskinen.</li>
+  <li>Torka av utsidan med fuktig duk, inklusive handtag och kontrollpanel.</li>
+</ol>
+
+<figure>
+  <img src="/images/inline/mikrovagen-angmetod.webp" alt="Skål med vatten och citron i mikrovågsugn för ångmetoden" width="1200" height="700" loading="lazy" />
+  <figcaption>Ångmetoden: koka vatten med citron i mikrovågsugnen, låt det stå 5 minuter, torka av. Hela processen tar 10 minuter.</figcaption>
+</figure>
+
+<h2 id="inbrant">Ta bort inbränt och torkat smuts</h2>
+
+<p>Om ångmetoden inte räcker för gamla inbrända fläckar:</p>
+
+<ol>
+  <li>Gör en pasta av 2 msk bikarbonat och lite vatten (ska vara lagom tjock, inte rinnig).</li>
+  <li>Applicera pastan på de inbrända ställena med en mjuk duk.</li>
+  <li>Låt verka 15 till 20 minuter.</li>
+  <li>Skrubba försiktigt med mjuk svamp (inga stålullsdynor som repar lacken).</li>
+  <li>Torka bort bikarbonat med fuktig duk, upprepa tills rent.</li>
+</ol>
+
+<p>Alternativt: lägg ett vått hushållspapper mot den inbrända ytan och kör mikrovågsugnen på låg effekt i 30 sekunder. Det ångbehandlar den specifika ytan.</p>
+
+<h2 id="detaljer">Detaljer och svåra ställen</h2>
+
+<p>Mikrovågsugnar har fler detaljer än de flesta tänker på:</p>
+
+<ul>
+  <li><strong>Dörrtätningen:</strong> fett och matrester samlas i gummitätningen runt dörren. Rengör med en tandborste doppad i diskmedelsvatten.</li>
+  <li><strong>Taket:</strong> stänk fastnar på taket och bränns fast. Ångmetoden är effektivast, men en fuktig duk rakt upp räcker för lätta fläckar.</li>
+  <li><strong>Ventilationsöppningarna:</strong> torka av dem med fuktig duk, men stär aldrig in vätska i öppningarna.</li>
+  <li><strong>Fettfiltret (om modellen har det):</strong> sitter under eller bakom mikrovågsugnen på modeller som hänger ovanför spisen. Rengörs eller byts var 3 till 6 månad.</li>
+</ul>
+
+<h2 id="lukt">Ta bort lukt</h2>
+
+<p>Kvarstående lukt av bränd mat, fisk eller stark krydda efter rengöring:</p>
+
+<ul>
+  <li>Kör ett glas vatten med 2 msk bikarbonat i 2 minuter, låt stå i 10 minuter stängt</li>
+  <li>Alternativt: ett glas vatten med 1 msk vanilj eller citronsaft</li>
+  <li>Lämna en öppen skål med aktivt kol eller bikarbonat i stängd mikrovågsugn över natten</li>
+  <li>Kontrollera ventilationsgaller och fettfilter, lukten kan sitta där</li>
+</ul>
+
+<h2 id="forebygg">Förebygg kommande smuts</h2>
+
+<ul>
+  <li>Täck alltid maten med lock eller mikrovågssäker plastfilm</li>
+  <li>Torka av droppar och stänk direkt med fuktig duk</li>
+  <li>Kör ångmetoden månadsvis som rutin, innan smutsen torkar fast</li>
+</ul>
+
+<p>Fler guider om rengöring av köksutrustning: <a href="/rengoring-av-apparater/rengora-kylskap/">rengöra kylskåpet ordentligt</a> och <a href="/rengoring-av-apparater/rengora-diskmaskin/">rengöra diskmaskinen</a>.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om apparatrengöring" />
+
+</ArticleLayout>
