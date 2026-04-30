@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://hälsorent.se',
+  site: 'https://halsorent.se',
   output: 'static',
   build: { inlineStylesheets: 'always' },
   vite: { plugins: [tailwindcss()] },

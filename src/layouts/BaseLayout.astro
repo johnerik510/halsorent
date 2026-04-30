@@ -13,7 +13,7 @@ interface Props {
 
 const { title, description, ogImage = '/og-default.svg', canonical, noindex = false } = Astro.props;
 const canonicalUrl = canonical || Astro.url.href;
-const ogImageUrl = ogImage.startsWith('http') ? ogImage : `https://hälsorent.se${ogImage}`;
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `https://halsorent.se${ogImage}`;
 ---
 <!DOCTYPE html>
 <html lang="sv">
@@ -51,7 +51,7 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `https://hälsorent.se
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Hälsorent",
-    "url": "https://hälsorent.se",
+    "url": "https://halsorent.se",
     "description": "Oberoende guide om städning och inomhusmiljö för din hälsa.",
     "inLanguage": "sv-SE"
   })} />
@@ -60,7 +60,7 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `https://hälsorent.se
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Hälsorent",
-    "url": "https://hälsorent.se",
+    "url": "https://halsorent.se",
     "description": "Redaktionell guide om allergivänlig städning, kemikaliefria rengöringsmedel, inomhusluft och mögel.",
     "foundingDate": "2026",
     "founder": { "@type": "Person", "name": "Karin Holm" }
@@ -71,8 +71,8 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : `https://hälsorent.se
     "@type": "Person",
     "name": "Karin Holm",
     "jobTitle": "Chefredaktör",
-    "url": "https://hälsorent.se/redaktionen/#karin-holm",
-    "worksFor": { "@type": "Organization", "name": "Hälsorent", "url": "https://hälsorent.se" },
+    "url": "https://halsorent.se/redaktionen/#karin-holm",
+    "worksFor": { "@type": "Organization", "name": "Hälsorent", "url": "https://halsorent.se" },
     "knowsAbout": ["allergivänlig städning", "kemikaliefri rengöring", "inomhusluft", "dammkvalster", "mögel", "astma", "allergi"]
   })} />
 
