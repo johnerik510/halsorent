@@ -462,6 +462,21 @@ export const articles: Article[] = [
     published: true,
   },
 
+  // Inomhusluft — VOC (2026-05-08)
+  {
+    slug: 'voc-inomhus',
+    url: '/inomhusluft/voc-inomhus/',
+    title: 'VOC inomhus: vad det är och hur du sänker halten i hemmet',
+    excerpt: 'VOC inomhus kommer från möbler, färg, rengöringsmedel och stearinljus. Så mäter du halten, identifierar källorna och sänker exponeringen i hemmet.',
+    category: 'Inomhusluft',
+    categoryUrl: '/inomhusluft/',
+    hero: '/images/articles/voc-inomhus.webp',
+    publishDate: '2026-05-08',
+    updateDate: '2026-05-08',
+    readingTime: 9,
+    published: true,
+  },
+
   // Rengöring av apparater — ny
   {
     slug: 'rengora-mikrovagen',
