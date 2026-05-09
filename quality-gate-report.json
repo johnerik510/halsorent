@@ -1,21 +1,14 @@
 {
   "site": "hälsorent",
   "siteRoot": "/Users/axeljonemyr/Documents/hälsorent",
-  "timestamp": "2026-05-09T06:14:02.597Z",
-  "durationMs": 201,
+  "timestamp": "2026-05-09T06:21:34.007Z",
+  "durationMs": 186,
   "summary": {
     "checks": 8,
-    "errors": 25,
+    "errors": 24,
     "warnings": 0
   },
   "results": [
-    {
-      "check": "05-mailto",
-      "severity": "error",
-      "file": "src/components/Footer.astro",
-      "line": 53,
-      "message": "mailto: utan email_off-wrapper: ELS Catalyst AB &middot; Org.nr 559583-6163 &middot; <!--email_off--><a href=\"mailto:elscatalyst@pro"
-    },
     {
       "check": "08-image-binary-duplicates",
       "severity": "error",
