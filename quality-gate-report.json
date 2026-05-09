@@ -1,18 +1,25 @@
 {
   "site": "hälsorent",
   "siteRoot": "/Users/axeljonemyr/Documents/hälsorent",
-  "timestamp": "2026-05-09T06:21:34.007Z",
-  "durationMs": 186,
+  "timestamp": "2026-05-09T07:39:28.160Z",
+  "durationMs": 234,
   "summary": {
     "checks": 8,
     "errors": 24,
-    "warnings": 0
+    "warnings": 0,
+    "newErrors": 0,
+    "baselinedErrors": 24
   },
-  "results": [
+  "results": [],
+  "baseline": {
+    "saved": true,
+    "count": 24
+  },
+  "allResults": [
     {
       "check": "08-image-binary-duplicates",
       "severity": "error",
-      "message": "6 bildfiler är binär-identiska (202KB) — samma bild laddats med olika filnamn: public/images/articles/allrengoringsmedel.webp | public/images/articles/bikarbonat.webp | public/images/articles/skanbrader.webp | public/images/inline/bikarbonat-rengoring.webp | public/images/inline/hemmagjord-rengoring.webp | public/images/inline/skanbrader-hygien.webp"
+      "message": "4 bildfiler är binär-identiska (202KB) — samma bild laddats med olika filnamn: public/images/articles/allrengoringsmedel.webp | public/images/articles/bikarbonat.webp | public/images/articles/skanbrader.webp | public/images/inline/bikarbonat-rengoring.webp"
     },
     {
       "check": "08-image-binary-duplicates",
@@ -27,12 +34,12 @@
     {
       "check": "08-image-binary-duplicates",
       "severity": "error",
-      "message": "4 bildfiler är binär-identiska (27KB) — samma bild laddats med olika filnamn: public/images/articles/avfuktare.webp | public/images/articles/luftfuktighet.webp | public/images/inline/avfuktare-typer.webp | public/images/inline/hygrometer-matning.webp"
+      "message": "3 bildfiler är binär-identiska (27KB) — samma bild laddats med olika filnamn: public/images/articles/avfuktare.webp | public/images/articles/luftfuktighet.webp | public/images/inline/avfuktare-typer.webp"
     },
     {
       "check": "08-image-binary-duplicates",
       "severity": "error",
-      "message": "4 bildfiler är binär-identiska (78KB) — samma bild laddats med olika filnamn: public/images/articles/badrum-stadning.webp | public/images/articles/mogel-badrum.webp | public/images/inline/badrum-rengoring-dusch.webp | public/images/inline/mogel-fog-badrum.webp"
+      "message": "3 bildfiler är binär-identiska (78KB) — samma bild laddats med olika filnamn: public/images/articles/badrum-stadning.webp | public/images/articles/mogel-badrum.webp | public/images/inline/badrum-rengoring-dusch.webp"
     },
     {
       "check": "08-image-binary-duplicates",
@@ -47,7 +54,7 @@
     {
       "check": "08-image-binary-duplicates",
       "severity": "error",
-      "message": "4 bildfiler är binär-identiska (48KB) — samma bild laddats med olika filnamn: public/images/articles/dammkvalster.webp | public/images/articles/husdjursallergen.webp | public/images/inline/dammkvalster-sang.webp | public/images/inline/husdjursallergen-stadning.webp"
+      "message": "3 bildfiler är binär-identiska (48KB) — samma bild laddats med olika filnamn: public/images/articles/dammkvalster.webp | public/images/articles/husdjursallergen.webp | public/images/inline/dammkvalster-sang.webp"
     },
     {
       "check": "08-image-binary-duplicates",
@@ -57,7 +64,7 @@
     {
       "check": "08-image-binary-duplicates",
       "severity": "error",
-      "message": "4 bildfiler är binär-identiska (34KB) — samma bild laddats med olika filnamn: public/images/articles/diskmaskin.webp | public/images/articles/ugnen.webp | public/images/inline/diskmaskin-filter-rengoring.webp | public/images/inline/ugn-rengoring-bikarbonat.webp"
+      "message": "3 bildfiler är binär-identiska (34KB) — samma bild laddats med olika filnamn: public/images/articles/diskmaskin.webp | public/images/articles/ugnen.webp | public/images/inline/diskmaskin-filter-rengoring.webp"
     },
     {
       "check": "08-image-binary-duplicates",
@@ -82,17 +89,17 @@
     {
       "check": "08-image-binary-duplicates",
       "severity": "error",
-      "message": "4 bildfiler är binär-identiska (23KB) — samma bild laddats med olika filnamn: public/images/articles/koldioxid.webp | public/images/articles/ventilation.webp | public/images/inline/co2-matare-placering.webp | public/images/inline/ventilationsgaller-rengoring.webp"
+      "message": "3 bildfiler är binär-identiska (23KB) — samma bild laddats med olika filnamn: public/images/articles/koldioxid.webp | public/images/articles/ventilation.webp | public/images/inline/co2-matare-placering.webp"
     },
     {
       "check": "08-image-binary-duplicates",
       "severity": "error",
-      "message": "7 bildfiler är binär-identiska (168KB) — samma bild laddats med olika filnamn: public/images/articles/kontaktytor.webp | public/images/articles/kylskap.webp | public/images/articles/mikrovagen.webp | public/images/heroes/kok-hygien.webp | public/images/inline/kontaktytor-kok-desinfektion.webp | public/images/inline/kylskap-rengoring-insida.webp | public/images/inline/mikrovagen-angmetod.webp"
+      "message": "4 bildfiler är binär-identiska (168KB) — samma bild laddats med olika filnamn: public/images/articles/kontaktytor.webp | public/images/articles/kylskap.webp | public/images/articles/mikrovagen.webp | public/images/heroes/kok-hygien.webp"
     },
     {
       "check": "08-image-binary-duplicates",
       "severity": "error",
-      "message": "3 bildfiler är binär-identiska (95KB) — samma bild laddats med olika filnamn: public/images/articles/luftrenare.webp | public/images/inline/luftrenare-hepa-filter.webp | public/images/inline/voc-luftrenare-kolfilter.webp"
+      "message": "2 bildfiler är binär-identiska (95KB) — samma bild laddats med olika filnamn: public/images/articles/luftrenare.webp | public/images/inline/luftrenare-hepa-filter.webp"
     },
     {
       "check": "08-image-binary-duplicates",
@@ -122,7 +129,7 @@
     {
       "check": "08-image-binary-duplicates",
       "severity": "error",
-      "message": "4 bildfiler är binär-identiska (129KB) — samma bild laddats med olika filnamn: public/images/articles/spisflaknten.webp | public/images/articles/tvattmaskin.webp | public/images/inline/spisflaknten-filter-rengoring.webp | public/images/inline/tvattmaskin-lucka-rengoring.webp"
+      "message": "3 bildfiler är binär-identiska (129KB) — samma bild laddats med olika filnamn: public/images/articles/spisflaknten.webp | public/images/articles/tvattmaskin.webp | public/images/inline/spisflaknten-filter-rengoring.webp"
     },
     {
       "check": "08-image-binary-duplicates",
