@@ -1,0 +1,140 @@
+{
+  "site": "hälsorent",
+  "siteRoot": "/Users/axeljonemyr/Documents/hälsorent",
+  "timestamp": "2026-05-09T06:05:11.518Z",
+  "durationMs": 199,
+  "summary": {
+    "checks": 8,
+    "errors": 25,
+    "warnings": 0
+  },
+  "results": [
+    {
+      "check": "05-mailto",
+      "severity": "error",
+      "file": "src/components/Footer.astro",
+      "line": 53,
+      "message": "mailto: utan email_off-wrapper: ELS Catalyst AB &middot; Org.nr 559583-6163 &middot; <!--email_off--><a href=\"mailto:elscatalyst@pro"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "6 bildfiler är binär-identiska (202KB) — samma bild laddats med olika filnamn: public/images/articles/allrengoringsmedel.webp | public/images/articles/bikarbonat.webp | public/images/articles/skanbrader.webp | public/images/inline/bikarbonat-rengoring.webp | public/images/inline/hemmagjord-rengoring.webp | public/images/inline/skanbrader-hygien.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "2 bildfiler är binär-identiska (25KB) — samma bild laddats med olika filnamn: public/images/articles/astma.webp | public/images/inline/stada-astma-mask.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "2 bildfiler är binär-identiska (95KB) — samma bild laddats med olika filnamn: public/images/articles/attika.webp | public/images/inline/attika-kalk.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "4 bildfiler är binär-identiska (27KB) — samma bild laddats med olika filnamn: public/images/articles/avfuktare.webp | public/images/articles/luftfuktighet.webp | public/images/inline/avfuktare-typer.webp | public/images/inline/hygrometer-matning.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "4 bildfiler är binär-identiska (78KB) — samma bild laddats med olika filnamn: public/images/articles/badrum-stadning.webp | public/images/articles/mogel-badrum.webp | public/images/inline/badrum-rengoring-dusch.webp | public/images/inline/mogel-fog-badrum.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "2 bildfiler är binär-identiska (46KB) — samma bild laddats med olika filnamn: public/images/articles/barnrum.webp | public/images/inline/giftfri-stadning-leksaker.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "2 bildfiler är binär-identiska (99KB) — samma bild laddats med olika filnamn: public/images/articles/citronsyra.webp | public/images/inline/citronsyra-kaffmaskin.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "4 bildfiler är binär-identiska (48KB) — samma bild laddats med olika filnamn: public/images/articles/dammkvalster.webp | public/images/articles/husdjursallergen.webp | public/images/inline/dammkvalster-sang.webp | public/images/inline/husdjursallergen-stadning.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "2 bildfiler är binär-identiska (32KB) — samma bild laddats med olika filnamn: public/images/articles/dammsugare.webp | public/images/inline/allergivanlig-dammsugare-hepa.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "4 bildfiler är binär-identiska (34KB) — samma bild laddats med olika filnamn: public/images/articles/diskmaskin.webp | public/images/articles/ugnen.webp | public/images/inline/diskmaskin-filter-rengoring.webp | public/images/inline/ugn-rengoring-bikarbonat.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "2 bildfiler är binär-identiska (57KB) — samma bild laddats med olika filnamn: public/images/articles/djup.webp | public/images/inline/djupstadning-bakom-kyl.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "2 bildfiler är binär-identiska (34KB) — samma bild laddats med olika filnamn: public/images/articles/fort.webp | public/images/inline/stada-fort-timer.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "3 bildfiler är binär-identiska (95KB) — samma bild laddats med olika filnamn: public/images/articles/inomhusluft.webp | public/images/articles/voc-inomhus.webp | public/images/inline/vadra-inomhusluft.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "2 bildfiler är binär-identiska (43KB) — samma bild laddats med olika filnamn: public/images/articles/kallare.webp | public/images/inline/fukt-kallare-matning.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "4 bildfiler är binär-identiska (23KB) — samma bild laddats med olika filnamn: public/images/articles/koldioxid.webp | public/images/articles/ventilation.webp | public/images/inline/co2-matare-placering.webp | public/images/inline/ventilationsgaller-rengoring.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "7 bildfiler är binär-identiska (168KB) — samma bild laddats med olika filnamn: public/images/articles/kontaktytor.webp | public/images/articles/kylskap.webp | public/images/articles/mikrovagen.webp | public/images/heroes/kok-hygien.webp | public/images/inline/kontaktytor-kok-desinfektion.webp | public/images/inline/kylskap-rengoring-insida.webp | public/images/inline/mikrovagen-angmetod.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "3 bildfiler är binär-identiska (95KB) — samma bild laddats med olika filnamn: public/images/articles/luftrenare.webp | public/images/inline/luftrenare-hepa-filter.webp | public/images/inline/voc-luftrenare-kolfilter.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "2 bildfiler är binär-identiska (118KB) — samma bild laddats med olika filnamn: public/images/articles/mogel.webp | public/images/inline/mogel-test-remsa.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "2 bildfiler är binär-identiska (14KB) — samma bild laddats med olika filnamn: public/images/articles/ordning.webp | public/images/inline/stadning-uppifraan-ner.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "2 bildfiler är binär-identiska (45KB) — samma bild laddats med olika filnamn: public/images/articles/pollen.webp | public/images/inline/pollen-hemmet-fonster.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "2 bildfiler är binär-identiska (94KB) — samma bild laddats med olika filnamn: public/images/articles/rengorning-luftrenare.webp | public/images/inline/luftrenare-filter-byte.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "2 bildfiler är binär-identiska (38KB) — samma bild laddats med olika filnamn: public/images/articles/sanering.webp | public/images/inline/mogelsanering-skyddsutrust.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "4 bildfiler är binär-identiska (129KB) — samma bild laddats med olika filnamn: public/images/articles/spisflaknten.webp | public/images/articles/tvattmaskin.webp | public/images/inline/spisflaknten-filter-rengoring.webp | public/images/inline/tvattmaskin-lucka-rengoring.webp"
+    },
+    {
+      "check": "08-image-binary-duplicates",
+      "severity": "error",
+      "message": "2 bildfiler är binär-identiska (40KB) — samma bild laddats med olika filnamn: public/images/articles/stadschema.webp | public/images/inline/stadschema-vecka.webp"
+    }
+  ]
+}

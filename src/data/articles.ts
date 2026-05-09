@@ -402,7 +402,7 @@ export const articles: Article[] = [
     published: true,
   },
 
-  // Allergi & astma — ny
+  // Allergi & astma, ny
   {
     slug: 'husdjursallergen-i-hemmet',
     url: '/allergi-och-astma/husdjursallergen-i-hemmet/',
@@ -417,7 +417,7 @@ export const articles: Article[] = [
     published: true,
   },
 
-  // Kemikaliefri städning — ny
+  // Kemikaliefri städning, ny
   {
     slug: 'gora-eget-allrengoringsmedel',
     url: '/kemikaliefri-stadning/gora-eget-allrengoringsmedel/',
@@ -432,7 +432,7 @@ export const articles: Article[] = [
     published: true,
   },
 
-  // Mögel & fukt — ny
+  // Mögel & fukt, ny
   {
     slug: 'avfuktare-hemmet',
     url: '/mogel-och-fukt/avfuktare-hemmet/',
@@ -447,7 +447,7 @@ export const articles: Article[] = [
     published: true,
   },
 
-  // Inomhusluft — ny
+  // Inomhusluft, ny
   {
     slug: 'koldioxid-inomhus',
     url: '/inomhusluft/koldioxid-inomhus/',
@@ -462,7 +462,7 @@ export const articles: Article[] = [
     published: true,
   },
 
-  // Inomhusluft — VOC (2026-05-08)
+  // Inomhusluft, VOC (2026-05-08)
   {
     slug: 'voc-inomhus',
     url: '/inomhusluft/voc-inomhus/',
@@ -477,7 +477,7 @@ export const articles: Article[] = [
     published: true,
   },
 
-  // Rengöring av apparater — ny
+  // Rengöring av apparater, ny
   {
     slug: 'rengora-mikrovagen',
     url: '/rengoring-av-apparater/rengora-mikrovagen/',
@@ -492,7 +492,7 @@ export const articles: Article[] = [
     published: true,
   },
 
-  // Städtips & rutiner — ny
+  // Städtips & rutiner, ny
   {
     slug: 'rengora-badrum',
     url: '/stadtips-och-rutiner/rengora-badrum/',
