@@ -1,5 +1,6 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Callout from '../../components/Callout.astro';
 import FAQ from '../../components/FAQ.astro';
 import RelatedPosts from '../../components/RelatedPosts.astro';
 import { getRelated } from '../../data/articles';
@@ -7,105 +8,188 @@ import { getRelated } from '../../data/articles';
 const related = getRelated('rengora-med-bikarbonat', '/kemikaliefri-stadning/');
 
 const toc = [
-  { id: 'vad-ar-bikarbonat', label: 'Vad är bikarbonat?' },
-  { id: 'vad-klarar', label: 'Vad bikarbonat klarar av' },
-  { id: 'vad-klarar-inte', label: 'Vad bikarbonat inte klarar' },
-  { id: 'koksvask', label: 'Bikarbonat i köket' },
+  { id: 'vad-ar-bikarbonat', label: 'Vad är bikarbonat och varför fungerar det?' },
+  { id: 'hur-anvander-man', label: 'Hur bikarbonat fungerar kemiskt' },
   { id: 'badrum', label: 'Bikarbonat i badrummet' },
-  { id: 'lukt', label: 'Luktneutralisering' },
-  { id: 'blanda-ratt', label: 'Blanda rätt, blanda inte fel' },
+  { id: 'kok', label: 'Bikarbonat i köket' },
+  { id: 'toalett-kylskap', label: 'Toalett, kylskåp och kläder' },
+  { id: 'deodorisering', label: 'Deodoriserande egenskaper' },
+  { id: 'kombinera', label: 'Kombinera med citronsyra eller ättika' },
+  { id: 'klarar-inte', label: 'Vad bikarbonat inte klarar' },
+  { id: 'kopguide', label: 'Vilket bikarbonat ska du köpa?' },
   { id: 'faq', label: 'Vanliga frågor' },
 ];
 
 const faqItems = [
-  { q: 'Är bikarbonat och bakpulver samma sak?', a: 'Nej. Bakpulver innehåller bikarbonat men också syra och stärkelse. Använd rent bikarbonat (natriumbikarbonat) för rengöring, inte bakpulver.' },
-  { q: 'Kan bikarbonat repa ytor?', a: 'Bikarbonat är ett milt slipmedel med hårdhet 2,5 på Mohs skala. Det är tillräckligt mjukt för de flesta ytor men kan repa mycket känsliga ytor som polerat rostfritt stål eller mjuk akryl. Testa alltid på en osynlig plats först.' },
-  { q: 'Hur länge håller en bikarbonatpasta?', a: 'En pasta av bikarbonat och vatten bör användas direkt. Bikarbonat i torr form håller obegränsat om det förvaras torrt och tätt.' },
-  { q: 'Tar bikarbonat bort mögel?', a: 'Bikarbonat hämmar mögelväxt och kan ta bort ytliga mögelsporer, men det tar inte bort djupare mögelangrepp. För mögel i fog och silikon, se vår guide om mögel i badrummet.' },
+  {
+    q: 'Är bikarbonat och bakpulver samma sak?',
+    a: 'Nej. Bakpulver innehåller bikarbonat men också syra (vanligtvis vinsyra eller natriumsyrepyrofosfat) och stärkelse. Bakpulver är formulerat för att ge jäsning i bakverk, inte för rengöring. Använd rent bikarbonat (natriumbikarbonat, E500ii) till städning, annars riskerar du fläckar från stärkelsen.',
+  },
+  {
+    q: 'Kan bikarbonat repa ytor?',
+    a: 'Bikarbonat är ett milt slipmedel med hårdhet 2,5 på Mohs skala, vilket är mjukare än de flesta köksytor. Det är tillräckligt fint för emaljerade ytor, kakel och rostfritt stål, men kan repa mycket känsliga ytor som polerat aluminium eller mjuk akryl. Testa alltid på en liten osynlig yta om du är osäker.',
+  },
+  {
+    q: 'Hur länge håller en bikarbonatpasta?',
+    a: 'En pasta av bikarbonat och vatten bör användas inom 30 minuter, annars torkar den och förlorar sin effekt. Bikarbonat i torr form är stabilt i år om det förvaras torrt och tätt försluten.',
+  },
+  {
+    q: 'Kan jag blanda bikarbonat och ättika i en sprayflaska?',
+    a: 'Nej, det är bortkastat. Bikarbonat (basiskt) och ättika (surt) neutraliserar varandra omedelbart och bildar ett salt plus koldioxidgas. Den rengörande effekten hos båda försvinner. Använd dem i sekvens: bikarbonat på fläcken, torka av, sedan ättika om det finns kalk att lösa upp.',
+  },
+  {
+    q: 'Tar bikarbonat bort mögel?',
+    a: 'Bikarbonat hämmar mögelväxt och kan ta bort ytliga mögelsporer på hårda ytor. Blanda med lite vatten till pasta och skrubba med en borste. För djupare mögelangrepp i fogar och silikon fungerar bikarbonat inte tillräckligt väl, läs mer i guiden om mögel i badrummet.',
+  },
+  {
+    q: 'Vilket bikarbonat är bäst: matbikarbonat eller tekniskt bikarbonat?',
+    a: 'Matbikarbonat och tekniskt bikarbonat är kemiskt identiska (båda NaHCO3) men renhetsgraderna varierar. Matbikarbonat (livsmedelsklassat) är rent nog för alla ändamål inklusive städning. Tekniskt bikarbonat kan innehålla mer föroreningar och är inte lämpligt om ytan är i kontakt med mat. Prisskillnaden är liten, köp gärna matbikarbonat i ett stort paket för hushållsbruk.',
+  },
 ];
 ---
 <ArticleLayout
-  title="Rengöra med bikarbonat: komplett guide för hemmet | Hälsorent"
-  description="Bikarbonat skurar, luktneutraliserar och löser upp fett. En komplett guide till hur du använder bikarbonat i varje rum i hemmet."
-  heroImage="/images/articles/bikarbonat.webp"
-  heroAlt="Bikarbonat i en glasburk bredvid naturliga rengöringsmedel"
-  publishDate="2026-04-29"
-  updateDate="2026-04-29"
-  readingTime={8}
-  breadcrumbs={[{ label: 'Kemikaliefri städning', href: '/kemikaliefri-stadning/' }, { label: 'Rengöra med bikarbonat' }]}
+  title="Bikarbonat städning: komplett guide för hela hemmet | Hälsorent"
+  description="Lär dig städa med bikarbonat i kök, badrum och på kläder. Vi går igenom hur bikarbonat fungerar kemiskt, var det passar bäst och vad det inte klarar."
+  heroImage="/images/heroes/bikarbonat-stadning.webp"
+  heroAlt="Bikarbonat i en glasburk med en träsked bredvid rengöringsverktyg på ett köksbord"
+  publishDate="2026-05-16"
+  updateDate="2026-05-16"
+  readingTime={10}
+  breadcrumbs={[{ label: 'Kemikaliefri städning', href: '/kemikaliefri-stadning/' }, { label: 'Bikarbonat städning' }]}
   toc={toc}
   category="Kemikaliefri städning"
 >
 
-<p>Bikarbonat kostar runt 20 kronor per kilo i mataffären. Det är milt basiskt (pH 8,3), vattenlösligt och bryts ner till koldioxid, vatten och natriumsalt, inga miljöfarliga restprodukter. Det gör det till ett av de mest mångsidiga och minst skadliga rengöringsmedlen du kan ha hemma.</p>
+<p>Bikarbonat kostar runt 20 till 30 kronor per kilo i mataffären, är godkänt som livsmedelstillsats och bryts ner till koldioxid, vatten och natriumsalt utan några miljöfarliga restprodukter. Det gör det till ett av de mest mångsidiga och ofarliga rengöringsmedlen du kan ha hemma. Ändå underskattar många vad det faktiskt klarar, och överskattar det i situationer där det inte är rätt verktyg.</p>
 
-<p>Det fungerar på tre sätt: kemiskt (neutraliserar syror och baser, löser upp fett), mekaniskt (milt slipmedel) och deodoriserande (neutraliserar luktmolekyler istället för att dölja dem med parfym).</p>
+<p>Den här guiden täcker bikarbonat städning från grunden: hur det fungerar kemiskt, hur du använder det rum för rum, hur du kombinerar det med ättika och citronsyra, vad det inte klarar och vilket bikarbonat du ska köpa.</p>
 
-<h2 id="vad-ar-bikarbonat">Vad är bikarbonat?</h2>
+<h2 id="vad-ar-bikarbonat">Vad är bikarbonat och varför fungerar det?</h2>
 
-<img src="/images/articles/bikarbonat.webp" alt="Bikarbonat i glasburk med en träsked" width="800" height="450" loading="lazy" />
+<p>Bikarbonat är natriumvätekarbonat, med kemisk formel NaHCO3. Det är ett vitt, luktlöst pulver som löser sig i vatten och skapar en svagt basisk lösning med pH runt 8,3. Det är ungefär lika basiskt som bakpulver och långt ifrån så starkt som tvättmedel eller hushållsrengörare med pH 10 till 12.</p>
 
-<p>Bikarbonat är natriumvätekarbonat (NaHCO3). Det är det vita pulvret du hittar i mataffärens bakavdelning, men det används även i rengöringsprodukter, tandkräm och brandsläckare. Det är godkänt som livsmedelstillsats (E500ii) och är ofarligt att andas in i normala mängder.</p>
+<p>Den svagt basiska egenskapen är grunden för bikarbonatets rengörande förmåga. Fett och organisk smuts bryts lättare ner i en basisk miljö eftersom fettsyrorna delvis emulgeras och blir vattenlösliga. Det är samma princip som gör att tvål och såpa fungerar, fast mildare.</p>
 
+<p>Bikarbonat verkar på tre sätt vid rengöring:</p>
 
-<figure>
-  <img src="/images/inline/bikarbonat-rengoring.webp" alt="Bikarbonatpulver och sprayflaska för kemikaliefri rengöring" width="1200" height="700" loading="lazy" />
-  <figcaption>Bikarbonat löser upp fett, neutraliserar lukt och ger mild slipeffekt, utan skadliga kemikalier.</figcaption>
-</figure>
+<ol>
+  <li><strong>Kemiskt:</strong> neutraliserar sura luktämnen och bryter delvis ner fettbaserade smutspartiklar</li>
+  <li><strong>Mekaniskt:</strong> fungerar som ett milt slipmedel med hårdhet 2,5 på Mohs skala, mjukare än de flesta ytor men tillräckligt hårt för att lösgöra smuts</li>
+  <li><strong>Deodoriserande:</strong> absorberar och neutraliserar luktmolekyler kemiskt, i stället för att täcka över dem med parfym</li>
+</ol>
 
-<h2 id="vad-klarar">Vad bikarbonat klarar av</h2>
+<h2 id="hur-anvander-man">Hur bikarbonat fungerar kemiskt</h2>
 
-<ul>
-  <li><strong>Fettavlagringar:</strong> milt basiskt pH bryter ner fettsyror, bra på spisfläktar och ugnar</li>
-  <li><strong>Lukt:</strong> neutraliserar sura och basiska luktmolekyler i kylskåp, skor, sophinkar och textilier</li>
-  <li><strong>Inbrända rester:</strong> pasta av bikarbonat och vatten på inbrända ugnsrester, låt verka och skrubba</li>
-  <li><strong>Vit porslin och kakel:</strong> skurar bort missfärgningar utan att repa</li>
-  <li><strong>Möbelavlopp och avlopp:</strong> häll bikarbonat, följ av ättika och varmt vatten för att lösa upp fett i avlopp</li>
-  <li><strong>Mattor och textilier:</strong> strö över luktande textilier, låt verka och dammstryg eller dammsug bort</li>
-</ul>
+<p>Bikarbonats bästa egenskap är att det reagerar med syror. Lukter från mat, svett och biologisk nedbrytning är ofta sura ämnen. Bikarbonat neutraliserar dem till luktlösa salter. Det är skälet till att en öppen burk bikarbonat i kylskåpet verkligen tar bort lukter, inte bara döljer dem.</p>
 
-<h2 id="vad-klarar-inte">Vad bikarbonat inte klarar</h2>
+<p>Vid upphettning sönderfaller bikarbonat i koldioxid och vatten. Det är det som händer när du lägger bikarbonatpasta i en het ugn: koldioxidgas bildas och lyfter loss inbrända rester från ytan mekaniskt. Restetr torkar ihop och kan sedan torkas bort lätt.</p>
 
-<ul>
-  <li><strong>Kalkavlagringar:</strong> kalk är basiskt, bikarbonat är basiskt, de neutraliserar inte varandra. Använd ättika eller citronsyra mot kalk.</li>
-  <li><strong>Djupa mögelangrepp:</strong> bikarbonat hämmar mögel men tar inte bort det</li>
-  <li><strong>Grova oljefläckar:</strong> biologiskt nedbrutna oljor kräver starkare avfettning</li>
-  <li><strong>Rostfläckar:</strong> kräver syra, inte bas</li>
-</ul>
-
-<h2 id="koksvask">Bikarbonat i köket</h2>
-
-<p><strong>Ugn:</strong> Blanda bikarbonat med lite vatten till en tjock pasta. Bred ut den på inbrända rester i ugnen, undvik värmeelement. Låt stå i 4 till 12 timmar. Torka av med fuktigt trasa. För envis smuts: lägg en liten mängd ättika ovanpå pastan strax innan du torkar av (då är reaktionen nyttig, den löser upp resterna).</p>
-
-<p><strong>Spisfläkt och filter:</strong> Koka spisfläktens filter i vatten med ett par matskedar bikarbonat. Fettet löser sig och filtret kan sköljas rent. Upprepa vid behov.</p>
-
-<p><strong>Kylskåp:</strong> Ställ in en öppen burk bikarbonat i kylskåpet för att absorbera matos. Byt ut varje 1 till 2 månader. Rengör kylskåpets insida med bikarbonat upplöst i vatten (1 matsked per halv liter) för att ta bort bakterier och lukter. Hela processen finns i <a href="/rengoring-av-apparater/rengora-kylskap/">rengöra kylskåpet</a>.</p>
+<Callout type="info" title="Bikarbonat vs natriumkarbonat">
+  <p>Natriumkarbonat (tvättläggningssoda, Na2CO3) är ett starkare alternativ för riktigt tung fettsmuts. Det har pH runt 11 och löser upp hårdare fettavlagringar. Det är inte samma sak som bikarbonat och är mer irriterande för hud och ögon. För normal hemstädning räcker bikarbonat utmärkt.</p>
+</Callout>
 
 <h2 id="badrum">Bikarbonat i badrummet</h2>
 
-<p><strong>Toalettstol:</strong> Häll bikarbonat i toalettskålen, lät verka ett par minuter, skrubba med toalettborste. Tillsätt lite ättika om det finns kalkavlagringar under kanten.</p>
+<p>Badrummet är ett av de ställen där bikarbonat verkligen levererar, framför allt för smuts som inte är kalk.</p>
 
-<p><strong>Handfat och badkar:</strong> Bikarbonatpasta på en svamp, skrubba och skölj. Bra mot tvål- och talgrester som inte kräver avkalkning. För andra naturliga basiska medel, se guiden om <a href="/kemikaliefri-stadning/sapa-och-tval-stadning/">såpa och tvål till städningen</a>.</p>
+<p><strong>Kakelfogar och kakel:</strong> blanda bikarbonat med lite vatten till en tjock pasta. Applicera på fogarna med en gammal tandborste och skrubba i cirklar. Skölj av med rent vatten. Pastan lösgör tvålrester, talg och ytliga missfärgningar effektivt. Har du kalk i fogarna kan du applicera ättika efteråt separat.</p>
 
-<p><strong>Kakelfogar:</strong> Bikarbonat och vatten som pasta, applicera på fogarna med en gammal tandborste. Skrubba och skölj. Lägg till ättika om det finns kalk i fogarna, men inte om fogarna är mögelangripna. <a href="/mogel-och-fukt/mogel-badrum/">Mögel i badrummet</a> täcker metoder som faktiskt fungerar mot mögel i fogar. I barnrum gäller samma principer för kemikaliefri rengöring som i badrummet, mer om <a href="/kemikaliefri-stadning/giftfri-stadning-barnrum/">giftfri städning av barnrum</a> och varför det spelar roll.</p>
+<p><strong>Handfat och badkar:</strong> strö bikarbonat på en fuktig svamp eller trasa och skrubba porslinet. Det milda slipmedlet tar bort tvålfilm och grå beläggning av talg utan att repa. Skölj med vatten. Det fungerar bra på emaljerade ytor och keramik, men är inte ett avkalkningsmedel, kalkfläckar i ett hårt-vatten-hem behöver ättika eller citronsyra.</p>
 
-<h2 id="lukt">Luktneutralisering</h2>
+<p><strong>Duschväggar:</strong> spray på en bikarbonat-vattenblandning (en matsked per deciliter vatten) och låt verka 5 minuter. Skrubba med en mjuk borste och skölj av. Kombinera med citronsyra om det finns kalkfläckar på glaset.</p>
 
-<p>Bikarbonat är ett av de bästa naturliga luktborttagningsmedlen, eftersom det neutraliserar luktmolekylerna kemiskt istället för att överdöva dem med parfym.</p>
+<figure>
+  <img src="/images/inline/bikarbonat-stadning-hemmet.webp" alt="Bikarbonatpasta appliceras på kakelfogar i ett badrum med en gammal tandborste" width="1200" height="800" loading="lazy" />
+  <figcaption>En pasta av bikarbonat och vatten appliceras med tandborste på kakelfogar. Konsistensen ska vara som tjock yoghurt, inte rinnig.</figcaption>
+</figure>
+
+<h2 id="kok">Bikarbonat i köket</h2>
+
+<p>Köket är bikarbonatets hemmaplan. Fettbaserad smuts, inbrända rester och matlukt, det är exakt vad bikarbonat är gjort för.</p>
+
+<p><strong>Ugnen:</strong> bikarbonatmetoden är den effektivaste naturliga metoden för inbränt fett. Blanda bikarbonat med lite vatten till en pasta och bred ut det tjockt på alla inbrända ytor, undvik värmeelementen. Låt stå i minst 4 timmar, gärna över natten. Torka av med en fuktig trasa. De inbrända resterna har mjuknat och lossnar med minimal kraft. Läs mer i guiden för att <a href="/kok-och-hygien/rengora-ugnen/">rengöra ugnen</a> för en fullständig genomgång inklusive temperaturhjälp.</p>
+
+<p><strong>Spisfläkt och filter:</strong> koka spisfläktens metallfilter i vatten blandat med några matskedar bikarbonat. Fettet löser sig successivt och filtret kan sköljas rent under rinnande vatten. Upprepa vid kraftiga avlagringar. Det fungerar också att lägga filtren i diskmaskin med ett extra skvätt bikarbonat i botten.</p>
+
+<p><strong>Köksbänk och stänkplåt:</strong> en spray med bikarbonat upplöst i vatten (en tesked per halv liter) är ett effektivt vardagsrengöringsmedel för köksbänken. Det tar bort smörrester, kaffefläckar och allmänt fett utan att skada de flesta bänkmaterial. Undantag: natursten som marmor och kalksten, dessa ska inte ha kontakt med basiska eller sura medel.</p>
+
+<p><strong>Inbrända grytor och kastruller:</strong> fyll kärlet med vatten, tillsätt ett par matskedar bikarbonat och koka upp. Låt sjuda i 15 minuter. De flesta inbrända rester lossnar av sig själva eller efter en lätt skrubb. Det är billigare och skonsamt mot kärl jämfört med starka skurpulver.</p>
+
+<Callout type="tip" title="Kylskåpet luktar">
+  <p>Ställ in en liten skål eller en öppen låda med bikarbonat i kylskåpet. Byt ut det var sjätte vecka. Bikarbonatet neutraliserar ättiksyra och organiska svavelföreningar från mat och förhindrar att kylskåpet börjar lukta härsket. Det är inte kosmetika, det är faktisk kemi.</p>
+</Callout>
+
+<h2 id="toalett-kylskap">Toalett, kylskåp och kläder</h2>
+
+<p><strong>Toalettstol:</strong> häll en deciliter bikarbonat i toalettskålen och låt verka 15 minuter. Skrubba med toalettborsten och spola. Det tar bort ytliga missfärgningar och neutraliserar lukter. För kalkringar under kanten behövs syra istället, häll ättika under kanten och låt verka.</p>
+
+<p><strong>Kylskåpets insida:</strong> rengör hyllor och lådor med en lösning av en matsked bikarbonat per halv liter vatten. Lösningen tar bort bakterier och neutraliserar matlukt utan att lämna kemikalierester nära mat. Det är ett av de säkraste alternativen för inre kylskåpsrengöring.</p>
+
+<p><strong>Kläder och textilier:</strong> tillsätt en halv deciliter bikarbonat direkt i tvättmedelsfacket eller i trumman vid tvätt. Det mjukar upp vattnet, förstärker tvättmedlets effekt och neutraliserar svettelukt i sportkläder. Är kläderna luktiga men inte smutsiga: strö bikarbonat på dem, låt verka i 30 minuter och skaka av.</p>
+
+<p><strong>Mattor och textilier med lukt:</strong> strö bikarbonat generöst på mattan eller soffkudden. Låt verka minst 15 minuter, gärna längre för starka lukter. Dammsug upp ordentligt. Det fungerar mot husdjurslukt, cigarettlukt och fuktig doft.</p>
+
+<h2 id="deodorisering">Deodoriserande egenskaper</h2>
+
+<p>Det deodoriserande är bikarbonatets mest underskattade egenskap. De flesta obehagliga lukter i hemmet är sura molekyler, ättiksyra i matos, organiska svavelföreningar i ruttnade livsmedel, fettsyror i husdjurslukt. Bikarbonat neutraliserar dessa kemiskt och bildar luktlösa salter.</p>
+
+<p>Det är viktigt att skilja det från doftmaskering. En luftfräschare täcker lukten med en starkare doft. Bikarbonat tar bort luktmolekylen. Resultatet är luktlöshet, inte en ny doft.</p>
+
+<p>Praktiska användningsområden för deodoriserande bikarbonat:</p>
 
 <ul>
   <li><strong>Skor:</strong> häll bikarbonat i skorna, låt stå natten och skaka ut på morgonen</li>
-  <li><strong>Sophinkar:</strong> strö bikarbonat i botten under påsen, absorberar matlukt</li>
-  <li><strong>Kylskåp:</strong> öppen burk, byt månadsvis</li>
-  <li><strong>Mattor:</strong> strö över, låt verka 15 minuter, dammsug upp</li>
-  <li><strong>Husdjurslukt:</strong> bikarbonat på madrasser och textilier, låt verka och dammsug bort</li>
+  <li><strong>Soptunna:</strong> strö bikarbonat i botten under påsen, neutraliserar matlukt</li>
+  <li><strong>Kylskåp:</strong> öppen burk, byt var sjätte vecka</li>
+  <li><strong>Diskho:</strong> bikarbonat ner i avloppet följt av varmt vatten, neutraliserar matrester som fastnat</li>
+  <li><strong>Sportväska:</strong> öppen påse med bikarbonat i väskan när den inte används</li>
 </ul>
 
-<h2 id="blanda-ratt">Blanda rätt, blanda inte fel</h2>
+<h2 id="kombinera">Kombinera med citronsyra eller ättika</h2>
 
-<p>Blanda <strong>aldrig</strong> bikarbonat direkt med ättika och förvänta dig att blandningen ska rengöra. De neutraliserar varandra och du får saltvattenlösning med koldioxidbubblor. Effekten upphävs.</p>
+<p>Bikarbonat (basiskt, pH 8,3) och ättika eller citronsyra (sura, pH 2 till 3) reagerar med varandra. Det händer att folk blandar dem i en sprayflaska och förväntar sig en superlösning. Effekten är den motsatta: de neutraliserar varandra och bildar salt och vatten. Rengöringseffekten hos båda försvinner.</p>
 
-<p>Om du vill använda båda: applicera bikarbonatpasta, låt verka, torka av. Applicera sedan ättikslösning separat för att ta bort kalkavlagringar. Eller häll bikarbonat i avloppet, följt av ättika, för att lösgöra fett mekaniskt med hjälp av bubblorna, inte kemiskt. Vad <a href="/kemikaliefri-stadning/attika-rengoring/">ättika vid rengöring</a> klarar och inte klarar finns i en separat guide.</p>
+<p>Det rätta sättet att använda dem tillsammans är i sekvens:</p>
+
+<ol>
+  <li>Applicera bikarbonatpasta på fläcken, låt verka 10 till 15 minuter och skrubba bort organisk smuts och fett</li>
+  <li>Torka av ytan ordentligt</li>
+  <li>Applicera utspädd ättika eller citronsyra för att ta bort kalk och mineralfläckar</li>
+</ol>
+
+<p>Det finns ett undantag: avloppet. Häll bikarbonat ner i avloppet, följt av ättika och sedan hett vatten. Reaktionen skapar koldioxidbubblor som lösgör fett och organiska rester mekaniskt inne i röret. Här är syftet inte kemisk rengöring utan mekanisk lösgöring via bubblorna, och det fungerar för lätt igentäppta avlopp.</p>
+
+<Callout type="warning" title="Blanda aldrig i stängd behållare">
+  <p>Blanda aldrig bikarbonat och ättika i en flaska med lock. Koldioxidtrycket som bildas kan vara tillräckligt för att spränga locket. Använd alltid ett öppet kärl vid kombination.</p>
+</Callout>
+
+<p>Citronsyra är ett starkare alternativ till ättika för avkalkning och är bättre lämpad för maskiner som kaffebryggare och diskmaskiner. Vad <a href="/kemikaliefri-stadning/citronsyra-rengoring/">citronsyra klarar av</a> vid rengöring finns i en separat guide.</p>
+
+<h2 id="klarar-inte">Vad bikarbonat inte klarar</h2>
+
+<p>Bikarbonat är mångsidigt men inte universellt. Tre uppgifter det gör dåligt:</p>
+
+<p><strong>Avkalkning:</strong> kalk är basiskt (kalciumkarbonat, pH 8 till 9). Bikarbonat är också basiskt. En bas löser inte upp en annan bas. Kalkfläckar på kranen, i duschen och runt toalettens kant kräver syra: ättika, citronsyra eller fosforsyra. Bikarbonat mot kalk är bortkastad tid.</p>
+
+<p><strong>Desinfektion:</strong> bikarbonat dödar inte bakterier eller virus. Det reducerar antalet bakterier mekaniskt (slipeffekten tar bort smutslager där bakterierna sitter) men det är inte ett desinfektionsmedel. För <a href="/kok-och-hygien/desinfektera-skanbrader/">desinfektering av skärbrädor</a> efter rått kött behövs antingen 70-procentig etanol eller en utspädd klorlösning.</p>
+
+<p><strong>Tung oljesmuts och rost:</strong> gamla oljefläckar som satsat i textilier, rost och blodmärken kräver enzymbaserade fläckmedel eller syrabaserade lösningar. Bikarbonat gör liten skillnad på gamla, inlagrade fläckar av dessa typer.</p>
+
+<h2 id="kopguide">Vilket bikarbonat ska du köpa?</h2>
+
+<p>Det enklaste svaret är: köp matbikarbonat i ett stort förpackning. Det finns i de flesta mataffärers bakavdelning under namn som "bikarbonat", "natron" eller "natriumbikarbonat". En kilo-påse kostar runt 25 till 35 kronor och räcker länge.</p>
+
+<p>Det finns några varianter att känna till:</p>
+
+<ul>
+  <li><strong>Matbikarbonat (livsmedelsklassat):</strong> rent, lämpligt för rengöring nära mat, standardvalet för hemmabruk</li>
+  <li><strong>Tekniskt bikarbonat:</strong> kan innehålla något mer föroreningar, billigare i stora volymer, fungerar för städning men inte i närheten av livsmedel</li>
+  <li><strong>Läkemedelsklassat bikarbonat:</strong> renast möjliga, onödig premie för städändamål</li>
+</ul>
+
+<p>Varumärket spelar liten roll för rengöringsprestandan, det är samma molekyl oavsett om det står Eldorado, Garant eller ett apoteksmärke på förpackningen. Köp det som är billigast per kilo i en storförpackning och förvara det i en lufttät burk för att undvika att det absorberar fukt och klumpar ihop sig.</p>
+
+<p>För städning behöver du inte köpa specialprodukter märkta "städbikarbonat" med premiumprislapp. Det tillför ingenting utöver en dyrare etikett. Om du vill kombinera bikarbonat med andra naturliga ingredienser finns konkreta recept i guiden för att <a href="/kemikaliefri-stadning/gora-eget-allrengoringsmedel/">göra eget allrengöringsmedel</a>.</p>
 
 <FAQ items={faqItems} />
 
