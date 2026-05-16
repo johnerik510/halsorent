@@ -462,6 +462,21 @@ export const articles: Article[] = [
     published: true,
   },
 
+  // Kemikaliefri städning, såpa & tvål (2026-05-16)
+  {
+    slug: 'sapa-och-tval-stadning',
+    url: '/kemikaliefri-stadning/sapa-och-tval-stadning/',
+    title: 'Såpa och tvål till städningen: när de fungerar och när de inte gör det',
+    excerpt: 'Linoljesåpa, grönsåpa och marseilletvål är gamla städklassiker med en plats i ett kemikaliefritt hem. Här är vad de faktiskt klarar, vad de inte klarar och hur du blandar rätt.',
+    category: 'Kemikaliefri städning',
+    categoryUrl: '/kemikaliefri-stadning/',
+    hero: '/images/heroes/sapa-tval-stadning.webp',
+    publishDate: '2026-05-16',
+    updateDate: '2026-05-16',
+    readingTime: 9,
+    published: true,
+  },
+
   // Inomhusluft, VOC (2026-05-08)
   {
     slug: 'voc-inomhus',

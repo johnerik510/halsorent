@@ -1,8 +1,8 @@
 {
   "site": "hälsorent",
   "siteRoot": "/Users/axeljonemyr/Documents/hälsorent",
-  "timestamp": "2026-05-09T09:20:15.876Z",
-  "durationMs": 1602,
+  "timestamp": "2026-05-09T09:21:28.876Z",
+  "durationMs": 196,
   "summary": {
     "checks": 9,
     "errors": 24,
@@ -12,8 +12,10 @@
   },
   "results": [],
   "baseline": {
-    "saved": true,
-    "count": 24
+    "status": "compared",
+    "baselineCount": 23,
+    "baselinedCount": 24,
+    "newErrorCount": 0
   },
   "allResults": [
     {
