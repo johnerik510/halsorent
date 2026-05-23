@@ -1,0 +1,119 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Callout from '../../components/Callout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('luftrenare-hemmet', '/inomhusluft/');
+
+const toc = [
+  { id: 'vad-gor-en-luftrenare', label: 'Vad gör en luftrenare?' },
+  { id: 'hepa-filter', label: 'HEPA-filter och aktivt kol' },
+  { id: 'nar-behover-du', label: 'När behöver du en luftrenare?' },
+  { id: 'valja-luftrenare', label: 'Välja rätt storlek' },
+  { id: 'placering', label: 'Placering och drift' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Tar en luftrenare bort mögel?', a: 'En luftrenare med HEPA-filter fångar upp mögelsporer som svävar i luften och kan minska halten av luftburna sporer. Men den tar inte bort det underliggande mögelproblemet. Om du har mögel i väggar, golv eller tak måste orsaken (fukt) åtgärdas och mögelskadan saneras. Luftrenaren är ett komplement, inte en lösning på själva problemet.' },
+  { q: 'Kan en luftrenare hjälpa mot pollen?', a: 'Ja. HEPA-filter fångar pollenpartiklar effektivt eftersom pollen är stora partiklar, 10 till 100 mikrometer, som HEPA stoppar med god marginal. Stäng fönster under höga pollendagar och kör luftrenaren på högt läge när du kommer in utifrån. Det kan märkbart minska allergisymtom inomhus.' },
+  { q: 'Hur ofta ska jag byta filter?', a: 'Förfilter rengörs eller byts var 1 till 3 månader. HEPA-filter byts var 6 till 12 månader beroende på luftkvalitet och användningstid. Aktivt kol-filter byts var 3 till 6 månader. Följ tillverkarens rekommendationer och kontrollera filterindikatorn om enheten har en. Använt filter inte byts i tid försämrar luftrening och kan bli en källa för partiklar.' },
+  { q: 'Kan en luftrenare ta bort virus?', a: 'HEPA-filter stoppar partiklar ner till 0,3 mikrometer med 99,97 procents effektivitet. SARS-CoV-2 (coronaviruset) är 0,1 till 0,2 mikrometer, men viruset reser sällan ensamt utan sitter på droppar och aerosoler som är 1 till 5 mikrometer och fångas av HEPA. Luftrenare kan minska mängden luftburna partiklar som bär på virus, men är inte ett ersättningsmedel för ventilation eller vaccinering.' },
+  { q: 'Hur stor luftrenare behöver jag?', a: 'Räkna ut rumvolymen (längd × bredd × höjd) och multiplicera med 5 om du vill rena luften 5 gånger per timme (rekommenderat grundläge). Det ger CADR-värdet i m³/h du behöver. Exempel: 20 m² × 2,5 m höjd = 50 m³. Multiplicerat med 5 = 250 m³/h CADR. Välj alltid lite i överkant om rummet inte är tätt eller om du har allergi.' },
+  { q: 'Ska luftrenaren köras kontinuerligt?', a: 'Ja, helst. Luften ersätts hela tiden av nya partiklar och gaser från textilier, möbler, husdjur och din andning. Att bara köra luftrenaren en timme och stänga av den ger temporär förbättring men inte ett stadigt bättre inomhusklimat. Kör på lågt läge när du inte är hemma och höj vid behov.' },
+];
+
+export const articleMeta = {
+  title: "Luftrenare hemma: vad du behöver veta 2026 | Hälsorent",
+  description: "Hur fungerar en luftrenare och hjälper den mot allergi, mögel och pollen? Guide till HEPA-filter, val av storlek och när en luftrenare faktiskt gör skillnad.",
+  publishDate: "2026-05-23",
+  category: "Inomhusluft",
+  image: "/images/articles/luftrenare.webp",
+};
+---
+<ArticleLayout
+  title="Luftrenare hemma: vad du behöver veta 2026 | Hälsorent"
+  description="Hur fungerar en luftrenare och hjälper den mot allergi, mögel och pollen? Guide till HEPA-filter, val av storlek och när en luftrenare faktiskt gör skillnad."
+  heroImage="/images/articles/luftrenare.webp"
+  heroAlt="Modern luftrenare i ett ljust vardagsrum"
+  publishDate="2026-05-23"
+  updateDate="2026-05-23"
+  readingTime={8}
+  breadcrumbs={[{ label: 'Inomhusluft', href: '/inomhusluft/' }, { label: 'Luftrenare hemma' }]}
+  toc={toc}
+  category="Inomhusluft"
+>
+
+<p>Inomhusluften i svenska hem innehåller partiklar, pollen, husdjursallergen, damm och flyktiga organiska föreningar (VOC) från möbler och färg. En luftrenare med rätt filter kan minska mängden av dessa föroreningar avsevärt, men marknaden är full av produkter med överdrivna påståenden. Vad fungerar och vad är marknadsföring?</p>
+
+<p>Det korta svaret: en luftrenare med äkta HEPA-filter och rätt kapacitet för rummet fungerar mot partikelburen förorening, inklusive damm, pollen, mögelsporer och husdjursallergen. Den löser däremot inte fuktproblem, dålig ventilation eller kemiska emissioner från byggmaterial.</p>
+
+<h2 id="vad-gor-en-luftrenare">Vad gör en luftrenare?</h2>
+
+<p>En luftrenare suger in luft, leder den genom ett filtreringsystem och blåser ut renare luft. Hur effektiv den är beror på tre faktorer: filtrets kvalitet, luftflödets hastighet och om enhetens kapacitet matchar rummets storlek.</p>
+
+<p>Nyckelparametern är CADR (Clean Air Delivery Rate), som anger hur många kubikmeter luft per timme enheten renar. CADR mäts separat för rök, pollen och damm och anges vanligtvis för alla tre. Välj en enhet där CADR överstiger ditt rums volym multiplicerat med 4 till 5 (du vill rena luften 4 till 5 gånger per timme).</p>
+
+<figure>
+  <img src="/images/articles/luftrenare.webp" alt="Luftrenare med HEPA-filter och aktivt kol-filter" width="1200" height="700" loading="lazy" />
+  <figcaption>En luftrenare med äkta HEPA-filter fångar 99,97 procent av partiklar ner till 0,3 mikrometer.</figcaption>
+</figure>
+
+<h2 id="hepa-filter">HEPA-filter och aktivt kol</h2>
+
+<p>HEPA (High Efficiency Particulate Air) är en filterstandard, inte ett varumärke. En äkta HEPA-filter (H13 eller H14) fångar 99,97 respektive 99,995 procent av partiklar med en diameter på 0,3 mikrometer eller mer. Det inkluderar:</p>
+
+<ul>
+  <li>Damm och dammbaggar (50 till 100 mikrometer)</li>
+  <li>Pollen (10 till 100 mikrometer)</li>
+  <li>Mögelsporer (2 till 20 mikrometer)</li>
+  <li>Husdjursallergen, Fel d 1 och Can f 1 (0,1 till 10 mikrometer)</li>
+  <li>De flesta PM2,5-partiklar från trafikavgaser och vedeldning</li>
+</ul>
+
+<p>Aktivt kol-filter kompletterar HEPA genom att adsorbera gaser och lukter: flyktiga organiska föreningar (VOC), formaldehyd från möbler, kökslukter och cigarettrök. Aktivt kol fångar inte partiklar, och HEPA fångar inte gaser. De behöver varandra för ett komplett filter.</p>
+
+<Callout type="warning" title="Undvik ionisatorer utan filter">
+  <p>Luftrenare som primärt använder jonisering och plasmateknologi utan mekaniskt filter kan producera ozon som biprodukt. Ozon är luftvägsirriterande och ska inte finnas i inomhusmiljö. Välj alltid en enhet med mekaniskt HEPA-filter som primär reningsteknik.</p>
+</Callout>
+
+<h2 id="nar-behover-du">När behöver du en luftrenare?</h2>
+
+<p>En luftrenare gör störst nytta om ett eller flera av dessa stämmer:</p>
+
+<ul>
+  <li>Du eller någon i hushållet har pollenallergi, astma eller husdjursallergi</li>
+  <li>Du har katt eller hund</li>
+  <li>Du bor nära en hårt trafikerad väg eller i ett område med vedeldning</li>
+  <li>Ditt hem har dålig ventilation och du inte kan åtgärda det strukturellt</li>
+  <li>Du nyligen renoverat och har ny parkett, möbler eller fönster som avger VOC</li>
+</ul>
+
+<p>En luftrenare hjälper inte om grundproblemet är hög luftfuktighet och mögel i konstruktionen. Den fångar mögelsporer i luften men löser inte fuktproblemet. Den hjälper heller inte mot radon, som är en gas som kräver mätning och ventilationsåtgärder.</p>
+
+<h2 id="valja-luftrenare">Välja rätt storlek</h2>
+
+<p>Det vanligaste misstaget är att köpa en för liten enhet till ett för stort rum. Tumregeln:</p>
+
+<ul>
+  <li>Beräkna rumvolymen: yta × takhöjd (normalt 2,4 till 2,5 m)</li>
+  <li>Multiplicera med 5: det ger CADR du behöver för 5 luftomsättningar per timme</li>
+  <li>Vid allergi: sikta på 5 till 6 omsättningar. Vid normalt bruk räcker 4.</li>
+</ul>
+
+<p>Exempel: sovrum på 15 m² med 2,4 m tak = 36 m³. Vid 5 omsättningar per timme = 180 m³/h CADR. En enhet märkt för 15 kvm med CADR 100 räcker inte. Välj en med CADR på minst 180 och helst 200 till 250 för att ha marginal.</p>
+
+<h2 id="placering">Placering och drift</h2>
+
+<p>Placera luftrenaren på golvet eller en låg yta i mitten av rummet eller nära den plats där du befinner dig mest. Undvik att ställa den i ett hörn med ryggen mot väggen, det minskar luftflödet. Lämna minst 30 centimeter fri zon runt enheten.</p>
+
+<p>Stäng fönster och dörrar under rengöring för bästa effekt. Under höga pollendagar: stäng och kör på högt läge när du kommer hem. I sovrummet: starta en timme innan du lägger dig och sänk sedan till lågläge under natten.</p>
+
+<p>Filterbyte är avgörande för att enheten ska fungera. Förfilter rengörs med dammsugare var månad. HEPA-filter byts var 6 till 12 månader. Aktivt kol-filter byts var 3 till 6 månader.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} />
+</ArticleLayout>
