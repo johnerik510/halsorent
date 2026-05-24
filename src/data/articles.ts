@@ -87,19 +87,6 @@ export const clusters: Cluster[] = [
     hero: '/images/heroes/kok-hygien.webp',
     intro: 'Köket är hemmet mest använda rum och det hygieniskt mest krävande. Skärbrädor, disktrasor och köksbänkar är de vanligaste källorna till korssmittning i hemmet. Rätt rengöringsrutiner och rätt frekvens eliminerar risken utan att du behöver fylla köksskåpen med kemikalier.',
   },
-  {
-    slug: 'luftrenare-hemmet',
-    url: '/inomhusluft/luftrenare-hemmet/',
-    title: 'Luftrenare hemma: vad du behöver veta 2026',
-    excerpt: 'En luftrenare med äkta HEPA-filter och rätt CADR-kapacitet minskar damm, pollen, mögelsporer och husdjursallergen. Guide till hur du väljer rätt storlek och placerar enheten optimalt.',
-    category: 'Inomhusluft',
-    categoryUrl: '/inomhusluft/',
-    hero: '/images/articles/avfuktare.webp',
-    publishDate: '2026-05-23',
-    updateDate: '2026-05-23',
-    readingTime: 8,
-    published: true,
-  },
 ];
 
 export const articles: Article[] = [
@@ -569,6 +556,19 @@ export const articles: Article[] = [
     hero: '/images/heroes/kontaktytor-kok.webp',
     publishDate: '2026-04-30',
     readingTime: 6,
+    published: true,
+  },
+  {
+    slug: 'luftrenare-hemmet',
+    url: '/inomhusluft/luftrenare-hemmet/',
+    title: 'Luftrenare hemma: vad du behöver veta 2026',
+    excerpt: 'En luftrenare med äkta HEPA-filter och rätt CADR-kapacitet minskar damm, pollen, mögelsporer och husdjursallergen. Guide till hur du väljer rätt storlek och placerar enheten optimalt.',
+    category: 'Inomhusluft',
+    categoryUrl: '/inomhusluft/',
+    hero: '/images/articles/avfuktare.webp',
+    publishDate: '2026-05-23',
+    updateDate: '2026-05-23',
+    readingTime: 8,
     published: true,
   },
 ];
