@@ -1,0 +1,196 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Callout from '../../components/Callout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('kondens-fonster', '/inomhusluft/');
+
+const toc = [
+  { id: 'varfor-bildas-kondens', label: 'Varför bildas kondens?' },
+  { id: 'kondens-insida-vs-utsida', label: 'Insida kontra utsida' },
+  { id: 'minska-luftfuktigheten', label: 'Minska luftfuktigheten' },
+  { id: 'avfuktare-och-hygrometer', label: 'Avfuktare och hygrometer' },
+  { id: 'allvarliga-fuktproblem', label: 'När det är allvarligt' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  {
+    q: 'Är kondens på fönster farligt?',
+    a: 'Kondens i sig är inte farligt, men det är ett tecken på att luftfuktigheten inomhus är för hög. Långvarig kondens som rinner ner längs väggar och samlas i fönsterbänkar kan orsaka mögel och fuktskador på fönsterkarmar och väggar. Åtgärda orsaken till hög luftfuktighet istället för att bara torka bort kondensen.',
+  },
+  {
+    q: 'Varför uppstår kondens just på natten och tidigt på morgonen?',
+    a: 'Under natten sänks uppvärmningen i många hem, vilket gör att fönsterytan blir kallare. Samtidigt producerar sovande människor fukt genom andning, upp till 0,5 liter per person och natt. Kombinationen av kallare fönster och fuktigare luft gör att daggpunkten nås, och kondens bildas på glaset.',
+  },
+  {
+    q: 'Hur hög luftfuktighet är normalt inomhus?',
+    a: 'Den optimala inomhusluftfuktigheten är 40 till 50 procent relativ luftfuktighet (RH). Under 30 procent kan slemhinnor och hud torka ut. Över 60 procent gynnar dammkvalster och mögel. Kondens på fönster uppstår ofta när luftfuktigheten överstiger 50 till 55 procent i kombination med kalla ytterglasrutor.',
+  },
+  {
+    q: 'Hjälper det att byta till treglasfönster om jag har kondens?',
+    a: 'Treglasfönster har ett varmare innersta glas, vilket gör att daggpunkten sällan nås på glaset. Det löser kondensproblemet syntetiskt, men den underliggande höga luftfuktigheten finns kvar. Bättre ventilation och lägre luftfuktighet är en mer kostnadseffektiv lösning om fönstren i övrigt fungerar.',
+  },
+  {
+    q: 'Kan krukväxter bidra till kondens?',
+    a: 'Ja, växter avdunstar vatten genom bladen, en process som kallas transpiration. Många växter på fönsterbrädan ökar den lokala luftfuktigheten nära glaset och kan bidra till kondens. Flytta växter en bit från fönstret eller minska antalet växter på samma yta om kondensen är besvärlig.',
+  },
+];
+
+export const articleMeta = {
+  title: "Kondens på fönster: orsaker och hur du åtgärdar det | Hälsorent",
+  description: "Kondens på fönster beror på hög luftfuktighet och temperaturskillnader. Lär dig vad som orsakar det och hur du åtgärdar problemet.",
+  publishDate: "2026-05-31",
+  category: "Inomhusluft",
+  image: "/images/articles/kondens-fonster.webp",
+};
+---
+<ArticleLayout
+  title="Kondens på fönster: orsaker och hur du åtgärdar det | Hälsorent"
+  description="Kondens på fönster beror på hög luftfuktighet och temperaturskillnader. Lär dig vad som orsakar det och hur du åtgärdar problemet."
+  heroImage="/images/articles/kondens-fonster.webp"
+  heroAlt="Immat fönster med vattendroppar av kondens"
+  publishDate="2026-05-31"
+  updateDate="2026-05-31"
+  readingTime={7}
+  breadcrumbs={[{ label: 'Inomhusluft', href: '/inomhusluft/' }, { label: 'Kondens på fönster' }]}
+  toc={toc}
+  category="Inomhusluft"
+>
+
+<p>Kondens på fönster är ett av de vanligaste tecknen på att luftfuktigheten inomhus är för hög. Det immar fönstret, vattendroppar rinner längs glaset, och i värsta fall samlas vatten i fönsterbänken och skadar träet under. Problemet är sällan fönstrets fel utan ett symptom på luften i rummet.</p>
+
+<p>Goda nyheter: i de allra flesta fall går kondensproblem att lösa med bättre vädring, rätt ventilation och i vissa fall en avfuktare. Det kräver varken nya fönster eller dyra installationer.</p>
+
+<h2 id="varfor-bildas-kondens">Varför bildas kondens?</h2>
+
+<p>Luft kan hålla en viss mängd vattenmolekyler beroende på temperaturen. Varm luft rymmer mer fukt än kall. När fuktig inomhusluft möter en kall yta, till exempel ett fönsterglas, kyls luften ner och kan inte längre hålla kvar all fukt. Överskottet kondenserar till vattendroppar på glaset.</p>
+
+<p>Det temperaturvärde där kondensation börjar kallas daggpunkten. Daggpunkten beror på luftens temperatur och relativa luftfuktighet. Exempel:</p>
+
+<ul>
+  <li>Inomhustemperatur 20 grader, luftfuktighet 50 procent: daggpunkten är ungefär 9 grader. Om glaset är kallare än 9 grader bildas kondens.</li>
+  <li>Inomhustemperatur 20 grader, luftfuktighet 70 procent: daggpunkten är ungefär 14 grader. Kondens uppstår på ett varmare glas.</li>
+</ul>
+
+<p>Slutsatsen: ju högre luftfuktighet inomhus, desto lättare bildas kondens. Och ju sämre isolerade fönstren är, desto kallare ytteryta och desto lättare uppstår problemet.</p>
+
+<Callout type="info" title="Varifrån kommer fukt inomhus?">
+  <p>Matlagning, duschning och bad tillför stora mängder fukt, upp till 2 liter per person och dag i ett normalt hushåll. Andning bidrar med ytterligare 0,3 till 0,5 liter per person under natten. Krukväxter, nytvättade kläder som torkar inomhus och nyare tilläggsisolerande åtgärder som tätar luftläckor kan alla höja luftfuktigheten märkbart.</p>
+</Callout>
+
+<h2 id="kondens-insida-vs-utsida">Kondens på insidan kontra utsidan av fönstret</h2>
+
+<p>Var kondensen sitter berättar var problemet finns. Det är viktigt att skilja dem åt, eftersom åtgärderna är helt olika.</p>
+
+<h3>Kondens på insidan av glaset</h3>
+
+<p>Det vanligaste scenariot. Varm och fuktig inomhusluft möter det kalla innersta glaset och kondenserar. Orsakerna är:</p>
+
+<ul>
+  <li>Hög inomhusluftfuktighet, vanligtvis över 50 till 55 procent</li>
+  <li>Dålig ventilation som inte för bort fukt från köket och badrummet</li>
+  <li>Otillräcklig uppvärmning nära fönstren, vilket gör att glaset är extra kallt</li>
+  <li>Gamla enkla fönster eller tvåglasfönster med dålig värmeisolering</li>
+</ul>
+
+<p>Åtgärder riktas mot att sänka inomhusluftfuktigheten och förbättra ventilationen.</p>
+
+<h3>Kondens på utsidan av glaset</h3>
+
+<p>Kondens på utsidan uppstår framförallt på moderna energieffektiva fönster. Innerglassets bra värmeisolering gör att glasets yttre sida förblir kall, nära utomhustemperaturen. Tidigt på morgonen, när ytterluftens daggpunkt nås, kondenseras fukt på utsidan.</p>
+
+<p>Kondens på utsidan är paradoxalt ett tecken på ett bra isolerat fönster, inte ett dåligt. Det är harmlöst och torkar av sig självt när solen värmer glaset. Ingen åtgärd behövs.</p>
+
+<h3>Kondens mellan glasen</h3>
+
+<p>Om kondensen sitter inuti ett isolerglas, alltså i luftspalten mellan glasskivorna, är tätningen mellan glasen trasig. Fukt har tagit sig in i spalten. Det ger ett grumligt eller disigt utseende som inte går att torka bort. Det enda som hjälper är att byta isolerglasenheten. Kontakta ett fönsterföretag för reparation.</p>
+
+<figure>
+  <img src="/images/articles/luftfuktighet.webp" alt="Hygrometer som visar relativ luftfuktighet inomhus" width="1200" height="700" loading="lazy" />
+  <figcaption>En hygrometer mäter relativ luftfuktighet och är det bästa hjälpmedlet för att avgöra om luften i hemmet är för fuktig.</figcaption>
+</figure>
+
+<h2 id="minska-luftfuktigheten">Hur du minskar inomhusluftfuktigheten</h2>
+
+<p>Att sänka luftfuktigheten är den effektivaste åtgärden mot kondens på insidan av fönstren. Här är de viktigaste stegen.</p>
+
+<h3>Vädra rätt</h3>
+
+<p>Vädring för ut fuktig inomhusluft och ersätter den med torrare utomhusluft, som i de flesta fall har lägre absolut fukthalt även om relativ luftfuktighet ute kan verka hög. Effektiv vädring görs som genomdrag under 5 till 10 minuter, inte som ett litet på glänt-fönster under timmar. Genomdrag skapar ett luftflöde som snabbt byter ut hela luftvolymen.</p>
+
+<p>Vädra alltid direkt efter dusch och bad, och under och efter matlagning. Håll badrumsdörren stängd under duschning så att fukten inte sprider sig i hela bostaden.</p>
+
+<h3>Använd köksfläkt och badrumsventilation</h3>
+
+<p>Köksfläkten ska vara på under all kokning och minst 15 minuter efteråt. Välj frånluftsläge (som suger ut luften) framför cirkulationsläge. Badrumsventilen ska köras under hela duschen och 15 till 30 minuter efteråt. Om badrumsfläkten är svag eller gammal: kontrollera att den faktiskt suger med ett papper mot ventilationen. Om papperet faller mot fläkten fungerar den dåligt och kan behöva rengöras eller bytas.</p>
+
+<h3>Undvik att torka kläder inomhus</h3>
+
+<p>Nytvättade kläder som hängs inomhus avdunstar sin fukt direkt till inomhusluften. En full tvättmaskin med kläder kan tillföra 2 till 3 liter vatten till luften när kläderna torkar. Om du måste torka inomhus: gör det i ett välventilerat rum med fönstret öppet, eller använd en torktumlare med kondensering.</p>
+
+<h3>Håll temperaturen jämn i hela bostaden</h3>
+
+<p>Kalla rum lockar till sig kondens. Om ett rum är svalt hålls fönsterglaset kallt och kondens uppstår lättare. Se till att värmen fördelas jämnt i bostaden. Stäng inte av värmen helt i rum du inte använder, eftersom en sval yta i kombination med fuktig luft som sprider sig dit bildar kondens.</p>
+
+<Callout type="tip" title="Enkelt test för fuktproduktion">
+  <p>Duscha utan att slå på ventilationen och lämna badrumsdörren öppen. Gå sedan till vardagsrummet och kontrollera om fönstren immar igen. Om de gör det sprider sig fukten snabbt i bostaden och ventilationen i badrummet behöver förbättras.</p>
+</Callout>
+
+<h2 id="avfuktare-och-hygrometer">Avfuktare och hygrometer som hjälpmedel</h2>
+
+<h3>Hygrometer</h3>
+
+<p>Utan ett mätinstrument vet du inte om luftfuktigheten faktiskt är för hög. En hygrometer mäter relativ luftfuktighet och kostar från 100 till 300 kronor. Placera den i det rum där kondensen är värst. Målet är 40 till 50 procent relativ luftfuktighet. Ligger den konsekvent över 55 till 60 procent behöver du vidta åtgärder.</p>
+
+<p>Billiga hygrometermodeller kan ha en felmarginal på upp till plus minus 5 procentenheter, vilket räcker för att avgöra om nivån är problematisk. Om du vill ha exakta mätvärden för att kontrollera till exempel mögelproblem: välj en kalibrerad modell från ett känt varumärke.</p>
+
+<h3>Avfuktare</h3>
+
+<p>En avfuktare suger in luft, kyler den under daggpunkten och samlar upp vattnet i en behållare. Luften värms sedan till rumstemperatur och blåser ut med lägre fuktinnehåll. Det är en direktlösning när vädring och ventilation inte räcker.</p>
+
+<p>Avfuktare passar bäst i:</p>
+
+<ul>
+  <li>Källare och krypgrunder med konstant högt marknära fuktproblem</li>
+  <li>Lägenheter med dålig ventilation som inte kan åtgärdas strukturellt</li>
+  <li>Sommarstugor och fritidshus under den fuktiga höst- och vintersäsongen</li>
+  <li>Torkrum för kläder</li>
+</ul>
+
+<p>Välj kapacitet utifrån rumets storlek. En avfuktare för ett vanligt vardagsrum behöver klara av att ta ut minst 10 till 20 liter per dygn. Kontrollera att modellen fungerar vid lägre temperaturer om den ska stå i en kallare källare, eftersom effektiviteten sjunker markant under 15 grader på kompressorbaserade modeller.</p>
+
+<h2 id="allvarliga-fuktproblem">När kondens är ett tecken på allvarligare fuktproblem</h2>
+
+<p>Vanlig kondens på fönster är ett inomhusluftsbrob som i de flesta fall kan åtgärdas med bättre vanor och ventilation. Men ibland är kondensen ett symptom på ett djupare fuktproblem i konstruktionen.</p>
+
+<h3>Tecken att ta på allvar</h3>
+
+<p>Kontakta en byggnadskonsult eller fastighetsskötare om du märker något av följande:</p>
+
+<ul>
+  <li>Mögel syns runt fönsterkarmarna, på väggarna nära fönstren eller i vinkeln mellan vägg och tak</li>
+  <li>Fuktighetsfläckar på väggar eller tak som inte försvinner trots att du reducerat luftfuktigheten</li>
+  <li>Luftfuktigheten håller sig konsekvent över 60 procent trots god vädring och ventilation</li>
+  <li>Kondensen sitter inte bara på fönstren utan även på kalla ytterväggars innersida</li>
+  <li>Golv, karmar eller panel känns fuktiga att ta på</li>
+</ul>
+
+<p>Fukt i konstruktionen kan ha flera orsaker: vattenläcka, otät grund, bristande ångspärr vid tilläggsisolering, eller otillräcklig ventilation i krypgrunden. Dessa problem kan inte lösas med en avfuktare eller bättre vädring. De kräver en genomgång av en fackkunnig som kan mäta fukthalten i materialen och identifiera källan.</p>
+
+<Callout type="warning" title="Mögel runt fönsterkarm">
+  <p>Svarta prickar eller missfärgningar längs fönsterkarmens kanter och i hörnens silikonfog är typiska mögelskador orsakade av långvarig kondens. Torka bort synligt mögel med ett mögelborttagningsmedel, men se till att åtgärda den bakomliggande luftfuktigheten. Möglet kommer tillbaka om orsaken inte tas bort.</p>
+</Callout>
+
+<h3>Tilläggsisolering och kondens</h3>
+
+<p>En vanlig situation i äldre villor och lägenheter är att fastigheten tilläggsisoleras utan att ventilationen anpassas. Byggnaden blir tätare, luftläckor stängs och fukten stannar kvar inomhus istället för att läcka ut. Resultatet är stigande luftfuktighet och mer kondens, trots att det egentligen blivit energieffektivare.</p>
+
+<p>Om du nyss isolerat, bytt fönster till tätare modeller, eller tätat luftläckor och märker att kondensproblemet förvärrats: se till att installera eller uppgradera mekanisk ventilation. Frånluft i kök och badrum och tilluftsventiler i sovrum och vardagsrum är minimikravet.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} />
+</ArticleLayout>

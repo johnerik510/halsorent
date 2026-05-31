@@ -571,6 +571,21 @@ export const articles: Article[] = [
     readingTime: 8,
     published: true,
   },
+  // Inomhusluft, kondens (2026-05-31)
+  {
+    slug: 'kondens-fonster',
+    url: '/inomhusluft/kondens-fonster/',
+    title: 'Kondens på fönster: orsaker och hur du åtgärdar det',
+    excerpt: 'Kondens på insidan av fönster är ett tecken på hög luftfuktighet. Lär dig orsaker, åtgärder och hur du förebygger fuktproblem.',
+    category: 'Inomhusluft',
+    categoryUrl: '/inomhusluft/',
+    hero: '/images/articles/ventilation.webp',
+    publishDate: '2026-05-31',
+    updateDate: '2026-05-31',
+    readingTime: 7,
+    published: true,
+  },
+
 ];
 
 export function getArticlesByCluster(slug: string): Article[] {
