@@ -1,8 +1,9 @@
 {
   "generatedAt": "2026-05-09T09:20:15.876Z",
-  "count": 24,
+  "count": 30,
   "summary": {
-    "08-image-binary-duplicates": 24
+    "08-image-binary-duplicates": 24,
+    "02-anchors": 0
   },
   "signatures": [
     "16644aff10a0ebe1",
@@ -27,6 +28,14 @@
     "c998c5f5ae9d66d0",
     "90adf8f2d9e29b73",
     "a4c84aa41b366bab",
-    "70b84e16fbf35952"
-  ]
+    "70b84e16fbf35952",
+    "8687821f7082c2a2",
+    "296e669d64a5866b",
+    "1c1f700602a50cc5",
+    "e9af3fc3f18d11aa",
+    "633b890dab5747f9",
+    "9f670119210922a9",
+    "d93d6c07532c4397"
+  ],
+  "note": "[2026-06-14] +7 check-02-anchors baselined (broadened anchor detection)."
 }
