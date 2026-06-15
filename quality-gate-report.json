@@ -1,23 +1,72 @@
 {
   "site": "hälsorent",
   "siteRoot": "/Users/axeljonemyr/Documents/hälsorent",
-  "timestamp": "2026-05-31T20:49:26.851Z",
-  "durationMs": 3873,
+  "timestamp": "2026-06-15T09:00:00.789Z",
+  "durationMs": 1829,
   "summary": {
-    "checks": 17,
-    "errors": 24,
+    "checks": 18,
+    "errors": 31,
     "warnings": 0,
     "newErrors": 0,
-    "baselinedErrors": 24
+    "baselinedErrors": 31
   },
   "results": [],
   "baseline": {
     "status": "compared",
-    "baselineCount": 23,
-    "baselinedCount": 24,
+    "baselineCount": 30,
+    "baselinedCount": 31,
     "newErrorCount": 0
   },
   "allResults": [
+    {
+      "check": "02-anchors",
+      "severity": "error",
+      "file": "src/pages/allergi-och-astma/index.astro",
+      "line": 36,
+      "message": "Förbjuden ankartext \"läs guiden\": <a href={a.url} class=\"group block bg-white border border-border rounded-xl overflow-hidden hover:bo"
+    },
+    {
+      "check": "02-anchors",
+      "severity": "error",
+      "file": "src/pages/inomhusluft/index.astro",
+      "line": 35,
+      "message": "Förbjuden ankartext \"läs guiden\": <a href={a.url} class=\"group block bg-white border border-border rounded-xl overflow-hidden hover:bo"
+    },
+    {
+      "check": "02-anchors",
+      "severity": "error",
+      "file": "src/pages/kemikaliefri-stadning/index.astro",
+      "line": 36,
+      "message": "Förbjuden ankartext \"läs guiden\": <a href={a.url} class=\"group block bg-white border border-border rounded-xl overflow-hidden hover:bo"
+    },
+    {
+      "check": "02-anchors",
+      "severity": "error",
+      "file": "src/pages/kok-och-hygien/index.astro",
+      "line": 36,
+      "message": "Förbjuden ankartext \"läs guiden\": <a href={a.url} class=\"group block bg-white border border-border rounded-xl overflow-hidden hover:bo"
+    },
+    {
+      "check": "02-anchors",
+      "severity": "error",
+      "file": "src/pages/mogel-och-fukt/index.astro",
+      "line": 36,
+      "message": "Förbjuden ankartext \"läs guiden\": <a href={a.url} class=\"group block bg-white border border-border rounded-xl overflow-hidden hover:bo"
+    },
+    {
+      "check": "02-anchors",
+      "severity": "error",
+      "file": "src/pages/rengoring-av-apparater/index.astro",
+      "line": 35,
+      "message": "Förbjuden ankartext \"läs guiden\": <a href={a.url} class=\"group block bg-white border border-border rounded-xl overflow-hidden hover:bo"
+    },
+    {
+      "check": "02-anchors",
+      "severity": "error",
+      "file": "src/pages/stadtips-och-rutiner/index.astro",
+      "line": 36,
+      "message": "Förbjuden ankartext \"läs guiden\": <a href={a.url} class=\"group block bg-white border border-border rounded-xl overflow-hidden hover:bo"
+    },
     {
       "check": "08-image-binary-duplicates",
       "severity": "error",
