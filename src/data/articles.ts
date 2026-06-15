@@ -571,6 +571,21 @@ export const articles: Article[] = [
     readingTime: 8,
     published: true,
   },
+  // Inomhusluft, minska damm (2026-06-15)
+  {
+    slug: 'minska-damm-i-hemmet',
+    url: '/inomhusluft/minska-damm-i-hemmet/',
+    title: 'Minska damm i hemmet: så får du färre dammpartiklar i luften',
+    excerpt: 'Damm består mest av hudceller och textilfibrer. Så minskar du källorna, dammtorkar rätt och håller nere dammet med en enkel veckorutin.',
+    category: 'Inomhusluft',
+    categoryUrl: '/inomhusluft/',
+    hero: '/images/articles/minska-damm-i-hemmet.webp',
+    publishDate: '2026-06-15',
+    updateDate: '2026-06-15',
+    readingTime: 8,
+    published: true,
+  },
+
   // Inomhusluft, kondens (2026-05-31)
   {
     slug: 'kondens-fonster',
