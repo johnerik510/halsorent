@@ -160,7 +160,7 @@ export const articles: Article[] = [
   {
     slug: 'attika-rengoring',
     url: '/kemikaliefri-stadning/attika-rengoring/',
-    title: 'Ättika vid rengöring: vad den klarar och vad den inte klarar',
+    title: 'Ättika vid rengöring: vad den klarar',
     excerpt: 'Ättika löser upp kalk och dödar bakterier, men ska aldrig blandas med bikarbonat eller användas på marmor. Så här gör du rätt.',
     category: 'Kemikaliefri städning',
     categoryUrl: '/kemikaliefri-stadning/',
@@ -316,7 +316,7 @@ export const articles: Article[] = [
   {
     slug: 'ratt-ordning-stadning',
     url: '/stadtips-och-rutiner/ratt-ordning-stadning/',
-    title: 'Rätt ordning när du städar: uppifrån och ner, torrare före vattnare',
+    title: 'Rätt ordning när du städar: uppifrån och ner',
     excerpt: 'Fel ordning innebär att du sprider smuts du just har städat bort. Den korrekta ordningen sparar tid och ger ett renare resultat.',
     category: 'Städtips & rutiner',
     categoryUrl: '/stadtips-och-rutiner/',
@@ -406,7 +406,7 @@ export const articles: Article[] = [
   {
     slug: 'husdjursallergen-i-hemmet',
     url: '/allergi-och-astma/husdjursallergen-i-hemmet/',
-    title: 'Husdjursallergen i hemmet: minska symtomen utan att ge bort djuret',
+    title: 'Husdjursallergen i hemmet: minska symtomen',
     excerpt: 'Katt- och hundallergener fastnar i textilier, möbler och ventilation. Konkreta åtgärder som sänker allergenhalten och lindrar symtomen.',
     category: 'Allergi & astma',
     categoryUrl: '/allergi-och-astma/',
@@ -421,7 +421,7 @@ export const articles: Article[] = [
   {
     slug: 'gora-eget-allrengoringsmedel',
     url: '/kemikaliefri-stadning/gora-eget-allrengoringsmedel/',
-    title: 'Gör ditt eget rengöringsmedel: recept med bikarbonat, ättika och citronsyra',
+    title: 'Gör eget rengöringsmedel: bikarbonat och ättika',
     excerpt: 'Sex beprövade recept på hemmagjorda rengöringsmedel. Allrengörare, badrumsrengöring, fönsterputsmedel och skurpulver för en bråkdel av priset.',
     category: 'Kemikaliefri städning',
     categoryUrl: '/kemikaliefri-stadning/',
@@ -481,7 +481,7 @@ export const articles: Article[] = [
   {
     slug: 'rengora-mikrovagen',
     url: '/rengoring-av-apparater/rengora-mikrovagen/',
-    title: 'Rengöra mikrovågsugnen: ångmetoden och hur du tar bort inbränt',
+    title: 'Rengöra mikrovågsugnen: ångmetoden',
     excerpt: 'Mikrovågsugnen rengörs lättast med ånga och naturliga medel. Steg för steg: ångmetoden, ta bort inbränt fett och förebygg framtida smuts.',
     category: 'Rengöring av apparater',
     categoryUrl: '/rengoring-av-apparater/',
@@ -496,7 +496,7 @@ export const articles: Article[] = [
   {
     slug: 'rengora-badrum',
     url: '/stadtips-och-rutiner/rengora-badrum/',
-    title: 'Rengöra badrummet effektivt: steg för steg med naturliga medel',
+    title: 'Rengöra badrummet: steg för steg',
     excerpt: 'Badrummet rengörs snabbast med rätt ordning och rätt medel. Komplett guide: toalett, dusch, handfat, golv och djupstädning av fogar.',
     category: 'Städtips & rutiner',
     categoryUrl: '/stadtips-och-rutiner/',
@@ -511,7 +511,7 @@ export const articles: Article[] = [
   {
     slug: 'rengora-ugnen',
     url: '/kok-och-hygien/rengora-ugnen/',
-    title: 'Rengöra ugnen: bikarbonatmetoden och hur du tar bort inbränt fett',
+    title: 'Rengöra ugnen: bikarbonatmetoden mot inbränt',
     excerpt: 'Inbränt fett i ugnen är en brandrisk och ger dålig lukt. Bikarbonatmetoden tar bort gamla fettfläckar utan farliga kemikalier.',
     category: 'Kök & hygien',
     categoryUrl: '/kok-och-hygien/',
@@ -549,7 +549,7 @@ export const articles: Article[] = [
   {
     slug: 'kontaktytor-kok',
     url: '/kok-och-hygien/kontaktytor-kok/',
-    title: 'Kontaktytor i köket: rengöra handtag, kranar och bänkar rätt',
+    title: 'Kontaktytor i köket: rengöra rätt',
     excerpt: 'Kökets kontaktytor sprider bakterier via händerna. Vilka ytor riskeras mest, hur du rengör dem effektivt och hur ofta det bör göras.',
     category: 'Kök & hygien',
     categoryUrl: '/kok-och-hygien/',
