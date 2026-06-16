@@ -352,6 +352,19 @@ export const articles: Article[] = [
 
   // Rengöring av apparater
   {
+    slug: 'avkalka-kaffebryggare',
+    url: '/rengoring-av-apparater/avkalka-kaffebryggare/',
+    title: 'Avkalka kaffebryggare och vattenkokare med ättika och citronsyra',
+    excerpt: 'Kalk gör bryggaren långsam och vattenkokaren ineffektiv. Så avkalkar du steg för steg med citronsyra eller ättika, och hur ofta det behövs.',
+    category: 'Rengöring av apparater',
+    categoryUrl: '/rengoring-av-apparater/',
+    hero: '/images/articles/avkalka-kaffebryggare.webp',
+    publishDate: '2026-06-16',
+    updateDate: '2026-06-16',
+    readingTime: 7,
+    published: true,
+  },
+  {
     slug: 'rengora-tvattmaskin',
     url: '/rengoring-av-apparater/rengora-tvattmaskin/',
     title: 'Rengöra tvättmaskin: komplett guide mot lukt och mögel',
