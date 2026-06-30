@@ -300,6 +300,19 @@ export const articles: Article[] = [
 
   // Städtips & rutiner
   {
+    slug: 'putsa-fonster',
+    url: '/stadtips-och-rutiner/putsa-fonster/',
+    title: 'Putsa fönster utan ränder: så gör du med ättika och rätt teknik',
+    excerpt: 'Så putsar du fönster strimfritt med en enkel ättikblandning och rätt teknik. Bästa redskapen, vanliga misstag och varför du inte ska putsa i solen.',
+    category: 'Städtips & rutiner',
+    categoryUrl: '/stadtips-och-rutiner/',
+    hero: '/images/articles/putsa-fonster.webp',
+    publishDate: '2026-06-30',
+    updateDate: '2026-06-30',
+    readingTime: 7,
+    published: true,
+  },
+  {
     slug: 'stadschema-hemmet',
     url: '/stadtips-och-rutiner/stadschema-hemmet/',
     title: 'Städschema för hemmet: dagligt, veckovis och månadsvis',

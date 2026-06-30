@@ -1,0 +1,92 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Callout from '../../components/Callout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('putsa-fonster', '/stadtips-och-rutiner/');
+
+const toc = [
+  { id: 'blandning', label: 'Ättikblandningen' },
+  { id: 'redskap', label: 'Redskap du behöver' },
+  { id: 'teknik', label: 'Teknik steg för steg' },
+  { id: 'utan-rander', label: 'Så slipper du ränder' },
+  { id: 'misstag', label: 'Vanliga misstag' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Vad är bäst att putsa fönster med?', a: 'En enkel blandning av ättika och vatten, eller en droppe diskmedel i ljummet vatten, räcker långt. Ättikan löser fett och kalkfläckar utan att lämna hinna. Torka av med en gummiskrapa eller en ren mikrofiberduk. Du behöver inga dyra specialmedel för rena fönster.' },
+  { q: 'Hur putsar man fönster utan ränder?', a: 'Ränder beror nästan alltid på tre saker: för mycket medel, en smutsig duk eller att fönstret torkar för snabbt i solen. Använd sparsamt med medel, en ren och torr mikrofiberduk för eftertorkning och putsa när fönstret är i skugga. Dra gummiskrapan i överlappande drag och torka av bladet mellan varje drag.' },
+  { q: 'Kan man putsa fönster i minusgrader?', a: 'Det går, men putsvattnet kan frysa på rutan. Tillsätt en skvätt T-sprit eller ättika i vattnet som sänker fryspunkten, arbeta snabbt och torka av direkt. Lättast blir det ändå på en mulen dag strax över noll, eftersom solen och kylan annars gör att vattnet torkar eller fryser innan du hinner skrapa av det.' },
+  { q: 'När ska man putsa fönster?', a: 'På en mulen dag eller när fönstret är i skugga, aldrig i direkt solljus. I solen torkar putsvattnet så snabbt att det lämnar ränder innan du hinner torka av. Många väljer vår och höst, men en molnig dag när som helst på året fungerar utmärkt.' },
+  { q: 'Fungerar gammeldags tidningspapper?', a: 'Det fungerade förr när trycksvärtan var fet och band smutsen, men dagens tidningstryck smetar ofta av sig och kan lämna grått på karmarna. En ren mikrofiberduk eller en gummiskrapa ger ett bättre och mer förutsägbart resultat idag.' },
+];
+---
+<ArticleLayout
+  title="Putsa fönster utan ränder: med ättika och rätt teknik | Hälsorent"
+  description="Så putsar du fönster strimfritt med en enkel ättikblandning och rätt teknik. Bästa redskapen, vanliga misstag och varför du inte ska putsa i solen."
+  heroImage="/images/articles/putsa-fonster.webp"
+  heroAlt="Hand med gummiskrapa som drar rent ett fönster utan ränder"
+  publishDate="2026-06-30"
+  updateDate="2026-06-30"
+  readingTime={7}
+  breadcrumbs={[{ label: 'Städtips & rutiner', href: '/stadtips-och-rutiner/' }, { label: 'Putsa fönster' }]}
+  toc={toc}
+  category="Städtips & rutiner"
+>
+
+<p>Rena fönster utan en enda rand handlar mindre om vilket medel du köper och mer om teknik och timing. Med en skvätt ättika i vatten, en gummiskrapa och en ren mikrofiberduk får du ett resultat som matchar dyra specialmedel, helt utan parfym och kemikalier. Det här är hela metoden, från blandning till sista avtorkningen.</p>
+
+<h2 id="blandning">Ättikblandningen</h2>
+<p>Du behöver inget specialmedel. Blanda ungefär en del ättika (12-procentig hushållsättika) med fyra delar ljummet vatten i en sprayflaska. Ättikan löser fett, fingeravtryck och kalkfläckar och lämnar ingen hinna efter sig. Är fönstren riktigt smutsiga kan du istället ta en droppe diskmedel i en hink ljummet vatten för att lösa det värsta först, och avsluta med ättikblandningen. Samma princip som i vår guide till <a href="/kemikaliefri-stadning/attika-rengoring/">ättika för rengöring</a>: rätt utspätt gör det jobbet utan dyra produkter.</p>
+
+<Callout type="tip" title="Tvätta karmen först">
+  Börja alltid med att torka av karmar och fönsterbleck med en fuktig trasa. Annars sköljer du ner damm och smuts från karmen på den nyputsade rutan och får börja om.
+</Callout>
+
+<h2 id="redskap">Redskap du behöver</h2>
+<p>Det blir både enklare och snyggare med rätt verktyg, och inget av det är dyrt:</p>
+<ul>
+  <li><strong>Sprayflaska</strong> med ättikblandningen.</li>
+  <li><strong>Gummiskrapa (fönsterskrapa)</strong> i lagom bredd för dina rutor.</li>
+  <li><strong>Två mikrofiberdukar</strong>, en lätt fuktad för tvätt och en torr för eftertorkning.</li>
+  <li><strong>En tvättsvamp eller fönstertvätt</strong> till stora rutor.</li>
+</ul>
+
+<figure>
+  <img src="/images/inline/putsa-fonster.webp" alt="Person som torkar rent ett fönster med en mikrofiberduk i dagsljus" width="1200" height="800" loading="lazy" />
+  <figcaption>En ren, torr mikrofiberduk för eftertorkningen är det som avgör om fönstret blir strimfritt.</figcaption>
+</figure>
+
+<h2 id="teknik">Teknik steg för steg</h2>
+<p>Arbeta uppifrån och ner, en ruta i taget, så att eventuellt rinnande vatten hamnar på det du ännu inte torkat:</p>
+<ul>
+  <li>Spraya eller tvätta rutan jämnt med blandningen och lös upp smutsen.</li>
+  <li>Dra gummiskrapan uppifrån och ner i raka, överlappande drag.</li>
+  <li>Torka av skrapans gummiblad med en torr duk mellan varje drag.</li>
+  <li>Torka rutans kanter och hörn med den torra mikrofiberduken.</li>
+  <li>Putsa bort eventuella sista strimmor med den torra duken i en cirkelrörelse.</li>
+</ul>
+
+<h2 id="utan-rander">Så slipper du ränder</h2>
+<p>Ränder kommer nästan alltid från en av tre saker. Den vanligaste är att du putsar i direkt solljus, då torkar vattnet innan du hinner skrapa av det och lämnar en hinna. Putsa därför alltid när fönstret är i skugga eller på en mulen dag. Den andra orsaken är för mycket medel, som inte hinner torka bort, så spreja sparsamt. Den tredje är en smutsig eller fuktig efterduk som bara flyttar runt smutsen. Byt till en torr, ren mikrofiberduk så fort den känns fuktig.</p>
+
+<Callout type="warning" title="Putsa aldrig i solen">
+  Solvärmen torkar putsvattnet på sekunder och är den enskilt vanligaste orsaken till ränder. Vänta på skugga eller en mulen dag, även om fönstret ser inbjudande soligt ut.
+</Callout>
+
+<h2 id="misstag">Vanliga misstag</h2>
+<ul>
+  <li>Att putsa i solen, vilket nästan garanterat ger ränder.</li>
+  <li>Att hoppa över karmen, så att smuts sköljs ner på den rena rutan.</li>
+  <li>Att använda för mycket medel som lämnar en hinna.</li>
+  <li>Att torka med en fuktig eller luddig duk i stället för en ren mikrofiberduk.</li>
+  <li>Att glömma torka av gummiskrapans blad mellan dragen.</li>
+</ul>
+<p>Putsade fönster hör hemma i en större rutin. Lägg in dem säsongsvis i ditt <a href="/stadtips-och-rutiner/stadschema-hemmet/">städschema</a>, och använd samma kemikaliefria tänk i resten av hemmet, till exempel när du <a href="/stadtips-och-rutiner/rengora-badrum/">rengör badrummet</a> eller avkalkar med <a href="/kemikaliefri-stadning/citronsyra-rengoring/">citronsyra</a>.</p>
+
+<FAQ items={faqItems} />
+<RelatedPosts articles={related} />
+</ArticleLayout>
