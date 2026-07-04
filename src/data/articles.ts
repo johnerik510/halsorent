@@ -245,6 +245,19 @@ export const articles: Article[] = [
     readingTime: 6,
     published: true,
   },
+  {
+    slug: 'frisk-luft-hemma',
+    url: '/inomhusluft/frisk-luft-hemma/',
+    title: 'Frisk luft hemma: vad du bör veta om luftkvalitet',
+    excerpt: 'Damm, fukt och koldioxid gör inomhusluften sämre än utomhusluften. Så känner du igen dålig luft, väljer rätt ventilation och får ett friskare hem.',
+    category: 'Inomhusluft',
+    categoryUrl: '/inomhusluft/',
+    hero: '/images/heroes/frisk-luft-hemma.webp',
+    publishDate: '2026-07-04',
+    updateDate: '2026-07-04',
+    readingTime: 7,
+    published: true,
+  },
 
   // Mögel & fukt
   {

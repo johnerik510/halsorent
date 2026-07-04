@@ -1,16 +1,22 @@
 {
   "site": "hälsorent",
   "siteRoot": "/Users/axeljonemyr/Documents/hälsorent",
-  "timestamp": "2026-06-16T16:34:59.301Z",
-  "durationMs": 2060,
+  "timestamp": "2026-07-04T20:17:40.434Z",
+  "durationMs": 1843,
   "summary": {
-    "checks": 18,
+    "checks": 19,
     "errors": 31,
-    "warnings": 0,
+    "warnings": 1,
     "newErrors": 0,
     "baselinedErrors": 31
   },
-  "results": [],
+  "results": [
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/articles/inomhusluft.webp\" används av 2 artiklar: Luftrenare hemma: vad du behöver veta 2026 | Hälsorent | Förbättra inomhusluften: 8 åtgärder som gör skillnad"
+    }
+  ],
   "baseline": {
     "status": "compared",
     "baselineCount": 30,
@@ -66,6 +72,11 @@
       "file": "src/pages/stadtips-och-rutiner/index.astro",
       "line": 36,
       "message": "Förbjuden ankartext \"läs guiden\": <a href={a.url} class=\"group block bg-white border border-border rounded-xl overflow-hidden hover:bo"
+    },
+    {
+      "check": "04-articlemeta",
+      "severity": "warning",
+      "message": "Bild \"/images/articles/inomhusluft.webp\" används av 2 artiklar: Luftrenare hemma: vad du behöver veta 2026 | Hälsorent | Förbättra inomhusluften: 8 åtgärder som gör skillnad"
     },
     {
       "check": "08-image-binary-duplicates",

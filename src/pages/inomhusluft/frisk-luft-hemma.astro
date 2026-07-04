@@ -1,0 +1,78 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import Callout from '../../components/Callout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedPosts from '../../components/RelatedPosts.astro';
+import { getRelated } from '../../data/articles';
+
+const related = getRelated('frisk-luft-hemma', '/inomhusluft/');
+
+const toc = [
+  { id: 'forsamrar', label: 'Vad försämrar luften inomhus' },
+  { id: 'kanna-igen', label: 'Så känner du igen dålig ventilation' },
+  { id: 'system', label: 'Olika ventilationssystem' },
+  { id: 'planering', label: 'Därför är planeringen avgörande' },
+  { id: 'idag', label: 'Enkla saker du kan göra idag' },
+  { id: 'faq', label: 'Vanliga frågor' },
+];
+
+const faqItems = [
+  { q: 'Hur vet jag om luften i mitt hem är dålig?', a: 'Imma på insidan av fönstren på morgonen, instängd lukt som sitter kvar efter matlagning och att du sover sämre i sovrummet än i andra rum är tydliga tecken. En hygrometer som visar över 60 procent luftfuktighet inomhus och en koldioxidmätare som passerar 1000 ppm i sovrummet bekräftar problemet.' },
+  { q: 'Räcker det med en luftrenare för att få frisk luft?', a: 'Nej. En luftrenare fångar partiklar och pollen men byter inte ut luften och för inte bort fukt eller koldioxid. Grunden är alltid ett fungerande luftombyte genom ventilation eller vädring. Luftrenaren är ett komplement, inte en ersättning.' },
+  { q: 'Vad är FTX-ventilation?', a: 'FTX står för från- och tilluftsventilation med värmeåtervinning. Systemet blåser in filtrerad, uppvärmd friskluft samtidigt som det suger ut den gamla luften och återvinner värmen på vägen ut. Det ger jämn luftkvalitet i hela huset och lägre uppvärmningskostnad, men måste dimensioneras rätt för att fungera.' },
+  { q: 'Hur ofta bör jag vädra?', a: 'Korsdrag i tio minuter morgon och kväll räcker långt i de flesta hem. Öppna fönster i motsatta delar av bostaden samtidigt så byts luften ut snabbt utan att väggarna hinner kylas ner. Vädra alltid extra efter dusch, matlagning och tvätt.' },
+  { q: 'Kan dålig luft göra mig sjuk?', a: 'Långvarig exponering för fukt och mögel kan ge luftvägsbesvär, trötthet och förvärra astma och allergi. Höga koldioxidnivåer försämrar sömn och koncentration. Frisk luft handlar därför inte bara om komfort utan om hälsa på sikt.' },
+];
+---
+<ArticleLayout
+  title="Frisk luft hemma: vad du bör veta om luftkvalitet | Hälsorent"
+  description="Damm, fukt och koldioxid gör inomhusluften sämre än utomhusluften. Så känner du igen dålig luft, väljer rätt ventilation och får ett friskare hem."
+  heroImage="/images/heroes/frisk-luft-hemma.webp"
+  heroAlt="Ljust vardagsrum med öppet fönster som släpper in frisk luft"
+  publishDate="2026-07-04"
+  updateDate="2026-07-04"
+  readingTime={7}
+  breadcrumbs={[{ label: 'Inomhusluft', href: '/inomhusluft/' }, { label: 'Frisk luft hemma' }]}
+  toc={toc}
+  category="Inomhusluft"
+>
+
+<p>Vi tillbringar runt 90 procent av vår tid inomhus, men luften där inne är ofta sämre än den vi andas ute. Damm, fukt, matos, avgaser som letar sig in och utsläpp från möbler och byggmaterial samlas i ett hem som inte ventileras ordentligt. Konsekvenserna märks som huvudvärk, trötthet, torra slemhinnor och i värsta fall mögel och astmabesvär. Här går vi igenom vad som faktiskt påverkar luftkvaliteten hemma och hur du får bukt med problemen.</p>
+
+<h2 id="forsamrar">Vad försämrar luften inomhus</h2>
+
+<p>Den vanligaste boven är fukt. En familj på fyra personer avger flera liter vatten per dygn genom andning, dusch, matlagning och tvätt. Får den fukten ingen väg ut fastnar den i väggar och tak, och då trivs mögel och kvalster. Höga halter koldioxid är en annan tyst faktor. I ett sovrum med stängd dörr och dålig ventilation kan koldioxidhalten stiga till nivåer som ger sämre sömn och koncentration redan efter några timmar.</p>
+
+<p>Till detta kommer partiklar och kemiska ämnen. Nytt golv, färsk färg och spånskivemöbler avger flyktiga organiska ämnen, så kallade VOC, långt efter att de installerats. Röker någon inomhus, eller bor du vid en hårt trafikerad väg, tillförs ytterligare partiklar som lungorna får arbeta med. Hur du minskar just <a href="/inomhusluft/voc-inomhus/">VOC i inomhusluften</a> går vi igenom i en egen guide.</p>
+
+<h2 id="kanna-igen">Så känner du igen dålig ventilation</h2>
+
+<img src="/images/inline/frisk-luft-fonsterkondens.webp" alt="Kondens och vattendroppar på insidan av en fönsterruta" width="880" height="495" loading="lazy" />
+
+<p>Imma på insidan av fönstren på morgonen är en tydlig varningssignal. Instängd lukt som sitter kvar länge efter matlagning, kondens i badrummet som inte försvinner och synliga fuktfläckar i tak eller vid fönsterkarmar hör också dit. Många upplever att de sover sämre i sovrummet än i andra rum, vilket ofta beror på just koldioxid. Om du känner igen dig i flera av dessa punkter är det inte luftrenaren som är lösningen, utan ventilationen.</p>
+
+<p>Kondens som återkommer varje morgon är värd att ta på allvar. Vi har en separat genomgång av varför det uppstår och vad du gör åt <a href="/inomhusluft/kondens-fonster/">kondens på fönster</a>.</p>
+
+<Callout type="tip" title="Snabbtest med ett papper">
+Håll en bit toalettpapper mot frånluftsgallret i badrum eller kök. Dras det mot gallret fungerar frånluften. Rör det sig inte alls är luftflödet för svagt, och då hjälper varken vädring eller luftrenare förrän själva ventilationen åtgärdas.
+</Callout>
+
+<h2 id="system">Olika ventilationssystem och vad de klarar</h2>
+
+<p>Äldre hus har ofta självdragsventilation, där luften rör sig av sig själv tack vare temperaturskillnader. Det fungerar dåligt varma dagar och läcker värme kalla dagar. Frånluftsventilation med fläkt suger ut gammal luft men lämnar tilluften åt slumpen genom otätheter och ventiler.</p>
+
+<p>Det mest effektiva för ett modernt, tätt hus är FTX, alltså från- och tilluftsventilation med värmeåtervinning. Systemet blåser in filtrerad, uppvärmd friskluft samtidigt som det suger ut den gamla, och återvinner värmen på vägen ut. Resultatet är jämn luftkvalitet i hela huset och lägre uppvärmningskostnad. Nackdelen är att ett FTX-system måste dimensioneras och installeras rätt för att leverera, annars får du ojämna flöden, drag och ljud. Bor du i lägenhet gäller delvis andra förutsättningar, det tar vi upp i guiden om <a href="/inomhusluft/ventilation-lagenhet/">ventilation i lägenhet</a>.</p>
+
+<h2 id="planering">Därför är planeringen avgörande</h2>
+
+<p>Ett ventilationssystem är aldrig bättre än sin projektering. Rätt luftflöde i varje rum, rätt kanaldimensioner och rätt placering av don avgör om du får den friska luften du betalar för. Det är här en genomtänkt <a href="https://ventlo.io" target="_blank" rel="noopener">ventilationsritning</a> blir kritisk: den visar exakt hur kanaler dras, hur stora luftflöden varje rum ska ha och var aggregatet placeras, så att installatören bygger rätt från början i stället för att gissa. En korrekt ritning ligger också till grund för den obligatoriska ventilationskontrollen (OVK) och krävs ofta för bygglov vid större ändringar. Utan den riskerar du ett system som varken uppfyller kraven eller ger den luftkvalitet du var ute efter.</p>
+
+<h2 id="idag">Enkla saker du kan göra redan idag</h2>
+
+<p>I väntan på ett bättre system finns det åtgärder som hjälper direkt. Vädra korsdrag tio minuter morgon och kväll, håll friskluftsventilerna öppna och rengjorda, och kör köksfläkten under och en stund efter matlagning. Se till att frånluftsdon i badrum och kök inte är igensatta av damm. Torka bort kondens från fönster så att fukten inte matar mögel. Krukväxter och luftrenare kan komplettera, men de ersätter aldrig ett fungerande luftombyte. Vill du gå vidare har vi samlat fler konkreta råd om hur du <a href="/inomhusluft/forbattra-inomhusluft/">förbättrar inomhusluften</a>.</p>
+
+<FAQ items={faqItems} />
+
+<RelatedPosts articles={related} title="Fler guider om inomhusluft" />
+
+</ArticleLayout>
