@@ -612,6 +612,21 @@ export const articles: Article[] = [
     published: true,
   },
 
+  // Mögel & fukt, vädra sängen (2026-06-30)
+  {
+    slug: 'vadra-sangen',
+    url: '/mogel-och-fukt/vadra-sangen/',
+    title: 'Vädra sängen innan du bäddar: därför ska du vänta',
+    excerpt: 'Under natten avdunstar upp till en liter fukt ner i sängen. Bäddar du direkt stänger du in den och gynnar dammkvalster. Så vädrar du sängen rätt.',
+    category: 'Mögel & fukt',
+    categoryUrl: '/mogel-och-fukt/',
+    hero: '/images/heroes/vadra-sangen.webp',
+    publishDate: '2026-06-30',
+    updateDate: '2026-06-30',
+    readingTime: 7,
+    published: true,
+  },
+
   // Inomhusluft, kondens (2026-05-31)
   {
     slug: 'kondens-fonster',
